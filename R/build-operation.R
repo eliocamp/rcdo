@@ -20,7 +20,11 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
 
   if (!is.null(operation$params)) {
     operation$params <- operation$params[lengths(operation$params) != 0]
-    operation$params <- paste0(operation$params, collapse = ",")
+    if (length(operation$params) == 0) {
+      operation$params <- NULL
+    } else {
+      operation$params <- paste0(operation$params, collapse = ",")
+    }
   }
 
   if (is.null(operation$output) && !chain) {
