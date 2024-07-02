@@ -4,8 +4,8 @@ create_function <- function(operator, template) {
 
   if (operator$n_input == 1) {
     input <- "ifile"
-  } else if (operator$n_input == 2) {
-    input <- "ifile1, ifile2"
+  } else if (operator$n_input < Inf) {
+    input <- paste0("ifile", seq_len(operator$n_input))
   } else if (operator$n_input == Inf) {
     input <- "..."
   }
