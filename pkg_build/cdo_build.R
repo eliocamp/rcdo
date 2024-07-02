@@ -79,7 +79,7 @@ for (operator in operators) {
 files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
 for (file in files) {
-  file.copy(file, file.path("R", basename(file)))
+  file.copy(file, file.path("R", basename(file)), overwrite = TRUE)
 }
 
 devtools::document(roclets = c('rd', 'collate', 'namespace'))

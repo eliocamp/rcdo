@@ -31,7 +31,7 @@ process_section.NAME <- function(section_text, operators) {
     as.list() |>
     setNames(c("operators", "short_description"))
 
-  list$operators <- strsplit(list$operators, ", ")[[1]]
+  list$operators <- trimws(strsplit(list$operators, ",")[[1]])
 
   operators <- c(operators, list)
   operators
