@@ -1,91 +1,78 @@
-operators <- list(
-  NULL
-  , copy = list(
-    command = "copy",
-    short_description = "Copy datasets",
-    description = "Copy datasets. Copies all input datasets to ofile",
-    params = NULL,
-    n_input = Inf,
-    n_output = 1,
-    family = "Copy",
-    section = "File Operations"
-  )
+source("pkg_build/process-section.R")
+# Operators IO
+op_list <- suppressWarnings(system("cdo --operators", intern = TRUE))
 
-  , cat = list(
-    command = "cat",
-    description = "Concatenate datasets. Concatenates all input datasets and appends the result to the end of ofile. If ofile does not exist it will be created",
-    params = NULL,
-    n_input = Inf,
-    n_output = 1
-  )
+operators <- strsplit(op_list, " ") |>
+  vapply(\(x) x[1], FUN.VALUE = character(1))
 
-  , replace = list(
-    command = "replace",
-    description = "The replace operator replaces variables of ifile1 with variables from ifile2 and write the result to ofile.",
-    params = NULL,
-    n_input = 2,
-    n_output = 1
-  )
+io <- utils::strcapture("\\({1}(-?[0123])\\|(-?[012])\\)", op_list,
+                        proto = list(n_input = integer(1),
+                                     n_output = integer(1)))
 
-  , merge = list(
-    command = "merge",
-    description = "Merge files",
-    params = NULL,
-    n_input = Inf,
-    n_output = 1
-  )
+stopifnot(all(!is.na(io$n_input + io$n_output)))
 
-  , splitcode = list(
-    command = "splitcode",
-    description = "Split code numbers",
-    params = list(
-      optional = c("swap" = "Swap the position of obase and xxx in the output filename")
-    ),
-    n_input = 1,
-    n_output = Inf
-  )
+operators_io <- data.table::data.table(operator = operators,
+                                       n_input = as.numeric(io$n_input),
+                                       n_output = as.numeric(io$n_output))
 
-  , splitsel = list(
-    command = "splitsel",
-    description = "splits ifile into pieces, one for each adjacent sequence t1, ...., tn of timesteps of the same selected time range",
-    params = list(
-      required = c("nsets" = "Number of input timesteps for each output file"),
-      optional = c("noffset" = "Number of input timesteps skipped before the first timestep range (optional)",
-                   "nskip" = "Number of input timesteps skipped between timestep ranges (optional)")
-    ),
-    n_input = 1,
-    n_output = Inf
-  )
+operators_io[n_input == -1, n_input := Inf]
+operators_io[n_output == -1, n_output := Inf]
 
-  , eq = list(
-    command = "eq",
-    description = "compares two datasets field by field",
-    params = NULL,
-    n_input = 2,
-    n_output = 1
-  )
 
-  , eqc = list(
-    command = "eqc",
-    description = "Compares all fields of a dataset with a constant",
-    params = list(required = c("c" = "Constant")),
-    n_input = 1,
-    n_output = 1
-  )
+# Operators documentation and parameters (more or less)
+help <- "pkg_build/cdo-2.4.1/src/operator_help.cc"
 
-  , sqrt = list(
-    command = "sqrt",
-    description = "square root",
-    params = NULL,
-    n_input = 1,
-    n_output = 1
-  )
+help <- readLines(help)
 
-  , sub = list(
-    command = "sub",
-    description = "substract two fields",
-    params = NULL,
-    n_input = 2,
-    n_output = 1
-  )
-)[-1]
+sections <- which(startsWith(help, "const "))
+
+helps <- list()
+
+for (i in seq_along(sections)[-length(sections)]) {
+  help_page <- help[seq(sections[i], sections[i+1] - 1)]
+
+  headers <- c(grep(r"( +"[A-Z]+",)", help_page), length(help_page) - 1)
+
+  operator <- list()
+
+  for (j in seq_along(headers)[-length(headers)]) {
+    section_name <- help_page[headers[j]] |>
+      rm_quotes()
+
+    section_text <- help_page[seq(headers[j] + 1, headers[j + 1] - 1)]
+
+    class(section_text) <- section_name
+
+    operator <- process_section(section_text, operator)
+  }
+
+  name <- help_page[1] |>
+    gsub("const CdoHelp ", "", x = _) |>
+    gsub("Help = \\{", "", x = _) |>
+    tolower()
+
+  helps[[i]] <- operator
+  names(helps)[i] <- name
+}
+
+
+operators <- list()
+
+not_build <- c("change", "windtrans")
+
+helps <- helps[!(names(helps) %in% not_build)]
+
+for (help in helps) {
+  for (op in help$operators)
+    operators[[op]] <- list(
+      command = op,
+      params = help$params,
+      description = help$short_description,
+      n_input = operators_io[operator == op]$n_input,
+      n_output = operators_io[operator == op]$n_output
+    )
+}
+
+
+usethis::use_data(operators, overwrite = TRUE)
+

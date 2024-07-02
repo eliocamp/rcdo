@@ -1,4 +1,4 @@
-source("operators.R")
+source("pkg_build/operators.R")
 create_function <- function(operator, template) {
   operator_name <- operator$command
 
@@ -66,10 +66,20 @@ create_function <- function(operator, template) {
   writeLines(code, file)
 }
 
+template <- readLines("pkg_build/cdo-template.R")
 
-template <- readLines("cdo-template.R")
+list.files("R", pattern = "cdo-", full.names = TRUE) |>
+  file.remove()
 for (operator in operators) {
-  create_function(operator, template)
+  if (length(operator$n_output) != 0 && operator$n_output == 1) {
+    create_function(operator, template)
+  }
 }
 
+files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
+for (file in files) {
+  file.copy(file, file.path("R", basename(file)))
+}
+
+devtools::document(roclets = c('rd', 'collate', 'namespace'))
