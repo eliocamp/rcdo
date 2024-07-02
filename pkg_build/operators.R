@@ -74,5 +74,5 @@ for (help in helps) {
 }
 
 
-usethis::use_data(operators, overwrite = TRUE)
+usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
 
