@@ -1,2 +1,4 @@
 ^rcdo\.Rproj$
 ^\.Rproj\.user$
+^README\.Rmd$
+^hgt_ncep\.nc$
