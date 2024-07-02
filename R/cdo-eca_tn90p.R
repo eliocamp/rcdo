@@ -11,7 +11,7 @@
 #' @export
 cdo_eca_tn90p <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$eca_tn90p,
-      input = list(ifile1, ifile2),
+      input = list(ifile1,ifile2),
       params = NULL,
       output = ofile
   )

@@ -12,9 +12,9 @@
 #' @param nskip, INTEGER - Number of input timesteps skipped between timestep ranges (optional)
 #'
 #' @export
-cdo_timselpctl <- function(ifile, p = NULL, nsets = NULL, noffset = NULL, nskip = NULL, ofile = NULL) {
+cdo_timselpctl <- function(ifile1, ifile2, ifile3, p = NULL, nsets = NULL, noffset = NULL, nskip = NULL, ofile = NULL) {
   cdo(operator = operators$timselpctl,
-      input = list(ifile),
+      input = list(ifile1,ifile2,ifile3),
       params = list(p = p, nsets = nsets, noffset = noffset, nskip = nskip),
       output = ofile
   )

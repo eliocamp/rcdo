@@ -9,9 +9,9 @@
 #' @param p, FLOAT - Percentile number in {0, ..., 100}
 #'
 #' @export
-cdo_daypctl <- function(ifile, p = NULL, ofile = NULL) {
+cdo_daypctl <- function(ifile1, ifile2, ifile3, p = NULL, ofile = NULL) {
   cdo(operator = operators$daypctl,
-      input = list(ifile),
+      input = list(ifile1,ifile2,ifile3),
       params = list(p = p),
       output = ofile
   )

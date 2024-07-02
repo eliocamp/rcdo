@@ -11,7 +11,7 @@
 #' @export
 cdo_intlevel3d <- function(ifile1, ifile2, tgtcoordinate = NULL, ofile = NULL) {
   cdo(operator = operators$intlevel3d,
-      input = list(ifile1, ifile2),
+      input = list(ifile1,ifile2),
       params = list(tgtcoordinate = tgtcoordinate),
       output = ofile
   )

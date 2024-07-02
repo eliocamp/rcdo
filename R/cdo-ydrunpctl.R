@@ -10,9 +10,9 @@
 #' @param nts, INTEGER - Number of timesteps
 #'
 #' @export
-cdo_ydrunpctl <- function(ifile, p = NULL, nts = NULL, ofile = NULL) {
+cdo_ydrunpctl <- function(ifile1, ifile2, ifile3, p = NULL, nts = NULL, ofile = NULL) {
   cdo(operator = operators$ydrunpctl,
-      input = list(ifile),
+      input = list(ifile1,ifile2,ifile3),
       params = list(p = p, nts = nts),
       output = ofile
   )

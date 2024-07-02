@@ -4,14 +4,14 @@
 \alias{cdo_daypctl}
 \title{daypctl}
 \usage{
-cdo_daypctl(ifile, p = NULL, ofile = NULL)
+cdo_daypctl(ifile1, ifile2, ifile3, p = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
 \item{p, }{FLOAT - Percentile number in {0, ..., 100}}
 
 \item{ofile}{String with the path to the output file.}
+
+\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
 
 \item{obase}{string with the basename of the output files.}
 }

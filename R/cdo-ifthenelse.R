@@ -9,9 +9,9 @@
 
 #'
 #' @export
-cdo_ifthenelse <- function(ifile, ofile = NULL) {
+cdo_ifthenelse <- function(ifile1, ifile2, ifile3, ofile = NULL) {
   cdo(operator = operators$ifthenelse,
-      input = list(ifile),
+      input = list(ifile1,ifile2,ifile3),
       params = NULL,
       output = ofile
   )

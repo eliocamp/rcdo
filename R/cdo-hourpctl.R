@@ -9,9 +9,9 @@
 #' @param p, FLOAT - Percentile number in {0, ..., 100}
 #'
 #' @export
-cdo_hourpctl <- function(ifile, p = NULL, ofile = NULL) {
+cdo_hourpctl <- function(ifile1, ifile2, ifile3, p = NULL, ofile = NULL) {
   cdo(operator = operators$hourpctl,
-      input = list(ifile),
+      input = list(ifile1,ifile2,ifile3),
       params = list(p = p),
       output = ofile
   )

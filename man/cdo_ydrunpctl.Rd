@@ -4,16 +4,16 @@
 \alias{cdo_ydrunpctl}
 \title{ydrunpctl}
 \usage{
-cdo_ydrunpctl(ifile, p = NULL, nts = NULL, ofile = NULL)
+cdo_ydrunpctl(ifile1, ifile2, ifile3, p = NULL, nts = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
 \item{p, }{FLOAT - Percentile number in {0, ..., 100}}
 
 \item{nts, }{INTEGER - Number of timesteps}
 
 \item{ofile}{String with the path to the output file.}
+
+\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
 
 \item{obase}{string with the basename of the output files.}
 }

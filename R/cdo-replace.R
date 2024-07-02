@@ -11,7 +11,7 @@
 #' @export
 cdo_replace <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$replace,
-      input = list(ifile1, ifile2),
+      input = list(ifile1,ifile2),
       params = NULL,
       output = ofile
   )

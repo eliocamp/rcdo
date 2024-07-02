@@ -4,7 +4,7 @@
 \alias{cdo_excecute}
 \title{Execute a CDO operation}
 \usage{
-cdo_excecute(operation, output = NULL, options = NULL)
+cdo_excecute(operation, output = tempfile(), options = NULL)
 }
 \arguments{
 \item{operation}{a CDO operation}

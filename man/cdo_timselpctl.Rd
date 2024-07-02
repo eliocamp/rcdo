@@ -5,7 +5,9 @@
 \title{timselpctl}
 \usage{
 cdo_timselpctl(
-  ifile,
+  ifile1,
+  ifile2,
+  ifile3,
   p = NULL,
   nsets = NULL,
   noffset = NULL,
@@ -14,8 +16,6 @@ cdo_timselpctl(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
 \item{p, }{FLOAT - Percentile number in {0, ..., 100}}
 
 \item{nsets, }{INTEGER - Number of input timesteps for each output timestep}
@@ -25,6 +25,8 @@ cdo_timselpctl(
 \item{nskip, }{INTEGER - Number of input timesteps skipped between timestep ranges (optional)}
 
 \item{ofile}{String with the path to the output file.}
+
+\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
 
 \item{obase}{string with the basename of the output files.}
 }

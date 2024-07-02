@@ -4,14 +4,14 @@
 \alias{cdo_subtrend}
 \title{subtrend}
 \usage{
-cdo_subtrend(ifile, equal = NULL, ofile = NULL)
+cdo_subtrend(ifile1, ifile2, ifile3, equal = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
 \item{equal, }{BOOL - Set to false for unequal distributed timesteps (default: true)}
 
 \item{ofile}{String with the path to the output file.}
+
+\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
 
 \item{obase}{string with the basename of the output files.}
 }

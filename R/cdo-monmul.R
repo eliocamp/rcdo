@@ -11,7 +11,7 @@
 #' @export
 cdo_monmul <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$monmul,
-      input = list(ifile1, ifile2),
+      input = list(ifile1,ifile2),
       params = NULL,
       output = ofile
   )

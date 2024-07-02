@@ -4,12 +4,12 @@
 \alias{cdo_ifthenelse}
 \title{ifthenelse}
 \usage{
-cdo_ifthenelse(ifile, ofile = NULL)
+cdo_ifthenelse(ifile1, ifile2, ifile3, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
 \item{ofile}{String with the path to the output file.}
+
+\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
 
 \item{obase}{string with the basename of the output files.}
 }

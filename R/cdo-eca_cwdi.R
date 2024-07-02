@@ -12,7 +12,7 @@
 #' @export
 cdo_eca_cwdi <- function(ifile1, ifile2, nday = NULL, T = NULL, ofile = NULL) {
   cdo(operator = operators$eca_cwdi,
-      input = list(ifile1, ifile2),
+      input = list(ifile1,ifile2),
       params = list(nday = nday, T = T),
       output = ofile
   )

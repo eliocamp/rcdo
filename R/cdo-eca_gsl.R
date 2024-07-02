@@ -13,7 +13,7 @@
 #' @export
 cdo_eca_gsl <- function(ifile1, ifile2, nday = NULL, T = NULL, fland = NULL, ofile = NULL) {
   cdo(operator = operators$eca_gsl,
-      input = list(ifile1, ifile2),
+      input = list(ifile1,ifile2),
       params = list(nday = nday, T = T, fland = fland),
       output = ofile
   )
