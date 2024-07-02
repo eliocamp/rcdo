@@ -1,6 +1,6 @@
 cdo <- function(operator, input, params = NULL, output = NULL) {
   n_input <- sum(vapply(input, get_output_length, numeric(1)))
-  stopifnot(operator$n_input == n_input)
+  stopifnot(operator$n_input == Inf || operator$n_input == n_input)
 
   # if (is.null(operator$params)) {
   #   stopifnot(`Missing parameters` = is.null(params))
