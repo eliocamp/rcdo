@@ -1,6 +1,7 @@
+## This file was created automatically, do not edit by hand.
 #' cat
 #'
-#' Concatenate datasets. Concatenates all input datasets and appends the result to the end of ofile. If ofile does not exist it will be created
+#' Copy datasets
 #'
 #' @param ifile,ifile1,ifile2 String with the path to the input file(s).
 #' @param ofile String with the path to the output file.

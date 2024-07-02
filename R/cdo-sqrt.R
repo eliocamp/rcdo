@@ -1,6 +1,7 @@
+## This file was created automatically, do not edit by hand.
 #' sqrt
 #'
-#' square root
+#' Mathematical functions
 #'
 #' @param ifile,ifile1,ifile2 String with the path to the input file(s).
 #' @param ofile String with the path to the output file.

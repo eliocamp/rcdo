@@ -4,9 +4,13 @@
 \alias{cdo_merge}
 \title{merge}
 \usage{
-cdo_merge(..., ofile = NULL)
+cdo_merge(..., skip_same_time = NULL, names = NULL, ofile = NULL)
 }
 \arguments{
+\item{skip_same_time, }{BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.}
+
+\item{names, }{STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).}
+
 \item{ofile}{String with the path to the output file.}
 
 \item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
@@ -14,5 +18,5 @@ cdo_merge(..., ofile = NULL)
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-Merge files
+Merge datasets
 }

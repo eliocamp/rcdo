@@ -14,5 +14,5 @@ cdo_cat(..., ofile = NULL)
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-Concatenate datasets. Concatenates all input datasets and appends the result to the end of ofile. If ofile does not exist it will be created
+Copy datasets
 }

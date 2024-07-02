@@ -14,5 +14,5 @@ cdo_sqrt(ifile, ofile = NULL)
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-square root
+Mathematical functions
 }

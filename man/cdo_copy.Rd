@@ -14,5 +14,5 @@ cdo_copy(..., ofile = NULL)
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-Copy datasets. Copies all input datasets to ofile
+Copy datasets
 }

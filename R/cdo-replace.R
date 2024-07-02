@@ -1,6 +1,7 @@
+## This file was created automatically, do not edit by hand.
 #' replace
 #'
-#' The replace operator replaces variables of ifile1 with variables from ifile2 and write the result to ofile.
+#' Replace variables
 #'
 #' @param ifile,ifile1,ifile2 String with the path to the input file(s).
 #' @param ofile String with the path to the output file.

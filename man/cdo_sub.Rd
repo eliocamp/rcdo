@@ -14,5 +14,5 @@ cdo_sub(ifile1, ifile2, ofile = NULL)
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-substract two fields
+Arithmetic on two datasets
 }

@@ -1,6 +1,7 @@
+## This file was created automatically, do not edit by hand.
 #' eq
 #'
-#' compares two datasets field by field
+#' Comparison of two fields
 #'
 #' @param ifile,ifile1,ifile2 String with the path to the input file(s).
 #' @param ofile String with the path to the output file.

@@ -14,5 +14,5 @@ cdo_replace(ifile1, ifile2, ofile = NULL)
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-The replace operator replaces variables of ifile1 with variables from ifile2 and write the result to ofile.
+Replace variables
 }

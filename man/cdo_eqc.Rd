@@ -4,17 +4,17 @@
 \alias{cdo_eqc}
 \title{eqc}
 \usage{
-cdo_eqc(ifile, c, ofile = NULL)
+cdo_eqc(ifile, c = NULL, ofile = NULL)
 }
 \arguments{
 \item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
 
-\item{c, }{Constant}
+\item{c, }{FLOAT - Constant}
 
 \item{ofile}{String with the path to the output file.}
 
 \item{obase}{string with the basename of the output files.}
 }
 \description{
-Compares all fields of a dataset with a constant
+Comparison of a field with a constant
 }
