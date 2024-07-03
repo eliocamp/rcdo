@@ -88,5 +88,11 @@ cdo_excecute <- function(operation, output = tempfile(), options = NULL) {
 
   command <- build_operation(operation, options = NULL)
   system(command)
+
+  if (!file.exists(output)) {
+    stop("Operation failed")
+  }
+  attr(output, "mtime") <- file.mtime(output)
+  attr(output, "size") <- file.size(output)
   return(output)
 }
