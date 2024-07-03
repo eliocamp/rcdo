@@ -77,7 +77,9 @@ get_output_length <- function(x) {
 #' @param output an output file or base string for output files
 #'
 #' @export
-cdo_execute <- function(operation, output = tempfile(), options = NULL) {
+cdo_execute <- function(operation, output = tempfile(),
+                        options = NULL,
+                        verbose = FALSE) {
   if (!is.null(output)) {
     operation$output <- output
   }
@@ -87,6 +89,9 @@ cdo_execute <- function(operation, output = tempfile(), options = NULL) {
   }
 
   command <- build_operation(operation, options = NULL)
+  if (verbose) {
+    message("Running ", command)
+  }
   system(command)
 
   if (!file.exists(output)) {
