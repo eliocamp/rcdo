@@ -77,7 +77,7 @@ get_output_length <- function(x) {
 #' @param output an output file or base string for output files
 #'
 #' @export
-cdo_excecute <- function(operation, output = tempfile(), options = NULL) {
+cdo_execute <- function(operation, output = tempfile(), options = NULL) {
   if (!is.null(output)) {
     operation$output <- output
   }

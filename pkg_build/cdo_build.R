@@ -68,7 +68,7 @@ create_function <- function(operator, template) {
 
 template <- readLines("pkg_build/cdo-template.R")
 
-list.files("R", pattern = "cdo-", full.names = TRUE) |>
+list.files("R", full.names = TRUE) |>
   file.remove()
 for (operator in operators) {
   if (length(operator$n_output) != 0 && operator$n_output == 1) {
