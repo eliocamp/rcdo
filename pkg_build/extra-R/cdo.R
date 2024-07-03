@@ -88,7 +88,7 @@ cdo_execute <- function(operation, output = tempfile(),
     stop("Missing output")
   }
 
-  command <- build_operation(operation, options = NULL)
+  command <- build_operation(operation, options = options)
   if (verbose) {
     message("Running ", command)
   }
