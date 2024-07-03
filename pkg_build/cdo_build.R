@@ -82,4 +82,6 @@ for (file in files) {
   file.copy(file, file.path("R", basename(file)), overwrite = TRUE)
 }
 
+usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
+
 devtools::document(roclets = c('rd', 'collate', 'namespace'))

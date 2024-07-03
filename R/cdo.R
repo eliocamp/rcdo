@@ -42,7 +42,7 @@ cdo_set_output <- function(operation, output) {
   operation
 }
 
-
+#' @export
 cdo_set_options <- function(operation, options) {
   operation$options <- options
   operation
