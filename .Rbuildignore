@@ -2,3 +2,7 @@
 ^\.Rproj\.user$
 ^README\.Rmd$
 ^hgt_ncep\.nc$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
