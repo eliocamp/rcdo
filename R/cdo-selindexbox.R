@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' selindexbox
-#'
-#' Select a box
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param lon1, FLOAT - Western longitude in degrees
@@ -15,6 +11,7 @@
 #' @param idy2, INTEGER - Index of last latitude (1 - nlat)
 #'
 #' @export
+#' @rdname selbox
 cdo_selindexbox <- function(ifile, lon1 = NULL, lon2 = NULL, lat1 = NULL, lat2 = NULL, idx1 = NULL, idx2 = NULL, idy1 = NULL, idy2 = NULL, ofile = NULL) {
   cdo(operator = operators$selindexbox,
       input = list(ifile),

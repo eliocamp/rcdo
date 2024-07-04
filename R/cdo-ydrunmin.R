@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' ydrunmin
-#'
-#' Multi
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param nts, INTEGER - Number of timesteps
 #'
 #' @export
+#' @rdname ydrunstat
 cdo_ydrunmin <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$ydrunmin,
       input = list(ifile),

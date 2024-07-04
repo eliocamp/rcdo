@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' atan2
-#'
-#' Arithmetic on two datasets
-#'
 #' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname arith
 cdo_atan2 <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$atan2,
       input = list(ifile1, ifile2),

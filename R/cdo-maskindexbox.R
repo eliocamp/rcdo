@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' maskindexbox
-#'
-#' Mask a box
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param lon1, FLOAT - Western longitude
@@ -15,6 +11,7 @@
 #' @param idy2, INTEGER - Index of last latitude
 #'
 #' @export
+#' @rdname maskbox
 cdo_maskindexbox <- function(ifile, lon1 = NULL, lon2 = NULL, lat1 = NULL, lat2 = NULL, idx1 = NULL, idx2 = NULL, idy1 = NULL, idy2 = NULL, ofile = NULL) {
   cdo(operator = operators$maskindexbox,
       input = list(ifile),

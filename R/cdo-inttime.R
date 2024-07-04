@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' inttime
-#'
-#' Time interpolation
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param date, STRING - Start date (format YYYY-MM-DD)
@@ -11,6 +7,7 @@
 #' @param n, INTEGER - Number of timesteps from one timestep to the next
 #'
 #' @export
+#' @rdname inttime
 cdo_inttime <- function(ifile, date = NULL, time = NULL, inc = NULL, n = NULL, ofile = NULL) {
   cdo(operator = operators$inttime,
       input = list(ifile),

@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' atan
-#'
-#' Mathematical functions
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname math
 cdo_atan <- function(ifile, ofile = NULL) {
   cdo(operator = operators$atan,
       input = list(ifile),

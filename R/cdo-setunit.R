@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' setunit
-#'
-#' Set field info
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param table, STRING - Parameter table file or name
@@ -14,6 +10,7 @@
 #' @param maxsteps, INTEGER - Maximum number of timesteps
 #'
 #' @export
+#' @rdname set
 cdo_setunit <- function(ifile, table = NULL, code = NULL, param = NULL, name = NULL, level = NULL, ltype = NULL, maxsteps = NULL, ofile = NULL) {
   cdo(operator = operators$setunit,
       input = list(ifile),

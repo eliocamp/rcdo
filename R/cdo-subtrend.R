@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' subtrend
-#'
-#' Add or subtract a trend
-#'
 #' @param ifile1,ifile2,ifile3 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
 #' @param equal, BOOL - Set to false for unequal distributed timesteps (default: true)
 #'
 #' @export
+#' @rdname trendarith
 cdo_subtrend <- function(ifile1, ifile2, ifile3, equal = NULL, ofile = NULL) {
   cdo(operator = operators$subtrend,
       input = list(ifile1, ifile2, ifile3),

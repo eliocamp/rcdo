@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' shifty
-#'
-#' Shift field
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param nshift, INTEGER - Number of grid cells to shift (default: 1)
@@ -10,6 +6,7 @@
 #' @param coord, STRING - If set, coordinates are also shifted
 #'
 #' @export
+#' @rdname shiftxy
 cdo_shifty <- function(ifile, nshift = NULL, cyclic = NULL, coord = NULL, ofile = NULL) {
   cdo(operator = operators$shifty,
       input = list(ifile),

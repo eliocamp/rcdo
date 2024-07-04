@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' varsstd1
-#'
-#' Statistical values over all variables
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname varsstat
 cdo_varsstd1 <- function(ifile, ofile = NULL) {
   cdo(operator = operators$varsstd1,
       input = list(ifile),

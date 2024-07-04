@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' shifttime
-#'
-#' Set time
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param day, INTEGER - Value of the new day
@@ -17,6 +13,7 @@
 #' @param shiftValue, STRING - Shift value (e.g. -3hour)
 #'
 #' @export
+#' @rdname settime
 cdo_shifttime <- function(ifile, day = NULL, month = NULL, year = NULL, units = NULL, date = NULL, time = NULL, inc = NULL, frequency = NULL, calendar = NULL, shiftValue = NULL, ofile = NULL) {
   cdo(operator = operators$shifttime,
       input = list(ifile),

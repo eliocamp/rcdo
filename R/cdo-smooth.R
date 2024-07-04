@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' smooth
-#'
-#' Smooth grid points
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param nsmooth, INTEGER - Number of times to smooth, default nsmooth=1
@@ -13,6 +9,7 @@
 #' @param weightR, FLOAT - Weight at the search radius, default weightR=0.25
 #'
 #' @export
+#' @rdname smooth
 cdo_smooth <- function(ifile, nsmooth = NULL, radius = NULL, maxpoints = NULL, form = NULL, weight0 = NULL, weightR = NULL, ofile = NULL) {
   cdo(operator = operators$smooth,
       input = list(ifile),

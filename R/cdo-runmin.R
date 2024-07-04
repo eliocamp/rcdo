@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' runmin
-#'
-#' Running statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param nts, INTEGER - Number of timesteps
 #'
 #' @export
+#' @rdname runstat
 cdo_runmin <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runmin,
       input = list(ifile),

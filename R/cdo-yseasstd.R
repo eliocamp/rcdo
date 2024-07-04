@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' yseasstd
-#'
-#' Multi
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname yseasstat
 cdo_yseasstd <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yseasstd,
       input = list(ifile),

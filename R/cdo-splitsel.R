@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' splitsel
-#'
-#' Split selected timesteps
-#'
 #' @param ifile String with the path to the input file.
 #' @param obase String with the basename of the output files.
 #' @param nsets, INTEGER - Number of input timesteps for each output file
@@ -10,6 +6,7 @@
 #' @param nskip, INTEGER - Number of input timesteps skipped between timestep ranges (optional)
 #'
 #' @export
+#' @rdname splitsel
 cdo_splitsel <- function(ifile, nsets = NULL, noffset = NULL, nskip = NULL, obase = NULL) {
   cdo(operator = operators$splitsel,
       input = list(ifile),

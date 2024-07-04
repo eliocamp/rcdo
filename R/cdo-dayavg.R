@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' dayavg
-#'
-#' Daily statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param complete_only, BOOL - Process only complete years
 #'
 #' @export
+#' @rdname daystat
 cdo_dayavg <- function(ifile, complete_only = NULL, ofile = NULL) {
   cdo(operator = operators$dayavg,
       input = list(ifile),

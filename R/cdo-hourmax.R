@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' hourmax
-#'
-#' Hourly statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname hourstat
 cdo_hourmax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$hourmax,
       input = list(ifile),

@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' setgridcell
-#'
-#' Set the value of a grid cell
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param value, FLOAT - Value of the grid cell
@@ -10,6 +6,7 @@
 #' @param mask, STRING - Name of the data file which contains the mask
 #'
 #' @export
+#' @rdname setgridcell
 cdo_setgridcell <- function(ifile, value = NULL, cell = NULL, mask = NULL, ofile = NULL) {
   cdo(operator = operators$setgridcell,
       input = list(ifile),

@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' selregion
-#'
-#' Select horizontal regions
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param regions, STRING - Comma-separated list of ASCII formatted files with different regions
@@ -11,6 +7,7 @@
 #' @param radius, STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)
 #'
 #' @export
+#' @rdname selregion
 cdo_selregion <- function(ifile, regions = NULL, lon = NULL, lat = NULL, radius = NULL, ofile = NULL) {
   cdo(operator = operators$selregion,
       input = list(ifile),

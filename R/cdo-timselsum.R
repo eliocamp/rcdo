@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' timselsum
-#'
-#' Time range statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param nsets, INTEGER - Number of input timesteps for each output timestep
@@ -10,6 +6,7 @@
 #' @param nskip, INTEGER - Number of input timesteps skipped between timestep ranges (optional)
 #'
 #' @export
+#' @rdname timselstat
 cdo_timselsum <- function(ifile, nsets = NULL, noffset = NULL, nskip = NULL, ofile = NULL) {
   cdo(operator = operators$timselsum,
       input = list(ifile),

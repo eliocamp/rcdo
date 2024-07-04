@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' timminidx
-#'
-#' Statistical values over all timesteps
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname timstat
 cdo_timminidx <- function(ifile, ofile = NULL) {
   cdo(operator = operators$timminidx,
       input = list(ifile),

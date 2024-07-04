@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' setgridmask
-#'
-#' Set grid information
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param grid, STRING - Grid description file or name
@@ -12,6 +8,7 @@
 #' @param projparams, STRING - Proj library parameter (e.g.:+init=EPSG:3413)
 #'
 #' @export
+#' @rdname setgrid
 cdo_setgridmask <- function(ifile, grid = NULL, gridtype = NULL, gridarea = NULL, gridmask = NULL, projparams = NULL, ofile = NULL) {
   cdo(operator = operators$setgridmask,
       input = list(ifile),

@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' monmean
-#'
-#' Monthly statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param complete_only, BOOL - Process only complete years
 #'
 #' @export
+#' @rdname monstat
 cdo_monmean <- function(ifile, complete_only = NULL, ofile = NULL) {
   cdo(operator = operators$monmean,
       input = list(ifile),

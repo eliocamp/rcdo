@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' fldcovar
-#'
-#' Covariance in grid space
-#'
 #' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname fldcovar
 cdo_fldcovar <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$fldcovar,
       input = list(ifile1, ifile2),

@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' selhour
-#'
-#' Select timesteps
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param timesteps, INTEGER - Comma-separated list or first/last\[/inc\] range of timesteps. Negative values select timesteps from the end (NetCDF only).
@@ -18,6 +14,7 @@
 #' @param nts2, INTEGER - Number of timesteps after the selected month \[default: nts1\].
 #'
 #' @export
+#' @rdname seltime
 cdo_selhour <- function(ifile, timesteps = NULL, times = NULL, hours = NULL, days = NULL, months = NULL, years = NULL, seasons = NULL, startdate = NULL, enddate = NULL, nts1 = NULL, nts2 = NULL, ofile = NULL) {
   cdo(operator = operators$selhour,
       input = list(ifile),

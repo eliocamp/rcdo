@@ -1,14 +1,11 @@
 ## This file was created automatically, do not edit by hand.
-#' eca_hwdi
-#'
-#' Heat wave duration index wrt mean of reference period
-#'
 #' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
 #' @param nday, INTEGER - Number of consecutive days (default: nday = 6)
 #' @param T, FLOAT - Temperature offset (unit: °C; default: T = 5°C)
 #'
 #' @export
+#' @rdname ecahwdi
 cdo_eca_hwdi <- function(ifile1, ifile2, nday = NULL, T = NULL, ofile = NULL) {
   cdo(operator = operators$eca_hwdi,
       input = list(ifile1, ifile2),

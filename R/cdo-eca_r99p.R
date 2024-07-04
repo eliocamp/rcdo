@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' eca_r99p
-#'
-#' Extremely wet days wrt 99th percentile of reference period
-#'
 #' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname ecar99p
 cdo_eca_r99p <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$eca_r99p,
       input = list(ifile1, ifile2),

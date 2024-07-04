@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' stdatm
-#'
-#' Generate a field
-#'
 #' @param ifile Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
 #' @param const, FLOAT - Constant
@@ -14,6 +10,7 @@
 #' @param levels, FLOAT - Target levels in metre above surface
 #'
 #' @export
+#' @rdname vargen
 cdo_stdatm <- function(ifile, const = NULL, seed = NULL, grid = NULL, start = NULL, end = NULL, inc = NULL, levels = NULL, ofile = NULL) {
   cdo(operator = operators$stdatm,
       input = list(ifile),

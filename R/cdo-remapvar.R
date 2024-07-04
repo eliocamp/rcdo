@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' remapvar
-#'
-#' Remaps source points to target cells
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param grid, STRING - Target grid description file or name
 #'
 #' @export
+#' @rdname remapstat
 cdo_remapvar <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapvar,
       input = list(ifile),

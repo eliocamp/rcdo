@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' splitmon
-#'
-#' Split timesteps of a dataset
-#'
 #' @param ifile String with the path to the input file.
 #' @param obase String with the basename of the output files.
 #' @param format, STRING - C-style format for strftime() (e.g. %B for the full month name)
 #'
 #' @export
+#' @rdname splittime
 cdo_splitmon <- function(ifile, format = NULL, obase = NULL) {
   cdo(operator = operators$splitmon,
       input = list(ifile),

@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' mermean
-#'
-#' Meridional statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param p, FLOAT - Percentile number in \{0, ..., 100\}
 #'
 #' @export
+#' @rdname merstat
 cdo_mermean <- function(ifile, p = NULL, ofile = NULL) {
   cdo(operator = operators$mermean,
       input = list(ifile),

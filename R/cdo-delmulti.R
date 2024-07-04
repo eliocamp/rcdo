@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' delmulti
-#'
-#' Select multiple fields via GRIB1 parameters
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 
 #'
 #' @export
+#' @rdname selmulti
 cdo_delmulti <- function(ifile, ofile = NULL) {
   cdo(operator = operators$delmulti,
       input = list(ifile),

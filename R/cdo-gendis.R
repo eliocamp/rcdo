@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' gendis
-#'
-#' Distance weighted average remapping
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param grid, STRING - Target grid description file or name
@@ -10,6 +6,7 @@
 #' @param map3d, BOOL - Generate all mapfiles of the first 3D field
 #'
 #' @export
+#' @rdname remapdis
 cdo_gendis <- function(ifile, grid = NULL, neighbors = NULL, map3d = NULL, ofile = NULL) {
   cdo(operator = operators$gendis,
       input = list(ifile),

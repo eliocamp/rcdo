@@ -1,13 +1,10 @@
 ## This file was created automatically, do not edit by hand.
-#' runavg
-#'
-#' Running statistics
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param nts, INTEGER - Number of timesteps
 #'
 #' @export
+#' @rdname runstat
 cdo_runavg <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runavg,
       input = list(ifile),

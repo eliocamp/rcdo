@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' select
-#'
-#' Select fields
-#'
 #' @param ifiles Character vector with the path to the input files.
 #' @param ofile String with the path to the output file.
 #' @param name, STRING - Comma-separated list of variable names.
@@ -32,6 +28,7 @@
 #' @param timestepmask, STRING - Read timesteps from a mask file.
 #'
 #' @export
+#' @rdname select
 cdo_select <- function(ifiles, name = NULL, param = NULL, code = NULL, level = NULL, levrange = NULL, levidx = NULL, zaxisname = NULL, zaxisnum = NULL, ltype = NULL, gridname = NULL, gridnum = NULL, steptype = NULL, date = NULL, startdate = NULL, enddate = NULL, minute = NULL, hour = NULL, day = NULL, month = NULL, season = NULL, year = NULL, dom = NULL, timestep = NULL, timestep_of_year = NULL, timestepmask = NULL, ofile = NULL) {
   cdo(operator = operators$select,
       input = as.list(ifiles),

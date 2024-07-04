@@ -1,0 +1,14 @@
+## This file was created automatically, do not edit by hand.
+#' Linear level interpolation from/to 3D vertical coordinates
+#'
+#' This operator performs a linear vertical interpolation of 3D variables fields with given 3D vertical coordinates. infile1 contains the 3D data variables and infile2 the 3D vertical source coordinate. The parameter tgtcoordinate is a datafile with the 3D vertical target coordinate. 
+#'
+#' @details
+#'     intlevel3d   Linear level interpolation onto a 3D vertical coordinate
+#'     intlevelx3d  like intlevel3d but with extrapolation
+#' 
+#'
+#' 
+#'
+#' @name intlevel3d
+NULL

@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' selzaxis
-#'
-#' Select fields
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param parameter, STRING - Comma-separated list of parameter identifiers.
@@ -18,6 +14,7 @@
 #' @param tabnums, INTEGER - Comma-separated list or range of parameter table numbers.
 #'
 #' @export
+#' @rdname selvar
 cdo_selzaxis <- function(ifile, parameter = NULL, codes = NULL, names = NULL, stdnames = NULL, levels = NULL, levidx = NULL, ltypes = NULL, grids = NULL, zaxes = NULL, zaxisnames = NULL, tabnums = NULL, ofile = NULL) {
   cdo(operator = operators$selzaxis,
       input = list(ifile),

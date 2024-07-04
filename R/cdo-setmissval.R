@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' setmissval
-#'
-#' Set missing value
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param neighbors, INTEGER - Number of nearest neighbors
@@ -12,6 +8,7 @@
 #' @param rmax, FLOAT - Upper bound
 #'
 #' @export
+#' @rdname setmiss
 cdo_setmissval <- function(ifile, neighbors = NULL, newmiss = NULL, c = NULL, rmin = NULL, rmax = NULL, ofile = NULL) {
   cdo(operator = operators$setmissval,
       input = list(ifile),

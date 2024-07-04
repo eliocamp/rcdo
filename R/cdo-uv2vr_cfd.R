@@ -1,8 +1,4 @@
 ## This file was created automatically, do not edit by hand.
-#' uv2vr_cfd
-#'
-#' Wind transformation
-#'
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
 #' @param u, STRING - Name of variable u (default: u)
@@ -11,6 +7,7 @@
 #' @param outMode, STRING - Output mode new/append (default: new)
 #'
 #' @export
+#' @rdname ncl_wind
 cdo_uv2vr_cfd <- function(ifile, u = NULL, v = NULL, boundOpt = NULL, outMode = NULL, ofile = NULL) {
   cdo(operator = operators$uv2vr_cfd,
       input = list(ifile),
