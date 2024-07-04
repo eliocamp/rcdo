@@ -56,7 +56,7 @@ If no outpuf file is specified, then the result is saved in a tempfile.
 ```{r, message=FALSE}
 ncep |> 
   cdo_ymonmean() |> 
-  cdo_excecute()
+  cdo_execute()
 ```
 
 Operators can be chained. 
