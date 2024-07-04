@@ -13,6 +13,6 @@ cdo_{{operator_name}} <- function({{arguments}}) {
   cdo(operator = operators${{operator_name}},
       input = list({{input}}),
       params = {{params_list}},
-      output = {{output}}
+      output = c({{output}})
   )
 }

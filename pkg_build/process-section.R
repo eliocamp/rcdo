@@ -72,7 +72,8 @@ process_section.PARAMETER <- function(section_text, operators) {
 
   parameters <- section_text |>
     strsplit(" ") |>
-    vapply("[", FUN.VALUE = character(1), 1)
+    vapply("[", FUN.VALUE = character(1), 1) |>
+    gsub("=<[a-z]+>", "", x = _)
 
   types <- section_text |>
     strsplit(" ") |>

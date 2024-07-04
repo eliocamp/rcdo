@@ -6,13 +6,15 @@ create_function <- function(operator, template) {
     input <- "ifile"
   } else if (operator$n_input < Inf) {
     input <- paste0("ifile", seq_len(operator$n_input))
-  } else if (operator$n_input == Inf) {
+  } else {
     input <- "..."
   }
 
   if (operator$n_output == 1) {
     output <- "ofile"
-  } else if (operator$n_output == Inf) {
+  } else if (operator$n_output < Inf) {
+    output <- paste0("ofile", seq_len(operator$n_output))
+  } else {
     output <- "obase"
   }
 
@@ -71,7 +73,7 @@ template <- readLines("pkg_build/cdo-template.R")
 list.files("R", full.names = TRUE) |>
   file.remove()
 for (operator in operators) {
-  if (length(operator$n_output) != 0 && operator$n_output == 1) {
+  if (length(operator$n_output) != 0 && operator$n_output != 0) {
     create_function(operator, template)
   }
 }
