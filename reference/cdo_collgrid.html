@@ -42,29 +42,25 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_collgrid</span><span class="op">(</span><span class="va">...</span>, nx <span class="op">=</span> <span class="cn">NULL</span>, names <span class="op">=</span> <span class="cn">NULL</span>, ofile <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_collgrid</span><span class="op">(</span><span class="va">ifiles</span>, nx <span class="op">=</span> <span class="cn">NULL</span>, names <span class="op">=</span> <span class="cn">NULL</span>, ofile <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>nx, </dt>
-<dd><p>INTEGER - Number of regions in x direction default: number of input files</p></dd>
+    <dl><dt>ifiles</dt>
+<dd><p>Character vector with the path to the input files.</p></dd>
+
+
+<dt>nx, </dt>
+<dd><p>INTEGER - Number of regions in x direction [default: number of input files]</p></dd>
 
 
 <dt>names, </dt>
-<dd><p>STRING - Comma-separated list of variable names default: all variables</p></dd>
+<dd><p>STRING - Comma-separated list of variable names [default: all variables]</p></dd>
 
 
 <dt>ofile</dt>
 <dd><p>String with the path to the output file.</p></dd>
-
-
-<dt>ifile, ifile1, ifile2</dt>
-<dd><p>String with the path to the input file(s).</p></dd>
-
-
-<dt>obase</dt>
-<dd><p>string with the basename of the output files.</p></dd>
 
 </dl></div>
 

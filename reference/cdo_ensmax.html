@@ -42,25 +42,21 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_ensmax</span><span class="op">(</span><span class="va">...</span>, p <span class="op">=</span> <span class="cn">NULL</span>, ofile <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_ensmax</span><span class="op">(</span><span class="va">ifiles</span>, p <span class="op">=</span> <span class="cn">NULL</span>, ofile <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>p, </dt>
-<dd><p>FLOAT - Percentile number in 0, ..., 100</p></dd>
+    <dl><dt>ifiles</dt>
+<dd><p>Character vector with the path to the input files.</p></dd>
+
+
+<dt>p, </dt>
+<dd><p>FLOAT - Percentile number in {0, ..., 100}</p></dd>
 
 
 <dt>ofile</dt>
 <dd><p>String with the path to the output file.</p></dd>
-
-
-<dt>ifile, ifile1, ifile2</dt>
-<dd><p>String with the path to the input file(s).</p></dd>
-
-
-<dt>obase</dt>
-<dd><p>string with the basename of the output files.</p></dd>
 
 </dl></div>
 

@@ -42,12 +42,16 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_mergetime</span><span class="op">(</span><span class="va">...</span>, skip_same_time <span class="op">=</span> <span class="cn">NULL</span>, names <span class="op">=</span> <span class="cn">NULL</span>, ofile <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_mergetime</span><span class="op">(</span><span class="va">ifiles</span>, skip_same_time <span class="op">=</span> <span class="cn">NULL</span>, names <span class="op">=</span> <span class="cn">NULL</span>, ofile <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>skip_same_time, </dt>
+    <dl><dt>ifiles</dt>
+<dd><p>Character vector with the path to the input files.</p></dd>
+
+
+<dt>skip_same_time, </dt>
 <dd><p>BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.</p></dd>
 
 
@@ -57,14 +61,6 @@
 
 <dt>ofile</dt>
 <dd><p>String with the path to the output file.</p></dd>
-
-
-<dt>ifile, ifile1, ifile2</dt>
-<dd><p>String with the path to the input file(s).</p></dd>
-
-
-<dt>obase</dt>
-<dd><p>string with the basename of the output files.</p></dd>
 
 </dl></div>
 

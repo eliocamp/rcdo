@@ -61,12 +61,12 @@
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
-    <dl><dt>ifile, ifile1, ifile2</dt>
-<dd><p>String with the path to the input file(s).</p></dd>
+    <dl><dt>ifile</dt>
+<dd><p>String with the path to the input file.</p></dd>
 
 
 <dt>timesteps, </dt>
-<dd><p>INTEGER - Comma-separated list or first/last/inc range of timesteps. Negative values select timesteps from the end (NetCDF only).</p></dd>
+<dd><p>INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).</p></dd>
 
 
 <dt>times, </dt>
@@ -74,19 +74,19 @@
 
 
 <dt>hours, </dt>
-<dd><p>INTEGER - Comma-separated list or first/last/inc range of hours.</p></dd>
+<dd><p>INTEGER - Comma-separated list or first/last[/inc] range of hours.</p></dd>
 
 
 <dt>days, </dt>
-<dd><p>INTEGER - Comma-separated list or first/last/inc range of days.</p></dd>
+<dd><p>INTEGER - Comma-separated list or first/last[/inc] range of days.</p></dd>
 
 
 <dt>months, </dt>
-<dd><p>INTEGER - Comma-separated list or first/last/inc range of months.</p></dd>
+<dd><p>INTEGER - Comma-separated list or first/last[/inc] range of months.</p></dd>
 
 
 <dt>years, </dt>
-<dd><p>INTEGER - Comma-separated list or first/last/inc range of years.</p></dd>
+<dd><p>INTEGER - Comma-separated list or first/last[/inc] range of years.</p></dd>
 
 
 <dt>seasons, </dt>
@@ -98,23 +98,19 @@
 
 
 <dt>enddate, </dt>
-<dd><p>STRING - End date (format YYYY-MM-DDThh:mm:ss) default: startdate.</p></dd>
+<dd><p>STRING - End date (format YYYY-MM-DDThh:mm:ss) [default: startdate].</p></dd>
 
 
 <dt>nts1, </dt>
-<dd><p>INTEGER - Number of timesteps before the selected month default: 0.</p></dd>
+<dd><p>INTEGER - Number of timesteps before the selected month [default: 0].</p></dd>
 
 
 <dt>nts2, </dt>
-<dd><p>INTEGER - Number of timesteps after the selected month default: nts1.</p></dd>
+<dd><p>INTEGER - Number of timesteps after the selected month [default: nts1].</p></dd>
 
 
 <dt>ofile</dt>
 <dd><p>String with the path to the output file.</p></dd>
-
-
-<dt>obase</dt>
-<dd><p>string with the basename of the output files.</p></dd>
 
 </dl></div>
 
