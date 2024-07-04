@@ -86,3 +86,19 @@ ncep |>
 ```
 
 
+## Prior art
+
+The [ClimateOperators](https://github.com/markpayneatwork/ClimateOperators) package also wrapps CDO, but it's approach is different. 
+Instead of wrapping each operator as its own function with parameters as arguments, it provides a generic `cdo()` function that runs the operators that the user needs to write as strings. 
+Instead of 
+
+```{r, eval=FALSE}
+ncep |> 
+  rcdo::cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) 
+```
+
+one would write 
+ 
+```{r, eval=FALSE}
+ClimateOperators::cdo("sellonlatbox,0,360,-90,0", ncep, output_file)
+```

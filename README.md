@@ -51,9 +51,9 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/RtmpDgsta9/file2090777db5c2f"
+#> [1] "/tmp/Rtmp89RjCK/file71812ea48dcc"
 #> attr(,"mtime")
-#> [1] "2024-07-04 17:43:35 AEST"
+#> [1] "2024-07-04 20:11:34 AEST"
 #> attr(,"size")
 #> [1] 8631345
 ```
@@ -87,4 +87,24 @@ ncep |>
   cdo_ymonmean() 
 #> CDO command:
 #>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] ] {{output}}
+```
+
+## Prior art
+
+The
+[ClimateOperators](https://github.com/markpayneatwork/ClimateOperators)
+package also wrapps CDO, but it’s approach is different. Instead of
+wrapping each operator as its own function with parameters as arguments,
+it provides a generic `cdo()` function that runs the operators that the
+user needs to write as strings. Instead of
+
+``` r
+ncep |> 
+  rcdo::cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) 
+```
+
+one would write
+
+``` r
+ClimateOperators::cdo("sellonlatbox,0,360,-90,0", ncep, output_file)
 ```
