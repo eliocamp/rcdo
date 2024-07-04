@@ -16,11 +16,11 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
 
   options <- collect_options(input)
   operation <-  structure(list(operator = operator,
-                 params = params,
-                 input = input,
-                 output = output,
-                 options = options),
-            class = "cdo_operation"
+                               params = params,
+                               input = input,
+                               output = output,
+                               options = options),
+                          class = "cdo_operation"
   )
 
   check_output(operation)
@@ -105,11 +105,15 @@ cdo_execute <- function(operation,
   }
   system(command)
 
-  if (!file.exists(output)) {
-    stop("Operation failed")
+  if (operation$operator$n_output < Inf) {
+
+    if (!all(file.exists(output))) {
+      stop("Operation failed")
+    }
+    attr(output, "mtime") <- max(file.mtime(output))
+    attr(output, "size") <- sum(file.size(output))
   }
-  attr(output, "mtime") <- file.mtime(output)
-  attr(output, "size") <- file.size(output)
+
   return(output)
 }
 
