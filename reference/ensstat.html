@@ -77,7 +77,7 @@
 <dd><p>Character vector with the path to the input files.</p></dd>
 
 
-<dt>p, </dt>
+<dt>p</dt>
 <dd><p>FLOAT - Percentile number in {0, ..., 100}</p></dd>
 
 
@@ -88,41 +88,41 @@
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>ensmin     Ensemble minimum</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> min{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> min\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>ensmax     Ensemble maximum</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> max{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> max\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>ensrange   Ensemble range</span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> range{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> range\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>enssum     Ensemble sum</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> sum{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> sum\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>ensmean    Ensemble mean</span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> mean{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> mean\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>ensavg     Ensemble average</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> avg{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> avg\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>ensstd     Ensemble standard deviation</span>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>           Normalize by n.</span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>           </span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> std{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> std\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>ensstd1    Ensemble standard <span class="fu">deviation</span> (n<span class="dv">-1</span>)</span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>           Normalize <span class="fu">by</span> (n<span class="dv">-1</span>).</span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>           </span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> std1{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> std1\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>ensvar     Ensemble variance</span>
 <span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>           Normalize by n.</span>
 <span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>           </span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> var{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> var\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>ensvar1    Ensemble <span class="fu">variance</span> (n<span class="dv">-1</span>)</span>
 <span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>           Normalize <span class="fu">by</span> (n<span class="dv">-1</span>).</span>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>           </span>
-<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> var1{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> var1\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>ensskew    Ensemble skewness</span>
-<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> skew{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> skew\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>enskurt    Ensemble kurtosis</span>
-<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> kurt{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> kurt\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>ensmedian  Ensemble median</span>
-<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> median{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> median\{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span>
 <span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a>enspctl    Ensemble percentiles</span>
-<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> pth percentile {<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)}</span></code></pre><p></p></div>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>           <span class="fu">o</span>(t,x) <span class="ot">=</span> pth percentile \{<span class="fu">i1</span>(t,x), <span class="fu">i2</span>(t,x), ..., <span class="cf">in</span>(t,x)\}</span></code></pre><p></p></div>
     </div>
     <div class="section level2">
     <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>

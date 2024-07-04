@@ -79,11 +79,11 @@
 <dd><p>String with the path to the input file.</p></dd>
 
 
-<dt>weights, </dt>
+<dt>weights</dt>
 <dd><p>BOOL - weights=FALSE disables weighting by grid cell area [default: weights=TRUE]</p></dd>
 
 
-<dt>p, </dt>
+<dt>p</dt>
 <dd><p>FLOAT - Percentile number in {0, ..., 100}</p></dd>
 
 
@@ -96,71 +96,71 @@
     <p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>fldmin     Field minimum</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>           For every gridpoint x_1, ..., x_n of the same field it is<span class="sc">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>           </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> min{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n<span class="er">}</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> min\{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n\<span class="er">}</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>fldmax     Field maximum</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>           For every gridpoint x_1, ..., x_n of the same field it is<span class="sc">:</span></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>           </span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> max{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n<span class="er">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> max\{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n\<span class="er">}</span></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>fldrange   Field range</span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>           For every gridpoint x_1, ..., x_n of the same field it is<span class="sc">:</span></span>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>           </span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> range{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n<span class="er">}</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> range\{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n\<span class="er">}</span></span>
 <span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>fldsum     Field sum</span>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>           For every gridpoint x_1, ..., x_n of the same field it is<span class="sc">:</span></span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>           </span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> sum{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n<span class="er">}</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> sum\{<span class="fu">i</span>(t,x<span class="st">'), x_1&amp;lt;x'</span><span class="sc">&amp;</span>lt;<span class="ot">=</span>x_n\<span class="er">}</span></span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>fldint     Field integral</span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>           For every gridpoint x_1, ..., x_n of the same field it is<span class="sc">:</span></span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>           </span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> sum{<span class="fu">i</span>(t,x<span class="st">')*cellarea(x'</span>), x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>           <span class="fu">o</span>(t,<span class="dv">1</span>) <span class="ot">=</span> sum\{<span class="fu">i</span>(t,x<span class="st">')*cellarea(x'</span>), x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="st">fldmean    Field mean</span></span>
 <span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="st">           For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="st">           o(t,1) = mean{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a><span class="st">           o(t,1) = mean\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="st">           weighted by area weights obtained by the input field.</span></span>
 <span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a><span class="st">fldavg     Field average</span></span>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a><span class="st">           For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="st">           o(t,1) = avg{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a><span class="st">           o(t,1) = avg\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a><span class="st">           weighted by area weights obtained by the input field.</span></span>
 <span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a><span class="st">fldstd     Field standard deviation</span></span>
 <span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a><span class="st">           Normalize by n. For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="st">           o(t,1) = std{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a><span class="st">           o(t,1) = std\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a><span class="st">           weighted by area weights obtained by the input field.</span></span>
 <span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a><span class="st">fldstd1    Field standard deviation (n-1)</span></span>
 <span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a><span class="st">           Normalize by (n-1). For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a><span class="st">           o(t,1) = std1{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a><span class="st">           o(t,1) = std1\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a><span class="st">           weighted by area weights obtained by the input field.</span></span>
 <span id="cb1-41"><a href="#cb1-41" tabindex="-1"></a><span class="st">fldvar     Field variance</span></span>
 <span id="cb1-42"><a href="#cb1-42" tabindex="-1"></a><span class="st">           Normalize by n. For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-43"><a href="#cb1-43" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a><span class="st">           o(t,1) = var{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-44"><a href="#cb1-44" tabindex="-1"></a><span class="st">           o(t,1) = var\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-45"><a href="#cb1-45" tabindex="-1"></a><span class="st">           weighted by area weights obtained by the input field.</span></span>
 <span id="cb1-46"><a href="#cb1-46" tabindex="-1"></a><span class="st">fldvar1    Field variance (n-1)</span></span>
 <span id="cb1-47"><a href="#cb1-47" tabindex="-1"></a><span class="st">           Normalize by (n-1). For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-48"><a href="#cb1-48" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a><span class="st">           o(t,1) = var1{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-49"><a href="#cb1-49" tabindex="-1"></a><span class="st">           o(t,1) = var1\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-50"><a href="#cb1-50" tabindex="-1"></a><span class="st">           weighted by area weights obtained by the input field.</span></span>
 <span id="cb1-51"><a href="#cb1-51" tabindex="-1"></a><span class="st">fldskew    Field skewness</span></span>
 <span id="cb1-52"><a href="#cb1-52" tabindex="-1"></a><span class="st">           For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-53"><a href="#cb1-53" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a><span class="st">           o(t,1) = skew{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-54"><a href="#cb1-54" tabindex="-1"></a><span class="st">           o(t,1) = skew\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-55"><a href="#cb1-55" tabindex="-1"></a><span class="st">fldkurt    Field kurtosis</span></span>
 <span id="cb1-56"><a href="#cb1-56" tabindex="-1"></a><span class="st">           For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-57"><a href="#cb1-57" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a><span class="st">           o(t,1) = kurt{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-58"><a href="#cb1-58" tabindex="-1"></a><span class="st">           o(t,1) = kurt\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-59"><a href="#cb1-59" tabindex="-1"></a><span class="st">fldmedian  Field median</span></span>
 <span id="cb1-60"><a href="#cb1-60" tabindex="-1"></a><span class="st">           For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-61"><a href="#cb1-61" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a><span class="st">           o(t,1) = median{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span>
+<span id="cb1-62"><a href="#cb1-62" tabindex="-1"></a><span class="st">           o(t,1) = median\{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span>
 <span id="cb1-63"><a href="#cb1-63" tabindex="-1"></a><span class="st">fldcount   Field count</span></span>
 <span id="cb1-64"><a href="#cb1-64" tabindex="-1"></a><span class="st">           Number of non-missing values of the field.</span></span>
 <span id="cb1-65"><a href="#cb1-65" tabindex="-1"></a><span class="st">fldpctl    Field percentiles</span></span>
 <span id="cb1-66"><a href="#cb1-66" tabindex="-1"></a><span class="st">           For every gridpoint x_1, ..., x_n of the same field it is:</span></span>
 <span id="cb1-67"><a href="#cb1-67" tabindex="-1"></a><span class="st">           </span></span>
-<span id="cb1-68"><a href="#cb1-68" tabindex="-1"></a><span class="st">           o(t,1) = pth percentile {i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n}</span></span></code></pre><p></p></div>
+<span id="cb1-68"><a href="#cb1-68" tabindex="-1"></a><span class="st">           o(t,1) = pth percentile \{i(t,x'</span><span class="er">)</span>, x_1<span class="sc">&amp;</span>lt;x<span class="st">'&amp;lt;=x_n\}</span></span></code></pre><p></p></div>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>

@@ -75,15 +75,15 @@
 <dd><p>String with the path to the input file.</p></dd>
 
 
-<dt>nsets, </dt>
+<dt>nsets</dt>
 <dd><p>INTEGER - Number of input timesteps for each output timestep</p></dd>
 
 
-<dt>noffset, </dt>
+<dt>noffset</dt>
 <dd><p>INTEGER - Number of input timesteps skipped before the first timestep range (optional)</p></dd>
 
 
-<dt>nskip, </dt>
+<dt>nskip</dt>
 <dd><p>INTEGER - Number of input timesteps skipped between timestep ranges (optional)</p></dd>
 
 
@@ -96,43 +96,43 @@
     <p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>timselmin    Time selection minimum</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>             For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>             </span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> min{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> min\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>timselmax    Time selection maximum</span>
 <span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>             For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>             </span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> max{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> max\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>timselrange  Time selection range</span>
 <span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>             For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>             </span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> range{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> range\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>timselsum    Time selection sum</span>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>             For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>             </span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> sum{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> sum\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>timselmean   Time selection mean</span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>             For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>             </span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> mean{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> mean\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>timselavg    Time selection average</span>
 <span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>             For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>             </span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> avg{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> avg\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>timselstd    Time selection standard deviation</span>
 <span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>             Normalize by n. For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>             </span>
-<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> std{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> std\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a>timselstd1   Time selection standard <span class="fu">deviation</span> (n<span class="dv">-1</span>)</span>
 <span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a>             Normalize <span class="fu">by</span> (n<span class="dv">-1</span>). For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>             </span>
-<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> std1{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-32"><a href="#cb1-32" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> std1\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-33"><a href="#cb1-33" tabindex="-1"></a>timselvar    Time selection variance</span>
 <span id="cb1-34"><a href="#cb1-34" tabindex="-1"></a>             Normalize by n. For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-35"><a href="#cb1-35" tabindex="-1"></a>             </span>
-<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> var{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span>
+<span id="cb1-36"><a href="#cb1-36" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> var\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span>
 <span id="cb1-37"><a href="#cb1-37" tabindex="-1"></a>timselvar1   Time selection <span class="fu">variance</span> (n<span class="dv">-1</span>)</span>
 <span id="cb1-38"><a href="#cb1-38" tabindex="-1"></a>             Normalize <span class="fu">by</span> (n<span class="dv">-1</span>). For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is<span class="sc">:</span></span>
 <span id="cb1-39"><a href="#cb1-39" tabindex="-1"></a>             </span>
-<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> var1{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn<span class="er">}</span></span></code></pre><p></p></div>
+<span id="cb1-40"><a href="#cb1-40" tabindex="-1"></a>             <span class="fu">o</span>(t,x) <span class="ot">=</span> var1\{<span class="fu">i</span>(t<span class="st">',x), t1 &amp;lt; t'</span> <span class="sc">&amp;</span>lt;<span class="ot">=</span> tn\<span class="er">}</span></span></code></pre><p></p></div>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
