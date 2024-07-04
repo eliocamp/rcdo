@@ -16,6 +16,6 @@ cdo_selregion <- function(ifile, regions = NULL, lon = NULL, lat = NULL, radius 
   cdo(operator = operators$selregion,
       input = list(ifile),
       params = list(regions = regions, lon = lon, lat = lat, radius = radius),
-      output = ofile
+      output = c(ofile)
   )
 }

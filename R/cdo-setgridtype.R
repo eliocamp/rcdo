@@ -17,6 +17,6 @@ cdo_setgridtype <- function(ifile, grid = NULL, gridtype = NULL, gridarea = NULL
   cdo(operator = operators$setgridtype,
       input = list(ifile),
       params = list(grid = grid, gridtype = gridtype, gridarea = gridarea, gridmask = gridmask, projparams = projparams),
-      output = ofile
+      output = c(ofile)
   )
 }

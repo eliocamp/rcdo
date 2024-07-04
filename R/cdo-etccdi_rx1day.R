@@ -13,6 +13,6 @@ cdo_etccdi_rx1day <- function(ifile, freq = NULL, ofile = NULL) {
   cdo(operator = operators$etccdi_rx1day,
       input = list(ifile),
       params = list(freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

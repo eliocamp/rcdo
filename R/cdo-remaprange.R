@@ -13,6 +13,6 @@ cdo_remaprange <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remaprange,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

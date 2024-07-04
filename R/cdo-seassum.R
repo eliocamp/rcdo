@@ -13,6 +13,6 @@ cdo_seassum <- function(ifile, ofile = NULL) {
   cdo(operator = operators$seassum,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

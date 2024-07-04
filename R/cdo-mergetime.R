@@ -14,6 +14,6 @@ cdo_mergetime <- function(..., skip_same_time = NULL, names = NULL, ofile = NULL
   cdo(operator = operators$mergetime,
       input = list(...),
       params = list(skip_same_time = skip_same_time, names = names),
-      output = ofile
+      output = c(ofile)
   )
 }

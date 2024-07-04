@@ -13,6 +13,6 @@ cdo_deltat <- function(ifile, ofile = NULL) {
   cdo(operator = operators$deltat,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

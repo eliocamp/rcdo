@@ -15,6 +15,6 @@ cdo_shifty <- function(ifile, nshift = NULL, cyclic = NULL, coord = NULL, ofile 
   cdo(operator = operators$shifty,
       input = list(ifile),
       params = list(nshift = nshift, cyclic = cyclic, coord = coord),
-      output = ofile
+      output = c(ofile)
   )
 }

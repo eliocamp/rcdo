@@ -13,6 +13,6 @@ cdo_ydaysum <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ydaysum,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

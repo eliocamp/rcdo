@@ -13,6 +13,6 @@ cdo_runmax <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runmax,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

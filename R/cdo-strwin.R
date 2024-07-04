@@ -13,6 +13,6 @@ cdo_strwin <- function(ifile, v = NULL, ofile = NULL) {
   cdo(operator = operators$strwin,
       input = list(ifile),
       params = list(v = v),
-      output = ofile
+      output = c(ofile)
   )
 }

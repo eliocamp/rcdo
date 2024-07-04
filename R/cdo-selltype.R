@@ -23,6 +23,6 @@ cdo_selltype <- function(ifile, parameter = NULL, codes = NULL, names = NULL, st
   cdo(operator = operators$selltype,
       input = list(ifile),
       params = list(parameter = parameter, codes = codes, names = names, stdnames = stdnames, levels = levels, levidx = levidx, ltypes = ltypes, grids = grids, zaxes = zaxes, zaxisnames = zaxisnames, tabnums = tabnums),
-      output = ofile
+      output = c(ofile)
   )
 }

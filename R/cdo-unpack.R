@@ -13,6 +13,6 @@ cdo_unpack <- function(ifile, ofile = NULL) {
   cdo(operator = operators$unpack,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -14,6 +14,6 @@ cdo_fldskew <- function(ifile, weights = NULL, p = NULL, ofile = NULL) {
   cdo(operator = operators$fldskew,
       input = list(ifile),
       params = list(weights = weights, p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

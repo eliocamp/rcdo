@@ -13,6 +13,6 @@ cdo_gridweights <- function(ifile, radius = NULL, ofile = NULL) {
   cdo(operator = operators$gridweights,
       input = list(ifile),
       params = list(radius = radius),
-      output = ofile
+      output = c(ofile)
   )
 }

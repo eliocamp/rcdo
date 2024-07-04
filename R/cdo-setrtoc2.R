@@ -17,6 +17,6 @@ cdo_setrtoc2 <- function(ifile, oldval,newval,... = NULL, rmin = NULL, rmax = NU
   cdo(operator = operators$setrtoc2,
       input = list(ifile),
       params = list(oldval,newval,... = oldval,newval,..., rmin = rmin, rmax = rmax, c = c, c2 = c2),
-      output = ofile
+      output = c(ofile)
   )
 }

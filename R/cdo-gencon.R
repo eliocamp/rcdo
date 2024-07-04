@@ -14,6 +14,6 @@ cdo_gencon <- function(ifile, grid = NULL, map3d = NULL, ofile = NULL) {
   cdo(operator = operators$gencon,
       input = list(ifile),
       params = list(grid = grid, map3d = map3d),
-      output = ofile
+      output = c(ofile)
   )
 }

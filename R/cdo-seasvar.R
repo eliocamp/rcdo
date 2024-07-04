@@ -13,6 +13,6 @@ cdo_seasvar <- function(ifile, ofile = NULL) {
   cdo(operator = operators$seasvar,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

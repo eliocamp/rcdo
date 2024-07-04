@@ -37,6 +37,6 @@ cdo_select <- function(..., name = NULL, param = NULL, code = NULL, level = NULL
   cdo(operator = operators$select,
       input = list(...),
       params = list(name = name, param = param, code = code, level = level, levrange = levrange, levidx = levidx, zaxisname = zaxisname, zaxisnum = zaxisnum, ltype = ltype, gridname = gridname, gridnum = gridnum, steptype = steptype, date = date, startdate = startdate, enddate = enddate, minute = minute, hour = hour, day = day, month = month, season = season, year = year, dom = dom, timestep = timestep, timestep_of_year = timestep_of_year, timestepmask = timestepmask),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_remapmedian <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapmedian,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

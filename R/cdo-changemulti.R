@@ -13,6 +13,6 @@ cdo_changemulti <- function(ifile, ofile = NULL) {
   cdo(operator = operators$changemulti,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -23,6 +23,6 @@ cdo_selseason <- function(ifile, timesteps = NULL, times = NULL, hours = NULL, d
   cdo(operator = operators$selseason,
       input = list(ifile),
       params = list(timesteps = timesteps, times = times, hours = hours, days = days, months = months, years = years, seasons = seasons, startdate = startdate, enddate = enddate, nts1 = nts1, nts2 = nts2),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_sin <- function(ifile, ofile = NULL) {
   cdo(operator = operators$sin,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

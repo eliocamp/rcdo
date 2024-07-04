@@ -13,6 +13,6 @@ cdo_duplicate <- function(ifile, ndup = NULL, ofile = NULL) {
   cdo(operator = operators$duplicate,
       input = list(ifile),
       params = list(ndup = ndup),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_mermedian <- function(ifile, p = NULL, ofile = NULL) {
   cdo(operator = operators$mermedian,
       input = list(ifile),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

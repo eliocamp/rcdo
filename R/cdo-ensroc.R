@@ -13,6 +13,6 @@ cdo_ensroc <- function(..., ofile = NULL) {
   cdo(operator = operators$ensroc,
       input = list(...),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_seasmax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$seasmax,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_yseasrange <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yseasrange,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

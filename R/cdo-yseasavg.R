@@ -13,6 +13,6 @@ cdo_yseasavg <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yseasavg,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

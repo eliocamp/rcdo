@@ -13,6 +13,6 @@ cdo_sealevelpressure <- function(ifile, ofile = NULL) {
   cdo(operator = operators$sealevelpressure,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

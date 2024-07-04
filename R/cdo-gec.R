@@ -13,6 +13,6 @@ cdo_gec <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$gec,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

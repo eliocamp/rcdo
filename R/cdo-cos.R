@@ -13,6 +13,6 @@ cdo_cos <- function(ifile, ofile = NULL) {
   cdo(operator = operators$cos,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

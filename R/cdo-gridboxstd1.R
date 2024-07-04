@@ -14,6 +14,6 @@ cdo_gridboxstd1 <- function(ifile, nx = NULL, ny = NULL, ofile = NULL) {
   cdo(operator = operators$gridboxstd1,
       input = list(ifile),
       params = list(nx = nx, ny = ny),
-      output = ofile
+      output = c(ofile)
   )
 }

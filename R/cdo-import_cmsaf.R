@@ -13,6 +13,6 @@ cdo_import_cmsaf <- function(ifile, ofile = NULL) {
   cdo(operator = operators$import_cmsaf,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

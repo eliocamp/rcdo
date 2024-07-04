@@ -13,6 +13,6 @@ cdo_sqr <- function(ifile, ofile = NULL) {
   cdo(operator = operators$sqr,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_contour <- function(ifile, parameter = NULL, ofile = NULL) {
   cdo(operator = operators$contour,
       input = list(ifile),
       params = list(parameter = parameter),
-      output = ofile
+      output = c(ofile)
   )
 }

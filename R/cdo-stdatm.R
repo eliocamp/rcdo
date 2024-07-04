@@ -19,6 +19,6 @@ cdo_stdatm <- function(ifile, const = NULL, seed = NULL, grid = NULL, start = NU
   cdo(operator = operators$stdatm,
       input = list(ifile),
       params = list(const = const, seed = seed, grid = grid, start = start, end = end, inc = inc, levels = levels),
-      output = ofile
+      output = c(ofile)
   )
 }

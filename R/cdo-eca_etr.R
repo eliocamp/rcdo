@@ -13,6 +13,6 @@ cdo_eca_etr <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$eca_etr,
       input = list(ifile1,ifile2),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

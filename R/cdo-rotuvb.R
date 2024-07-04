@@ -13,6 +13,6 @@ cdo_rotuvb <- function(ifile, u,v,... = NULL, ofile = NULL) {
   cdo(operator = operators$rotuvb,
       input = list(ifile),
       params = list(u,v,... = u,v,...),
-      output = ofile
+      output = c(ofile)
   )
 }

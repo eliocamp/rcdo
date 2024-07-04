@@ -13,6 +13,6 @@ cdo_maxc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$maxc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

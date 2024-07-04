@@ -13,6 +13,6 @@ cdo_nec <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$nec,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

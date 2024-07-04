@@ -13,6 +13,6 @@ cdo_etccdi_id <- function(ifile, freq = NULL, ofile = NULL) {
   cdo(operator = operators$etccdi_id,
       input = list(ifile),
       params = list(freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

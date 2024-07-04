@@ -14,6 +14,6 @@ cdo_remapeta <- function(ifile, vct = NULL, oro = NULL, ofile = NULL) {
   cdo(operator = operators$remapeta,
       input = list(ifile),
       params = list(vct = vct, oro = oro),
-      output = ofile
+      output = c(ofile)
   )
 }

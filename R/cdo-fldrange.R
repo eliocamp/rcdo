@@ -14,6 +14,6 @@ cdo_fldrange <- function(ifile, weights = NULL, p = NULL, ofile = NULL) {
   cdo(operator = operators$fldrange,
       input = list(ifile),
       params = list(weights = weights, p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

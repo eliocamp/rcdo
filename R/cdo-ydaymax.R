@@ -13,6 +13,6 @@ cdo_ydaymax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ydaymax,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

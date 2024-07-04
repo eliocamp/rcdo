@@ -13,6 +13,6 @@ cdo_ydayavg <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ydayavg,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_merstd <- function(ifile, p = NULL, ofile = NULL) {
   cdo(operator = operators$merstd,
       input = list(ifile),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

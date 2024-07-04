@@ -13,6 +13,6 @@ cdo_runsum <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runsum,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

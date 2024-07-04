@@ -13,6 +13,6 @@ cdo_mervar <- function(ifile, p = NULL, ofile = NULL) {
   cdo(operator = operators$mervar,
       input = list(ifile),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -14,6 +14,6 @@ cdo_bandpass <- function(ifile, fmin = NULL, fmax = NULL, ofile = NULL) {
   cdo(operator = operators$bandpass,
       input = list(ifile),
       params = list(fmin = fmin, fmax = fmax),
-      output = ofile
+      output = c(ofile)
   )
 }

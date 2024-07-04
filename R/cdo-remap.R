@@ -14,6 +14,6 @@ cdo_remap <- function(ifile, grid = NULL, weights = NULL, ofile = NULL) {
   cdo(operator = operators$remap,
       input = list(ifile),
       params = list(grid = grid, weights = weights),
-      output = ofile
+      output = c(ofile)
   )
 }

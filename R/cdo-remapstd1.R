@@ -13,6 +13,6 @@ cdo_remapstd1 <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapstd1,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

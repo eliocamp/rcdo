@@ -13,6 +13,6 @@ cdo_setattribute <- function(ifile, attributes = NULL, ofile = NULL) {
   cdo(operator = operators$setattribute,
       input = list(ifile),
       params = list(attributes = attributes),
-      output = ofile
+      output = c(ofile)
   )
 }

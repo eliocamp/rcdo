@@ -13,6 +13,6 @@ cdo_fourier <- function(ifile, epsilon = NULL, ofile = NULL) {
   cdo(operator = operators$fourier,
       input = list(ifile),
       params = list(epsilon = epsilon),
-      output = ofile
+      output = c(ofile)
   )
 }

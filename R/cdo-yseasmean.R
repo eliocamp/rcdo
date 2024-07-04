@@ -13,6 +13,6 @@ cdo_yseasmean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yseasmean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

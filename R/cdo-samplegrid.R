@@ -13,6 +13,6 @@ cdo_samplegrid <- function(ifile, factor = NULL, ofile = NULL) {
   cdo(operator = operators$samplegrid,
       input = list(ifile),
       params = list(factor = factor),
-      output = ofile
+      output = c(ofile)
   )
 }

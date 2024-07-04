@@ -13,6 +13,6 @@ cdo_remapkurt <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapkurt,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

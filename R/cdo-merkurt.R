@@ -13,6 +13,6 @@ cdo_merkurt <- function(ifile, p = NULL, ofile = NULL) {
   cdo(operator = operators$merkurt,
       input = list(ifile),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -17,6 +17,6 @@ cdo_setprojparams <- function(ifile, grid = NULL, gridtype = NULL, gridarea = NU
   cdo(operator = operators$setprojparams,
       input = list(ifile),
       params = list(grid = grid, gridtype = gridtype, gridarea = gridarea, gridmask = gridmask, projparams = projparams),
-      output = ofile
+      output = c(ofile)
   )
 }

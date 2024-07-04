@@ -15,6 +15,6 @@ cdo_gendis <- function(ifile, grid = NULL, neighbors = NULL, map3d = NULL, ofile
   cdo(operator = operators$gendis,
       input = list(ifile),
       params = list(grid = grid, neighbors = neighbors, map3d = map3d),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_ltc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$ltc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_houravg <- function(ifile, ofile = NULL) {
   cdo(operator = operators$houravg,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_yearmonmean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yearmonmean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

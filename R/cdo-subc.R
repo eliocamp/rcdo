@@ -13,6 +13,6 @@ cdo_subc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$subc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_ensrkhistspace <- function(..., ofile = NULL) {
   cdo(operator = operators$ensrkhistspace,
       input = list(...),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

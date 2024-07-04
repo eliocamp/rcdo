@@ -20,6 +20,6 @@ cdo_maskindexbox <- function(ifile, lon1 = NULL, lon2 = NULL, lat1 = NULL, lat2 
   cdo(operator = operators$maskindexbox,
       input = list(ifile),
       params = list(lon1 = lon1, lon2 = lon2, lat1 = lat1, lat2 = lat2, idx1 = idx1, idx2 = idx2, idy1 = idy1, idy2 = idy2),
-      output = ofile
+      output = c(ofile)
   )
 }

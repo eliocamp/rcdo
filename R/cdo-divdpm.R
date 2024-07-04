@@ -13,6 +13,6 @@ cdo_divdpm <- function(ifile, ofile = NULL) {
   cdo(operator = operators$divdpm,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

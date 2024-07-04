@@ -19,6 +19,6 @@ cdo_setlevel <- function(ifile, table = NULL, code = NULL, param = NULL, name = 
   cdo(operator = operators$setlevel,
       input = list(ifile),
       params = list(table = table, code = code, param = param, name = name, level = level, ltype = ltype, maxsteps = maxsteps),
-      output = ofile
+      output = c(ofile)
   )
 }

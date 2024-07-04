@@ -13,6 +13,6 @@ cdo_ydrunmax <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$ydrunmax,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

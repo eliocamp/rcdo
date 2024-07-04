@@ -13,6 +13,6 @@ cdo_ydrunavg <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$ydrunavg,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

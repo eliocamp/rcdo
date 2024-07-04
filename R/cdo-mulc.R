@@ -13,6 +13,6 @@ cdo_mulc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$mulc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

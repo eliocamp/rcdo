@@ -1,6 +1,11 @@
 cdo <- function(operator, input, params = NULL, output = NULL) {
   n_input <- sum(vapply(input, get_output_length, numeric(1)))
-  stopifnot(operator$n_input == Inf || operator$n_input == n_input)
+
+  operators_compatible <- operator$n_input == Inf || operator$n_input == n_input
+
+  if (!operators_compatible) {
+    cli::cli_abort("cdo_{operator$command} needs {operator$n_input} input stream{?s}, not {n_input}.")
+  }
 
   # if (is.null(operator$params)) {
   #   stopifnot(`Missing parameters` = is.null(params))
@@ -10,14 +15,16 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
   # }
 
   options <- collect_options(input)
-
-  structure(list(operator = operator,
+  operation <-  structure(list(operator = operator,
                  params = params,
                  input = input,
                  output = output,
                  options = options),
             class = "cdo_operation"
   )
+
+  check_output(operation)
+  return(operation)
 }
 
 collect_options <- function(inputs) {
@@ -77,15 +84,19 @@ get_output_length <- function(x) {
 #' @param output an output file or base string for output files
 #'
 #' @export
-cdo_execute <- function(operation, output = tempfile(),
+cdo_execute <- function(operation,
+                        output = replicate(operation$operator$n_output, tempfile()),
                         options = NULL,
                         verbose = FALSE) {
+
   if (!is.null(output)) {
     operation$output <- output
   }
 
   if (is.null(operation$output)) {
     stop("Missing output")
+  } else {
+    check_output(operation)
   }
 
   command <- build_operation(operation, options = options)
@@ -100,4 +111,23 @@ cdo_execute <- function(operation, output = tempfile(),
   attr(output, "mtime") <- file.mtime(output)
   attr(output, "size") <- file.size(output)
   return(output)
+}
+
+
+check_output <- function(operation, call = rlang::caller_env()) {
+  if (is.null(operation$output)) {
+    return()
+  }
+
+  n_expected_output <- operation$operator$n_output
+  n_output <- length(operation$output)
+
+  if (n_expected_output == Inf) {
+    n_expected_output <- 1
+  }
+
+  if (n_expected_output != n_output) {
+    cli::cli_abort("The {.var cdo_{operation$operator$command}} requires {n_expected_output} {cli::qty(n_expected_output)} output{?s}, not {n_output}.",
+                   call = call)
+  }
 }

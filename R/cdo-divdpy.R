@@ -13,6 +13,6 @@ cdo_divdpy <- function(ifile, ofile = NULL) {
   cdo(operator = operators$divdpy,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

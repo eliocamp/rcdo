@@ -15,6 +15,6 @@ cdo_remapdis <- function(ifile, grid = NULL, neighbors = NULL, map3d = NULL, ofi
   cdo(operator = operators$remapdis,
       input = list(ifile),
       params = list(grid = grid, neighbors = neighbors, map3d = map3d),
-      output = ofile
+      output = c(ofile)
   )
 }

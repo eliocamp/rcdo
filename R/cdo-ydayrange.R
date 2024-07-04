@@ -13,6 +13,6 @@ cdo_ydayrange <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ydayrange,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

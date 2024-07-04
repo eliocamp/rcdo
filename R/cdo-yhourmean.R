@@ -13,6 +13,6 @@ cdo_yhourmean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yhourmean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

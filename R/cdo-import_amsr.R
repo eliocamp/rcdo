@@ -13,6 +13,6 @@ cdo_import_amsr <- function(ifile, ofile = NULL) {
   cdo(operator = operators$import_amsr,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

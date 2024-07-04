@@ -17,6 +17,6 @@ cdo_sethalo <- function(ifile, east = NULL, west = NULL, south = NULL, north = N
   cdo(operator = operators$sethalo,
       input = list(ifile),
       params = list(east = east, west = west, south = south, north = north, value = value),
-      output = ofile
+      output = c(ofile)
   )
 }

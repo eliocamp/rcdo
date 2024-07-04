@@ -4,7 +4,12 @@
 \alias{cdo_execute}
 \title{Execute a CDO operation}
 \usage{
-cdo_execute(operation, output = tempfile(), options = NULL, verbose = FALSE)
+cdo_execute(
+  operation,
+  output = replicate(operation$operator$n_output, tempfile()),
+  options = NULL,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{operation}{a CDO operation}

@@ -13,6 +13,6 @@ cdo_delgridcell <- function(ifile, indices = NULL, ofile = NULL) {
   cdo(operator = operators$delgridcell,
       input = list(ifile),
       params = list(indices = indices),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_remapsum <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapsum,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

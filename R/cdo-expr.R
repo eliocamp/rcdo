@@ -14,6 +14,6 @@ cdo_expr <- function(ifile, instr = NULL, filename = NULL, ofile = NULL) {
   cdo(operator = operators$expr,
       input = list(ifile),
       params = list(instr = instr, filename = filename),
-      output = ofile
+      output = c(ofile)
   )
 }

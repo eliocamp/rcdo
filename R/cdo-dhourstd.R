@@ -13,6 +13,6 @@ cdo_dhourstd <- function(ifile, ofile = NULL) {
   cdo(operator = operators$dhourstd,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

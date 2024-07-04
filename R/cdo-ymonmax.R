@@ -13,6 +13,6 @@ cdo_ymonmax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ymonmax,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

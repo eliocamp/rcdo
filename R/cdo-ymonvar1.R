@@ -13,6 +13,6 @@ cdo_ymonvar1 <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ymonvar1,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -14,6 +14,6 @@ cdo_collgrid <- function(..., nx = NULL, names = NULL, ofile = NULL) {
   cdo(operator = operators$collgrid,
       input = list(...),
       params = list(nx = nx, names = names),
-      output = ofile
+      output = c(ofile)
   )
 }

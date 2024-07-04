@@ -13,6 +13,6 @@ cdo_ydrunstd1 <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$ydrunstd1,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

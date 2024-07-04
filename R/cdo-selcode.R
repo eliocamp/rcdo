@@ -23,6 +23,6 @@ cdo_selcode <- function(ifile, parameter = NULL, codes = NULL, names = NULL, std
   cdo(operator = operators$selcode,
       input = list(ifile),
       params = list(parameter = parameter, codes = codes, names = names, stdnames = stdnames, levels = levels, levidx = levidx, ltypes = ltypes, grids = grids, zaxes = zaxes, zaxisnames = zaxisnames, tabnums = tabnums),
-      output = ofile
+      output = c(ofile)
   )
 }

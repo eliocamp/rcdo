@@ -18,6 +18,6 @@ cdo_smooth9 <- function(ifile, nsmooth = NULL, radius = NULL, maxpoints = NULL, 
   cdo(operator = operators$smooth9,
       input = list(ifile),
       params = list(nsmooth = nsmooth, radius = radius, maxpoints = maxpoints, form = form, weight0 = weight0, weightR = weightR),
-      output = ofile
+      output = c(ofile)
   )
 }

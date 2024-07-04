@@ -13,6 +13,6 @@ cdo_ensmedian <- function(..., p = NULL, ofile = NULL) {
   cdo(operator = operators$ensmedian,
       input = list(...),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

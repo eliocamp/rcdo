@@ -13,6 +13,6 @@ cdo_timrange <- function(ifile, ofile = NULL) {
   cdo(operator = operators$timrange,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

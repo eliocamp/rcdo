@@ -13,6 +13,6 @@ cdo_adipot <- function(ifile, pressure = NULL, ofile = NULL) {
   cdo(operator = operators$adipot,
       input = list(ifile),
       params = list(pressure = pressure),
-      output = ofile
+      output = c(ofile)
   )
 }

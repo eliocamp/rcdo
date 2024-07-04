@@ -13,6 +13,6 @@ cdo_seasmean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$seasmean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

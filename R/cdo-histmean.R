@@ -13,6 +13,6 @@ cdo_histmean <- function(ifile, bounds = NULL, ofile = NULL) {
   cdo(operator = operators$histmean,
       input = list(ifile),
       params = list(bounds = bounds),
-      output = ofile
+      output = c(ofile)
   )
 }

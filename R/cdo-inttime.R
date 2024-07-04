@@ -16,6 +16,6 @@ cdo_inttime <- function(ifile, date = NULL, time = NULL, inc = NULL, n = NULL, o
   cdo(operator = operators$inttime,
       input = list(ifile),
       params = list(date = date, time = time, inc = inc, n = n),
-      output = ofile
+      output = c(ofile)
   )
 }

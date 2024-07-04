@@ -13,6 +13,6 @@ cdo_ymonavg <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ymonavg,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

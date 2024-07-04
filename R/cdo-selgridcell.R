@@ -13,6 +13,6 @@ cdo_selgridcell <- function(ifile, indices = NULL, ofile = NULL) {
   cdo(operator = operators$selgridcell,
       input = list(ifile),
       params = list(indices = indices),
-      output = ofile
+      output = c(ofile)
   )
 }

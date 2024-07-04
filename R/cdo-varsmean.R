@@ -13,6 +13,6 @@ cdo_varsmean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$varsmean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

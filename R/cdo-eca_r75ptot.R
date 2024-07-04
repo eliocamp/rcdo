@@ -13,6 +13,6 @@ cdo_eca_r75ptot <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$eca_r75ptot,
       input = list(ifile1,ifile2),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

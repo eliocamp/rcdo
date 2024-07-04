@@ -13,6 +13,6 @@ cdo_ap2pl <- function(ifile, plevels = NULL, ofile = NULL) {
   cdo(operator = operators$ap2pl,
       input = list(ifile),
       params = list(plevels = plevels),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -15,6 +15,6 @@ cdo_setzaxis <- function(ifile, zaxis = NULL, zbot = NULL, ztop = NULL, ofile = 
   cdo(operator = operators$setzaxis,
       input = list(ifile),
       params = list(zaxis = zaxis, zbot = zbot, ztop = ztop),
-      output = ofile
+      output = c(ofile)
   )
 }

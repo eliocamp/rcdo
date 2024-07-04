@@ -13,6 +13,6 @@ cdo_runmin <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runmin,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

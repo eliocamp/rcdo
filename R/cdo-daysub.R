@@ -13,6 +13,6 @@ cdo_daysub <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$daysub,
       input = list(ifile1,ifile2),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

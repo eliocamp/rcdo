@@ -15,6 +15,6 @@ cdo_intlevel <- function(ifile, level = NULL, zdescription = NULL, zvarname = NU
   cdo(operator = operators$intlevel,
       input = list(ifile),
       params = list(level = level, zdescription = zdescription, zvarname = zvarname),
-      output = ofile
+      output = c(ofile)
   )
 }

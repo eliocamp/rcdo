@@ -13,6 +13,6 @@ cdo_ensmin <- function(..., p = NULL, ofile = NULL) {
   cdo(operator = operators$ensmin,
       input = list(...),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

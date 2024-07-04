@@ -13,6 +13,6 @@ cdo_remapmean <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapmean,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

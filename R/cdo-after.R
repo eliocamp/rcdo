@@ -13,6 +13,6 @@ cdo_after <- function(..., vct = NULL, ofile = NULL) {
   cdo(operator = operators$after,
       input = list(...),
       params = list(vct = vct),
-      output = ofile
+      output = c(ofile)
   )
 }

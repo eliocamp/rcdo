@@ -14,6 +14,6 @@ cdo_fldavg <- function(ifile, weights = NULL, p = NULL, ofile = NULL) {
   cdo(operator = operators$fldavg,
       input = list(ifile),
       params = list(weights = weights, p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

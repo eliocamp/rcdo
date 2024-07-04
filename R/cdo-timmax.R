@@ -13,6 +13,6 @@ cdo_timmax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$timmax,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

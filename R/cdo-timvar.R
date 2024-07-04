@@ -13,6 +13,6 @@ cdo_timvar <- function(ifile, ofile = NULL) {
   cdo(operator = operators$timvar,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

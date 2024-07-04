@@ -13,6 +13,6 @@ cdo_apply <- function(ifile, operators = NULL, ofile = NULL) {
   cdo(operator = operators$apply,
       input = list(ifile),
       params = list(operators = operators),
-      output = ofile
+      output = c(ofile)
   )
 }

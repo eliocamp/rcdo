@@ -17,6 +17,6 @@ cdo_setvrange <- function(ifile, neighbors = NULL, newmiss = NULL, c = NULL, rmi
   cdo(operator = operators$setvrange,
       input = list(ifile),
       params = list(neighbors = neighbors, newmiss = newmiss, c = c, rmin = rmin, rmax = rmax),
-      output = ofile
+      output = c(ofile)
   )
 }

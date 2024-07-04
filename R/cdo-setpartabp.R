@@ -14,6 +14,6 @@ cdo_setpartabp <- function(ifile, table = NULL, convert = NULL, ofile = NULL) {
   cdo(operator = operators$setpartabp,
       input = list(ifile),
       params = list(table = table, convert = convert),
-      output = ofile
+      output = c(ofile)
   )
 }

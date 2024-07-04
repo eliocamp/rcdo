@@ -13,6 +13,6 @@ cdo_vertmin <- function(ifile, weights = NULL, ofile = NULL) {
   cdo(operator = operators$vertmin,
       input = list(ifile),
       params = list(weights = weights),
-      output = ofile
+      output = c(ofile)
   )
 }

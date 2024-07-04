@@ -14,6 +14,6 @@ cdo_etccdi_r1mm <- function(ifile, x = NULL, freq = NULL, ofile = NULL) {
   cdo(operator = operators$etccdi_r1mm,
       input = list(ifile),
       params = list(x = x, freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

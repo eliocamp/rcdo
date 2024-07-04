@@ -14,6 +14,6 @@ cdo_zonmin <- function(ifile, p = NULL, zonaldes = NULL, ofile = NULL) {
   cdo(operator = operators$zonmin,
       input = list(ifile),
       params = list(p = p, zonaldes = zonaldes),
-      output = ofile
+      output = c(ofile)
   )
 }

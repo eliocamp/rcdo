@@ -13,6 +13,6 @@ cdo_import_binary <- function(ifile, ofile = NULL) {
   cdo(operator = operators$import_binary,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

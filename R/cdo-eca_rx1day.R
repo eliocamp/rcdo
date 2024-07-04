@@ -13,6 +13,6 @@ cdo_eca_rx1day <- function(ifile, freq = NULL, ofile = NULL) {
   cdo(operator = operators$eca_rx1day,
       input = list(ifile),
       params = list(freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

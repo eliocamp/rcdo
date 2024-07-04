@@ -19,6 +19,6 @@ cdo_setcode <- function(ifile, table = NULL, code = NULL, param = NULL, name = N
   cdo(operator = operators$setcode,
       input = list(ifile),
       params = list(table = table, code = code, param = param, name = name, level = level, ltype = ltype, maxsteps = maxsteps),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_histcount <- function(ifile, bounds = NULL, ofile = NULL) {
   cdo(operator = operators$histcount,
       input = list(ifile),
       params = list(bounds = bounds),
-      output = ofile
+      output = c(ofile)
   )
 }

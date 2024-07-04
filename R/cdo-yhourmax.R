@@ -13,6 +13,6 @@ cdo_yhourmax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$yhourmax,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

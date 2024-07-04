@@ -13,6 +13,6 @@ cdo_runrange <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runrange,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

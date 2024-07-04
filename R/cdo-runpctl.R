@@ -14,6 +14,6 @@ cdo_runpctl <- function(ifile, p = NULL, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runpctl,
       input = list(ifile),
       params = list(p = p, nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

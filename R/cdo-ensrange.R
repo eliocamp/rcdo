@@ -13,6 +13,6 @@ cdo_ensrange <- function(..., p = NULL, ofile = NULL) {
   cdo(operator = operators$ensrange,
       input = list(...),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

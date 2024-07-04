@@ -15,6 +15,6 @@ cdo_setgridcell <- function(ifile, value = NULL, cell = NULL, mask = NULL, ofile
   cdo(operator = operators$setgridcell,
       input = list(ifile),
       params = list(value = value, cell = cell, mask = mask),
-      output = ofile
+      output = c(ofile)
   )
 }

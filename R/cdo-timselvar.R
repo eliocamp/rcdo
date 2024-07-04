@@ -15,6 +15,6 @@ cdo_timselvar <- function(ifile, nsets = NULL, noffset = NULL, nskip = NULL, ofi
   cdo(operator = operators$timselvar,
       input = list(ifile),
       params = list(nsets = nsets, noffset = noffset, nskip = nskip),
-      output = ofile
+      output = c(ofile)
   )
 }

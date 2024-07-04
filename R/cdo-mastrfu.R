@@ -13,6 +13,6 @@ cdo_mastrfu <- function(ifile, ofile = NULL) {
   cdo(operator = operators$mastrfu,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

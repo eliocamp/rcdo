@@ -15,6 +15,6 @@ cdo_timselrange <- function(ifile, nsets = NULL, noffset = NULL, nskip = NULL, o
   cdo(operator = operators$timselrange,
       input = list(ifile),
       params = list(nsets = nsets, noffset = noffset, nskip = nskip),
-      output = ofile
+      output = c(ofile)
   )
 }

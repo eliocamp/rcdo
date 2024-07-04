@@ -13,6 +13,6 @@ cdo_shaded <- function(ifile, parameter = NULL, ofile = NULL) {
   cdo(operator = operators$shaded,
       input = list(ifile),
       params = list(parameter = parameter),
-      output = ofile
+      output = c(ofile)
   )
 }

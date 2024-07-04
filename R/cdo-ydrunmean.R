@@ -13,6 +13,6 @@ cdo_ydrunmean <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$ydrunmean,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

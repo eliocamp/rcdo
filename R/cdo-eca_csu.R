@@ -14,6 +14,6 @@ cdo_eca_csu <- function(ifile, T = NULL, N = NULL, ofile = NULL) {
   cdo(operator = operators$eca_csu,
       input = list(ifile),
       params = list(T = T, N = N),
-      output = ofile
+      output = c(ofile)
   )
 }

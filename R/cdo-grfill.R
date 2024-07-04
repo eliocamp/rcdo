@@ -13,6 +13,6 @@ cdo_grfill <- function(ifile, parameter = NULL, ofile = NULL) {
   cdo(operator = operators$grfill,
       input = list(ifile),
       params = list(parameter = parameter),
-      output = ofile
+      output = c(ofile)
   )
 }

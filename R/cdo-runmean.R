@@ -13,6 +13,6 @@ cdo_runmean <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runmean,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

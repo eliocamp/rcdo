@@ -13,6 +13,6 @@ cdo_regres <- function(ifile, equal = NULL, ofile = NULL) {
   cdo(operator = operators$regres,
       input = list(ifile),
       params = list(equal = equal),
-      output = ofile
+      output = c(ofile)
   )
 }

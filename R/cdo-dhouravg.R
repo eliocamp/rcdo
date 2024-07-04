@@ -13,6 +13,6 @@ cdo_dhouravg <- function(ifile, ofile = NULL) {
   cdo(operator = operators$dhouravg,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

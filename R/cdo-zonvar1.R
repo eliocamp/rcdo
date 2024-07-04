@@ -14,6 +14,6 @@ cdo_zonvar1 <- function(ifile, p = NULL, zonaldes = NULL, ofile = NULL) {
   cdo(operator = operators$zonvar1,
       input = list(ifile),
       params = list(p = p, zonaldes = zonaldes),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_strbre <- function(ifile, ofile = NULL) {
   cdo(operator = operators$strbre,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

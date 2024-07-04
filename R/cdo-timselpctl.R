@@ -16,6 +16,6 @@ cdo_timselpctl <- function(ifile1, ifile2, ifile3, p = NULL, nsets = NULL, noffs
   cdo(operator = operators$timselpctl,
       input = list(ifile1,ifile2,ifile3),
       params = list(p = p, nsets = nsets, noffset = noffset, nskip = nskip),
-      output = ofile
+      output = c(ofile)
   )
 }

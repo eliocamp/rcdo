@@ -13,6 +13,6 @@ cdo_isosurface <- function(ifile, isovalue = NULL, ofile = NULL) {
   cdo(operator = operators$isosurface,
       input = list(ifile),
       params = list(isovalue = isovalue),
-      output = ofile
+      output = c(ofile)
   )
 }

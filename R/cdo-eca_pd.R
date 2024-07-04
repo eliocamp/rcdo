@@ -14,6 +14,6 @@ cdo_eca_pd <- function(ifile, x = NULL, freq = NULL, ofile = NULL) {
   cdo(operator = operators$eca_pd,
       input = list(ifile),
       params = list(x = x, freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

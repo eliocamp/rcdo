@@ -13,6 +13,6 @@ cdo_maskregion <- function(ifile, regions = NULL, ofile = NULL) {
   cdo(operator = operators$maskregion,
       input = list(ifile),
       params = list(regions = regions),
-      output = ofile
+      output = c(ofile)
   )
 }

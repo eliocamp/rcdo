@@ -13,6 +13,6 @@ cdo_consects <- function(ifile, ofile = NULL) {
   cdo(operator = operators$consects,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

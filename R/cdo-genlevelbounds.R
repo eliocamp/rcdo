@@ -15,6 +15,6 @@ cdo_genlevelbounds <- function(ifile, zaxis = NULL, zbot = NULL, ztop = NULL, of
   cdo(operator = operators$genlevelbounds,
       input = list(ifile),
       params = list(zaxis = zaxis, zbot = zbot, ztop = ztop),
-      output = ofile
+      output = c(ofile)
   )
 }

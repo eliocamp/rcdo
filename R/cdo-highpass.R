@@ -14,6 +14,6 @@ cdo_highpass <- function(ifile, fmin = NULL, fmax = NULL, ofile = NULL) {
   cdo(operator = operators$highpass,
       input = list(ifile),
       params = list(fmin = fmin, fmax = fmax),
-      output = ofile
+      output = c(ofile)
   )
 }

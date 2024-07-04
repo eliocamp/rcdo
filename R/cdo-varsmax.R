@@ -13,6 +13,6 @@ cdo_varsmax <- function(ifile, ofile = NULL) {
   cdo(operator = operators$varsmax,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

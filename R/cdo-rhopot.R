@@ -13,6 +13,6 @@ cdo_rhopot <- function(ifile, pressure = NULL, ofile = NULL) {
   cdo(operator = operators$rhopot,
       input = list(ifile),
       params = list(pressure = pressure),
-      output = ofile
+      output = c(ofile)
   )
 }

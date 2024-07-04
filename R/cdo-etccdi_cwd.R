@@ -15,6 +15,6 @@ cdo_etccdi_cwd <- function(ifile, R = NULL, N = NULL, freq = NULL, ofile = NULL)
   cdo(operator = operators$etccdi_cwd,
       input = list(ifile),
       params = list(R = R, N = N, freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

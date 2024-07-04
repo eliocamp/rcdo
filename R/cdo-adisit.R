@@ -13,6 +13,6 @@ cdo_adisit <- function(ifile, pressure = NULL, ofile = NULL) {
   cdo(operator = operators$adisit,
       input = list(ifile),
       params = list(pressure = pressure),
-      output = ofile
+      output = c(ofile)
   )
 }

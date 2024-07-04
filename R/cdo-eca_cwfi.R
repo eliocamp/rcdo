@@ -14,6 +14,6 @@ cdo_eca_cwfi <- function(ifile1, ifile2, nday = NULL, freq = NULL, ofile = NULL)
   cdo(operator = operators$eca_cwfi,
       input = list(ifile1,ifile2),
       params = list(nday = nday, freq = freq),
-      output = ofile
+      output = c(ofile)
   )
 }

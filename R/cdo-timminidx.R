@@ -13,6 +13,6 @@ cdo_timminidx <- function(ifile, ofile = NULL) {
   cdo(operator = operators$timminidx,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

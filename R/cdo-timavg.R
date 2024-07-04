@@ -13,6 +13,6 @@ cdo_timavg <- function(ifile, ofile = NULL) {
   cdo(operator = operators$timavg,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

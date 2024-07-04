@@ -13,6 +13,6 @@ cdo_ensvar1 <- function(..., p = NULL, ofile = NULL) {
   cdo(operator = operators$ensvar1,
       input = list(...),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

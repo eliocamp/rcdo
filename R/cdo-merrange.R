@@ -13,6 +13,6 @@ cdo_merrange <- function(ifile, p = NULL, ofile = NULL) {
   cdo(operator = operators$merrange,
       input = list(ifile),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

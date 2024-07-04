@@ -13,6 +13,6 @@ cdo_remapmax <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapmax,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

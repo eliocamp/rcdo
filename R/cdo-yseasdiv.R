@@ -13,6 +13,6 @@ cdo_yseasdiv <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$yseasdiv,
       input = list(ifile1,ifile2),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

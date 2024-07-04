@@ -14,6 +14,6 @@ cdo_ydrunpctl <- function(ifile1, ifile2, ifile3, p = NULL, nts = NULL, ofile = 
   cdo(operator = operators$ydrunpctl,
       input = list(ifile1,ifile2,ifile3),
       params = list(p = p, nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

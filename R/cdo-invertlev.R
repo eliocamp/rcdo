@@ -13,6 +13,6 @@ cdo_invertlev <- function(ifile, ofile = NULL) {
   cdo(operator = operators$invertlev,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_remaplaf <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remaplaf,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

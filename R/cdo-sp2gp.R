@@ -14,6 +14,6 @@ cdo_sp2gp <- function(ifile, type = NULL, trunc = NULL, ofile = NULL) {
   cdo(operator = operators$sp2gp,
       input = list(ifile),
       params = list(type = type, trunc = trunc),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_histfreq <- function(ifile, bounds = NULL, ofile = NULL) {
   cdo(operator = operators$histfreq,
       input = list(ifile),
       params = list(bounds = bounds),
-      output = ofile
+      output = c(ofile)
   )
 }

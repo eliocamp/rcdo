@@ -13,6 +13,6 @@ cdo_minc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$minc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

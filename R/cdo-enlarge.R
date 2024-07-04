@@ -13,6 +13,6 @@ cdo_enlarge <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$enlarge,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

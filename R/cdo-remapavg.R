@@ -13,6 +13,6 @@ cdo_remapavg <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapavg,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

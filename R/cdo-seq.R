@@ -19,6 +19,6 @@ cdo_seq <- function(ifile, const = NULL, seed = NULL, grid = NULL, start = NULL,
   cdo(operator = operators$seq,
       input = list(ifile),
       params = list(const = const, seed = seed, grid = grid, start = start, end = end, inc = inc, levels = levels),
-      output = ofile
+      output = c(ofile)
   )
 }

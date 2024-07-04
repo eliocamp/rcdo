@@ -13,6 +13,6 @@ cdo_sp2sp <- function(ifile, trunc = NULL, ofile = NULL) {
   cdo(operator = operators$sp2sp,
       input = list(ifile),
       params = list(trunc = trunc),
-      output = ofile
+      output = c(ofile)
   )
 }

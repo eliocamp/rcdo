@@ -13,6 +13,6 @@ cdo_yseaspctl <- function(ifile1, ifile2, ifile3, p = NULL, ofile = NULL) {
   cdo(operator = operators$yseaspctl,
       input = list(ifile1,ifile2,ifile3),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

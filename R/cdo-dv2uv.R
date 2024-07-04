@@ -13,6 +13,6 @@ cdo_dv2uv <- function(ifile, gridtype = NULL, ofile = NULL) {
   cdo(operator = operators$dv2uv,
       input = list(ifile),
       params = list(gridtype = gridtype),
-      output = ofile
+      output = c(ofile)
   )
 }

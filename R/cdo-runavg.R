@@ -13,6 +13,6 @@ cdo_runavg <- function(ifile, nts = NULL, ofile = NULL) {
   cdo(operator = operators$runavg,
       input = list(ifile),
       params = list(nts = nts),
-      output = ofile
+      output = c(ofile)
   )
 }

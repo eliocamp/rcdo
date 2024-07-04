@@ -13,6 +13,6 @@ cdo_seasmin <- function(ifile, ofile = NULL) {
   cdo(operator = operators$seasmin,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

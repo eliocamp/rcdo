@@ -13,6 +13,6 @@ cdo_graph <- function(..., parameter = NULL, ofile = NULL) {
   cdo(operator = operators$graph,
       input = list(...),
       params = list(parameter = parameter),
-      output = ofile
+      output = c(ofile)
   )
 }

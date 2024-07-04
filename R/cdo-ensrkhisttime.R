@@ -13,6 +13,6 @@ cdo_ensrkhisttime <- function(..., ofile = NULL) {
   cdo(operator = operators$ensrkhisttime,
       input = list(...),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_gridarea <- function(ifile, radius = NULL, ofile = NULL) {
   cdo(operator = operators$gridarea,
       input = list(ifile),
       params = list(radius = radius),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_gh2hl <- function(ifile, hlevels = NULL, ofile = NULL) {
   cdo(operator = operators$gh2hl,
       input = list(ifile),
       params = list(hlevels = hlevels),
-      output = ofile
+      output = c(ofile)
   )
 }

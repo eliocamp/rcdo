@@ -16,6 +16,6 @@ cdo_uv2dv_cfd <- function(ifile, u = NULL, v = NULL, boundOpt = NULL, outMode = 
   cdo(operator = operators$uv2dv_cfd,
       input = list(ifile),
       params = list(u = u, v = v, boundOpt = boundOpt, outMode = outMode),
-      output = ofile
+      output = c(ofile)
   )
 }

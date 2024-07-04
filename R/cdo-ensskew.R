@@ -13,6 +13,6 @@ cdo_ensskew <- function(..., p = NULL, ofile = NULL) {
   cdo(operator = operators$ensskew,
       input = list(...),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

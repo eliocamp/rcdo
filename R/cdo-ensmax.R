@@ -13,6 +13,6 @@ cdo_ensmax <- function(..., p = NULL, ofile = NULL) {
   cdo(operator = operators$ensmax,
       input = list(...),
       params = list(p = p),
-      output = ofile
+      output = c(ofile)
   )
 }

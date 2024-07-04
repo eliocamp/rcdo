@@ -13,6 +13,6 @@ cdo_log10 <- function(ifile, ofile = NULL) {
   cdo(operator = operators$log10,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

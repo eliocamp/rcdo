@@ -22,6 +22,6 @@ cdo_settime <- function(ifile, day = NULL, month = NULL, year = NULL, units = NU
   cdo(operator = operators$settime,
       input = list(ifile),
       params = list(day = day, month = month, year = year, units = units, date = date, time = time, inc = inc, frequency = frequency, calendar = calendar, shiftValue = shiftValue),
-      output = ofile
+      output = c(ofile)
   )
 }

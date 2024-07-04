@@ -13,6 +13,6 @@ cdo_topvalue <- function(ifile, isovalue = NULL, ofile = NULL) {
   cdo(operator = operators$topvalue,
       input = list(ifile),
       params = list(isovalue = isovalue),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -14,6 +14,6 @@ cdo_input <- function(ifile, grid = NULL, zaxis = NULL, ofile = NULL) {
   cdo(operator = operators$input,
       input = list(ifile),
       params = list(grid = grid, zaxis = zaxis),
-      output = ofile
+      output = c(ofile)
   )
 }

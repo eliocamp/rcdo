@@ -13,6 +13,6 @@ cdo_ydaymean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ydaymean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

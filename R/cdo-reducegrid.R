@@ -14,6 +14,6 @@ cdo_reducegrid <- function(ifile, mask = NULL, limitCoordsOutput = NULL, ofile =
   cdo(operator = operators$reducegrid,
       input = list(ifile),
       params = list(mask = mask, limitCoordsOutput = limitCoordsOutput),
-      output = ofile
+      output = c(ofile)
   )
 }

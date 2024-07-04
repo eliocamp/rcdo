@@ -14,6 +14,6 @@ cdo_pack <- function(ifile, printparam = NULL, filename = NULL, ofile = NULL) {
   cdo(operator = operators$pack,
       input = list(ifile),
       params = list(printparam = printparam, filename = filename),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_hourmean <- function(ifile, ofile = NULL) {
   cdo(operator = operators$hourmean,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_ymonmin <- function(ifile, ofile = NULL) {
   cdo(operator = operators$ymonmin,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

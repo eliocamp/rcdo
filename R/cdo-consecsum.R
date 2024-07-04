@@ -13,6 +13,6 @@ cdo_consecsum <- function(ifile, ofile = NULL) {
   cdo(operator = operators$consecsum,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

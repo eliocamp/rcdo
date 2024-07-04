@@ -13,6 +13,6 @@ cdo_addtrend <- function(ifile1, ifile2, ifile3, equal = NULL, ofile = NULL) {
   cdo(operator = operators$addtrend,
       input = list(ifile1,ifile2,ifile3),
       params = list(equal = equal),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_strgal <- function(ifile, ofile = NULL) {
   cdo(operator = operators$strgal,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

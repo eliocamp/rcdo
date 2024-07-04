@@ -13,6 +13,6 @@ cdo_vertavg <- function(ifile, weights = NULL, ofile = NULL) {
   cdo(operator = operators$vertavg,
       input = list(ifile),
       params = list(weights = weights),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_remapskew <- function(ifile, grid = NULL, ofile = NULL) {
   cdo(operator = operators$remapskew,
       input = list(ifile),
       params = list(grid = grid),
-      output = ofile
+      output = c(ofile)
   )
 }

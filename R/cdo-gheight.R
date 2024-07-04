@@ -13,6 +13,6 @@ cdo_gheight <- function(ifile, ofile = NULL) {
   cdo(operator = operators$gheight,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

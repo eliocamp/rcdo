@@ -17,6 +17,6 @@ cdo_setmisstoc <- function(ifile, neighbors = NULL, newmiss = NULL, c = NULL, rm
   cdo(operator = operators$setmisstoc,
       input = list(ifile),
       params = list(neighbors = neighbors, newmiss = newmiss, c = c, rmin = rmin, rmax = rmax),
-      output = ofile
+      output = c(ofile)
   )
 }

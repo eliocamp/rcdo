@@ -13,6 +13,6 @@ cdo_vector <- function(ifile, parameter = NULL, ofile = NULL) {
   cdo(operator = operators$vector,
       input = list(ifile),
       params = list(parameter = parameter),
-      output = ofile
+      output = c(ofile)
   )
 }

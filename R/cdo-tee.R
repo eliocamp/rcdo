@@ -13,6 +13,6 @@ cdo_tee <- function(ifile, outfile2 = NULL, ofile = NULL) {
   cdo(operator = operators$tee,
       input = list(ifile),
       params = list(outfile2 = outfile2),
-      output = ofile
+      output = c(ofile)
   )
 }

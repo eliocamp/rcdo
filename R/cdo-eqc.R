@@ -13,6 +13,6 @@ cdo_eqc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$eqc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

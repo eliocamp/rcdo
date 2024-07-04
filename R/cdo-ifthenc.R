@@ -13,6 +13,6 @@ cdo_ifthenc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$ifthenc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }

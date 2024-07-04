@@ -13,6 +13,6 @@ cdo_dhourmin <- function(ifile, ofile = NULL) {
   cdo(operator = operators$dhourmin,
       input = list(ifile),
       params = NULL,
-      output = ofile
+      output = c(ofile)
   )
 }

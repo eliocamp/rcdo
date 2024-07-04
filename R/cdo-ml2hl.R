@@ -14,6 +14,6 @@ cdo_ml2hl <- function(ifile, plevels = NULL, hlevels = NULL, ofile = NULL) {
   cdo(operator = operators$ml2hl,
       input = list(ifile),
       params = list(plevels = plevels, hlevels = hlevels),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_eca_cfd <- function(ifile, N = NULL, ofile = NULL) {
   cdo(operator = operators$eca_cfd,
       input = list(ifile),
       params = list(N = N),
-      output = ofile
+      output = c(ofile)
   )
 }

@@ -13,6 +13,6 @@ cdo_ifnotthenc <- function(ifile, c = NULL, ofile = NULL) {
   cdo(operator = operators$ifnotthenc,
       input = list(ifile),
       params = list(c = c),
-      output = ofile
+      output = c(ofile)
   )
 }
