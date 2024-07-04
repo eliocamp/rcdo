@@ -190,6 +190,9 @@
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_dhourvar1.html</loc>
   </url>
   <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_distgrid.html</loc>
+  </url>
+  <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_div.html</loc>
   </url>
   <url>
@@ -328,6 +331,12 @@
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_ensavg.html</loc>
   </url>
   <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_ensbrs.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_enscrps.html</loc>
+  </url>
+  <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_enskurt.html</loc>
   </url>
   <url>
@@ -374,6 +383,21 @@
   </url>
   <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_ensvar1.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_eof.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_eof3d.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_eofcoeff.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_eofspatial.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_eoftime.html</loc>
   </url>
   <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_eq.html</loc>
@@ -677,6 +701,9 @@
   </url>
   <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_inttime.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_intyear.html</loc>
   </url>
   <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_invertlat.html</loc>
@@ -1267,6 +1294,48 @@
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_sp2sp.html</loc>
   </url>
   <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitcode.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitday.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitgrid.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splithour.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitlevel.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitmon.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitname.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitparam.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitseas.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitsel.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splittabnum.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splityear.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splityearmon.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_splitzaxis.html</loc>
+  </url>
+  <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_sqr.html</loc>
   </url>
   <url>
@@ -1388,6 +1457,9 @@
   </url>
   <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_topvalue.html</loc>
+  </url>
+  <url>
+    <loc>https://eliocamp.github.io/rcdo/reference/cdo_trend.html</loc>
   </url>
   <url>
     <loc>https://eliocamp.github.io/rcdo/reference/cdo_unpack.html</loc>
