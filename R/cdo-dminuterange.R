@@ -1,14 +1,14 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param operators STRING - Blank-separated list of CDO operators.
+
 #'
 #' @export
-#' @rdname apply
-cdo_apply <- function(ifile, operators = NULL, ofile = NULL) {
-  cdo(operator = operators$apply,
+#' @rdname dminutestat
+cdo_dminuterange <- function(ifile, ofile = NULL) {
+  cdo(operator = operators$dminuterange,
       input = list(ifile),
-      params = list(operators = operators),
+      params = NULL,
       output = c(ofile)
   )
 }

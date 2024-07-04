@@ -1231,13 +1231,13 @@ const CdoHelp YmoncompHelp = {
 
 const CdoHelp SetattributeHelp = {
     "NAME",
-    "    setattribute - Set attributes",
+    "    setattribute, delattribute - Set attributes",
     "",
     "SYNOPSIS",
-    "    setattribute,attributes  infile outfile",
+    "    <operator>,attributes  infile outfile",
     "",
     "DESCRIPTION",
-    "    This operator sets attributes of a dataset and writes the result to outfile.",
+    "    This operator sets or deletes attributes of a dataset and writes the result to outfile.",
     "    The new attributes are only available in outfile if the file format supports attributes.",
     "    ",
     "    Each attribute has the following structure:",
@@ -1264,6 +1264,10 @@ const CdoHelp SetattributeHelp = {
     "    ",
     "    A special meaning has the attribute name FILE. If this is the 1st attribute then all attributes",
     "    are read from a file specified in the value of att_val.",
+    "",
+    "OPERATORS",
+    "    setattribute  Set attributes",
+    "    delattribute  Delete attributes",
     "",
     "PARAMETER",
     "    attributes  STRING  Comma-separated list of attributes. ",
@@ -2456,15 +2460,15 @@ const CdoHelp Ensstat2Help = {
     "    observations being smaller as all ensembles and level nensfiles+1 indicating",
     "    the number of observations being larger than all ensembles. ",
     "    ",
-    "    ensrkhistspace computes a ranked histogram at each timestep reducing each ",
+    "    ensrkhisttime computes a ranked histogram at each timestep reducing each ",
     "    horizontal grid to a 1x1 grid and keeping the time axis as in obsfile. ",
     "    Contrary ensrkhistspace  computes a histogram at each grid point keeping the ",
     "    horizontal grid for each variable and reducing the time-axis. The time information",
     "    is that from the last timestep in obsfile. ",
     "",
     "OPERATORS",
-    "    ensrkhistspace  Ranked Histogram averaged over time",
-    "    ensrkhisttime   Ranked Histogram averaged over space",
+    "    ensrkhistspace  Ranked Histogram averaged over space",
+    "    ensrkhisttime   Ranked Histogram averaged over time",
     "    ensroc          Ensemble Receiver Operating characteristics",
 };
 
@@ -3251,7 +3255,7 @@ const CdoHelp DaystatHelp = {
     "              o(t,x) = var1{i(t',x), t_1<t'<=t_n}",
     "",
     "PARAMETER",
-    "    complete_only  BOOL Process only complete years",
+    "    complete_only  BOOL Process the last day only if it is complete",
 };
 
 const CdoHelp DaypctlHelp = {
@@ -3340,7 +3344,7 @@ const CdoHelp MonstatHelp = {
     "              o(t,x) = var1{i(t',x), t_1 < t' <= t_n}",
     "",
     "PARAMETER",
-    "    complete_only  BOOL Process only complete years",
+    "    complete_only  BOOL Process the last month only if it is complete",
 };
 
 const CdoHelp MonpctlHelp = {
@@ -3458,7 +3462,7 @@ const CdoHelp YearstatHelp = {
     "                o(t,x) = var1{i(t',x), t_1 < t' <= t_n}",
     "",
     "PARAMETER",
-    "    complete_only  BOOL Process only complete years",
+    "    complete_only  BOOL Process the last year only if it is complete",
     "",
     "NOTE",
     "    The operators yearmean and yearavg compute only arithmetical means!",

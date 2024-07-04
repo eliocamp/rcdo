@@ -151,6 +151,7 @@ Operator catalog:
    Modification
 -------------------------------------------------------------
    Setattribute  setattribute    Set attributes
+   Setattribute  delattribute    Delete attributes
    Setpartab     setpartabp      Set parameter table
    Setpartab     setpartabn      Set parameter table
    Set           setcodetab      Set parameter code table
@@ -307,8 +308,8 @@ Operator catalog:
    Ensstat       enskurt         Ensemble kurtosis
    Ensstat       ensmedian       Ensemble median
    Ensstat       enspctl         Ensemble percentiles
-   Ensstat2      ensrkhistspace  Ranked Histogram averaged over time
-   Ensstat2      ensrkhisttime   Ranked Histogram averaged over space
+   Ensstat2      ensrkhistspace  Ranked Histogram averaged over space
+   Ensstat2      ensrkhisttime   Ranked Histogram averaged over time
    Ensstat2      ensroc          Ensemble Receiver Operating characteristics
    Ensval        enscrps         Ensemble CRPS and decomposition
    Ensval        ensbrs          Ensemble Brier score

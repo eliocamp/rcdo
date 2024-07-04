@@ -39,7 +39,7 @@ cdo_monvar1(ifile, complete_only = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{complete_only}{BOOL - Process only complete years}
+\item{complete_only}{BOOL - Process the last month only if it is complete}
 
 \item{ofile}{String with the path to the output file.}
 }
