@@ -117,8 +117,6 @@ for (help in helps) {
   writeLines(code, file)
 }
 
-
-
 files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
 for (file in files) {
@@ -126,7 +124,5 @@ for (file in files) {
 }
 
 usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
-
-
 
 devtools::document(roclets = c('rd', 'collate', 'namespace'))

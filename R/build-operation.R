@@ -1,6 +1,6 @@
 build_operation <- function(operation, chain = FALSE, options = NULL) {
   if (is.character(operation)) {
-    return(paste(shQuote(path.expand(operation)), collapse = " "))
+    return(paste(shQuote(normalizePath(operation)), collapse = " "))
   }
 
   operation$input <- vapply(operation$input, build_operation, chain = TRUE, FUN.VALUE = character(1))
@@ -10,7 +10,7 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
     operation$options <- options
   }
 
-  prefix <- paste(c("cdo", operation$options), collapse = " -")
+  prefix <- paste(c(get_cdo(), operation$options), collapse = " -")
 
   if (chain) {
     operation$operator$command <- paste0("-", operation$operator$command)
@@ -38,4 +38,20 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
           "]",
           operation$output),
         collapse = " ")
+}
+
+
+get_cdo <- function() {
+  cdo <- cdo_local_path()
+  if (file.exists(cdo)) {
+    return(cdo)
+  } else {
+    "cdo"
+  }
+}
+
+
+
+cdo_local_path <- function() {
+  file.path(tools::R_user_dir("rcdo", "data"), "bin", "cdo")
 }

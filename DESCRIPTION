@@ -7,7 +7,7 @@ Authors@R:
 Description: Provides a translation layer between R and CDO operators. Each 
   operator is it's own function with documentation. Nested or piped functions
   will be translateed into CDO chains. 
-License: GPL-3
+License: BSD_3_clause + file LICENSE
 Encoding: UTF-8
 Language: en-GB
 Roxygen: list(markdown = TRUE)
