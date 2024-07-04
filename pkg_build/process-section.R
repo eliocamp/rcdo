@@ -27,9 +27,12 @@ process_section.NAME <- function(section_text, operators) {
     paste0(collapse = "") |>
     strsplit("-") |>
     _[[1]] |>
-    trimws() |>
-    as.list() |>
-    setNames(c("operators", "short_description"))
+    trimws()
+
+  list <- list(operators = list[[1]],
+       short_description = paste0(list[-1], collapse = "")
+       )
+
 
   list$operators <- trimws(strsplit(list$operators, ",")[[1]])
 
@@ -41,7 +44,7 @@ process_section.DESCRIPTION <- function(section_text, operators) {
   operators$description <- section_text |>
     rm_quotes() |>
     trimws() |>
-    paste0(collapse = "")
+    paste0(collapse = " ")
 
   operators
 }
@@ -50,7 +53,7 @@ process_section.NOTE <- function(section_text, operators) {
   operators$note <- section_text |>
     rm_quotes() |>
     trimws() |>
-    paste0(collapse = "")
+    paste0(collapse = " ")
 
   operators
 }

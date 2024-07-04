@@ -64,8 +64,7 @@ create_function <- function(operator, template) {
 
   arguments <- paste0(c(input_args, params_args, paste0(output, " = NULL")), collapse = ", ")
   data <- list(
-    title = operator_name,
-    description = operator$description,
+    family = operator$family,
     operator_name = operator_name,
     input = input,
     input_param = input_param,
@@ -83,15 +82,43 @@ create_function <- function(operator, template) {
   writeLines(code, file)
 }
 
-template <- readLines("pkg_build/cdo-template.R")
 
 list.files("R", full.names = TRUE) |>
   file.remove()
+
+template <- readLines("pkg_build/cdo-template.R")
+
 for (operator in operators) {
   if (length(operator$n_output) != 0 && operator$n_output != 0) {
     create_function(operator, template)
   }
 }
+
+
+template_family <- readLines("pkg_build/cdo-template-family.R")
+
+for (help in helps) {
+  if (length(help$details) > 0) {
+    help$details <- gsub("\\n", "\n", help$details)
+    help$details <- paste0("@details\n", help$details)
+  }
+  help$details <- gsub("\\n", "\n#' ", help$details)
+
+  if (length(help$note) > 0) {
+    help$note <- gsub("\\n", "\n", help$note)
+    help$note <- paste0("@section Note: \n", help$note)
+  }
+
+  help$note <- gsub("\\n", "\n#' ", help$note)
+
+  help$warning <- "## This file was created automatically, do not edit by hand."
+
+  code <- whisker::whisker.render(template_family, help)
+  file <- paste0("R/family-", help$name, ".R" )
+  writeLines(code, file)
+}
+
+
 
 files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
@@ -100,5 +127,7 @@ for (file in files) {
 }
 
 usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
+
+
 
 devtools::document(roclets = c('rd', 'collate', 'namespace'))

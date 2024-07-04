@@ -52,6 +52,7 @@ for (i in seq_along(sections)[-length(sections)]) {
     tolower()
 
   helps[[i]] <- operator
+  helps[[i]]$name <- name
   names(helps)[i] <- name
 }
 
@@ -67,7 +68,7 @@ for (help in helps) {
     operators[[op]] <- list(
       command = op,
       params = help$params,
-      description = help$short_description,
+      family = help$name,
       n_input = operators_io[operator == op]$n_input,
       n_output = operators_io[operator == op]$n_output
     )
