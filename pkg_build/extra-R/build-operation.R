@@ -1,6 +1,6 @@
 build_operation <- function(operation, chain = FALSE, options = NULL) {
   if (is.character(operation)) {
-    return(paste(operation, collapse = " "))
+    return(paste(shQuote(path.expand(operation)), collapse = " "))
   }
 
   operation$input <- vapply(operation$input, build_operation, chain = TRUE, FUN.VALUE = character(1))
