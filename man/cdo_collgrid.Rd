@@ -4,18 +4,16 @@
 \alias{cdo_collgrid}
 \title{collgrid}
 \usage{
-cdo_collgrid(..., nx = NULL, names = NULL, ofile = NULL)
+cdo_collgrid(ifiles, nx = NULL, names = NULL, ofile = NULL)
 }
 \arguments{
-\item{nx, }{INTEGER - Number of regions in x direction \link{default: number of input files}}
+\item{ifiles}{Character vector with the path to the input files.}
 
-\item{names, }{STRING - Comma-separated list of variable names \link{default: all variables}}
+\item{nx, }{INTEGER - Number of regions in x direction [default: number of input files]}
+
+\item{names, }{STRING - Comma-separated list of variable names [default: all variables]}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Collect horizontal grid

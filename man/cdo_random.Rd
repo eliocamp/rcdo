@@ -17,11 +17,11 @@ cdo_random(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{Strings with the path to the input files.}
 
 \item{const, }{FLOAT - Constant}
 
-\item{seed, }{INTEGER - The seed for a new sequence of pseudo-random numbers \link{default: 1}}
+\item{seed, }{INTEGER - The seed for a new sequence of pseudo-random numbers [default: 1]}
 
 \item{grid, }{STRING - Target grid description file or name}
 
@@ -29,13 +29,11 @@ cdo_random(
 
 \item{end, }{FLOAT - End value of the loop}
 
-\item{inc, }{FLOAT - Increment of the loop \link{default: 1}}
+\item{inc, }{FLOAT - Increment of the loop [default: 1]}
 
 \item{levels, }{FLOAT - Target levels in metre above surface}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Generate a field

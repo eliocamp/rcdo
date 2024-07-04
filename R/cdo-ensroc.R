@@ -3,15 +3,14 @@
 #'
 #' Statistical values over an ensemble
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifiles Character vector with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 
 #'
 #' @export
-cdo_ensroc <- function(..., ofile = NULL) {
+cdo_ensroc <- function(ifiles, ofile = NULL) {
   cdo(operator = operators$ensroc,
-      input = list(...),
+      input = as.list(ifiles),
       params = NULL,
       output = c(ofile)
   )

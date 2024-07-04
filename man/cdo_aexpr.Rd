@@ -7,15 +7,13 @@
 cdo_aexpr(ifile, instr = NULL, filename = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{instr, }{STRING - Processing instructions (need to be 'quoted' in most cases)}
 
 \item{filename, }{STRING - File with processing instructions}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Evaluate expressions

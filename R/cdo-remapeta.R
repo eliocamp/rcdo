@@ -3,9 +3,8 @@
 #'
 #' Remap vertical hybrid level
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param vct, STRING - File name of an ASCII dataset with the vertical coordinate table
 #' @param oro, STRING - File name with the orography (surf. geopotential) of the target dataset (optional)
 #'

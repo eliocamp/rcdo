@@ -7,11 +7,9 @@
 cdo_eca_tx90p(ifile1, ifile2, ofile = NULL)
 }
 \arguments{
+\item{ifile1, ifile2}{Strings with the path to the input files.}
+
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Very warm days percent wrt 90th percentile of reference period

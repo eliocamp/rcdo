@@ -18,7 +18,7 @@ cdo_sellonlatbox(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{lon1, }{FLOAT - Western longitude in degrees}
 
@@ -37,8 +37,6 @@ cdo_sellonlatbox(
 \item{idy2, }{INTEGER - Index of last latitude (1 - nlat)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Select a box

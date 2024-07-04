@@ -7,13 +7,11 @@
 cdo_duplicate(ifile, ndup = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{ndup, }{INTEGER - Number of duplicates, default is 2.}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Duplicates a dataset

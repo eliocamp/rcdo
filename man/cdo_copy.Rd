@@ -4,14 +4,12 @@
 \alias{cdo_copy}
 \title{copy}
 \usage{
-cdo_copy(..., ofile = NULL)
+cdo_copy(ifiles, ofile = NULL)
 }
 \arguments{
+\item{ifiles}{Character vector with the path to the input files.}
+
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Copy datasets

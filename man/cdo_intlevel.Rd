@@ -13,7 +13,7 @@ cdo_intlevel(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{level, }{FLOAT - Comma-separated list of target levels}
 
@@ -22,8 +22,6 @@ cdo_intlevel(
 \item{zvarname, }{STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Linear level interpolation

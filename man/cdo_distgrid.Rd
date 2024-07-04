@@ -7,15 +7,13 @@
 cdo_distgrid(ifile, nx = NULL, ny = NULL, obase = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{nx, }{INTEGER - Number of regions in x direction, or number of pieces for unstructured grids}
 
-\item{ny, }{INTEGER - Number of regions in y direction \link{default: 1}}
+\item{ny, }{INTEGER - Number of regions in y direction [default: 1]}
 
-\item{obase}{string with the basename of the output files.}
-
-\item{ofile}{String with the path to the output file.}
+\item{obase}{String with the basename of the output files.}
 }
 \description{
 Distribute horizontal grid

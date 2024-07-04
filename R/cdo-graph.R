@@ -3,15 +3,14 @@
 #'
 #' Line graph plot
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifiles Character vector with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param parameter, STRING - Comma-separated list of plot parameters
 #'
 #' @export
-cdo_graph <- function(..., parameter = NULL, ofile = NULL) {
+cdo_graph <- function(ifiles, parameter = NULL, ofile = NULL) {
   cdo(operator = operators$graph,
-      input = list(...),
+      input = as.list(ifiles),
       params = list(parameter = parameter),
       output = c(ofile)
   )

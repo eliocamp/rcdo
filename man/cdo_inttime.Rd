@@ -14,19 +14,17 @@ cdo_inttime(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{date, }{STRING - Start date (format YYYY-MM-DD)}
 
 \item{time, }{STRING - Start time (format hh:mm:ss)}
 
-\item{inc, }{STRING - Optional increment (seconds, minutes, hours, days, months, years) \link{default: 0hour}}
+\item{inc, }{STRING - Optional increment (seconds, minutes, hours, days, months, years) [default: 0hour]}
 
 \item{n, }{INTEGER - Number of timesteps from one timestep to the next}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Time interpolation

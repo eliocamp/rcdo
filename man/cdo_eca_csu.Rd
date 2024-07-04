@@ -7,15 +7,13 @@
 cdo_eca_csu(ifile, T = NULL, N = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{T, }{FLOAT - Temperature threshold (unit: °C; default: T = 25°C)}
 
 \item{N, }{INTEGER - Minimum number of days exceeded (default: N = 5)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Consecutive summer days index per time period

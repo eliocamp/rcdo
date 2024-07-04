@@ -7,11 +7,9 @@
 cdo_eofcoeff(ifile1, ifile2, obase = NULL)
 }
 \arguments{
-\item{obase}{string with the basename of the output files.}
+\item{ifile1, ifile2}{Strings with the path to the input files.}
 
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{ofile}{String with the path to the output file.}
+\item{obase}{String with the basename of the output files.}
 }
 \description{
 Principal coefficients of EOFs

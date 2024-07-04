@@ -7,15 +7,13 @@
 cdo_reducegrid(ifile, mask = NULL, limitCoordsOutput = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{mask, }{STRING - file which holds the mask field}
 
 \item{limitCoordsOutput, }{STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Reduce fields to user

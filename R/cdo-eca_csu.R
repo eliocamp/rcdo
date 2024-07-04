@@ -3,9 +3,8 @@
 #'
 #' Consecutive summer days index per time period
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param T, FLOAT - Temperature threshold (unit: °C; default: T = 25°C)
 #' @param N, INTEGER - Minimum number of days exceeded (default: N = 5)
 #'

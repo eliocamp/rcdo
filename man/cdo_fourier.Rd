@@ -7,13 +7,11 @@
 cdo_fourier(ifile, epsilon = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{epsilon, }{INTEGER - -1: forward transformation; 1: backward transformation}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Fourier transformation

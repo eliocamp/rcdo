@@ -7,13 +7,11 @@
 cdo_samplegrid(ifile, factor = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{factor, }{INTEGER - Resample factor, typically 2, which will half the resolution}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Resample grid

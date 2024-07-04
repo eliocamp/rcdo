@@ -7,15 +7,13 @@
 cdo_eca_r20mm(ifile, x = NULL, freq = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
-\item{x, }{FLOAT - Daily precipitation amount threshold in \link{mm}}
+\item{x, }{FLOAT - Daily precipitation amount threshold in [mm]}
 
 \item{freq, }{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Precipitation days index per time period

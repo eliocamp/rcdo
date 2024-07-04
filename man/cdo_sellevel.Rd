@@ -21,11 +21,11 @@ cdo_sellevel(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{parameter, }{STRING - Comma-separated list of parameter identifiers.}
 
-\item{codes, }{INTEGER - Comma-separated list or first/last\link{/inc} range of code numbers.}
+\item{codes, }{INTEGER - Comma-separated list or first/last[/inc] range of code numbers.}
 
 \item{names, }{STRING - Comma-separated list of variable names.}
 
@@ -33,9 +33,9 @@ cdo_sellevel(
 
 \item{levels, }{FLOAT - Comma-separated list of vertical levels.}
 
-\item{levidx, }{INTEGER - Comma-separated list or first/last\link{/inc} range of index of levels.}
+\item{levidx, }{INTEGER - Comma-separated list or first/last[/inc] range of index of levels.}
 
-\item{ltypes, }{INTEGER - Comma-separated list or first/last\link{/inc} range of GRIB level types.}
+\item{ltypes, }{INTEGER - Comma-separated list or first/last[/inc] range of GRIB level types.}
 
 \item{grids, }{STRING - Comma-separated list of grid names or numbers.}
 
@@ -46,8 +46,6 @@ cdo_sellevel(
 \item{tabnums, }{INTEGER - Comma-separated list or range of parameter table numbers.}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Select fields

@@ -18,7 +18,7 @@ cdo_maskindexbox(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{lon1, }{FLOAT - Western longitude}
 
@@ -37,8 +37,6 @@ cdo_maskindexbox(
 \item{idy2, }{INTEGER - Index of last latitude}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Mask a box

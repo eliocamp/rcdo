@@ -20,7 +20,7 @@ cdo_setmon(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{day, }{INTEGER - Value of the new day}
 
@@ -34,7 +34,7 @@ cdo_setmon(
 
 \item{time, }{STRING - Time (format: hh:mm:ss)}
 
-\item{inc, }{STRING - Optional increment (seconds, minutes, hours, days, months, years) \link{default: 1hour}}
+\item{inc, }{STRING - Optional increment (seconds, minutes, hours, days, months, years) [default: 1hour]}
 
 \item{frequency, }{STRING - Frequency of the time series (hour, day, month, year)}
 
@@ -43,8 +43,6 @@ cdo_setmon(
 \item{shiftValue, }{STRING - Shift value (e.g. -3hour)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Set time

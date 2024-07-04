@@ -7,13 +7,11 @@
 cdo_eca_cfd(ifile, N = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{N, }{INTEGER - Minimum number of days exceeded (default: N = 5)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Consecutive frost days index per time period

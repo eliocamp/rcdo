@@ -7,7 +7,7 @@
 cdo_genlevelbounds(ifile, zaxis = NULL, zbot = NULL, ztop = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{zaxis, }{STRING - Z-axis description file or name of the target z-axis}
 
@@ -16,8 +16,6 @@ cdo_genlevelbounds(ifile, zaxis = NULL, zbot = NULL, ztop = NULL, ofile = NULL)
 \item{ztop, }{FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Set z

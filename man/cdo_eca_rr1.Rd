@@ -7,13 +7,11 @@
 cdo_eca_rr1(ifile, R = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{R, }{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Wet days index per time period

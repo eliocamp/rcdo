@@ -7,13 +7,11 @@
 cdo_subtrend(ifile1, ifile2, ifile3, equal = NULL, ofile = NULL)
 }
 \arguments{
+\item{ifile1, ifile2, ifile3}{Strings with the path to the input files.}
+
 \item{equal, }{BOOL - Set to false for unequal distributed timesteps (default: true)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Add or subtract a trend

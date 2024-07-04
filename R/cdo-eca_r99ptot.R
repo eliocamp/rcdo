@@ -3,15 +3,14 @@
 #'
 #' Precipitation percent due to R99p days
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 
 #'
 #' @export
 cdo_eca_r99ptot <- function(ifile1, ifile2, ofile = NULL) {
   cdo(operator = operators$eca_r99ptot,
-      input = list(ifile1,ifile2),
+      input = list(ifile1, ifile2),
       params = NULL,
       output = c(ofile)
   )

@@ -15,7 +15,7 @@ cdo_setgridmask(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{grid, }{STRING - Grid description file or name}
 
@@ -28,8 +28,6 @@ cdo_setgridmask(
 \item{projparams, }{STRING - Proj library parameter (e.g.:+init=EPSG:3413)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Set grid information

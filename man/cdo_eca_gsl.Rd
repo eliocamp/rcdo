@@ -7,6 +7,8 @@
 cdo_eca_gsl(ifile1, ifile2, nday = NULL, T = NULL, fland = NULL, ofile = NULL)
 }
 \arguments{
+\item{ifile1, ifile2}{Strings with the path to the input files.}
+
 \item{nday, }{INTEGER - Number of consecutive days (default: nday = 6)}
 
 \item{T, }{FLOAT - Temperature threshold (unit: °C; default: T = 5°C)}
@@ -14,10 +16,6 @@ cdo_eca_gsl(ifile1, ifile2, nday = NULL, T = NULL, fland = NULL, ofile = NULL)
 \item{fland, }{FLOAT - Land fraction threshold (default: fland = 0.5)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Thermal Growing season length index

@@ -7,13 +7,11 @@
 cdo_rotuvb(ifile, u, v, ... = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{u, v, ..., }{STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Rotation

@@ -7,15 +7,13 @@
 cdo_cmorlite(ifile, table = NULL, convert = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{table, }{STRING - Name of the CMOR table as specified from PCMDI}
 
 \item{convert, }{STRING - Converts the units if necessary}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 CMOR lite

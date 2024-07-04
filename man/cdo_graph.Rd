@@ -4,16 +4,14 @@
 \alias{cdo_graph}
 \title{graph}
 \usage{
-cdo_graph(..., parameter = NULL, ofile = NULL)
+cdo_graph(ifiles, parameter = NULL, ofile = NULL)
 }
 \arguments{
+\item{ifiles}{Character vector with the path to the input files.}
+
 \item{parameter, }{STRING - Comma-separated list of plot parameters}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Line graph plot

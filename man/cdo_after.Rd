@@ -4,16 +4,14 @@
 \alias{cdo_after}
 \title{after}
 \usage{
-cdo_after(..., vct = NULL, ofile = NULL)
+cdo_after(ifiles, vct = NULL, ofile = NULL)
 }
 \arguments{
+\item{ifiles}{Character vector with the path to the input files.}
+
 \item{vct, }{STRING - File with VCT in ASCII format}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 ECHAM standard post processor

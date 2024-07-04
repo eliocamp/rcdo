@@ -7,7 +7,7 @@
 cdo_eca_cwd(ifile, R = NULL, N = NULL, freq = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{R, }{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
 
@@ -16,8 +16,6 @@ cdo_eca_cwd(ifile, R = NULL, N = NULL, freq = NULL, ofile = NULL)
 \item{freq, }{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Consecutive wet days index per time period

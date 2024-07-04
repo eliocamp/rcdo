@@ -3,9 +3,8 @@
 #'
 #' Vertical pressure interpolation
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param plevels, FLOAT - Comma-separated list of pressure levels in pascal
 #'
 #' @export

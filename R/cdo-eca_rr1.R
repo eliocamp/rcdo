@@ -3,9 +3,8 @@
 #'
 #' Wet days index per time period
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param R, FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)
 #'
 #' @export

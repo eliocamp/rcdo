@@ -7,7 +7,7 @@
 cdo_shifty(ifile, nshift = NULL, cyclic = NULL, coord = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{nshift, }{INTEGER - Number of grid cells to shift (default: 1)}
 
@@ -16,8 +16,6 @@ cdo_shifty(ifile, nshift = NULL, cyclic = NULL, coord = NULL, ofile = NULL)
 \item{coord, }{STRING - If set, coordinates are also shifted}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Shift field

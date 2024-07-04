@@ -3,9 +3,8 @@
 #'
 #' Select horizontal regions
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param regions, STRING - Comma-separated list of ASCII formatted files with different regions
 #' @param lon, FLOAT - Longitude of the center of the circle in degrees, default lon=0.0
 #' @param lat, FLOAT - Latitude of the center of the circle in degrees, default lat=0.0

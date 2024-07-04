@@ -7,13 +7,11 @@
 cdo_delgridcell(ifile, indices = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
-\item{indices, }{INTEGER - Comma-separated list or first/last\link{/inc} range of indices}
+\item{indices, }{INTEGER - Comma-separated list or first/last[/inc] range of indices}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Select grid cells

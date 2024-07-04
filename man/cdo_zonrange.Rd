@@ -7,15 +7,13 @@
 cdo_zonrange(ifile, p = NULL, zonaldes = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
-\item{p, }{FLOAT - Percentile number in {0, ..., 100}}
+\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{zonaldes, }{STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Zonal statistics

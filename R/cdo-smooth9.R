@@ -3,9 +3,8 @@
 #'
 #' Smooth grid points
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param nsmooth, INTEGER - Number of times to smooth, default nsmooth=1
 #' @param radius, STRING - Search radius, default radius=1deg (units: deg, rad, km, m)
 #' @param maxpoints, INTEGER - Maximum number of points, default maxpoints=&lt;gridsize&gt;

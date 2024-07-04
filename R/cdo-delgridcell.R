@@ -3,10 +3,9 @@
 #'
 #' Select grid cells
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
-#' @param indices, INTEGER - Comma-separated list or first/last[/inc] range of indices
+#' @param indices, INTEGER - Comma-separated list or first/last\[/inc\] range of indices
 #'
 #' @export
 cdo_delgridcell <- function(ifile, indices = NULL, ofile = NULL) {

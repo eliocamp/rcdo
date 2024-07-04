@@ -15,7 +15,7 @@ cdo_sethalo(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{east, }{INTEGER - East halo}
 
@@ -28,8 +28,6 @@ cdo_sethalo(
 \item{value, }{FLOAT - Fill value (default is the missing value)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Set the bounds of a field

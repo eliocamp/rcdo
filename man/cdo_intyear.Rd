@@ -7,13 +7,11 @@
 cdo_intyear(ifile1, ifile2, years = NULL, obase = NULL)
 }
 \arguments{
-\item{years, }{INTEGER - Comma-separated list or first/last\link{/inc} range of years}
+\item{ifile1, ifile2}{Strings with the path to the input files.}
 
-\item{obase}{string with the basename of the output files.}
+\item{years, }{INTEGER - Comma-separated list or first/last[/inc] range of years}
 
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{ofile}{String with the path to the output file.}
+\item{obase}{String with the basename of the output files.}
 }
 \description{
 Year interpolation

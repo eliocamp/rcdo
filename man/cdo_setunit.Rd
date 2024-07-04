@@ -17,13 +17,13 @@ cdo_setunit(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{table, }{STRING - Parameter table file or name}
 
 \item{code, }{INTEGER - Code number}
 
-\item{param, }{STRING - Parameter identifier (GRIB1: code\link{.tabnum}; GRIB2: num[.cat\link{.dis}])}
+\item{param, }{STRING - Parameter identifier (GRIB1: code[.tabnum]; GRIB2: num[.cat[.dis]])}
 
 \item{name, }{STRING - Variable name}
 
@@ -34,8 +34,6 @@ cdo_setunit(
 \item{maxsteps, }{INTEGER - Maximum number of timesteps}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Set field info

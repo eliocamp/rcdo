@@ -7,13 +7,11 @@
 cdo_tee(ifile, outfile2 = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{outfile2, }{STRING - Destination filename for the copy of the input file}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Duplicate a data stream and write it to file

@@ -7,15 +7,13 @@
 cdo_eca_tr(ifile, T = NULL, freq = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{T, }{FLOAT - Temperature threshold (unit: °C; default: T = 20°C)}
 
 \item{freq, }{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Tropical nights index per time period

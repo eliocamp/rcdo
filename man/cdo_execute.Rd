@@ -6,7 +6,7 @@
 \usage{
 cdo_execute(
   operation,
-  output = replicate(operation$operator$n_output, tempfile()),
+  output = temp_output(operation),
   options = NULL,
   verbose = FALSE
 )
@@ -14,7 +14,12 @@ cdo_execute(
 \arguments{
 \item{operation}{a CDO operation}
 
-\item{output}{an output file or base string for output files}
+\item{output}{an output file or base string for output files. Defaults to
+temporary files.}
+
+\item{options}{character vector with CDO options.}
+
+\item{verbose}{whether to print the command being executed.}
 }
 \description{
 Execute a CDO operation

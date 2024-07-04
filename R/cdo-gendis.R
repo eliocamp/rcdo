@@ -3,11 +3,10 @@
 #'
 #' Distance weighted average remapping
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param grid, STRING - Target grid description file or name
-#' @param neighbors, INTEGER - Number of nearest neighbors [default: 4]
+#' @param neighbors, INTEGER - Number of nearest neighbors \[default: 4\]
 #' @param map3d, BOOL - Generate all mapfiles of the first 3D field
 #'
 #' @export

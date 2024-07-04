@@ -7,15 +7,13 @@
 cdo_splitcode(ifile, swap = NULL, uuid = NULL, obase = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{swap, }{STRING - Swap the position of obase and xxx in the output filename}
 
 \item{uuid, }{STRING - Add a UUID as global attribute <attname> to each output file}
 
-\item{obase}{string with the basename of the output files.}
-
-\item{ofile}{String with the path to the output file.}
+\item{obase}{String with the basename of the output files.}
 }
 \description{
 Split a dataset

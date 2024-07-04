@@ -17,7 +17,7 @@ cdo_setrtoc(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{oldval, newval, ..., }{FLOAT - Pairs of old and new values}
 
@@ -30,8 +30,6 @@ cdo_setrtoc(
 \item{c2, }{FLOAT - New value - outside range}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Replace variable values

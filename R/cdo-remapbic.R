@@ -3,9 +3,8 @@
 #'
 #' Bicubic interpolation
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param grid, STRING - Target grid description file or name
 #' @param map3d, BOOL - Generate all mapfiles of the first 3D field
 #'

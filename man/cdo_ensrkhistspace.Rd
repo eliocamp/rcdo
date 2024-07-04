@@ -4,14 +4,12 @@
 \alias{cdo_ensrkhistspace}
 \title{ensrkhistspace}
 \usage{
-cdo_ensrkhistspace(..., ofile = NULL)
+cdo_ensrkhistspace(ifiles, ofile = NULL)
 }
 \arguments{
+\item{ifiles}{Character vector with the path to the input files.}
+
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Statistical values over an ensemble

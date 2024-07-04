@@ -16,7 +16,7 @@ cdo_smooth(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{nsmooth, }{INTEGER - Number of times to smooth, default nsmooth=1}
 
@@ -31,8 +31,6 @@ cdo_smooth(
 \item{weightR, }{FLOAT - Weight at the search radius, default weightR=0.25}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Smooth grid points

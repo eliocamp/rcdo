@@ -14,7 +14,7 @@ cdo_uv2dv_cfd(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{u, }{STRING - Name of variable u (default: u)}
 
@@ -25,8 +25,6 @@ cdo_uv2dv_cfd(
 \item{outMode, }{STRING - Output mode new/append (default: new)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Wind transformation

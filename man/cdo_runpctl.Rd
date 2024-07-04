@@ -7,15 +7,13 @@
 cdo_runpctl(ifile, p = NULL, nts = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
-\item{p, }{FLOAT - Percentile number in {0, ..., 100}}
+\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{nts, }{INTEGER - Number of timesteps}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Running percentile values

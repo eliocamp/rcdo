@@ -3,15 +3,14 @@
 #'
 #' Ensemble validation tools
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
-#' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
+#' @param ifiles Character vector with the path to the input files.
+#' @param obase String with the basename of the output files.
 
 #'
 #' @export
-cdo_enscrps <- function(..., obase = NULL) {
+cdo_enscrps <- function(ifiles, obase = NULL) {
   cdo(operator = operators$enscrps,
-      input = list(...),
+      input = as.list(ifiles),
       params = NULL,
       output = c(obase)
   )

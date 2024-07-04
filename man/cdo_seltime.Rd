@@ -21,33 +21,31 @@ cdo_seltime(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
-\item{timesteps, }{INTEGER - Comma-separated list or first/last\link{/inc} range of timesteps. Negative values select timesteps from the end (NetCDF only).}
+\item{timesteps, }{INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).}
 
 \item{times, }{STRING - Comma-separated list of times (format hh:mm:ss).}
 
-\item{hours, }{INTEGER - Comma-separated list or first/last\link{/inc} range of hours.}
+\item{hours, }{INTEGER - Comma-separated list or first/last[/inc] range of hours.}
 
-\item{days, }{INTEGER - Comma-separated list or first/last\link{/inc} range of days.}
+\item{days, }{INTEGER - Comma-separated list or first/last[/inc] range of days.}
 
-\item{months, }{INTEGER - Comma-separated list or first/last\link{/inc} range of months.}
+\item{months, }{INTEGER - Comma-separated list or first/last[/inc] range of months.}
 
-\item{years, }{INTEGER - Comma-separated list or first/last\link{/inc} range of years.}
+\item{years, }{INTEGER - Comma-separated list or first/last[/inc] range of years.}
 
 \item{seasons, }{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
 
 \item{startdate, }{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
 
-\item{enddate, }{STRING - End date (format YYYY-MM-DDThh:mm:ss) \link{default: startdate}.}
+\item{enddate, }{STRING - End date (format YYYY-MM-DDThh:mm:ss) [default: startdate].}
 
-\item{nts1, }{INTEGER - Number of timesteps before the selected month \link{default: 0}.}
+\item{nts1, }{INTEGER - Number of timesteps before the selected month [default: 0].}
 
-\item{nts2, }{INTEGER - Number of timesteps after the selected month \link{default: nts1}.}
+\item{nts2, }{INTEGER - Number of timesteps after the selected month [default: nts1].}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Select timesteps

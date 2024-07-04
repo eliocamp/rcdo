@@ -14,7 +14,7 @@ cdo_selcircle(
 )
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{regions, }{STRING - Comma-separated list of ASCII formatted files with different regions}
 
@@ -25,8 +25,6 @@ cdo_selcircle(
 \item{radius, }{STRING - Radius of the circle, default radius=1deg (units: deg, rad, km, m)}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Select horizontal regions

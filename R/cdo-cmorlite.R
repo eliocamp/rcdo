@@ -3,9 +3,8 @@
 #'
 #' CMOR lite
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param table, STRING - Name of the CMOR table as specified from PCMDI
 #' @param convert, STRING - Converts the units if necessary
 #'

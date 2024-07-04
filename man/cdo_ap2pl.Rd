@@ -7,13 +7,11 @@
 cdo_ap2pl(ifile, plevels = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{plevels, }{FLOAT - Comma-separated list of pressure levels in pascal}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Vertical pressure interpolation

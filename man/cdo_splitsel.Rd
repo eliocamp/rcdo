@@ -7,7 +7,7 @@
 cdo_splitsel(ifile, nsets = NULL, noffset = NULL, nskip = NULL, obase = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{nsets, }{INTEGER - Number of input timesteps for each output file}
 
@@ -15,9 +15,7 @@ cdo_splitsel(ifile, nsets = NULL, noffset = NULL, nskip = NULL, obase = NULL)
 
 \item{nskip, }{INTEGER - Number of input timesteps skipped between timestep ranges (optional)}
 
-\item{obase}{string with the basename of the output files.}
-
-\item{ofile}{String with the path to the output file.}
+\item{obase}{String with the basename of the output files.}
 }
 \description{
 Split selected timesteps

@@ -7,13 +7,11 @@
 cdo_gh2hl(ifile, hlevels = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{hlevels, }{FLOAT - Comma-separated list of height levels in meter}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Vertical height interpolation

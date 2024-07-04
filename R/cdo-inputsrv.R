@@ -3,9 +3,8 @@
 #'
 #' Formatted input
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param grid, STRING - Grid description file or name
 #' @param zaxis, STRING - Z-axis description file
 #'

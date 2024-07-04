@@ -7,17 +7,15 @@
 cdo_gendis(ifile, grid = NULL, neighbors = NULL, map3d = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{grid, }{STRING - Target grid description file or name}
 
-\item{neighbors, }{INTEGER - Number of nearest neighbors \link{default: 4}}
+\item{neighbors, }{INTEGER - Number of nearest neighbors [default: 4]}
 
 \item{map3d, }{BOOL - Generate all mapfiles of the first 3D field}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Distance weighted average remapping

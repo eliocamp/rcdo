@@ -3,15 +3,14 @@
 #'
 #' Copy datasets
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifiles Character vector with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 
 #'
 #' @export
-cdo_copy <- function(..., ofile = NULL) {
+cdo_copy <- function(ifiles, ofile = NULL) {
   cdo(operator = operators$copy,
-      input = list(...),
+      input = as.list(ifiles),
       params = NULL,
       output = c(ofile)
   )

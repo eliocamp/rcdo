@@ -3,9 +3,8 @@
 #'
 #' Set missing value
 #'
-#' @param ifile,ifile1,ifile2 String with the path to the input file(s).
+#' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param obase string with the basename of the output files.
 #' @param neighbors, INTEGER - Number of nearest neighbors
 #' @param newmiss, FLOAT - New missing value
 #' @param c, FLOAT - Constant

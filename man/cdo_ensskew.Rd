@@ -4,16 +4,14 @@
 \alias{cdo_ensskew}
 \title{ensskew}
 \usage{
-cdo_ensskew(..., p = NULL, ofile = NULL)
+cdo_ensskew(ifiles, p = NULL, ofile = NULL)
 }
 \arguments{
-\item{p, }{FLOAT - Percentile number in {0, ..., 100}}
+\item{ifiles}{Character vector with the path to the input files.}
+
+\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Statistical values over an ensemble

@@ -5,7 +5,7 @@
 \title{delete}
 \usage{
 cdo_delete(
-  ...,
+  ifiles,
   name = NULL,
   param = NULL,
   code = NULL,
@@ -35,27 +35,29 @@ cdo_delete(
 )
 }
 \arguments{
+\item{ifiles}{Character vector with the path to the input files.}
+
 \item{name, }{STRING - Comma-separated list of variable names.}
 
 \item{param, }{STRING - Comma-separated list of parameter identifiers.}
 
-\item{code, }{INTEGER - Comma-separated list or first/last\link{/inc} range of code numbers.}
+\item{code, }{INTEGER - Comma-separated list or first/last[/inc] range of code numbers.}
 
 \item{level, }{FLOAT - Comma-separated list of vertical levels.}
 
 \item{levrange, }{FLOAT - First and last value of the level range.}
 
-\item{levidx, }{INTEGER - Comma-separated list or first/last\link{/inc} range of index of levels.}
+\item{levidx, }{INTEGER - Comma-separated list or first/last[/inc] range of index of levels.}
 
 \item{zaxisname, }{STRING - Comma-separated list of zaxis names.}
 
-\item{zaxisnum, }{INTEGER - Comma-separated list or first/last\link{/inc} range of zaxis numbers.}
+\item{zaxisnum, }{INTEGER - Comma-separated list or first/last[/inc] range of zaxis numbers.}
 
-\item{ltype, }{INTEGER - Comma-separated list or first/last\link{/inc} range of GRIB level types.}
+\item{ltype, }{INTEGER - Comma-separated list or first/last[/inc] range of GRIB level types.}
 
 \item{gridname, }{STRING - Comma-separated list of grid names.}
 
-\item{gridnum, }{INTEGER - Comma-separated list or first/last\link{/inc} range of grid numbers.}
+\item{gridnum, }{INTEGER - Comma-separated list or first/last[/inc] range of grid numbers.}
 
 \item{steptype, }{STRING - Comma-separated list of timestep types (constant, avg, accum, min, max, range, diff, sum)}
 
@@ -65,31 +67,27 @@ cdo_delete(
 
 \item{enddate, }{STRING - End date (format YYYY-MM-DDThh:mm:ss).}
 
-\item{minute, }{INTEGER - Comma-separated list or first/last\link{/inc} range of minutes.}
+\item{minute, }{INTEGER - Comma-separated list or first/last[/inc] range of minutes.}
 
-\item{hour, }{INTEGER - Comma-separated list or first/last\link{/inc} range of hours.}
+\item{hour, }{INTEGER - Comma-separated list or first/last[/inc] range of hours.}
 
-\item{day, }{INTEGER - Comma-separated list or first/last\link{/inc} range of days.}
+\item{day, }{INTEGER - Comma-separated list or first/last[/inc] range of days.}
 
-\item{month, }{INTEGER - Comma-separated list or first/last\link{/inc} range of months.}
+\item{month, }{INTEGER - Comma-separated list or first/last[/inc] range of months.}
 
 \item{season, }{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
 
-\item{year, }{INTEGER - Comma-separated list or first/last\link{/inc} range of years.}
+\item{year, }{INTEGER - Comma-separated list or first/last[/inc] range of years.}
 
 \item{dom, }{STRING - Comma-separated list of the day of month (e.g. 29feb).}
 
-\item{timestep, }{INTEGER - Comma-separated list or first/last\link{/inc} range of timesteps. Negative values select timesteps from the end (NetCDF only).}
+\item{timestep, }{INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).}
 
-\item{timestep_of_year, }{INTEGER - Comma-separated list or first/last\link{/inc} range of timesteps of year.}
+\item{timestep_of_year, }{INTEGER - Comma-separated list or first/last[/inc] range of timesteps of year.}
 
 \item{timestepmask, }{STRING - Read timesteps from a mask file.}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Select fields

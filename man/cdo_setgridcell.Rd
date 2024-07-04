@@ -7,7 +7,7 @@
 cdo_setgridcell(ifile, value = NULL, cell = NULL, mask = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile, ifile1, ifile2}{String with the path to the input file(s).}
+\item{ifile}{String with the path to the input file.}
 
 \item{value, }{FLOAT - Value of the grid cell}
 
@@ -16,8 +16,6 @@ cdo_setgridcell(ifile, value = NULL, cell = NULL, mask = NULL, ofile = NULL)
 \item{mask, }{STRING - Name of the data file which contains the mask}
 
 \item{ofile}{String with the path to the output file.}
-
-\item{obase}{string with the basename of the output files.}
 }
 \description{
 Set the value of a grid cell
