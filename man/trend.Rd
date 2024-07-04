@@ -10,7 +10,7 @@ cdo_trend(ifile, equal = NULL, ofile1 = NULL, ofile2 = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{equal, }{BOOL - Set to false for unequal distributed timesteps (default: true)}
+\item{equal}{BOOL - Set to false for unequal distributed timesteps (default: true)}
 
 \item{ofile1, ofile2}{Strings with the path to the output files.}
 }

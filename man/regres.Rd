@@ -10,7 +10,7 @@ cdo_regres(ifile, equal = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{equal, }{BOOL - Set to false for unequal distributed timesteps (default: true)}
+\item{equal}{BOOL - Set to false for unequal distributed timesteps (default: true)}
 
 \item{ofile}{String with the path to the output file.}
 }

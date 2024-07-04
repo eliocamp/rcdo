@@ -10,9 +10,9 @@ cdo_collgrid(ifiles, nx = NULL, names = NULL, ofile = NULL)
 \arguments{
 \item{ifiles}{Character vector with the path to the input files.}
 
-\item{nx, }{INTEGER - Number of regions in x direction [default: number of input files]}
+\item{nx}{INTEGER - Number of regions in x direction [default: number of input files]}
 
-\item{names, }{STRING - Comma-separated list of variable names [default: all variables]}
+\item{names}{STRING - Comma-separated list of variable names [default: all variables]}
 
 \item{ofile}{String with the path to the output file.}
 }

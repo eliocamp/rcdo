@@ -10,9 +10,9 @@ cdo_distgrid(ifile, nx = NULL, ny = NULL, obase = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{nx, }{INTEGER - Number of regions in x direction, or number of pieces for unstructured grids}
+\item{nx}{INTEGER - Number of regions in x direction, or number of pieces for unstructured grids}
 
-\item{ny, }{INTEGER - Number of regions in y direction [default: 1]}
+\item{ny}{INTEGER - Number of regions in y direction [default: 1]}
 
 \item{obase}{String with the basename of the output files.}
 }

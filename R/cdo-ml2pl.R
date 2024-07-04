@@ -1,8 +1,8 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param plevels, FLOAT - Pressure levels in pascal
-#' @param hlevels, FLOAT - Height levels in meter
+#' @param plevels FLOAT - Pressure levels in pascal
+#' @param hlevels FLOAT - Height levels in meter
 #'
 #' @export
 #' @rdname vertintml

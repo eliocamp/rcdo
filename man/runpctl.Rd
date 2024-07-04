@@ -10,12 +10,12 @@ cdo_runpctl(ifile, p = NULL, nts = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
+\item{p}{FLOAT - Percentile number in \{0, ..., 100\}}
 
-\item{nts, }{INTEGER - Number of timesteps}
+\item{nts}{INTEGER - Number of timesteps}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module computes running percentiles over a selected number of timesteps in infile. The time of outfile is determined by the time in the middle of all contributing timesteps of infile. This can be change with the CDO option --timestat_date <first|middle|last>.  o(t+(nts-1)/2,x) = pth percentile {i(t,x), i(t+1,x), ..., i(t+nts-1,x)}
+This module computes running percentiles over a selected number of timesteps in infile. The time of outfile is determined by the time in the middle of all contributing timesteps of infile. This can be change with the CDO option --timestat_date <first|middle|last>.  o(t+(nts-1)/2,x) = pth percentile \{i(t,x), i(t+1,x), ..., i(t+nts-1,x)\}
 }

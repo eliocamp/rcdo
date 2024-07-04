@@ -7,43 +7,43 @@
 #'     seasmin    Seasonal minimum
 #'                For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = min{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = min\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasmax    Seasonal maximum
 #'                For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = max{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = max\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasrange  Seasonal range
 #'                For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = range{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = range\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seassum    Seasonal sum
 #'                For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = sum{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = sum\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasmean   Seasonal mean
 #'                For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = mean{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = mean\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasavg    Seasonal average
 #'                For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = avg{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = avg\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasstd    Seasonal standard deviation
 #'                Normalize by n. For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = std{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = std\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasstd1   Seasonal standard deviation (n-1)
 #'                Normalize by (n-1). For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = std1{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = std1\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasvar    Seasonal variance
 #'                Normalize by n. For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = var{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = var\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'     seasvar1   Seasonal variance (n-1)
 #'                Normalize by (n-1). For every adjacent sequence t_1, ...,t_n of timesteps of the same season it is:
 #'                
-#'                o(t,x) = var1{i(t',x), t1 &lt; t' &lt;= tn}
+#'                o(t,x) = var1\{i(t',x), t1 &lt; t' &lt;= tn\}
 #'
 #' 
 #'

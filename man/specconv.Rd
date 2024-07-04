@@ -10,7 +10,7 @@ cdo_sp2sp(ifile, trunc = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{trunc, }{INTEGER - New spectral resolution}
+\item{trunc}{INTEGER - New spectral resolution}
 
 \item{ofile}{String with the path to the output file.}
 }

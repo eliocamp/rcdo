@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param outfile2, STRING - Destination filename for the copy of the input file
+#' @param outfile2 STRING - Destination filename for the copy of the input file
 #'
 #' @export
 #' @rdname tee

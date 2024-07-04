@@ -10,11 +10,11 @@ cdo_eca_gsl(ifile1, ifile2, nday = NULL, T = NULL, fland = NULL, ofile = NULL)
 \arguments{
 \item{ifile1, ifile2}{Strings with the path to the input files.}
 
-\item{nday, }{INTEGER - Number of consecutive days (default: nday = 6)}
+\item{nday}{INTEGER - Number of consecutive days (default: nday = 6)}
 
-\item{T, }{FLOAT - Temperature threshold (unit: °C; default: T = 5°C)}
+\item{T}{FLOAT - Temperature threshold (unit: °C; default: T = 5°C)}
 
-\item{fland, }{FLOAT - Land fraction threshold (default: fland = 0.5)}
+\item{fland}{FLOAT - Land fraction threshold (default: fland = 0.5)}
 
 \item{ofile}{String with the path to the output file.}
 }

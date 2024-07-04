@@ -1,8 +1,8 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifiles Character vector with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param skip_same_time, BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
-#' @param names, STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
+#' @param skip_same_time BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.
+#' @param names STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).
 #'
 #' @export
 #' @rdname merge

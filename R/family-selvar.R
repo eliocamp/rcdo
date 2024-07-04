@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' Select fields
 #'
-#' This module selects some fields from infile and writes them to outfile. The fields selected depends on the chosen operator and the parameters. A range of integer values can be specified by first/last[/inc]. 
+#' This module selects some fields from infile and writes them to outfile. The fields selected depends on the chosen operator and the parameters. A range of integer values can be specified by first/last\[/inc\]. 
 #'
 #' @details
 #'     selparam      Select parameters by identifier

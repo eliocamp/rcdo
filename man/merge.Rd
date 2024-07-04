@@ -14,9 +14,9 @@ cdo_mergetime(ifiles, skip_same_time = NULL, names = NULL, ofile = NULL)
 \arguments{
 \item{ifiles}{Character vector with the path to the input files.}
 
-\item{skip_same_time, }{BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.}
+\item{skip_same_time}{BOOL - Skips all consecutive timesteps with a double entry of the same timestamp.}
 
-\item{names, }{STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).}
+\item{names}{STRING - Fill missing variable names with missing values (union) or use the intersection (intersect).}
 
 \item{ofile}{String with the path to the output file.}
 }

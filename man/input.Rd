@@ -17,9 +17,9 @@ cdo_inputsrv(ifile, grid = NULL, zaxis = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{Strings with the path to the input files.}
 
-\item{grid, }{STRING - Grid description file or name}
+\item{grid}{STRING - Grid description file or name}
 
-\item{zaxis, }{STRING - Z-axis description file}
+\item{zaxis}{STRING - Z-axis description file}
 
 \item{ofile}{String with the path to the output file.}
 }

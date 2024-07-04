@@ -18,15 +18,15 @@ cdo_sethalo(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{east, }{INTEGER - East halo}
+\item{east}{INTEGER - East halo}
 
-\item{west, }{INTEGER - West halo}
+\item{west}{INTEGER - West halo}
 
-\item{south, }{INTEGER - South halo}
+\item{south}{INTEGER - South halo}
 
-\item{north, }{INTEGER - North halo}
+\item{north}{INTEGER - North halo}
 
-\item{value, }{FLOAT - Fill value (default is the missing value)}
+\item{value}{FLOAT - Fill value (default is the missing value)}
 
 \item{ofile}{String with the path to the output file.}
 }

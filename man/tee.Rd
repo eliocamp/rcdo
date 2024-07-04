@@ -10,7 +10,7 @@ cdo_tee(ifile, outfile2 = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{outfile2, }{STRING - Destination filename for the copy of the input file}
+\item{outfile2}{STRING - Destination filename for the copy of the input file}
 
 \item{ofile}{String with the path to the output file.}
 }

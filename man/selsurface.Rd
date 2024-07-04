@@ -17,7 +17,7 @@ cdo_topvalue(ifile, isovalue = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{isovalue, }{FLOAT - Isosurface value}
+\item{isovalue}{FLOAT - Isosurface value}
 
 \item{ofile}{String with the path to the output file.}
 }

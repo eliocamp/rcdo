@@ -1,14 +1,14 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param lon1, FLOAT - Western longitude
-#' @param lon2, FLOAT - Eastern longitude
-#' @param lat1, FLOAT - Southern or northern latitude
-#' @param lat2, FLOAT - Northern or southern latitude
-#' @param idx1, INTEGER - Index of first longitude
-#' @param idx2, INTEGER - Index of last longitude
-#' @param idy1, INTEGER - Index of first latitude
-#' @param idy2, INTEGER - Index of last latitude
+#' @param lon1 FLOAT - Western longitude
+#' @param lon2 FLOAT - Eastern longitude
+#' @param lat1 FLOAT - Southern or northern latitude
+#' @param lat2 FLOAT - Northern or southern latitude
+#' @param idx1 INTEGER - Index of first longitude
+#' @param idx2 INTEGER - Index of last longitude
+#' @param idy1 INTEGER - Index of first latitude
+#' @param idy2 INTEGER - Index of last latitude
 #'
 #' @export
 #' @rdname maskbox

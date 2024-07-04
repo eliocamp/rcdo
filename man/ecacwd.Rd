@@ -14,11 +14,11 @@ cdo_etccdi_cwd(ifile, R = NULL, N = NULL, freq = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{R, }{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
+\item{R}{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
 
-\item{N, }{INTEGER - Minimum number of days exceeded (default: N = 5)}
+\item{N}{INTEGER - Minimum number of days exceeded (default: N = 5)}
 
-\item{freq, }{STRING - Output frequency (year, month)}
+\item{freq}{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
 }

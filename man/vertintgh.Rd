@@ -10,7 +10,7 @@ cdo_gh2hl(ifile, hlevels = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{hlevels, }{FLOAT - Comma-separated list of height levels in meter}
+\item{hlevels}{FLOAT - Comma-separated list of height levels in meter}
 
 \item{ofile}{String with the path to the output file.}
 }

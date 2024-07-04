@@ -14,7 +14,7 @@ cdo_ifthenc(ifile, c = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{c, }{FLOAT - Constant}
+\item{c}{FLOAT - Constant}
 
 \item{ofile}{String with the path to the output file.}
 }

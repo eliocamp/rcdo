@@ -10,9 +10,9 @@ cdo_pack(ifile, printparam = NULL, filename = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{printparam, }{BOOL - Print pack parameters to stdout for each variable}
+\item{printparam}{BOOL - Print pack parameters to stdout for each variable}
 
-\item{filename, }{STRING - Read pack parameters from file for each variable[format: name=<> add_offset=<> scale_factor=<>]}
+\item{filename}{STRING - Read pack parameters from file for each variable[format: name=<> add_offset=<> scale_factor=<>]}
 
 \item{ofile}{String with the path to the output file.}
 }

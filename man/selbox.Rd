@@ -36,21 +36,21 @@ cdo_sellonlatbox(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{lon1, }{FLOAT - Western longitude in degrees}
+\item{lon1}{FLOAT - Western longitude in degrees}
 
-\item{lon2, }{FLOAT - Eastern longitude in degrees}
+\item{lon2}{FLOAT - Eastern longitude in degrees}
 
-\item{lat1, }{FLOAT - Southern or northern latitude in degrees}
+\item{lat1}{FLOAT - Southern or northern latitude in degrees}
 
-\item{lat2, }{FLOAT - Northern or southern latitude in degrees}
+\item{lat2}{FLOAT - Northern or southern latitude in degrees}
 
-\item{idx1, }{INTEGER - Index of first longitude (1 - nlon)}
+\item{idx1}{INTEGER - Index of first longitude (1 - nlon)}
 
-\item{idx2, }{INTEGER - Index of last longitude (1 - nlon)}
+\item{idx2}{INTEGER - Index of last longitude (1 - nlon)}
 
-\item{idy1, }{INTEGER - Index of first latitude (1 - nlat)}
+\item{idy1}{INTEGER - Index of first latitude (1 - nlat)}
 
-\item{idy2, }{INTEGER - Index of last latitude (1 - nlat)}
+\item{idy2}{INTEGER - Index of last latitude (1 - nlat)}
 
 \item{ofile}{String with the path to the output file.}
 }

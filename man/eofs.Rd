@@ -20,7 +20,7 @@ cdo_eoftime(ifile, neof = NULL, ofile1 = NULL, ofile2 = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{neof, }{INTEGER - Number of eigen functions}
+\item{neof}{INTEGER - Number of eigen functions}
 
 \item{ofile1, ofile2}{Strings with the path to the output files.}
 }

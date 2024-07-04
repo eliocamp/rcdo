@@ -7,7 +7,7 @@
 #'     const   Create a constant field
 #'             Creates a constant field. All field elements of the grid have the same value.
 #'     random  Create a field with random numbers
-#'             Creates a field with rectangularly distrubuted random numbers in the interval [0,1].
+#'             Creates a field with rectangularly distrubuted random numbers in the interval \[0,1\].
 #'     topo    Create a field with topography
 #'             Creates a field with topography data, per default on a global half degree grid.
 #'     seq     Create a time series

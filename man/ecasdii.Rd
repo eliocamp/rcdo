@@ -10,7 +10,7 @@ cdo_eca_sdii(ifile, R = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{R, }{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
+\item{R}{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
 
 \item{ofile}{String with the path to the output file.}
 }

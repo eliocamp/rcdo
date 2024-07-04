@@ -10,9 +10,9 @@ cdo_reducegrid(ifile, mask = NULL, limitCoordsOutput = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{mask, }{STRING - file which holds the mask field}
+\item{mask}{STRING - file which holds the mask field}
 
-\item{limitCoordsOutput, }{STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information}
+\item{limitCoordsOutput}{STRING - optional parameter to limit coordinates output: 'nobounds' disables coordinate bounds, 'nocoords' avoids all coordinate information}
 
 \item{ofile}{String with the path to the output file.}
 }

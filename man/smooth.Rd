@@ -32,17 +32,17 @@ cdo_smooth9(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{nsmooth, }{INTEGER - Number of times to smooth, default nsmooth=1}
+\item{nsmooth}{INTEGER - Number of times to smooth, default nsmooth=1}
 
-\item{radius, }{STRING - Search radius, default radius=1deg (units: deg, rad, km, m)}
+\item{radius}{STRING - Search radius, default radius=1deg (units: deg, rad, km, m)}
 
-\item{maxpoints, }{INTEGER - Maximum number of points, default maxpoints=<gridsize>}
+\item{maxpoints}{INTEGER - Maximum number of points, default maxpoints=<gridsize>}
 
-\item{form, }{STRING - Form of the curve, default form=linear}
+\item{form}{STRING - Form of the curve, default form=linear}
 
-\item{weight0, }{FLOAT - Weight at distance 0, default weight0=0.25}
+\item{weight0}{FLOAT - Weight at distance 0, default weight0=0.25}
 
-\item{weightR, }{FLOAT - Weight at the search radius, default weightR=0.25}
+\item{weightR}{FLOAT - Weight at the search radius, default weightR=0.25}
 
 \item{ofile}{String with the path to the output file.}
 }

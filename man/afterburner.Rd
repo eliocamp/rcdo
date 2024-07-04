@@ -10,7 +10,7 @@ cdo_after(ifiles, vct = NULL, ofile = NULL)
 \arguments{
 \item{ifiles}{Character vector with the path to the input files.}
 
-\item{vct, }{STRING - File with VCT in ASCII format}
+\item{vct}{STRING - File with VCT in ASCII format}
 
 \item{ofile}{String with the path to the output file.}
 }

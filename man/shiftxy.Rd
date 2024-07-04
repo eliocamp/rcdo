@@ -14,11 +14,11 @@ cdo_shifty(ifile, nshift = NULL, cyclic = NULL, coord = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{nshift, }{INTEGER - Number of grid cells to shift (default: 1)}
+\item{nshift}{INTEGER - Number of grid cells to shift (default: 1)}
 
-\item{cyclic, }{STRING - If set, cells are filled up cyclic (default: missing value)}
+\item{cyclic}{STRING - If set, cells are filled up cyclic (default: missing value)}
 
-\item{coord, }{STRING - If set, coordinates are also shifted}
+\item{coord}{STRING - If set, coordinates are also shifted}
 
 \item{ofile}{String with the path to the output file.}
 }

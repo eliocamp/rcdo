@@ -162,32 +162,32 @@ cdo_selyear(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{timesteps, }{INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).}
+\item{timesteps}{INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).}
 
-\item{times, }{STRING - Comma-separated list of times (format hh:mm:ss).}
+\item{times}{STRING - Comma-separated list of times (format hh:mm:ss).}
 
-\item{hours, }{INTEGER - Comma-separated list or first/last[/inc] range of hours.}
+\item{hours}{INTEGER - Comma-separated list or first/last[/inc] range of hours.}
 
-\item{days, }{INTEGER - Comma-separated list or first/last[/inc] range of days.}
+\item{days}{INTEGER - Comma-separated list or first/last[/inc] range of days.}
 
-\item{months, }{INTEGER - Comma-separated list or first/last[/inc] range of months.}
+\item{months}{INTEGER - Comma-separated list or first/last[/inc] range of months.}
 
-\item{years, }{INTEGER - Comma-separated list or first/last[/inc] range of years.}
+\item{years}{INTEGER - Comma-separated list or first/last[/inc] range of years.}
 
-\item{seasons, }{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
+\item{seasons}{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
 
-\item{startdate, }{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
+\item{startdate}{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
 
-\item{enddate, }{STRING - End date (format YYYY-MM-DDThh:mm:ss) [default: startdate].}
+\item{enddate}{STRING - End date (format YYYY-MM-DDThh:mm:ss) [default: startdate].}
 
-\item{nts1, }{INTEGER - Number of timesteps before the selected month [default: 0].}
+\item{nts1}{INTEGER - Number of timesteps before the selected month [default: 0].}
 
-\item{nts2, }{INTEGER - Number of timesteps after the selected month [default: nts1].}
+\item{nts2}{INTEGER - Number of timesteps after the selected month [default: nts1].}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module selects user specified timesteps from infile and writes them to outfile. The timesteps selected depends on the chosen operator and the parameters. A range of integer values can be specified by first/last\link{/inc}.
+This module selects user specified timesteps from infile and writes them to outfile. The timesteps selected depends on the chosen operator and the parameters. A range of integer values can be specified by first/last[/inc].
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{seltimestep  Select timesteps

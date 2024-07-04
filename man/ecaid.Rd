@@ -14,7 +14,7 @@ cdo_etccdi_id(ifile, freq = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{freq, }{STRING - Output frequency (year, month)}
+\item{freq}{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -14,7 +14,7 @@ cdo_selgridcell(ifile, indices = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{indices, }{INTEGER - Comma-separated list or first/last[/inc] range of indices}
+\item{indices}{INTEGER - Comma-separated list or first/last[/inc] range of indices}
 
 \item{ofile}{String with the path to the output file.}
 }

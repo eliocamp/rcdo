@@ -46,11 +46,11 @@ cdo_timselvar1(ifile, nsets = NULL, noffset = NULL, nskip = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{nsets, }{INTEGER - Number of input timesteps for each output timestep}
+\item{nsets}{INTEGER - Number of input timesteps for each output timestep}
 
-\item{noffset, }{INTEGER - Number of input timesteps skipped before the first timestep range (optional)}
+\item{noffset}{INTEGER - Number of input timesteps skipped before the first timestep range (optional)}
 
-\item{nskip, }{INTEGER - Number of input timesteps skipped between timestep ranges (optional)}
+\item{nskip}{INTEGER - Number of input timesteps skipped between timestep ranges (optional)}
 
 \item{ofile}{String with the path to the output file.}
 }
@@ -61,42 +61,42 @@ This module computes statistical values for a selected number of timesteps. Acco
 \if{html}{\out{<div class="sourceCode">}}\preformatted{timselmin    Time selection minimum
              For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = min\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = min\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselmax    Time selection maximum
              For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = max\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = max\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselrange  Time selection range
              For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = range\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = range\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselsum    Time selection sum
              For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = sum\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = sum\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselmean   Time selection mean
              For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = mean\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = mean\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselavg    Time selection average
              For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = avg\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = avg\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselstd    Time selection standard deviation
              Normalize by n. For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = std\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = std\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselstd1   Time selection standard deviation (n-1)
              Normalize by (n-1). For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = std1\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = std1\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselvar    Time selection variance
              Normalize by n. For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = var\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = var\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 timselvar1   Time selection variance (n-1)
              Normalize by (n-1). For every adjacent sequence t1, ...., tn of timesteps of the same selected time range it is:
              
-             o(t,x) = var1\{i(t',x), t1 &lt; t' &lt;= tn\}
+             o(t,x) = var1\\\{i(t',x), t1 &lt; t' &lt;= tn\\\}
 }\if{html}{\out{</div>}}
 }

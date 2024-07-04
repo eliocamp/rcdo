@@ -47,15 +47,15 @@ cdo_setvals(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{oldval, newval, ..., }{FLOAT - Pairs of old and new values}
+\item{oldval, newval, ...}{FLOAT - Pairs of old and new values}
 
-\item{rmin, }{FLOAT - Lower bound}
+\item{rmin}{FLOAT - Lower bound}
 
-\item{rmax, }{FLOAT - Upper bound}
+\item{rmax}{FLOAT - Upper bound}
 
-\item{c, }{FLOAT - New value - inside range}
+\item{c}{FLOAT - New value - inside range}
 
-\item{c2, }{FLOAT - New value - outside range}
+\item{c2}{FLOAT - New value - outside range}
 
 \item{ofile}{String with the path to the output file.}
 }

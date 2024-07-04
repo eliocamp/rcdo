@@ -1,10 +1,10 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param u, STRING - Name of variable u (default: u)
-#' @param v, STRING - Name of variable v (default: v)
-#' @param boundOpt, INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
-#' @param outMode, STRING - Output mode new/append (default: new)
+#' @param u STRING - Name of variable u (default: u)
+#' @param v STRING - Name of variable v (default: v)
+#' @param boundOpt INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)
+#' @param outMode STRING - Output mode new/append (default: new)
 #'
 #' @export
 #' @rdname ncl_wind

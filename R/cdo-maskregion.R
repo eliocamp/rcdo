@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param regions, STRING - Comma-separated list of ASCII formatted files with different regions
+#' @param regions STRING - Comma-separated list of ASCII formatted files with different regions
 #'
 #' @export
 #' @rdname maskregion

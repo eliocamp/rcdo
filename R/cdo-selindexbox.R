@@ -1,14 +1,14 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param lon1, FLOAT - Western longitude in degrees
-#' @param lon2, FLOAT - Eastern longitude in degrees
-#' @param lat1, FLOAT - Southern or northern latitude in degrees
-#' @param lat2, FLOAT - Northern or southern latitude in degrees
-#' @param idx1, INTEGER - Index of first longitude (1 - nlon)
-#' @param idx2, INTEGER - Index of last longitude (1 - nlon)
-#' @param idy1, INTEGER - Index of first latitude (1 - nlat)
-#' @param idy2, INTEGER - Index of last latitude (1 - nlat)
+#' @param lon1 FLOAT - Western longitude in degrees
+#' @param lon2 FLOAT - Eastern longitude in degrees
+#' @param lat1 FLOAT - Southern or northern latitude in degrees
+#' @param lat2 FLOAT - Northern or southern latitude in degrees
+#' @param idx1 INTEGER - Index of first longitude (1 - nlon)
+#' @param idx2 INTEGER - Index of last longitude (1 - nlon)
+#' @param idy1 INTEGER - Index of first latitude (1 - nlat)
+#' @param idy2 INTEGER - Index of last latitude (1 - nlat)
 #'
 #' @export
 #' @rdname selbox

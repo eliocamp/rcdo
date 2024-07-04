@@ -10,7 +10,7 @@ cdo_rotuvb(ifile, u, v, ... = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{u, v, ..., }{STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)}
+\item{u, v, ...}{STRING - Pairs of zonal and meridional velocity components (use variable names or code numbers)}
 
 \item{ofile}{String with the path to the output file.}
 }

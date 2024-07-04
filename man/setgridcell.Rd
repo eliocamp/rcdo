@@ -10,11 +10,11 @@ cdo_setgridcell(ifile, value = NULL, cell = NULL, mask = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{value, }{FLOAT - Value of the grid cell}
+\item{value}{FLOAT - Value of the grid cell}
 
-\item{cell, }{INTEGER - Comma-separated list of grid cell indices}
+\item{cell}{INTEGER - Comma-separated list of grid cell indices}
 
-\item{mask, }{STRING - Name of the data file which contains the mask}
+\item{mask}{STRING - Name of the data file which contains the mask}
 
 \item{ofile}{String with the path to the output file.}
 }

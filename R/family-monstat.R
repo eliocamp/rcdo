@@ -7,43 +7,43 @@
 #'     monmin    Monthly minimum
 #'               For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = min{i(t',x), t_1&lt;t'&lt;=t_n}
+#'               o(t,x) = min\{i(t',x), t_1&lt;t'&lt;=t_n\}
 #'     monmax    Monthly maximum
 #'               For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = max{i(t',x), t_1&lt;t'&lt;=t_n}
+#'               o(t,x) = max\{i(t',x), t_1&lt;t'&lt;=t_n\}
 #'     monrange  Monthly range
 #'               For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = range{i(t',x), t_1&lt;t'&lt;=t_n}
+#'               o(t,x) = range\{i(t',x), t_1&lt;t'&lt;=t_n\}
 #'     monsum    Monthly sum
 #'               For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = sum{i(t',x), t_1&lt;t'&lt;=t_n}
+#'               o(t,x) = sum\{i(t',x), t_1&lt;t'&lt;=t_n\}
 #'     monmean   Monthly mean
 #'               For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = mean{i(t',x), t_1&lt;t'&lt;=t_n}
+#'               o(t,x) = mean\{i(t',x), t_1&lt;t'&lt;=t_n\}
 #'     monavg    Monthly average
 #'               For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = avg{i(t',x), t_1&lt;t'&lt;=t_n}
+#'               o(t,x) = avg\{i(t',x), t_1&lt;t'&lt;=t_n\}
 #'     monstd    Monthly standard deviation
 #'               Normalize by n. For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = std{i(t',x), t_1 &lt; t' &lt;= t_n}
+#'               o(t,x) = std\{i(t',x), t_1 &lt; t' &lt;= t_n\}
 #'     monstd1   Monthly standard deviation (n-1)
 #'               Normalize by (n-1). For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = std1{i(t',x), t_1 &lt; t' &lt;= t_n}
+#'               o(t,x) = std1\{i(t',x), t_1 &lt; t' &lt;= t_n\}
 #'     monvar    Monthly variance
 #'               Normalize by n. For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = var{i(t',x), t_1 &lt; t' &lt;= t_n}
+#'               o(t,x) = var\{i(t',x), t_1 &lt; t' &lt;= t_n\}
 #'     monvar1   Monthly variance (n-1)
 #'               Normalize by (n-1). For every adjacent sequence t_1, ...,t_n of timesteps of the same month it is:
 #'               
-#'               o(t,x) = var1{i(t',x), t_1 &lt; t' &lt;= t_n}
+#'               o(t,x) = var1\{i(t',x), t_1 &lt; t' &lt;= t_n\}
 #' 
 #'
 #' 

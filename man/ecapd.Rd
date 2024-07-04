@@ -20,14 +20,14 @@ cdo_etccdi_r1mm(ifile, x = NULL, freq = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{x, }{FLOAT - Daily precipitation amount threshold in [mm]}
+\item{x}{FLOAT - Daily precipitation amount threshold in [mm]}
 
-\item{freq, }{STRING - Output frequency (year, month)}
+\item{freq}{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily precipitation amount RR in \link{mm} (or alternatively in \link{kg m-2}), then the number of days where RR is at least x mm is counted. eca_r10mm and eca_r20mm are specific ECA operators with a daily precipitation amount of 10 and 20 mm respectively. The date information of a timestep in outfile is the date of the last contributing timestep in infile except for the etccdi operator. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile be a time series of the daily precipitation amount RR in [mm] (or alternatively in [kg m-2]), then the number of days where RR is at least x mm is counted. eca_r10mm and eca_r20mm are specific ECA operators with a daily precipitation amount of 10 and 20 mm respectively. The date information of a timestep in outfile is the date of the last contributing timestep in infile except for the etccdi operator. Parameter is a comma-separated list of \"key=values\" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_pd       Precipitation days index per time period
@@ -44,6 +44,6 @@ etccdi_r1mm  Precipitation days index per time period
 }
 \section{Note}{
 
-Precipitation rates in \link{mm/s} have to be converted to precipitation amounts (multiply with 86400 s). Apart from metadata information the result of eca_pd,1 and eca_rr1 is the same.
+Precipitation rates in [mm/s] have to be converted to precipitation amounts (multiply with 86400 s). Apart from metadata information the result of eca_pd,1 and eca_rr1 is the same.
 }
 

@@ -10,10 +10,10 @@ cdo_ymonpctl(ifile1, ifile2, ifile3, p = NULL, ofile = NULL)
 \arguments{
 \item{ifile1, ifile2, ifile3}{Strings with the path to the input files.}
 
-\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
+\item{p}{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This operator writes a certain percentile of each month of year in infile1 to outfile. The algorithm uses histograms with minimum and maximum bounds given in infile2 and infile3, respectively. The default number of histogram bins is 101. The default can be overridden by setting the environment variable CDO_PCTL_NBINS to a different value. The files infile2 and infile3 should be the result of corresponding ymonmin and ymonmax operations, respectively. The date information in an output field is the date of the last contributing input field.  o(01,x) = pth percentile {i(t,x), month(i(t)) = 01} ... o(12,x) = pth percentile {i(t,x), month(i(t)) = 12}
+This operator writes a certain percentile of each month of year in infile1 to outfile. The algorithm uses histograms with minimum and maximum bounds given in infile2 and infile3, respectively. The default number of histogram bins is 101. The default can be overridden by setting the environment variable CDO_PCTL_NBINS to a different value. The files infile2 and infile3 should be the result of corresponding ymonmin and ymonmax operations, respectively. The date information in an output field is the date of the last contributing input field.  o(01,x) = pth percentile \{i(t,x), month(i(t)) = 01\} ... o(12,x) = pth percentile \{i(t,x), month(i(t)) = 12\}
 }

@@ -13,7 +13,7 @@ cdo_uv2dv(ifile, gridtype = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{gridtype, }{STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)}
+\item{gridtype}{STRING - Type of the grid: quadratic, linear, cubic (default: quadratic)}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param nts, INTEGER - Number of timesteps
+#' @param nts INTEGER - Number of timesteps
 #'
 #' @export
 #' @rdname runstat

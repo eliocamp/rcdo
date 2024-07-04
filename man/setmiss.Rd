@@ -86,15 +86,15 @@ cdo_setvrange(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{neighbors, }{INTEGER - Number of nearest neighbors}
+\item{neighbors}{INTEGER - Number of nearest neighbors}
 
-\item{newmiss, }{FLOAT - New missing value}
+\item{newmiss}{FLOAT - New missing value}
 
-\item{c, }{FLOAT - Constant}
+\item{c}{FLOAT - Constant}
 
-\item{rmin, }{FLOAT - Lower bound}
+\item{rmin}{FLOAT - Lower bound}
 
-\item{rmax, }{FLOAT - Upper bound}
+\item{rmax}{FLOAT - Upper bound}
 
 \item{ofile}{String with the path to the output file.}
 }

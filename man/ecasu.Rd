@@ -14,9 +14,9 @@ cdo_etccdi_su(ifile, T = NULL, freq = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{T, }{FLOAT - Temperature threshold (unit: °C; default: T = 25°C)}
+\item{T}{FLOAT - Temperature threshold (unit: °C; default: T = 25°C)}
 
-\item{freq, }{STRING - Output frequency (year, month)}
+\item{freq}{STRING - Output frequency (year, month)}
 
 \item{ofile}{String with the path to the output file.}
 }

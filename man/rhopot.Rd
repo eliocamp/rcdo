@@ -10,7 +10,7 @@ cdo_rhopot(ifile, pressure = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{pressure, }{FLOAT - Pressure in bar (constant value assigned to all levels)}
+\item{pressure}{FLOAT - Pressure in bar (constant value assigned to all levels)}
 
 \item{ofile}{String with the path to the output file.}
 }

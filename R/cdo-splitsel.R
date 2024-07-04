@@ -1,9 +1,9 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param obase String with the basename of the output files.
-#' @param nsets, INTEGER - Number of input timesteps for each output file
-#' @param noffset, INTEGER - Number of input timesteps skipped before the first timestep range (optional)
-#' @param nskip, INTEGER - Number of input timesteps skipped between timestep ranges (optional)
+#' @param nsets INTEGER - Number of input timesteps for each output file
+#' @param noffset INTEGER - Number of input timesteps skipped before the first timestep range (optional)
+#' @param nskip INTEGER - Number of input timesteps skipped between timestep ranges (optional)
 #'
 #' @export
 #' @rdname splitsel

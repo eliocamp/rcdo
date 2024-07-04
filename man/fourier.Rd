@@ -10,7 +10,7 @@ cdo_fourier(ifile, epsilon = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{epsilon, }{INTEGER - -1: forward transformation; 1: backward transformation}
+\item{epsilon}{INTEGER - -1: forward transformation; 1: backward transformation}
 
 \item{ofile}{String with the path to the output file.}
 }

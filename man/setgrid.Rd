@@ -64,15 +64,15 @@ cdo_setprojparams(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{grid, }{STRING - Grid description file or name}
+\item{grid}{STRING - Grid description file or name}
 
-\item{gridtype, }{STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)}
+\item{gridtype}{STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)}
 
-\item{gridarea, }{STRING - Data file, the first field is used as grid cell area}
+\item{gridarea}{STRING - Data file, the first field is used as grid cell area}
 
-\item{gridmask, }{STRING - Data file, the first field is used as grid mask}
+\item{gridmask}{STRING - Data file, the first field is used as grid mask}
 
-\item{projparams, }{STRING - Proj library parameter (e.g.:+init=EPSG:3413)}
+\item{projparams}{STRING - Proj library parameter (e.g.:+init=EPSG:3413)}
 
 \item{ofile}{String with the path to the output file.}
 }

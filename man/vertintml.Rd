@@ -14,9 +14,9 @@ cdo_ml2pl(ifile, plevels = NULL, hlevels = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{plevels, }{FLOAT - Pressure levels in pascal}
+\item{plevels}{FLOAT - Pressure levels in pascal}
 
-\item{hlevels, }{FLOAT - Height levels in meter}
+\item{hlevels}{FLOAT - Height levels in meter}
 
 \item{ofile}{String with the path to the output file.}
 }

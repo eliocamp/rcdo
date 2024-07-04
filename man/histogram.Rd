@@ -20,7 +20,7 @@ cdo_histsum(ifile, bounds = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{bounds, }{FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)}
+\item{bounds}{FLOAT - Comma-separated list of the bin bounds (-inf and inf valid)}
 
 \item{ofile}{String with the path to the output file.}
 }

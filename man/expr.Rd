@@ -20,9 +20,9 @@ cdo_exprf(ifile, instr = NULL, filename = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{instr, }{STRING - Processing instructions (need to be 'quoted' in most cases)}
+\item{instr}{STRING - Processing instructions (need to be 'quoted' in most cases)}
 
-\item{filename, }{STRING - File with processing instructions}
+\item{filename}{STRING - File with processing instructions}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -1,9 +1,9 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param ofile String with the path to the output file.
-#' @param nday, INTEGER - Number of consecutive days (default: nday = 6)
-#' @param T, FLOAT - Temperature threshold (unit: °C; default: T = 5°C)
-#' @param fland, FLOAT - Land fraction threshold (default: fland = 0.5)
+#' @param nday INTEGER - Number of consecutive days (default: nday = 6)
+#' @param T FLOAT - Temperature threshold (unit: °C; default: T = 5°C)
+#' @param fland FLOAT - Land fraction threshold (default: fland = 0.5)
 #'
 #' @export
 #' @rdname ecagsl

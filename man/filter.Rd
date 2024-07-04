@@ -17,9 +17,9 @@ cdo_lowpass(ifile, fmin = NULL, fmax = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{fmin, }{FLOAT    Minimum - frequency per year that passes the filter.}
+\item{fmin}{FLOAT    Minimum - frequency per year that passes the filter.}
 
-\item{fmax, }{FLOAT    Maximum - frequency per year that passes the filter.}
+\item{fmax}{FLOAT    Maximum - frequency per year that passes the filter.}
 
 \item{ofile}{String with the path to the output file.}
 }
@@ -29,7 +29,7 @@ This module takes the time series for each gridpoint in infile and (fast fourier
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{bandpass  Bandpass filtering
           Bandpass filtering (pass for frequencies between fmin and fmax).
-          Suppresses all variability outside the frequency range specified by [fmin,fmax].
+          Suppresses all variability outside the frequency range specified by \[fmin,fmax\].
 lowpass   Lowpass filtering
           Lowpass filtering (pass for frequencies lower than fmax).
           Suppresses all variability with frequencies greater than fmax. 

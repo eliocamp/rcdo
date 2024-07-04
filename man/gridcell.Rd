@@ -14,7 +14,7 @@ cdo_gridweights(ifile, radius = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{radius, }{FLOAT - Planet radius in meter}
+\item{radius}{FLOAT - Planet radius in meter}
 
 \item{ofile}{String with the path to the output file.}
 }

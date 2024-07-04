@@ -52,7 +52,7 @@ cdo_ensvar1(ifiles, p = NULL, ofile = NULL)
 \arguments{
 \item{ifiles}{Character vector with the path to the input files.}
 
-\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
+\item{p}{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{ofile}{String with the path to the output file.}
 }
@@ -61,41 +61,41 @@ This module computes statistical values over an ensemble of input files. Dependi
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{ensmin     Ensemble minimum
-           o(t,x) = min\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = min\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensmax     Ensemble maximum
-           o(t,x) = max\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = max\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensrange   Ensemble range
-           o(t,x) = range\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = range\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 enssum     Ensemble sum
-           o(t,x) = sum\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = sum\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensmean    Ensemble mean
-           o(t,x) = mean\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = mean\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensavg     Ensemble average
-           o(t,x) = avg\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = avg\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensstd     Ensemble standard deviation
            Normalize by n.
            
-           o(t,x) = std\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = std\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensstd1    Ensemble standard deviation (n-1)
            Normalize by (n-1).
            
-           o(t,x) = std1\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = std1\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensvar     Ensemble variance
            Normalize by n.
            
-           o(t,x) = var\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = var\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensvar1    Ensemble variance (n-1)
            Normalize by (n-1).
            
-           o(t,x) = var1\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = var1\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensskew    Ensemble skewness
-           o(t,x) = skew\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = skew\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 enskurt    Ensemble kurtosis
-           o(t,x) = kurt\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = kurt\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 ensmedian  Ensemble median
-           o(t,x) = median\{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = median\\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 enspctl    Ensemble percentiles
-           o(t,x) = pth percentile \{i1(t,x), i2(t,x), ..., in(t,x)\}
+           o(t,x) = pth percentile \\\{i1(t,x), i2(t,x), ..., in(t,x)\\\}
 }\if{html}{\out{</div>}}
 }
 \section{Note}{

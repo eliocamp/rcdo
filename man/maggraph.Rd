@@ -10,7 +10,7 @@ cdo_graph(ifiles, parameter = NULL, ofile = NULL)
 \arguments{
 \item{ifiles}{Character vector with the path to the input files.}
 
-\item{parameter, }{STRING - Comma-separated list of plot parameters}
+\item{parameter}{STRING - Comma-separated list of plot parameters}
 
 \item{ofile}{String with the path to the output file.}
 }

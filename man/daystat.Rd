@@ -39,7 +39,7 @@ cdo_dayvar1(ifile, complete_only = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{complete_only, }{BOOL - Process only complete years}
+\item{complete_only}{BOOL - Process only complete years}
 
 \item{ofile}{String with the path to the output file.}
 }
@@ -50,42 +50,42 @@ This module computes statistical values over timesteps of the same day. Dependin
 \if{html}{\out{<div class="sourceCode">}}\preformatted{daymin    Daily minimum
           For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = min\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = min\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 daymax    Daily maximum
           For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = max\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = max\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 dayrange  Daily range
           For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = range\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = range\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 daysum    Daily sum
           For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = sum\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = sum\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 daymean   Daily mean
           For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = mean\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = mean\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 dayavg    Daily average
           For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = avg\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = avg\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 daystd    Daily standard deviation
           Normalize by n. For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = std\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = std\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 daystd1   Daily standard deviation (n-1)
           Normalize by (n-1). For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = std1\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = std1\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 dayvar    Daily variance
           Normalize by n. For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = var\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = var\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 dayvar1   Daily variance (n-1)
           Normalize by (n-1). For every adjacent sequence t_1, ...,t_n of timesteps of the same day it is:
           
-          o(t,x) = var1\{i(t',x), t_1&lt;t'&lt;=t_n\}
+          o(t,x) = var1\\\{i(t',x), t_1&lt;t'&lt;=t_n\\\}
 }\if{html}{\out{</div>}}
 }

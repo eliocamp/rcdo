@@ -69,60 +69,60 @@ cdo_select(
 \arguments{
 \item{ifiles}{Character vector with the path to the input files.}
 
-\item{name, }{STRING - Comma-separated list of variable names.}
+\item{name}{STRING - Comma-separated list of variable names.}
 
-\item{param, }{STRING - Comma-separated list of parameter identifiers.}
+\item{param}{STRING - Comma-separated list of parameter identifiers.}
 
-\item{code, }{INTEGER - Comma-separated list or first/last[/inc] range of code numbers.}
+\item{code}{INTEGER - Comma-separated list or first/last[/inc] range of code numbers.}
 
-\item{level, }{FLOAT - Comma-separated list of vertical levels.}
+\item{level}{FLOAT - Comma-separated list of vertical levels.}
 
-\item{levrange, }{FLOAT - First and last value of the level range.}
+\item{levrange}{FLOAT - First and last value of the level range.}
 
-\item{levidx, }{INTEGER - Comma-separated list or first/last[/inc] range of index of levels.}
+\item{levidx}{INTEGER - Comma-separated list or first/last[/inc] range of index of levels.}
 
-\item{zaxisname, }{STRING - Comma-separated list of zaxis names.}
+\item{zaxisname}{STRING - Comma-separated list of zaxis names.}
 
-\item{zaxisnum, }{INTEGER - Comma-separated list or first/last[/inc] range of zaxis numbers.}
+\item{zaxisnum}{INTEGER - Comma-separated list or first/last[/inc] range of zaxis numbers.}
 
-\item{ltype, }{INTEGER - Comma-separated list or first/last[/inc] range of GRIB level types.}
+\item{ltype}{INTEGER - Comma-separated list or first/last[/inc] range of GRIB level types.}
 
-\item{gridname, }{STRING - Comma-separated list of grid names.}
+\item{gridname}{STRING - Comma-separated list of grid names.}
 
-\item{gridnum, }{INTEGER - Comma-separated list or first/last[/inc] range of grid numbers.}
+\item{gridnum}{INTEGER - Comma-separated list or first/last[/inc] range of grid numbers.}
 
-\item{steptype, }{STRING - Comma-separated list of timestep types (constant, avg, accum, min, max, range, diff, sum)}
+\item{steptype}{STRING - Comma-separated list of timestep types (constant, avg, accum, min, max, range, diff, sum)}
 
-\item{date, }{STRING - Comma-separated list of dates (format YYYY-MM-DDThh:mm:ss).}
+\item{date}{STRING - Comma-separated list of dates (format YYYY-MM-DDThh:mm:ss).}
 
-\item{startdate, }{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
+\item{startdate}{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
 
-\item{enddate, }{STRING - End date (format YYYY-MM-DDThh:mm:ss).}
+\item{enddate}{STRING - End date (format YYYY-MM-DDThh:mm:ss).}
 
-\item{minute, }{INTEGER - Comma-separated list or first/last[/inc] range of minutes.}
+\item{minute}{INTEGER - Comma-separated list or first/last[/inc] range of minutes.}
 
-\item{hour, }{INTEGER - Comma-separated list or first/last[/inc] range of hours.}
+\item{hour}{INTEGER - Comma-separated list or first/last[/inc] range of hours.}
 
-\item{day, }{INTEGER - Comma-separated list or first/last[/inc] range of days.}
+\item{day}{INTEGER - Comma-separated list or first/last[/inc] range of days.}
 
-\item{month, }{INTEGER - Comma-separated list or first/last[/inc] range of months.}
+\item{month}{INTEGER - Comma-separated list or first/last[/inc] range of months.}
 
-\item{season, }{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
+\item{season}{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
 
-\item{year, }{INTEGER - Comma-separated list or first/last[/inc] range of years.}
+\item{year}{INTEGER - Comma-separated list or first/last[/inc] range of years.}
 
-\item{dom, }{STRING - Comma-separated list of the day of month (e.g. 29feb).}
+\item{dom}{STRING - Comma-separated list of the day of month (e.g. 29feb).}
 
-\item{timestep, }{INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).}
+\item{timestep}{INTEGER - Comma-separated list or first/last[/inc] range of timesteps. Negative values select timesteps from the end (NetCDF only).}
 
-\item{timestep_of_year, }{INTEGER - Comma-separated list or first/last[/inc] range of timesteps of year.}
+\item{timestep_of_year}{INTEGER - Comma-separated list or first/last[/inc] range of timesteps of year.}
 
-\item{timestepmask, }{STRING - Read timesteps from a mask file.}
+\item{timestepmask}{STRING - Read timesteps from a mask file.}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module selects some fields from infiles and writes them to outfile. infiles is an arbitrary number of input files. All input files need to have the same structure with the same variables on different timesteps. The fields selected depends on the chosen parameters. Parameter is a comma-separated list of \"key=value\" pairs. A range of integer values can be specified by first/last\link{/inc}. Wildcards are supported for string values.
+This module selects some fields from infiles and writes them to outfile. infiles is an arbitrary number of input files. All input files need to have the same structure with the same variables on different timesteps. The fields selected depends on the chosen parameters. Parameter is a comma-separated list of \"key=value\" pairs. A range of integer values can be specified by first/last[/inc]. Wildcards are supported for string values.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{select  Select fields

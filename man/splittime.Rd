@@ -27,7 +27,7 @@ cdo_splityearmon(ifile, format = NULL, obase = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{format, }{STRING - C-style format for strftime() (e.g. \%B for the full month name)}
+\item{format}{STRING - C-style format for strftime() (e.g. \%B for the full month name)}
 
 \item{obase}{String with the basename of the output files.}
 }

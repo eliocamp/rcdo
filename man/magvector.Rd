@@ -10,7 +10,7 @@ cdo_vector(ifile, parameter = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{parameter, }{STRING - Comma-separated list of plot parameters}
+\item{parameter}{STRING - Comma-separated list of plot parameters}
 
 \item{ofile}{String with the path to the output file.}
 }

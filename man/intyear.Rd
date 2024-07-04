@@ -10,7 +10,7 @@ cdo_intyear(ifile1, ifile2, years = NULL, obase = NULL)
 \arguments{
 \item{ifile1, ifile2}{Strings with the path to the input files.}
 
-\item{years, }{INTEGER - Comma-separated list or first/last[/inc] range of years}
+\item{years}{INTEGER - Comma-separated list or first/last[/inc] range of years}
 
 \item{obase}{String with the basename of the output files.}
 }

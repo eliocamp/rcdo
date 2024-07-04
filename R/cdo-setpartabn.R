@@ -1,8 +1,8 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param table, STRING - Parameter table file or name
-#' @param convert, STRING - Converts the units if necessary
+#' @param table STRING - Parameter table file or name
+#' @param convert STRING - Converts the units if necessary
 #'
 #' @export
 #' @rdname setpartab

@@ -38,23 +38,23 @@ cdo_setclonlatbox(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{c, }{FLOAT - Constant}
+\item{c}{FLOAT - Constant}
 
-\item{lon1, }{FLOAT - Western longitude}
+\item{lon1}{FLOAT - Western longitude}
 
-\item{lon2, }{FLOAT - Eastern longitude}
+\item{lon2}{FLOAT - Eastern longitude}
 
-\item{lat1, }{FLOAT - Southern or northern latitude}
+\item{lat1}{FLOAT - Southern or northern latitude}
 
-\item{lat2, }{FLOAT - Northern or southern latitude}
+\item{lat2}{FLOAT - Northern or southern latitude}
 
-\item{idx1, }{INTEGER - Index of first longitude}
+\item{idx1}{INTEGER - Index of first longitude}
 
-\item{idx2, }{INTEGER - Index of last longitude}
+\item{idx2}{INTEGER - Index of last longitude}
 
-\item{idy1, }{INTEGER - Index of first latitude}
+\item{idy1}{INTEGER - Index of first latitude}
 
-\item{idy2, }{INTEGER - Index of last latitude}
+\item{idy2}{INTEGER - Index of last latitude}
 
 \item{ofile}{String with the path to the output file.}
 }

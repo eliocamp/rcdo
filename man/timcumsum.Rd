@@ -13,5 +13,5 @@ cdo_timcumsum(ifile, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-The timcumsum operator calculates the cumulative sum over all timesteps. Missing values are treated as numeric zero when summing.  o(t,x) = sum{i(t',x), 0<t'<=t}
+The timcumsum operator calculates the cumulative sum over all timesteps. Missing values are treated as numeric zero when summing.  o(t,x) = sum\{i(t',x), 0<t'<=t\}
 }

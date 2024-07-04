@@ -5,49 +5,49 @@
 #'
 #' @details
 #'     ydrunmin   Multi-year daily running minimum
-#'                o(001,x) = min{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = min\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = min{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = min\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #'     ydrunmax   Multi-year daily running maximum
-#'                o(001,x) = max{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = max\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = max{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = max\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #'     ydrunsum   Multi-year daily running sum
-#'                o(001,x) = sum{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = sum\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = sum{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = sum\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #'     ydrunmean  Multi-year daily running mean
-#'                o(001,x) = mean{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = mean\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = mean{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = mean\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #'     ydrunavg   Multi-year daily running average
-#'                o(001,x) = avg{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = avg\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = avg{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = avg\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #'     ydrunstd   Multi-year daily running standard deviation
 #'                Normalize by n.
 #'                
-#'                o(001,x) = std{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = std\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = std{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = std\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[i(t+(nts-1)/2)\] = 366\}
 #'     ydrunstd1  Multi-year daily running standard deviation (n-1)
 #'                Normalize by (n-1).
 #'                
-#'                o(001,x) = std1{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = std1\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = std1{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = std1\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[i(t+(nts-1)/2)\] = 366\}
 #'     ydrunvar   Multi-year daily running variance
 #'                Normalize by n.
 #'                
-#'                o(001,x) = var{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = var\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = var{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = var\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #'     ydrunvar1  Multi-year daily running variance (n-1)
 #'                Normalize by (n-1).
 #'                
-#'                o(001,x) = var1{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 001}
+#'                o(001,x) = var1\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 001\}
 #'                                 ...
-#'                o(366,x) = var1{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day[(i(t+(nts-1)/2)] = 366}
+#'                o(366,x) = var1\{i(t,x), i(t+1,x), ..., i(t+nts-1,x); day\[(i(t+(nts-1)/2)\] = 366\}
 #' 
 #'
 #' 

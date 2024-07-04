@@ -10,7 +10,7 @@ cdo_apply(ifile, operators = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{operators, }{STRING - Blank-separated list of CDO operators.}
+\item{operators}{STRING - Blank-separated list of CDO operators.}
 
 \item{ofile}{String with the path to the output file.}
 }

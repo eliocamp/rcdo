@@ -1,11 +1,11 @@
 ## This file was created automatically, do not edit by hand.
 #' @param ifile String with the path to the input file.
 #' @param ofile String with the path to the output file.
-#' @param grid, STRING - Grid description file or name
-#' @param gridtype, STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
-#' @param gridarea, STRING - Data file, the first field is used as grid cell area
-#' @param gridmask, STRING - Data file, the first field is used as grid mask
-#' @param projparams, STRING - Proj library parameter (e.g.:+init=EPSG:3413)
+#' @param grid STRING - Grid description file or name
+#' @param gridtype STRING - Grid type (curvilinear, unstructured, regular, lonlat, projection or dereference)
+#' @param gridarea STRING - Data file, the first field is used as grid cell area
+#' @param gridmask STRING - Data file, the first field is used as grid mask
+#' @param projparams STRING - Proj library parameter (e.g.:+init=EPSG:3413)
 #'
 #' @export
 #' @rdname setgrid

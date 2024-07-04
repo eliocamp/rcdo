@@ -10,7 +10,7 @@ cdo_eca_cfd(ifile, N = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{N, }{INTEGER - Minimum number of days exceeded (default: N = 5)}
+\item{N}{INTEGER - Minimum number of days exceeded (default: N = 5)}
 
 \item{ofile}{String with the path to the output file.}
 }

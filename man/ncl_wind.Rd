@@ -28,13 +28,13 @@ cdo_uv2vr_cfd(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{u, }{STRING - Name of variable u (default: u)}
+\item{u}{STRING - Name of variable u (default: u)}
 
-\item{v, }{STRING - Name of variable v (default: v)}
+\item{v}{STRING - Name of variable v (default: v)}
 
-\item{boundOpt, }{INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)}
+\item{boundOpt}{INTEGER - Boundary condition option (0-3) (default: 0/1 for cyclic grids)}
 
-\item{outMode, }{STRING - Output mode new/append (default: new)}
+\item{outMode}{STRING - Output mode new/append (default: new)}
 
 \item{ofile}{String with the path to the output file.}
 }

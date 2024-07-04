@@ -10,7 +10,7 @@ cdo_duplicate(ifile, ndup = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{ndup, }{INTEGER - Number of duplicates, default is 2.}
+\item{ndup}{INTEGER - Number of duplicates, default is 2.}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -10,9 +10,9 @@ cdo_eca_hd(ifile, T1 = NULL, T2 = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{T1, }{FLOAT - Temperature limit (unit: °C; default: T1 = 17°C)}
+\item{T1}{FLOAT - Temperature limit (unit: °C; default: T1 = 17°C)}
 
-\item{T2, }{FLOAT - Temperature limit (unit: °C; default: T2 = T1)}
+\item{T2}{FLOAT - Temperature limit (unit: °C; default: T2 = T1)}
 
 \item{ofile}{String with the path to the output file.}
 }

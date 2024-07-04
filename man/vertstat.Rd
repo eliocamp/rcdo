@@ -40,7 +40,7 @@ cdo_vertvar1(ifile, weights = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{weights, }{BOOL - weights=FALSE disables weighting by layer thickness [default: weights=TRUE]}
+\item{weights}{BOOL - weights=FALSE disables weighting by layer thickness [default: weights=TRUE]}
 
 \item{ofile}{String with the path to the output file.}
 }

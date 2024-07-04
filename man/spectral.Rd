@@ -13,9 +13,9 @@ cdo_sp2gp(ifile, type = NULL, trunc = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{type, }{STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)}
+\item{type}{STRING - Type of the grid: quadratic, linear, cubic (default: type=quadratic)}
 
-\item{trunc, }{STRING - Triangular truncation}
+\item{trunc}{STRING - Triangular truncation}
 
 \item{ofile}{String with the path to the output file.}
 }

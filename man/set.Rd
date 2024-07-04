@@ -100,19 +100,19 @@ cdo_setunit(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{table, }{STRING - Parameter table file or name}
+\item{table}{STRING - Parameter table file or name}
 
-\item{code, }{INTEGER - Code number}
+\item{code}{INTEGER - Code number}
 
-\item{param, }{STRING - Parameter identifier (GRIB1: code[.tabnum]; GRIB2: num[.cat[.dis]])}
+\item{param}{STRING - Parameter identifier (GRIB1: code[.tabnum]; GRIB2: num[.cat[.dis]])}
 
-\item{name, }{STRING - Variable name}
+\item{name}{STRING - Variable name}
 
-\item{level, }{FLOAT - New level}
+\item{level}{FLOAT - New level}
 
-\item{ltype, }{INTEGER - GRIB level type}
+\item{ltype}{INTEGER - GRIB level type}
 
-\item{maxsteps, }{INTEGER - Maximum number of timesteps}
+\item{maxsteps}{INTEGER - Maximum number of timesteps}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -52,7 +52,7 @@ cdo_mervar1(ifile, p = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
+\item{p}{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -14,7 +14,7 @@ cdo_intlevelx3d(ifile1, ifile2, tgtcoordinate = NULL, ofile = NULL)
 \arguments{
 \item{ifile1, ifile2}{Strings with the path to the input files.}
 
-\item{tgtcoordinate, }{STRING - filename for 3D vertical target coordinates}
+\item{tgtcoordinate}{STRING - filename for 3D vertical target coordinates}
 
 \item{ofile}{String with the path to the output file.}
 }

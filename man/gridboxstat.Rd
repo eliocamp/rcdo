@@ -50,9 +50,9 @@ cdo_gridboxvar1(ifile, nx = NULL, ny = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{nx, }{INTEGER - Number of grid boxes in x direction}
+\item{nx}{INTEGER - Number of grid boxes in x direction}
 
-\item{ny, }{INTEGER - Number of grid boxes in y direction}
+\item{ny}{INTEGER - Number of grid boxes in y direction}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -249,32 +249,32 @@ cdo_selzaxisname(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{parameter, }{STRING - Comma-separated list of parameter identifiers.}
+\item{parameter}{STRING - Comma-separated list of parameter identifiers.}
 
-\item{codes, }{INTEGER - Comma-separated list or first/last[/inc] range of code numbers.}
+\item{codes}{INTEGER - Comma-separated list or first/last[/inc] range of code numbers.}
 
-\item{names, }{STRING - Comma-separated list of variable names.}
+\item{names}{STRING - Comma-separated list of variable names.}
 
-\item{stdnames, }{STRING - Comma-separated list of standard names.}
+\item{stdnames}{STRING - Comma-separated list of standard names.}
 
-\item{levels, }{FLOAT - Comma-separated list of vertical levels.}
+\item{levels}{FLOAT - Comma-separated list of vertical levels.}
 
-\item{levidx, }{INTEGER - Comma-separated list or first/last[/inc] range of index of levels.}
+\item{levidx}{INTEGER - Comma-separated list or first/last[/inc] range of index of levels.}
 
-\item{ltypes, }{INTEGER - Comma-separated list or first/last[/inc] range of GRIB level types.}
+\item{ltypes}{INTEGER - Comma-separated list or first/last[/inc] range of GRIB level types.}
 
-\item{grids, }{STRING - Comma-separated list of grid names or numbers.}
+\item{grids}{STRING - Comma-separated list of grid names or numbers.}
 
-\item{zaxes, }{STRING - Comma-separated list of z-axis types or numbers.}
+\item{zaxes}{STRING - Comma-separated list of z-axis types or numbers.}
 
-\item{zaxisnames, }{STRING - Comma-separated list of z-axis names.}
+\item{zaxisnames}{STRING - Comma-separated list of z-axis names.}
 
-\item{tabnums, }{INTEGER - Comma-separated list or range of parameter table numbers.}
+\item{tabnums}{INTEGER - Comma-separated list or range of parameter table numbers.}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module selects some fields from infile and writes them to outfile. The fields selected depends on the chosen operator and the parameters. A range of integer values can be specified by first/last\link{/inc}.
+This module selects some fields from infile and writes them to outfile. The fields selected depends on the chosen operator and the parameters. A range of integer values can be specified by first/last[/inc].
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{selparam      Select parameters by identifier

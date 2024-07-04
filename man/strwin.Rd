@@ -10,7 +10,7 @@ cdo_strwin(ifile, v = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{v, }{FLOAT - Horizontal wind speed threshold (m/s, default v = 10.5 m/s)}
+\item{v}{FLOAT - Horizontal wind speed threshold (m/s, default v = 10.5 m/s)}
 
 \item{ofile}{String with the path to the output file.}
 }

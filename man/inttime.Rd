@@ -28,13 +28,13 @@ cdo_inttime(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{date, }{STRING - Start date (format YYYY-MM-DD)}
+\item{date}{STRING - Start date (format YYYY-MM-DD)}
 
-\item{time, }{STRING - Start time (format hh:mm:ss)}
+\item{time}{STRING - Start time (format hh:mm:ss)}
 
-\item{inc, }{STRING - Optional increment (seconds, minutes, hours, days, months, years) [default: 0hour]}
+\item{inc}{STRING - Optional increment (seconds, minutes, hours, days, months, years) [default: 0hour]}
 
-\item{n, }{INTEGER - Number of timesteps from one timestep to the next}
+\item{n}{INTEGER - Number of timesteps from one timestep to the next}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -73,19 +73,19 @@ cdo_topo(
 \arguments{
 \item{ifile}{Strings with the path to the input files.}
 
-\item{const, }{FLOAT - Constant}
+\item{const}{FLOAT - Constant}
 
-\item{seed, }{INTEGER - The seed for a new sequence of pseudo-random numbers [default: 1]}
+\item{seed}{INTEGER - The seed for a new sequence of pseudo-random numbers [default: 1]}
 
-\item{grid, }{STRING - Target grid description file or name}
+\item{grid}{STRING - Target grid description file or name}
 
-\item{start, }{FLOAT - Start value of the loop}
+\item{start}{FLOAT - Start value of the loop}
 
-\item{end, }{FLOAT - End value of the loop}
+\item{end}{FLOAT - End value of the loop}
 
-\item{inc, }{FLOAT - Increment of the loop [default: 1]}
+\item{inc}{FLOAT - Increment of the loop [default: 1]}
 
-\item{levels, }{FLOAT - Target levels in metre above surface}
+\item{levels}{FLOAT - Target levels in metre above surface}
 
 \item{ofile}{String with the path to the output file.}
 }
@@ -96,7 +96,7 @@ Generates a dataset with one or more fields
 \if{html}{\out{<div class="sourceCode">}}\preformatted{const   Create a constant field
         Creates a constant field. All field elements of the grid have the same value.
 random  Create a field with random numbers
-        Creates a field with rectangularly distrubuted random numbers in the interval [0,1].
+        Creates a field with rectangularly distrubuted random numbers in the interval \[0,1\].
 topo    Create a field with topography
         Creates a field with topography data, per default on a global half degree grid.
 seq     Create a time series

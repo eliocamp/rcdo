@@ -10,9 +10,9 @@ cdo_eca_cwdi(ifile1, ifile2, nday = NULL, T = NULL, ofile = NULL)
 \arguments{
 \item{ifile1, ifile2}{Strings with the path to the input files.}
 
-\item{nday, }{INTEGER - Number of consecutive days (default: nday = 6)}
+\item{nday}{INTEGER - Number of consecutive days (default: nday = 6)}
 
-\item{T, }{FLOAT - Temperature offset (unit: °C; default: T = 5°C)}
+\item{T}{FLOAT - Temperature offset (unit: °C; default: T = 5°C)}
 
 \item{ofile}{String with the path to the output file.}
 }

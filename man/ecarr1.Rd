@@ -10,10 +10,10 @@ cdo_eca_rr1(ifile, R = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{R, }{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
+\item{R}{FLOAT - Precipitation threshold (unit: mm; default: R = 1 mm)}
 
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily precipitation amount RR in \link{mm} (or alternatively in \link{kg m-2}), then the number of days where RR is at least R is counted. R is an optional parameter with default R = 1 mm. The date information of a timestep in outfile is the date of the last contributing timestep in infile.
+Let infile be a time series of the daily precipitation amount RR in [mm] (or alternatively in [kg m-2]), then the number of days where RR is at least R is counted. R is an optional parameter with default R = 1 mm. The date information of a timestep in outfile is the date of the last contributing timestep in infile.
 }

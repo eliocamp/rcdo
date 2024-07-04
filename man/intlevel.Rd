@@ -16,11 +16,11 @@ cdo_intlevel(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{level, }{FLOAT - Comma-separated list of target levels}
+\item{level}{FLOAT - Comma-separated list of target levels}
 
-\item{zdescription, }{STRING - Path to a file containing a description of the Z-axis}
+\item{zdescription}{STRING - Path to a file containing a description of the Z-axis}
 
-\item{zvarname, }{STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable}
+\item{zvarname}{STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable}
 
 \item{ofile}{String with the path to the output file.}
 }

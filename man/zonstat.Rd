@@ -52,9 +52,9 @@ cdo_zonvar1(ifile, p = NULL, zonaldes = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{p, }{FLOAT - Percentile number in \{0, ..., 100\}}
+\item{p}{FLOAT - Percentile number in \{0, ..., 100\}}
 
-\item{zonaldes, }{STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.}
+\item{zonaldes}{STRING - Description of the zonal latitude bins needed for data on an unstructured grid. A predefined zonal description is zonal_<DY>. DY is the increment of the latitudes in degrees.}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -6,7 +6,7 @@
 #' @details
 #'     bandpass  Bandpass filtering
 #'               Bandpass filtering (pass for frequencies between fmin and fmax).
-#'               Suppresses all variability outside the frequency range specified by [fmin,fmax].
+#'               Suppresses all variability outside the frequency range specified by \[fmin,fmax\].
 #'     lowpass   Lowpass filtering
 #'               Lowpass filtering (pass for frequencies lower than fmax).
 #'               Suppresses all variability with frequencies greater than fmax. 

@@ -14,11 +14,11 @@ cdo_setzaxis(ifile, zaxis = NULL, zbot = NULL, ztop = NULL, ofile = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{zaxis, }{STRING - Z-axis description file or name of the target z-axis}
+\item{zaxis}{STRING - Z-axis description file or name of the target z-axis}
 
-\item{zbot, }{FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.}
+\item{zbot}{FLOAT - Specifying the bottom of the vertical column. Must have the same units as z-axis.}
 
-\item{ztop, }{FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.}
+\item{ztop}{FLOAT - Specifying the top of the vertical column. Must have the same units as z-axis.}
 
 \item{ofile}{String with the path to the output file.}
 }

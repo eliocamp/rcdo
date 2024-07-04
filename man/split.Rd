@@ -30,9 +30,9 @@ cdo_splitzaxis(ifile, swap = NULL, uuid = NULL, obase = NULL)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{swap, }{STRING - Swap the position of obase and xxx in the output filename}
+\item{swap}{STRING - Swap the position of obase and xxx in the output filename}
 
-\item{uuid, }{STRING - Add a UUID as global attribute <attname> to each output file}
+\item{uuid}{STRING - Add a UUID as global attribute <attname> to each output file}
 
 \item{obase}{String with the basename of the output files.}
 }
