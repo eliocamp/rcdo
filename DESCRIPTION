@@ -1,5 +1,5 @@
 Package: rcdo
-Title: Create CDO Commands from R Functions.
+Title: Create CDO Commands from R Functions
 Version: 0.0.0.9000
 Authors@R: 
     person("Elio", "Campitelli", , "elio.campitelli@cima.fcen.uba.ar", role = c("cre", "aut"),
@@ -17,4 +17,5 @@ Depends:
 LazyData: true
 URL: https://eliocamp.github.io/rcdo/
 Imports: 
-    cli
+    cli,
+    rlang

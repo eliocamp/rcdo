@@ -5,17 +5,17 @@ create_function <- function(operator, template) {
   if (operator$n_input == 1) {
     input <- "list(ifile)"
     input_args <- "ifile"
-    input_param <- "ifile, String with the path to the input file."
+    input_param <- "ifile String with the path to the input file."
 
   } else if (operator$n_input < Inf) {
     input_args <- paste0("ifile", seq_len(operator$n_input))
-    input <- paste0("list(", input_args, ")")
-    input_param <- paste0(paste0(input, collapse = ","),
-                          "Strings with the path to the input files.")
+    input <- paste0("list(", paste0(input_args, collapse = ", "), ")")
+    input_param <- paste0(paste0(input_args, collapse = ","),
+                          " Strings with the path to the input files.")
   } else {
     input <- "as.list(ifiles)"
     input_args <- "ifiles"
-    input_param <- "ifiles, Character vector with the path to the input files."
+    input_param <- "ifiles Character vector with the path to the input files."
   }
 
   if (operator$n_output == 1) {
@@ -24,7 +24,7 @@ create_function <- function(operator, template) {
   } else if (operator$n_output < Inf) {
     output <- paste0("ofile", seq_len(operator$n_output))
     output_param <- paste0(paste0(output, collapse = ","),
-                          "Strings with the path to the output files.")
+                          " Strings with the path to the output files.")
   } else {
     output <- "obase"
     output_param <- "obase String with the basename of the output files."

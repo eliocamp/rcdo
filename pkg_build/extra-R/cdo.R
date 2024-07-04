@@ -38,7 +38,7 @@ collect_options <- function(inputs) {
   unlist(options, recursive = FALSE)
 }
 
-#' Sets the output of a CDO operation
+#' Set output and options
 #'
 #' @param operation a CDO operation
 #' @param output an output file or base string for output files
@@ -49,7 +49,9 @@ cdo_set_output <- function(operation, output) {
   operation
 }
 
+#' @param options character vector with CDO options.
 #' @export
+#' @rdname cdo_set_output
 cdo_set_options <- function(operation, options) {
   operation$options <- options
   operation
@@ -81,11 +83,14 @@ get_output_length <- function(x) {
 #' Execute a CDO operation
 #'
 #' @param operation a CDO operation
-#' @param output an output file or base string for output files
+#' @param output an output file or base string for output files. Defaults to
+#' temporary files.
+#' @param options character vector with CDO options.
+#' @param verbose whether to print the command being executed.
 #'
 #' @export
 cdo_execute <- function(operation,
-                        output = replicate(operation$operator$n_output, tempfile()),
+                        output = temp_output(operation),
                         options = NULL,
                         verbose = FALSE) {
 
@@ -115,6 +120,16 @@ cdo_execute <- function(operation,
   }
 
   return(output)
+}
+
+temp_output <- function(operation) {
+  if (operation$operator$n_output == Inf) {
+    n <- 1
+  } else {
+    n <- operation$operator$n_output
+  }
+
+  replicate(n, tempfile())
 }
 
 

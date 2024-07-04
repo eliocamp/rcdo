@@ -64,6 +64,7 @@ process_section.OPERATORS <- function(section_text, operators) {
   operators
 }
 
+escape <- c("\\{", "\\}", "\\[", "\\]")
 
 process_section.PARAMETER <- function(section_text, operators) {
   section_text <- section_text |>
@@ -84,6 +85,11 @@ process_section.PARAMETER <- function(section_text, operators) {
     strsplit(" ") |>
     lapply(rm_empy_strings) |>
     vapply(\(x) paste0(x[-(1:2)], collapse = " "), FUN.VALUE = character(1))
+
+  for (e in escape) {
+    descriptions <- gsub(e, paste0("\\", e), descriptions)
+  }
+
 
   # they are all optional for now because I cannot detect if they are
   # required.
