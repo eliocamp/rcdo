@@ -3,19 +3,31 @@ create_function <- function(operator, template) {
   operator_name <- operator$command
 
   if (operator$n_input == 1) {
-    input <- "ifile"
+    input <- "list(ifile)"
+    input_args <- "ifile"
+    input_param <- "ifile, String with the path to the input file."
+
   } else if (operator$n_input < Inf) {
-    input <- paste0("ifile", seq_len(operator$n_input))
+    input_args <- paste0("ifile", seq_len(operator$n_input))
+    input <- paste0("list(", input_args, ")")
+    input_param <- paste0(paste0(input, collapse = ","),
+                          "Strings with the path to the input files.")
   } else {
-    input <- "..."
+    input <- "as.list(ifiles)"
+    input_args <- "ifiles"
+    input_param <- "ifiles, Character vector with the path to the input files."
   }
 
   if (operator$n_output == 1) {
     output <- "ofile"
+    output_param <- "ofile String with the path to the output file."
   } else if (operator$n_output < Inf) {
     output <- paste0("ofile", seq_len(operator$n_output))
+    output_param <- paste0(paste0(output, collapse = ","),
+                          "Strings with the path to the output files.")
   } else {
     output <- "obase"
+    output_param <- "obase String with the basename of the output files."
   }
 
   params_args <- NULL
@@ -50,17 +62,20 @@ create_function <- function(operator, template) {
     extra_params <- paste0(extra_params, collapse = "\n")
   }
 
-  arguments <- paste0(c(input, params_args, paste0(output, " = NULL")), collapse = ", ")
+  arguments <- paste0(c(input_args, params_args, paste0(output, " = NULL")), collapse = ", ")
   data <- list(
     title = operator_name,
     description = operator$description,
     operator_name = operator_name,
     input = input,
+    input_param = input_param,
     output = output,
+    output_param = output_param,
     params_args = params_args,
     params_list = params_list,
     arguments = arguments,
-    extra_params = extra_params
+    extra_params = extra_params,
+    warning = "## This file was created automatically, do not edit by hand."
   )
 
   code <-   whisker::whisker.render(template, data)
