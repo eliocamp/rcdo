@@ -1,4 +1,13 @@
 
+escape_chars <- function(x) {
+  escape <- c("\\{", "\\}", "\\[", "\\]")
+  for (e in escape) {
+    x <- gsub(e, paste0("\\", e), x)
+  }
+  return(x)
+}
+
+
 rm_quotes <- function(x) {
   gsub("^ +\"", "", x) |>
     gsub("\",", "", x = _)
@@ -44,7 +53,8 @@ process_section.DESCRIPTION <- function(section_text, operators) {
   operators$description <- section_text |>
     rm_quotes() |>
     trimws() |>
-    paste0(collapse = " ")
+    paste0(collapse = " ") |>
+    escape_chars()
 
   operators
 }
@@ -53,7 +63,8 @@ process_section.NOTE <- function(section_text, operators) {
   operators$note <- section_text |>
     rm_quotes() |>
     trimws() |>
-    paste0(collapse = " ")
+    paste0(collapse = " ") |>
+    escape_chars()
 
   operators
 }
@@ -62,12 +73,14 @@ process_section.NOTE <- function(section_text, operators) {
 process_section.OPERATORS <- function(section_text, operators) {
   operators$details <- section_text |>
     rm_quotes() |>
-    paste0(collapse = "\n")
+    paste0(collapse = "\n") |>
+    escape_chars()
 
   operators
 }
 
-escape <- c("\\{", "\\}", "\\[", "\\]")
+
+
 
 process_section.PARAMETER <- function(section_text, operators) {
   section_text <- section_text |>
@@ -87,12 +100,8 @@ process_section.PARAMETER <- function(section_text, operators) {
   descriptions <- section_text |>
     strsplit(" ") |>
     lapply(rm_empy_strings) |>
-    vapply(\(x) paste0(x[-(1:2)], collapse = " "), FUN.VALUE = character(1))
-
-  for (e in escape) {
-    descriptions <- gsub(e, paste0("\\", e), descriptions)
-  }
-
+    vapply(\(x) paste0(x[-(1:2)], collapse = " "), FUN.VALUE = character(1)) |>
+    escape_chars()
 
   # they are all optional for now because I cannot detect if they are
   # required.
@@ -103,17 +112,3 @@ process_section.PARAMETER <- function(section_text, operators) {
   operators
 }
 
-
-
-rm_quotes <- function(x) {
-  gsub("^ +\"", "", x) |>
-    gsub("\",", "", x = _)
-}
-
-rm_last_comma <- function(x) {
-  gsub("\",")
-}
-
-rm_empy_strings <- function(x) {
-  x[nchar(x) != 0]
-}

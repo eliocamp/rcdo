@@ -38,7 +38,7 @@ create_function <- function(operator, template) {
     if (!is.null(operator$params$optional)) {
       optional <- paste0(names(operator$params$optional), sep = " = NULL")
       optional_list <- paste0(names(operator$params$optional), " = ", names(operator$params$optional))
-      extra_params <- paste0("#' @param ", names(operator$params$optional), ", ", operator$param$optional)
+      extra_params <- paste0("#' @param ", names(operator$params$optional), " ", operator$param$optional)
     } else {
       optional <- NULL
       optional_list <- NULL
@@ -48,7 +48,7 @@ create_function <- function(operator, template) {
       required <- names(operator$params$required)
       required_list <- paste0(names(operator$params$required), " = ", names(operator$params$required))
       extra_params <- c(extra_params,
-                        paste0("#' @param ", names(operator$params$required), ", ", operator$param$required))
+                        paste0("#' @param ", names(operator$params$required), " ", operator$param$required))
     } else {
       required <- NULL
       required_list <- NULL
@@ -61,7 +61,6 @@ create_function <- function(operator, template) {
                           ")")
     extra_params <- paste0(extra_params, collapse = "\n")
   }
-
   arguments <- paste0(c(input_args, params_args, paste0(output, " = NULL")), collapse = ", ")
   data <- list(
     family = operator$family,
