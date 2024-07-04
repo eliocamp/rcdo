@@ -82,9 +82,9 @@
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/RtmpDgsta9/file2090777db5c2f"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp89RjCK/file71812ea48dcc"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2024-07-04 17:43:35 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2024-07-04 20:11:34 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 8631345</span></span></code></pre></div>
 <p>Operators can be chained. Lets select just the Southern Hemisphere first.</p>
@@ -109,6 +109,17 @@
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; CDO command:</span></span>
 <span><span class="co">#&gt;    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] ] {{output}}</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="prior-art">Prior art<a class="anchor" aria-label="anchor" href="#prior-art"></a>
+</h2>
+<p>The <a href="https://github.com/markpayneatwork/ClimateOperators" class="external-link">ClimateOperators</a> package also wrapps CDO, but it’s approach is different. Instead of wrapping each operator as its own function with parameters as arguments, it provides a generic <code>cdo()</code> function that runs the operators that the user needs to write as strings. Instead of</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">rcdo</span><span class="fu">::</span><span class="fu"><a href="reference/selbox.html">cdo_sellonlatbox</a></span><span class="op">(</span>lon1 <span class="op">=</span> <span class="fl">0</span>, lon2 <span class="op">=</span> <span class="fl">360</span>, lat1 <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, lat2 <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> </span></code></pre></div>
+<p>one would write</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">ClimateOperators</span><span class="fu">::</span><span class="fu">cdo</span><span class="op">(</span><span class="st">"sellonlatbox,0,360,-90,0"</span>, <span class="va">ncep</span>, <span class="va">output_file</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="license">
