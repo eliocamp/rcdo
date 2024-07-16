@@ -40,18 +40,3 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
         collapse = " ")
 }
 
-
-get_cdo <- function() {
-  cdo <- cdo_local_path()
-  if (file.exists(cdo)) {
-    return(cdo)
-  } else {
-    "cdo"
-  }
-}
-
-
-
-cdo_local_path <- function() {
-  file.path(tools::R_user_dir("rcdo", "data"), "bin", "cdo")
-}

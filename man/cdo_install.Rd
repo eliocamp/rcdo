@@ -5,7 +5,12 @@
 \alias{cdo_version}
 \title{Install the supported CDO version}
 \usage{
-cdo_install(reinstall = FALSE)
+cdo_install(
+  reinstall = FALSE,
+  proj = "/usr/",
+  netcdf = "/usr/",
+  eccodes = "/usr/"
+)
 
 cdo_version()
 }
