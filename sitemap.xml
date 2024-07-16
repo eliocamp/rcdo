@@ -1,675 +1,227 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/404.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/index.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/adisit.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/afterburner.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/apply.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/arith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/arithc.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/arithdays.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/arithlat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/bitrounding.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cdo_execute.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cdo_install.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cdo_set_output.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cmor.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cmorlite.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/collgrid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/comp.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/compc.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cond.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/cond2.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/condc.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/consecstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/copy.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/dayarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/daypctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/daystat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/deltat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/derivepar.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/detrend.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/dhourstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/diff.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/distgrid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/dminutestat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/duplicate.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecacdd.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecacfd.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecacsu.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecacwd.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecacwdi.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecacwfi.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecaetr.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecafd.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecagsl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecahd.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecahwdi.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecahwfi.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecaid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecapd.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar75p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar75ptot.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar90p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar90ptot.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar95p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar95ptot.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar99p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecar99ptot.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecarr1.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecarx1day.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecarx5day.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecasdii.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecasu.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatg10p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatg90p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatn10p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatn90p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatr.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatx10p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ecatx90p.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/enlarge.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ensstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ensstat2.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ensval.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/eofcoeff.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/eofs.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/expr.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/fdns.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/filedes.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/filter.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/fldcor.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/fldcovar.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/fldstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/fourier.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/getgridcell.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/gradsdes.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/gridboxstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/gridcell.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/healpix.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/histogram.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/hourpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/hourstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/hurr.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/importamsr.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/importbinary.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/importcmsaf.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/info.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/input.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/intlevel.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/intlevel3d.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/inttime.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/intyear.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/invert.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/invertlev.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/maggraph.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/magplot.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/magvector.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/mapreduce.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/maskbox.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/maskregion.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/mastrfu.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/math.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/merge.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/mergegrid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/merstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/monarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/monpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/monstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/mrotuvb.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ncl_wind.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ninfo.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/output.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/outputgmt.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/outputtab.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/pack.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/pressure.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/regres.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remap.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapbic.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapbil.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapcon.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapdis.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapeta.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remaplaf.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapnn.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/remapstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/replace.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/replacevalues.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/rhopot.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/rotuvb.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/runpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/runstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/samplegrid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/seaspctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/seasstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selbox.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/select.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selgridcell.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selmulti.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selregion.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selsurface.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/seltime.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/seltimeidx.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selvar.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/selyearidx.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/set.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setattribute.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setbox.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setgrid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setgridcell.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/sethalo.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setmiss.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setpartab.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/settime.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/setzaxis.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/shiftxy.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/showattribute.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/showinfo.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/sinfo.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/smooth.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/specconv.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/spectral.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/split.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/splitdate.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/splitsel.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/splittime.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/strbre.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/strgal.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/strwin.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/tee.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timcor.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timcovar.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timcumsum.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timfillmiss.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timselpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timselstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timsort.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/timstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/trend.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/trendarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/unpack.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/vargen.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/varsstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/verifygrid.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/vertfillmiss.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/vertintap.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/vertintgh.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/vertintml.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/vertstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/wct.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/wind.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/wind2.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/xsinfo.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ydayarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ydaypctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ydaystat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ydrunpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ydrunstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yeararith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yearmonstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yearpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yearstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yhourarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yhourstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ymonarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ymoncomp.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ymonpctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/ymonstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yseasarith.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yseaspctl.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/yseasstat.html</loc>
-  </url>
-  <url>
-    <loc>https://eliocamp.github.io/rcdo/reference/zonstat.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://eliocamp.github.io/rcdo/404.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/LICENSE-text.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/authors.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/index.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/adisit.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/afterburner.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/apply.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/arith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/arithc.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/arithdays.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/arithlat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/bitrounding.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cdo_execute.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cdo_install.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cdo_set_output.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cmor.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cmorlite.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/collgrid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/comp.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/compc.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cond.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cond2.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/condc.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/consecstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/copy.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/dayarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/daypctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/daystat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/deltat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/derivepar.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/detrend.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/dhourstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/diff.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/distgrid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/dminutestat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/duplicate.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecacdd.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecacfd.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecacsu.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecacwd.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecacwdi.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecacwfi.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecaetr.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecafd.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecagsl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecahd.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecahwdi.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecahwfi.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecaid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecapd.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar75p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar75ptot.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar90p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar90ptot.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar95p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar95ptot.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar99p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecar99ptot.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecarr1.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecarx1day.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecarx5day.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecasdii.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecasu.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatg10p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatg90p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatn10p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatn90p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatr.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatx10p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ecatx90p.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/enlarge.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ensstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ensstat2.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ensval.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/eofcoeff.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/eofs.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/expr.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/fdns.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/filedes.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/filter.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/fldcor.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/fldcovar.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/fldstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/fourier.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/getgridcell.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/gradsdes.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/gridboxstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/gridcell.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/healpix.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/histogram.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/hourpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/hourstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/hurr.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/importamsr.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/importbinary.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/importcmsaf.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/index.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/info.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/input.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/intlevel.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/intlevel3d.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/inttime.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/intyear.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/invert.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/invertlev.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/maggraph.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/magplot.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/magvector.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/mapreduce.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/maskbox.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/maskregion.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/mastrfu.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/math.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/merge.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/mergegrid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/merstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/monarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/monpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/monstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/mrotuvb.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ncl_wind.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ninfo.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/output.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/outputgmt.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/outputtab.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/pack.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/pressure.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/regres.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remap.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapbic.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapbil.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapcon.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapdis.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapeta.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remaplaf.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapnn.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/remapstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/replace.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/replacevalues.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/rhopot.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/rotuvb.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/runpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/runstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/samplegrid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/seaspctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/seasstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selbox.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/select.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selgridcell.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selmulti.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selregion.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selsurface.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/seltime.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/seltimeidx.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selvar.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/selyearidx.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/set.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setattribute.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setbox.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setgrid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setgridcell.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/sethalo.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setmiss.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setpartab.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/settime.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/setzaxis.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/shiftxy.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/showattribute.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/showinfo.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/sinfo.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/smooth.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/specconv.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/spectral.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/split.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/splitdate.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/splitsel.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/splittime.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/strbre.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/strgal.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/strwin.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/tee.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timcor.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timcovar.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timcumsum.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timfillmiss.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timselpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timselstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timsort.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/timstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/trend.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/trendarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/unpack.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/vargen.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/varsstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/verifygrid.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/vertfillmiss.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/vertintap.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/vertintgh.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/vertintml.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/vertstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/wct.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/wind.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/wind2.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/xsinfo.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ydayarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ydaypctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ydaystat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ydrunpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ydrunstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yeararith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yearmonstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yearpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yearstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yhourarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yhourstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ymonarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ymoncomp.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ymonpctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/ymonstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yseasarith.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yseaspctl.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/yseasstat.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/zonstat.html</loc></url>
 </urlset>
+
