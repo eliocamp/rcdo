@@ -1,5 +1,6 @@
 cdo <- function(operator, input, params = NULL, output = NULL) {
   n_input <- sum(vapply(input, get_output_length, numeric(1)))
+  check_input_exists(input, call = rlang::caller_env())
 
   operators_compatible <- operator$n_input == Inf || operator$n_input == n_input
 
@@ -26,6 +27,20 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
   check_output(operation)
   return(operation)
 }
+
+check_input_exists <- function(input, call = rlang::caller_env()) {
+  force(call)
+  none <- lapply(input, function(x) {
+    if (is.character(x)) {
+      if (!file.exists(x)) {
+        cli::cli_abort("File {x} doesn't exist.", call = call)
+      }
+    }
+  })
+
+  return(invisible(input))
+}
+
 
 collect_options <- function(inputs) {
   options <- lapply(inputs, function(x) {
@@ -90,7 +105,7 @@ get_output_length <- function(x) {
 #'
 #' @export
 cdo_execute <- function(operation,
-                        output = temp_output(operation),
+                        output = temp_output(input),
                         options = NULL,
                         verbose = FALSE) {
 

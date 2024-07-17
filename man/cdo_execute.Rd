@@ -6,7 +6,7 @@
 \usage{
 cdo_execute(
   operation,
-  output = temp_output(operation),
+  output = temp_output(input),
   options = NULL,
   verbose = FALSE
 )
