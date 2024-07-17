@@ -2,7 +2,6 @@
 % Please edit documentation in R/cdo-install.R
 \name{cdo_install}
 \alias{cdo_install}
-\alias{cdo_version}
 \title{Install the supported CDO version}
 \usage{
 cdo_install(
@@ -11,8 +10,6 @@ cdo_install(
   netcdf = "/usr/",
   eccodes = "/usr/"
 )
-
-cdo_version()
 }
 \arguments{
 \item{reinstall}{Logical. Set to true to force reinstallation.}

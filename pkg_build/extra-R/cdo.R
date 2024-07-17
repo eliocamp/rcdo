@@ -81,7 +81,7 @@ is.operation <- function(x) {
 #' @export
 print.cdo_operation <- function(x,...) {
   cat("CDO command:\n")
-  cat("  ", build_operation(x))
+  cat("  ", build_operation(x), "\n")
 }
 
 
@@ -105,7 +105,7 @@ get_output_length <- function(x) {
 #'
 #' @export
 cdo_execute <- function(operation,
-                        output = temp_output(input),
+                        output = temp_output(operation),
                         options = NULL,
                         verbose = FALSE) {
 

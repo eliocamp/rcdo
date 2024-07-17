@@ -23,9 +23,9 @@ cdo_install <- function(reinstall = FALSE,
     return(cdo_local_path())
   }
 
-  version <- package_cdo$version
+  version <- cdo_supported_version()
 
-  url <- package_cdo$url
+  url <- cdo_supported_url()
   file <- tempfile()
   on.exit(unlink(file))
   download_dir <- file.path(tempdir(), "cdo")
@@ -54,14 +54,44 @@ cdo_data <- function(...) {
   file.path(tools::R_user_dir("rcdo", "data"), ...)
 }
 
-#' @export
-#' @rdname cdo_install
-cdo_version <- function() {
-  return(cdo_version_string)
-}
 
+cdo_supported_version <- function() {
+  return(package_cdo$version)
+}
+cdo_supported_url <- function() {
+  return(package_cdo$url)
+}
 package_cdo <- list(version = "2.4.2",
                     url = "https://code.mpimet.mpg.de/attachments/download/29481/cdo-2.4.2.tar.gz")
+
+
+get_cdo_version <- function(cdo) {
+  version <- system2(cdo, "-V", stdout = TRUE, stderr = TRUE)[1]
+  semver_regex <- r"(\d+\.\d+\.\d+)"
+  version <- regmatches(version, regexpr(semver_regex, version))
+
+  return(version)
+}
+
+
+version_warned <- new.env()
+version_warned$warned <- FALSE
+
+check_cdo_version <- function(cdo, call = rlang::caller_env()) {
+  version <- get_cdo_version(cdo)
+  if (Sys.getenv("RCDO_DEBUG_CDO_VERSION") != "") {
+    version <- Sys.getenv("RCDO_DEBUG_CDO_VERSION")
+  }
+  supported_version <- cdo_supported_version()
+  if (version != supported_version) {
+    if (!version_warned$warned) {
+      cli::cli_warn(c("Using CDO version {version} which is different from the version supported by this version of rcdo ({supported_version}).",
+                      i = "This warning is displayed once per session."))
+      version_warned$warned <- TRUE
+    }
+  }
+}
+
 
 
 cdo_use <- function(which = c("system", "packaged")) {
@@ -79,18 +109,13 @@ cdo_use <- function(which = c("system", "packaged")) {
     }
   }
 
-  version <- system2(cdo, "-V", stdout = TRUE, stderr = TRUE)[1]
-  semver_regex <- r"(\d+\.\d+\.\d+)"
-  version <- regmatches(version, regexpr(semver_regex, version))
-
+  version <- get_cdo_version(cdo)
   cli::cli_inform("Using {which[1]} CDO, version {version}.")
   options("rcdo_version" = which[1])
 }
 
-
-
-get_cdo <- function(version = getOption("rcdo_version", "system")) {
-  if (version == "system") {
+get_cdo <- function(which = getOption("rcdo_version", "system")) {
+  if (which == "system") {
     return("cdo")
   }
 
@@ -102,9 +127,6 @@ get_cdo <- function(version = getOption("rcdo_version", "system")) {
   }
 }
 
-cdo_local_path <- function(version = package_cdo$version) {
-  if (is.null(version)) {
-    version <- package_cdo$version
-  }
-  cdo_data(paste0("cdo-", version), "bin", "cdo")
+cdo_local_path <- function() {
+  cdo_data(paste0("cdo-", cdo_supported_version()), "bin", "cdo")
 }
