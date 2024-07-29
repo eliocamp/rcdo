@@ -41,7 +41,7 @@ cdo_install <- function(reinstall = FALSE,
   old <- setwd(file.path(download_dir, paste0("cdo-", version)))
   on.exit(setwd(old), add = TRUE)
 
-  config_cmd <- paste0("./configure --enable-netcdf4  --enable-zlib --with-netcdf=", shQuote(netcdf), " --with-proj=", shQuote(proj), " --prefix ", shQuote(cdo_dir))
+  config_cmd <- paste0("./configure --enable-netcdf4  --with-fftw3 --enable-zlib --with-netcdf=", shQuote(netcdf), " --with-proj=", shQuote(proj), " --prefix ", shQuote(cdo_dir))
   system(config_cmd)
 
   system("make -j15")
