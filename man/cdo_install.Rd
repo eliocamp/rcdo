@@ -8,11 +8,14 @@ cdo_install(
   reinstall = FALSE,
   proj = "/usr/",
   netcdf = "/usr/",
+  fftw3 = "/usr/",
   eccodes = "/usr/"
 )
 }
 \arguments{
 \item{reinstall}{Logical. Set to true to force reinstallation.}
+
+\item{proj, netcdf, fftw3, eccodes}{Location of the optional libraries.}
 }
 \description{
 Install the supported CDO version

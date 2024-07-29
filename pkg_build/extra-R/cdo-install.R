@@ -1,6 +1,7 @@
 #' Install the supported CDO version
 #'
 #' @param reinstall Logical. Set to true to force reinstallation.
+#' @param proj,netcdf,fftw3,eccodes Location of the optional libraries.
 #'
 #' @details
 #' rcdo should work with your normal CDO installation but you if your installed
@@ -17,6 +18,7 @@
 cdo_install <- function(reinstall = FALSE,
                         proj = "/usr/",
                         netcdf = "/usr/",
+                        fftw3 = "/usr/",
                         eccodes = "/usr/") {
   if (!reinstall && file.exists(cdo_local_path())) {
     cli::cli_warn("Local CDO installation detected. To reinstall use {.code cdo_install(reinstall = TRUE)}")
@@ -41,7 +43,7 @@ cdo_install <- function(reinstall = FALSE,
   old <- setwd(file.path(download_dir, paste0("cdo-", version)))
   on.exit(setwd(old), add = TRUE)
 
-  config_cmd <- paste0("./configure --enable-netcdf4  --with-fftw3 --enable-zlib --with-netcdf=", shQuote(netcdf), " --with-proj=", shQuote(proj), " --prefix ", shQuote(cdo_dir))
+  config_cmd <- paste0("./configure --enable-netcdf4  --with-fftw3=", shQuote(fftw3), " --enable-zlib --with-netcdf=", shQuote(netcdf), " --with-proj=", shQuote(proj), " --prefix ", shQuote(cdo_dir))
   system(config_cmd)
 
   system("make -j15")
