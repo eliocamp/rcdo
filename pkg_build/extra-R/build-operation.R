@@ -12,7 +12,11 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
     operation$options <- options
   }
 
-  prefix <- paste(c(get_cdo(), operation$options), collapse = " -")
+  if (is.null(operation$options)) {
+    operation$options <- getOption(rcdo_options)
+  }
+
+  prefix <- paste(c(get_cdo(), operation$options), collapse = " ")
 
   if (chain) {
     operation$operator$command <- paste0("-", operation$operator$command)

@@ -67,11 +67,24 @@ cdo_set_output <- function(operation, output) {
 #' @param options character vector with CDO options.
 #' @export
 #' @rdname cdo_set_output
-cdo_set_options <- function(operation, options) {
+cdo_options_use <- function(operation, options) {
   operation$options <- options
   operation
 }
 
+rcdo_options <- "rcdo_options"
+
+#' @export
+#' @rdname cdo_set_output
+cdo_options_set <- function(options) {
+  return(invisible(options(rcdo_options = options)))
+}
+
+#' @export
+#' @rdname cdo_set_output
+cdo_options_clear <- function() {
+  return(invisible(options(rcdo_options = NULL)))
+}
 
 is.operation <- function(x) {
   inherits(x, "cdo_operation")

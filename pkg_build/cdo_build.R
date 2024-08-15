@@ -116,13 +116,13 @@ for (help in helps) {
   file <- paste0("R/family-", help$name, ".R" )
   writeLines(code, file)
 }
+usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
+
 
 files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
 for (file in files) {
   file.copy(file, file.path("R", basename(file)), overwrite = TRUE)
 }
-
-usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
 
 devtools::document(roclets = c('rd', 'collate', 'namespace'))
