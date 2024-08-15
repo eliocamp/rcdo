@@ -32,6 +32,7 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
 <li class="nav-item"><form class="form-inline" role="search">
@@ -107,7 +108,7 @@
 <div class="section level2">
 <h2 id="prior-art">Prior art<a class="anchor" aria-label="anchor" href="#prior-art"></a>
 </h2>
-<p>The <a href="https://github.com/markpayneatwork/ClimateOperators" class="external-link">ClimateOperators</a> package also wrapps CDO, but it’s approach is different. Instead of wrapping each operator as its own function with parameters as arguments, it provides a generic <code>cdo()</code> function that runs the operators that the user needs to write as strings. Instead of</p>
+<p>The <a href="https://github.com/markpayneatwork/ClimateOperators" class="external-link">ClimateOperators</a> package also wrapps CDO, but it’s approach is different. Instead of wrapping each operator as its own function with parameters as arguments, it provides a generic <code><a href="reference/cdo.html">cdo()</a></code> function that runs the operators that the user needs to write as strings. Instead of</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu">rcdo</span><span class="fu">::</span><span class="fu"><a href="reference/selbox.html">cdo_sellonlatbox</a></span><span class="op">(</span>lon1 <span class="op">=</span> <span class="fl">0</span>, lon2 <span class="op">=</span> <span class="fl">360</span>, lat1 <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, lat2 <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> </span></code></pre></div>
