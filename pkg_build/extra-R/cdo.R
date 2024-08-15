@@ -1,3 +1,14 @@
+#' Execute a custom operator
+#'
+#' @param operator, a list created with `cdo_operator`.
+#' @param input a list with the input files.
+#' @param params a named vector of parameters.
+#' @param output a vector of file name(s).
+#'
+#' @return
+#' a cdo operation.
+#'
+#' @export
 cdo <- function(operator, input, params = NULL, output = NULL) {
   n_input <- sum(vapply(input, get_output_length, numeric(1)))
   check_input_exists(input, call = rlang::caller_env())
@@ -27,6 +38,27 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
   check_output(operation)
   return(operation)
 }
+
+
+#' @param command a string with the command used to run the operator
+#' @param params a character vector with the name of the parametsr
+#' @param n_input,n_output an integer with the number of input and ouput files
+#' required by the operator
+#'
+#' @return
+#' A list with elements comand, params, n_input and n_output.
+#' @export
+#' @rdname cdo
+cdo_operator <- function(command, params, n_input, n_output) {
+  params <- stats::setNames(params, params)
+  list(
+    command = command,
+    params = list(optional = params),
+    n_input = n_input,
+    n_output = n_output
+  )
+}
+
 
 check_input_exists <- function(input, call = rlang::caller_env()) {
   force(call)
