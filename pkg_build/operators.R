@@ -35,6 +35,11 @@ for (i in seq_along(sections)[-length(sections)]) {
 
   operator <- list()
 
+  name <- help_page[1] |>
+    gsub("const CdoHelp ", "", x = _) |>
+    gsub("Help = \\{", "", x = _) |>
+    tolower()
+
   for (j in seq_along(headers)[-length(headers)]) {
     section_name <- help_page[headers[j]] |>
       rm_quotes()
@@ -42,14 +47,9 @@ for (i in seq_along(sections)[-length(sections)]) {
     section_text <- help_page[seq(headers[j] + 1, headers[j + 1] - 1)]
 
     class(section_text) <- section_name
-
+# browser(expr = name == "expr" & section_name == "PARAMETER")
     operator <- process_section(section_text, operator)
   }
-
-  name <- help_page[1] |>
-    gsub("const CdoHelp ", "", x = _) |>
-    gsub("Help = \\{", "", x = _) |>
-    tolower()
 
   helps[[i]] <- operator
   helps[[i]]$name <- name
@@ -59,7 +59,7 @@ for (i in seq_along(sections)[-length(sections)]) {
 
 operators <- list()
 
-not_build <- c("change", "windtrans")
+not_build <- c("change", "windtrans", "cmor")
 
 helps <- helps[!(names(helps) %in% not_build)]
 

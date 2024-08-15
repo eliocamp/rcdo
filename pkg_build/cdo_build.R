@@ -19,15 +19,23 @@ create_function <- function(operator, template) {
   }
 
   if (operator$n_output == 1) {
-    output <- "ofile"
-    output_param <- "ofile String with the path to the output file."
+    output <- "ofile = NULL"
+    output_body <- "ofile"
+    output_param <- "#' @param ofile String with the path to the output file."
+  } else if (operator$n_output == 0) {
+    output <- NULL
+    output_body <- NULL
+    output_param <- NULL
   } else if (operator$n_output < Inf) {
-    output <- paste0("ofile", seq_len(operator$n_output))
-    output_param <- paste0(paste0(output, collapse = ","),
+    output <- paste0("ofile", seq_len(operator$n_output), " = NULL")
+    output_body <- paste0("ofile", seq_len(operator$n_output))
+    output_param <- paste0("#' @param ",
+                           paste0(output_body, collapse = ","),
                           " Strings with the path to the output files.")
   } else {
-    output <- "obase"
-    output_param <- "obase String with the basename of the output files."
+    output <- "obase = NULL"
+    output_body <- "obase"
+    output_param <- "#' @param obase String with the basename of the output files."
   }
 
   params_args <- NULL
@@ -61,13 +69,14 @@ create_function <- function(operator, template) {
                           ")")
     extra_params <- paste0(extra_params, collapse = "\n")
   }
-  arguments <- paste0(c(input_args, params_args, paste0(output, " = NULL")), collapse = ", ")
+  arguments <- paste0(c(input_args, params_args, output), collapse = ", ")
   data <- list(
     family = operator$family,
     operator_name = operator_name,
     input = input,
     input_param = input_param,
     output = output,
+    output_body = output_body,
     output_param = output_param,
     params_args = params_args,
     params_list = params_list,
@@ -88,7 +97,7 @@ list.files("R", full.names = TRUE) |>
 template <- readLines("pkg_build/cdo-template.R")
 
 for (operator in operators) {
-  if (length(operator$n_output) != 0 && operator$n_output != 0) {
+  if (length(operator$n_output) != 0) {
     create_function(operator, template)
   }
 }

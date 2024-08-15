@@ -154,7 +154,7 @@ cdo_execute <- function(operation,
                         options = NULL,
                         verbose = FALSE) {
 
-  if (!is.null(output)) {
+  if (is.null(operation$output)) {
     operation$output <- output
   }
 
@@ -168,7 +168,12 @@ cdo_execute <- function(operation,
   if (verbose) {
     message("Running ", command)
   }
-  system(command)
+
+  result <- system(command, intern = operation$operator$n_output == 0)
+
+  if (operation$operator$n_output == 0) {
+    return(result)
+  }
 
   if (operation$operator$n_output < Inf) {
 

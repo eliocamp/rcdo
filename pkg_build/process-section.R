@@ -85,23 +85,39 @@ process_section.OPERATORS <- function(section_text, operators) {
 process_section.PARAMETER <- function(section_text, operators) {
   section_text <- section_text |>
     rm_quotes() |>
-    trimws()
+    rm_empy_strings() |>
+    escape_chars()
 
-  parameters <- section_text |>
+  spaces_start <- stringr::str_count(section_text, "\\G ")
+
+  param_start <- spaces_start == min(spaces_start)
+
+  parameters <- section_text[param_start] |>
+    trimws() |>
     strsplit(" ") |>
     vapply("[", FUN.VALUE = character(1), 1) |>
     gsub("=<[a-z]+>", "", x = _)
 
-  types <- section_text |>
+  types <- section_text[param_start] |>
+    trimws() |>
     strsplit(" ") |>
     lapply(rm_empy_strings) |>
     vapply("[", FUN.VALUE = character(1), 2)
 
   descriptions <- section_text |>
+    trimws()
+
+  descriptions[param_start] <- descriptions[param_start] |>
     strsplit(" ") |>
     lapply(rm_empy_strings) |>
-    vapply(\(x) paste0(x[-(1:2)], collapse = " "), FUN.VALUE = character(1)) |>
-    escape_chars()
+    vapply(\(x) paste0(x[-c(1, 2)], collapse = " "), FUN.VALUE = character(1))
+
+  trues <- param_start
+  param_start[!param_start] <- NA
+  param_start[trues] <- seq_len(sum(trues, na.rm = TRUE))
+  param_start <- data.table::nafill(param_start, "locf")
+
+  descriptions <- tapply(descriptions, param_start, \(x) paste0(x, collapse = ""))
 
   # they are all optional for now because I cannot detect if they are
   # required.
