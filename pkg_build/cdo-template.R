@@ -1,5 +1,5 @@
 {{warning}}
-#' @param {{input_param}}
+{{input_param}}
 {{output_param}}
 {{extra_params}}
 #'

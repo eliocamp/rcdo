@@ -11,7 +11,6 @@
 \title{Generate a field}
 \usage{
 cdo_const(
-  ifile,
   const = NULL,
   seed = NULL,
   grid = NULL,
@@ -23,7 +22,6 @@ cdo_const(
 )
 
 cdo_random(
-  ifile,
   const = NULL,
   seed = NULL,
   grid = NULL,
@@ -35,7 +33,6 @@ cdo_random(
 )
 
 cdo_seq(
-  ifile,
   const = NULL,
   seed = NULL,
   grid = NULL,
@@ -47,7 +44,6 @@ cdo_seq(
 )
 
 cdo_stdatm(
-  ifile,
   const = NULL,
   seed = NULL,
   grid = NULL,
@@ -59,7 +55,6 @@ cdo_stdatm(
 )
 
 cdo_topo(
-  ifile,
   const = NULL,
   seed = NULL,
   grid = NULL,
@@ -71,8 +66,6 @@ cdo_topo(
 )
 }
 \arguments{
-\item{ifile}{Strings with the path to the input files.}
-
 \item{const}{FLOAT - Constant}
 
 \item{seed}{INTEGER - The seed for a new sequence of pseudo-random numbers [default: 1]}

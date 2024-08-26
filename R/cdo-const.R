@@ -1,5 +1,5 @@
 ## This file was created automatically, do not edit by hand.
-#' @param ifile Strings with the path to the input files.
+
 #' @param ofile String with the path to the output file.
 #' @param const FLOAT - Constant
 #' @param seed INTEGER - The seed for a new sequence of pseudo-random numbers \[default: 1\]
@@ -11,9 +11,9 @@
 #'
 #' @export
 #' @rdname vargen
-cdo_const <- function(ifile, const = NULL, seed = NULL, grid = NULL, start = NULL, end = NULL, inc = NULL, levels = NULL, ofile = NULL) {
+cdo_const <- function(const = NULL, seed = NULL, grid = NULL, start = NULL, end = NULL, inc = NULL, levels = NULL, ofile = NULL) {
   cdo(operator = operators$const,
-      input = list(ifile),
+      input = list(),
       params = list(const = const, seed = seed, grid = grid, start = start, end = end, inc = inc, levels = levels),
       output = c(ofile)
   )

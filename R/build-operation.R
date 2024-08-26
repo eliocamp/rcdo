@@ -36,12 +36,13 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
   if (is.null(operation$output) && !chain) {
     operation$output <- "{{output}}"
   }
+  if (nzchar(operation$input)) {
+    operation$input <- paste("[", operation$input, "]")
+  }
 
   paste(c(prefix,
           paste(c(operation$operator$command, operation$params), collapse = ","),
-          "[",   # always group jsut in
           operation$input,
-          "]",
           operation$output),
         collapse = " ")
 }

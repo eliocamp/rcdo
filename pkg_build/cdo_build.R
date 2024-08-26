@@ -5,17 +5,20 @@ create_function <- function(operator, template) {
   if (operator$n_input == 1) {
     input <- "list(ifile)"
     input_args <- "ifile"
-    input_param <- "ifile String with the path to the input file."
-
+    input_param <- "#' @param ifile String with the path to the input file."
+  } else if (operator$n_input == 0) {
+    input <- "list()"
+    input_args <- input_param <- input_body <- NULL
   } else if (operator$n_input < Inf) {
     input_args <- paste0("ifile", seq_len(operator$n_input))
     input <- paste0("list(", paste0(input_args, collapse = ", "), ")")
-    input_param <- paste0(paste0(input_args, collapse = ","),
+    input_param <- paste0("#' @param ",
+                          paste0(input_args, collapse = ","),
                           " Strings with the path to the input files.")
   } else {
     input <- "as.list(ifiles)"
     input_args <- "ifiles"
-    input_param <- "ifiles Character vector with the path to the input files."
+    input_param <- "#' @param ifiles Character vector with the path to the input files."
   }
 
   if (operator$n_output == 1) {

@@ -176,15 +176,14 @@ cdo_execute <- function(operation,
   }
 
   if (operation$operator$n_output < Inf) {
-
-    if (!all(file.exists(output))) {
+    if (!all(file.exists(operation$output))) {
       stop("Operation failed")
     }
-    attr(output, "mtime") <- max(file.mtime(output))
-    attr(output, "size") <- sum(file.size(output))
+    attr(operation$output, "mtime") <- max(file.mtime(operation$output))
+    attr(operation$output, "size") <- sum(file.size(operation$output))
   }
 
-  return(output)
+  return(operation$output)
 }
 
 temp_output <- function(operation) {

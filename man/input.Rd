@@ -8,15 +8,13 @@
 \alias{input}
 \title{Formatted input}
 \usage{
-cdo_input(ifile, grid = NULL, zaxis = NULL, ofile = NULL)
+cdo_input(grid = NULL, zaxis = NULL, ofile = NULL)
 
-cdo_inputext(ifile, grid = NULL, zaxis = NULL, ofile = NULL)
+cdo_inputext(grid = NULL, zaxis = NULL, ofile = NULL)
 
-cdo_inputsrv(ifile, grid = NULL, zaxis = NULL, ofile = NULL)
+cdo_inputsrv(grid = NULL, zaxis = NULL, ofile = NULL)
 }
 \arguments{
-\item{ifile}{Strings with the path to the input files.}
-
 \item{grid}{STRING - Grid description file or name}
 
 \item{zaxis}{STRING - Z-axis description file}
