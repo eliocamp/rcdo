@@ -11,7 +11,7 @@
 #' @export
 cdo <- function(operator, input, params = NULL, output = NULL) {
   n_input <- sum(vapply(input, get_output_length, numeric(1)))
-  check_input_exists(input, call = rlang::caller_env())
+  # check_input_exists(input, call = rlang::caller_env())
 
   operators_compatible <- operator$n_input == Inf || operator$n_input == n_input
 
