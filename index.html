@@ -71,24 +71,24 @@
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    cdo ymonmean [ 'hgt_ncep.nc' ] {{output}}</span></span></code></pre></div>
+<span><span class="co">#&gt;    cdo ymonmean [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] {{output}}</span></span></code></pre></div>
 <p>The output just prints the command with a place holder output. Use <code><a href="reference/cdo_execute.html">cdo_execute()</a></code> to actually run the command. If no outpuf file is specified, then the result is saved in a tempfile.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp89RjCK/file71812ea48dcc"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/RtmpLUdudJ/file138101b65e3eb"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2024-07-04 20:11:34 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2024-09-30 10:52:47 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
-<span><span class="co">#&gt; [1] 8631345</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 8630649</span></span></code></pre></div>
 <p>Operators can be chained. Lets select just the Southern Hemisphere first.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/selbox.html">cdo_sellonlatbox</a></span><span class="op">(</span>lon1 <span class="op">=</span> <span class="fl">0</span>, lon2 <span class="op">=</span> <span class="fl">360</span>, lat1 <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, lat2 <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    cdo ymonmean [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] {{output}}</span></span></code></pre></div>
+<span><span class="co">#&gt;    cdo ymonmean [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] {{output}}</span></span></code></pre></div>
 <p>Now also select the 500 hPa level</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
@@ -96,14 +96,14 @@
 <span>  <span class="fu"><a href="reference/selvar.html">cdo_sellevel</a></span><span class="op">(</span>level <span class="op">=</span> <span class="fl">500</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] ] {{output}}</span></span></code></pre></div>
+<span><span class="co">#&gt;    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}</span></span></code></pre></div>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ncep</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/selbox.html">cdo_sellonlatbox</a></span><span class="op">(</span>lon1 <span class="op">=</span> <span class="fl">0</span>, lon2 <span class="op">=</span> <span class="fl">360</span>, lat1 <span class="op">=</span> <span class="op">-</span><span class="fl">90</span>, lat2 <span class="op">=</span> <span class="fl">0</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/selvar.html">cdo_sellevel</a></span><span class="op">(</span>level <span class="op">=</span> <span class="fl">500</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="reference/ymonstat.html">cdo_ymonmean</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] ] {{output}}</span></span></code></pre></div>
+<span><span class="co">#&gt;    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="prior-art">Prior art<a class="anchor" aria-label="anchor" href="#prior-art"></a>
@@ -157,7 +157,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>

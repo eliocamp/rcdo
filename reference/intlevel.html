@@ -43,6 +43,7 @@
 <span>  level <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  zdescription <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  zvarname <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  extrapolate <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  ofile <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -67,6 +68,10 @@
 <dd><p>STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable</p></dd>
 
 
+<dt id="arg-extrapolate">extrapolate<a class="anchor" aria-label="anchor" href="#arg-extrapolate"></a></dt>
+<dd><p>BOOL - Fill target layers out of the source layer range with the nearest source layer</p></dd>
+
+
 <dt id="arg-ofile">ofile<a class="anchor" aria-label="anchor" href="#arg-ofile"></a></dt>
 <dd><p>String with the path to the output file.</p></dd>
 
@@ -81,7 +86,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer></div>
