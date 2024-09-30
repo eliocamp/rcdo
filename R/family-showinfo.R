@@ -26,6 +26,8 @@
 #'                    Prints time information of all timesteps (format hh:mm:ss).
 #'     showtimestamp  Show timestamp
 #'                    Prints timestamp of all timesteps (format YYYY-MM-DDThh:mm:ss).
+#'     showfilter     Show filter specification
+#'                    Prints NetCDF4 filter specification of all variables.
 #'
 #' 
 #'

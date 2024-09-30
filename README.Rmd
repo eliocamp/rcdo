@@ -85,7 +85,6 @@ ncep |>
   cdo_ymonmean() 
 ```
 
-
 ## Prior art
 
 The [ClimateOperators](https://github.com/markpayneatwork/ClimateOperators) package also wrapps CDO, but it's approach is different. 

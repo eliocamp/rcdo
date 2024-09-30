@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' Remaps source points to target cells
 #'
-#' This module maps source points to target cells by calculating a statistical value from the source points. Each target cell contains the statistical value from all source points within that target cell. If there are no source points within a target cell, it gets a missing value. The target grid must be regular lon/lat or Gaussian. Depending on the chosen operator the minimum, maximum, range, sum, average, variance, standard deviation, skewness, kurtosis or median of source points is computed. 
+#' This module maps source points to target cells by calculating a statistical value from the source points. Each target cell contains the statistical value from all source points within that target cell. If there are no source points within a target cell, it gets a missing value. Depending on the chosen operator the minimum, maximum, range, sum, average, variance, standard deviation, skewness, kurtosis or median of source points is computed. 
 #'
 #' @details
 #'     remapmin     Remap minimum

@@ -63,8 +63,8 @@ cdo_supported_version <- function() {
 cdo_supported_url <- function() {
   return(package_cdo$url)
 }
-package_cdo <- list(version = "2.4.2",
-                    url = "https://code.mpimet.mpg.de/attachments/download/29481/cdo-2.4.2.tar.gz")
+package_cdo <- list(version = "2.4.3",
+                    url = "https://code.mpimet.mpg.de/attachments/download/29616/cdo-2.4.3.tar.gz")
 
 
 get_cdo_version <- function(cdo) {

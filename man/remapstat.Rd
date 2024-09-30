@@ -54,7 +54,7 @@ cdo_remapvar1(ifile, grid = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module maps source points to target cells by calculating a statistical value from the source points. Each target cell contains the statistical value from all source points within that target cell. If there are no source points within a target cell, it gets a missing value. The target grid must be regular lon/lat or Gaussian. Depending on the chosen operator the minimum, maximum, range, sum, average, variance, standard deviation, skewness, kurtosis or median of source points is computed.
+This module maps source points to target cells by calculating a statistical value from the source points. Each target cell contains the statistical value from all source points within that target cell. If there are no source points within a target cell, it gets a missing value. Depending on the chosen operator the minimum, maximum, range, sum, average, variance, standard deviation, skewness, kurtosis or median of source points is computed.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{remapmin     Remap minimum

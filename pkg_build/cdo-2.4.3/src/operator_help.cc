@@ -164,7 +164,8 @@ const CdoHelp NinfoHelp = {
 const CdoHelp ShowinfoHelp = {
     "NAME",
     "    showformat, showcode, showname, showstdname, showlevel, showltype, showyear, ",
-    "    showmon, showdate, showtime, showtimestamp - Show variables, levels or times",
+    "    showmon, showdate, showtime, showtimestamp, showfilter - ",
+    "    Show variables, levels or times",
     "",
     "SYNOPSIS",
     "    <operator>  infile",
@@ -195,6 +196,8 @@ const CdoHelp ShowinfoHelp = {
     "                   Prints time information of all timesteps (format hh:mm:ss).",
     "    showtimestamp  Show timestamp",
     "                   Prints timestamp of all timesteps (format YYYY-MM-DDThh:mm:ss).",
+    "    showfilter     Show filter specification",
+    "                   Prints NetCDF4 filter specification of all variables.",
 };
 
 const CdoHelp ShowattributeHelp = {
@@ -344,6 +347,28 @@ const CdoHelp UnpackHelp = {
     "    The operator unpack unpack all packed variables.",
     "    The default data type for all variables is automatically changed to 32-bit floats.",
     "    Use the CDO option -b F64 to change the data type to 64-bit floats, if needed.",
+};
+
+const CdoHelp SetfilterHelp = {
+    "NAME",
+    "    setfilter - Set NetCDF4 filter",
+    "",
+    "SYNOPSIS",
+    "    setfilter[,parameter]  infile outfile",
+    "",
+    "DESCRIPTION",
+    "    This operator sets the NetCDF4 filter specification for selected variables. Filters are mainly used to compress/decompress data.",
+    "    NetCDF4 uses the HDF5 plugins for filter support. To find the HDF5 plugins, the environment variable HDF5_PLUGIN_PATH must point",
+    "    to the directory with the installed plugins. The program may terminate unexpectedly if filters are used whose plugins are not found. ",
+    "    ",
+    "    A filter specification consists of the filterId and the filter parameters. CDO supports multiple filters connected with '|'.",
+    "    Here is a filter specification for bzip2 (filterId: 307) combined with szip (filterId:4): \"307,9|4,32,32\".",
+    "    ",
+    "    Use the CDO option --filter instead of setfilter if all variables require the same filter.",
+    "    More information about NetCDF4 filters can be found in https://docs.unidata.ucar.edu/netcdf-c/current/filters.html.",
+    "",
+    "PARAMETER",
+    "    filename  STRING  Read filter specification per variable from file [format: varname=\"<filterspec>\"]",
 };
 
 const CdoHelp BitroundingHelp = {
@@ -1303,6 +1328,7 @@ const CdoHelp SetpartabHelp = {
     "     comment         & STRING      & Information concerning the variable",
     "     cell_methods    & STRING      & Information concerning calculation of means or climatologies",
     "     cell_measures   & STRING      & Indicates the names of the variables containing cell areas and volumes",
+    "     filterspec      & STRING      & NetCDF4 filter specification",
     "     missing_value   & FLOAT       & Specifying how missing data will be identified",
     "     valid_min       & FLOAT       & Minimum valid value",
     "     valid_max       & FLOAT       & Maximum valid value",
@@ -2795,7 +2821,6 @@ const CdoHelp RemapstatHelp = {
     "    This module maps source points to target cells by calculating a statistical value from the source points.",
     "    Each target cell contains the statistical value from all source points within that target cell.",
     "    If there are no source points within a target cell, it gets a missing value.",
-    "    The target grid must be regular lon/lat or Gaussian.",
     "    Depending on the chosen operator the minimum, maximum, range, sum, average, variance,",
     "    standard deviation, skewness, kurtosis or median of source points is computed.",
     "",
@@ -4850,6 +4875,7 @@ const CdoHelp IntlevelHelp = {
     "    level         FLOAT   Comma-separated list of target levels",
     "    zdescription  STRING  Path to a file containing a description of the Z-axis",
     "    zvarname      STRING  Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable",
+    "    extrapolate   BOOL    Fill target layers out of the source layer range with the nearest source layer",
 };
 
 const CdoHelp Intlevel3dHelp = {
@@ -5929,6 +5955,7 @@ const CdoHelp SethaloHelp = {
     "    decrease the field at the selected boundary. The new rows and columns are filled with the missing value.",
     "    With the optional parameter value a different fill value can be used. Global cyclic fields are filled",
     "    cyclically at the east and west borders, if the fill value is not set by the user.",
+    "    All input fields need to have the same horizontal grid.",
     "",
     "PARAMETER",
     "    east   INTEGER  East halo",

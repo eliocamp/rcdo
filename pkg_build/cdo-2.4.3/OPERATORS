@@ -35,6 +35,7 @@ Operator catalog:
    Showinfo      showdate        Show date information
    Showinfo      showtime        Show time information
    Showinfo      showtimestamp   Show timestamp
+   Showinfo      showfilter      Show filter specification
    Showattribute showattribute   Show a global attribute or a variable attribute
    Filedes       partab          Parameter table
    Filedes       codetab         Parameter code table
@@ -51,6 +52,7 @@ Operator catalog:
    Tee           tee             Duplicate a data stream
    Pack          pack            Pack data
    Unpack        unpack          Unpack data
+   Setfilter     setfilter       Set NetCDF4 filter specification
    Bitrounding   bitrounding     Bit rounding
    Replace       replace         Replace variables
    Duplicate     duplicate       Duplicates a dataset

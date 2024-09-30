@@ -10,6 +10,7 @@ cdo_intlevel(
   level = NULL,
   zdescription = NULL,
   zvarname = NULL,
+  extrapolate = NULL,
   ofile = NULL
 )
 }
@@ -21,6 +22,8 @@ cdo_intlevel(
 \item{zdescription}{STRING - Path to a file containing a description of the Z-axis}
 
 \item{zvarname}{STRING - Use zvarname as the vertical 3D source coordinate instead of the 1D coordinate variable}
+
+\item{extrapolate}{BOOL - Fill target layers out of the source layer range with the nearest source layer}
 
 \item{ofile}{String with the path to the output file.}
 }

@@ -40,7 +40,7 @@ is `cdo_ymonmean()`
 ncep |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ 'hgt_ncep.nc' ] {{output}}
+#>    cdo ymonmean [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] {{output}}
 ```
 
 The output just prints the command with a place holder output. Use
@@ -51,11 +51,11 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/Rtmp89RjCK/file71812ea48dcc"
+#> [1] "/tmp/RtmpLUdudJ/file138101b65e3eb"
 #> attr(,"mtime")
-#> [1] "2024-07-04 20:11:34 AEST"
+#> [1] "2024-09-30 10:52:47 AEST"
 #> attr(,"size")
-#> [1] 8631345
+#> [1] 8630649
 ```
 
 Operators can be chained. Lets select just the Southern Hemisphere
@@ -66,7 +66,7 @@ ncep |>
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] {{output}}
+#>    cdo ymonmean [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] {{output}}
 ```
 
 Now also select the 500 hPa level
@@ -77,7 +77,7 @@ ncep |>
   cdo_sellevel(level = 500) |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] ] {{output}}
+#>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
 ```
 
 ``` r
@@ -86,7 +86,7 @@ ncep |>
   cdo_sellevel(level = 500) |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ 'hgt_ncep.nc' ] ] ] {{output}}
+#>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
 ```
 
 ## Prior art

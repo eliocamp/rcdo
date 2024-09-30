@@ -20,7 +20,7 @@ operators_io[n_output == -1, n_output := Inf]
 
 
 # Operators documentation and parameters (more or less)
-help <- "pkg_build/cdo-2.4.2/src/operator_help.cc"
+help <- "pkg_build/cdo-2.4.3/src/operator_help.cc"
 
 help <- readLines(help)
 
