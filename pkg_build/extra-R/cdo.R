@@ -144,7 +144,7 @@ get_output_length <- function(x) {
 #'
 #' @param operation a CDO operation
 #' @param output an output file or base string for output files. Defaults to
-#' temporary files.
+#' temporary files that will be deleted when its bond variable is garbage collected.
 #' @param options character vector with CDO options.
 #' @param verbose whether to print the command being executed.
 #'
@@ -186,6 +186,22 @@ cdo_execute <- function(operation,
   return(operation$output)
 }
 
+
+ephemeral_files <- R6::R6Class("ephemeral_files", public = list(
+  files = NA,
+  initialize = function(files) {
+    self$files <- files
+    return(self)
+  },
+  print = function() {
+    cat("Will be deleted when garbage collected\n")
+  },
+
+  finalize = function() {
+    file.remove(self$files)
+  })
+)
+
 temp_output <- function(operation) {
   if (operation$operator$n_output == Inf) {
     n <- 1
@@ -193,7 +209,9 @@ temp_output <- function(operation) {
     n <- operation$operator$n_output
   }
 
-  replicate(n, tempfile())
+  files <- replicate(n, tempfile())
+  attr(files, "ephemeral") <- ephemeral_files$new(files)
+  files
 }
 
 
