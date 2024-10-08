@@ -18,4 +18,5 @@ LazyData: true
 URL: https://eliocamp.github.io/rcdo/
 Imports: 
     cli,
+    R6,
     rlang
