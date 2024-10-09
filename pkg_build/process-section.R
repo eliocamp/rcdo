@@ -119,10 +119,26 @@ process_section.PARAMETER <- function(section_text, operators) {
 
   descriptions <- tapply(descriptions, param_start, \(x) paste0(x, collapse = ""))
 
+  # For some operators (chname), some parameters are written as
+  # "par1,par2,...". Split them up, remove the "..." and duplicate
+  # the description.
+  newpars <- strsplit(parameters, ",") |>
+    lapply(\(x) x[x!= "..."])
+
+  parameters <- lapply(seq_along(newpars), \(i) {
+    paste0(types[i], " - ", descriptions[i]) |>
+      rep(length(newpars[[i]])) |>
+      setNames(newpars[[i]])
+  }) |>
+    unlist()
+
+  # Some are duplicated (listed both as its own parameter and as
+  # parameter,parameter,....)
+  parameters <- parameters[!duplicated(names(parameters))]
+
   # they are all optional for now because I cannot detect if they are
   # required.
-  operators$params$optional <- paste0(types, " - ", descriptions) |>
-    setNames(parameters)
+  operators$params$optional <- parameters
 
   operators$params$optional <- operators$params$optional[!is.na(names(operators$params$optional))]
   operators

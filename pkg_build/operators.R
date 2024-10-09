@@ -47,7 +47,10 @@ for (i in seq_along(sections)[-length(sections)]) {
     section_text <- help_page[seq(headers[j] + 1, headers[j + 1] - 1)]
 
     class(section_text) <- section_name
-# browser(expr = name == "expr" & section_name == "PARAMETER")
+    # if (name == "change" & section_name == "PARAMETER") {
+    #   debugonce(process_section.PARAMETER)
+    # }
+
     operator <- process_section(section_text, operator)
   }
 
@@ -59,7 +62,8 @@ for (i in seq_along(sections)[-length(sections)]) {
 
 operators <- list()
 
-not_build <- c("change", "windtrans", "cmor")
+not_build <- c("windtrans", "cmor")
+
 
 helps <- helps[!(names(helps) %in% not_build)]
 

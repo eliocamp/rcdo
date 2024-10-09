@@ -15,7 +15,7 @@ cdo_execute(
 \item{operation}{a CDO operation}
 
 \item{output}{an output file or base string for output files. Defaults to
-temporary files.}
+temporary files that will be deleted when its bond variable is garbage collected.}
 
 \item{options}{character vector with CDO options.}
 

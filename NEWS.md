@@ -6,3 +6,4 @@
 -   The new `cdo_operator()` allows the user to define an arbitrary operator in case the some operator is missing in the package. Operators are run with the `cdo()` function.
 -   Added operators with zero outputs.
 -   By default, temporay files output are deleted when not accessible from the R session.
+-   Adds change operators.

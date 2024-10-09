@@ -10,9 +10,8 @@
 \usage{
 cdo_setrtoc(
   ifile,
-  oldval,
-  newval,
-  ... = NULL,
+  oldval = NULL,
+  newval = NULL,
   rmin = NULL,
   rmax = NULL,
   c = NULL,
@@ -22,9 +21,8 @@ cdo_setrtoc(
 
 cdo_setrtoc2(
   ifile,
-  oldval,
-  newval,
-  ... = NULL,
+  oldval = NULL,
+  newval = NULL,
   rmin = NULL,
   rmax = NULL,
   c = NULL,
@@ -34,9 +32,8 @@ cdo_setrtoc2(
 
 cdo_setvals(
   ifile,
-  oldval,
-  newval,
-  ... = NULL,
+  oldval = NULL,
+  newval = NULL,
   rmin = NULL,
   rmax = NULL,
   c = NULL,
@@ -47,7 +44,9 @@ cdo_setvals(
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
-\item{oldval, newval, ...}{FLOAT - Pairs of old and new values}
+\item{oldval}{FLOAT - Pairs of old and new values}
+
+\item{newval}{FLOAT - Pairs of old and new values}
 
 \item{rmin}{FLOAT - Lower bound}
 
