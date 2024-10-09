@@ -40,9 +40,8 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_setrtoc</span><span class="op">(</span></span>
 <span>  <span class="va">ifile</span>,</span>
-<span>  <span class="va">oldval</span>,</span>
-<span>  <span class="va">newval</span>,</span>
-<span>  ... <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  oldval <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  newval <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  rmin <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  rmax <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  c <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -52,9 +51,8 @@
 <span></span>
 <span><span class="fu">cdo_setrtoc2</span><span class="op">(</span></span>
 <span>  <span class="va">ifile</span>,</span>
-<span>  <span class="va">oldval</span>,</span>
-<span>  <span class="va">newval</span>,</span>
-<span>  ... <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  oldval <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  newval <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  rmin <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  rmax <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  c <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -64,9 +62,8 @@
 <span></span>
 <span><span class="fu">cdo_setvals</span><span class="op">(</span></span>
 <span>  <span class="va">ifile</span>,</span>
-<span>  <span class="va">oldval</span>,</span>
-<span>  <span class="va">newval</span>,</span>
-<span>  ... <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  oldval <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  newval <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  rmin <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  rmax <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  c <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -83,7 +80,11 @@
 <dd><p>String with the path to the input file.</p></dd>
 
 
-<dt id="arg-oldval-newval-">oldval, newval, ...<a class="anchor" aria-label="anchor" href="#arg-oldval-newval-"></a></dt>
+<dt id="arg-oldval">oldval<a class="anchor" aria-label="anchor" href="#arg-oldval"></a></dt>
+<dd><p>FLOAT - Pairs of old and new values</p></dd>
+
+
+<dt id="arg-newval">newval<a class="anchor" aria-label="anchor" href="#arg-newval"></a></dt>
 <dd><p>FLOAT - Pairs of old and new values</p></dd>
 
 
