@@ -200,7 +200,7 @@ ephemeral_files <- R6::R6Class("ephemeral_files", public = list(
   finalize = function() {
     to_delete <- file.exists(self$files)
     if (any(to_delete)) {
-      file.remove(self$files[to_delete])
+      try(file.remove(self$files[to_delete]), silent = TRUE)
     }
 
   })
