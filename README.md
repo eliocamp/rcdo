@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/rcdo)](https://CRAN.R-project.org/package=rcdo)
 <!-- badges: end -->
 
 rcdo is a wrapper around [Climate Data
@@ -51,9 +53,15 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/RtmpLUdudJ/file138101b65e3eb"
+#> [1] "/tmp/Rtmpw7Ab0Q/file9bcc76ad5c497"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"class")
+#> [1] "ephemeral_files" "character"      
 #> attr(,"mtime")
-#> [1] "2024-09-30 10:52:47 AEST"
+#> [1] "2025-01-21 17:13:20 AEDT"
 #> attr(,"size")
 #> [1] 8630649
 ```
