@@ -29,7 +29,9 @@ build_operation <- function(operation, chain = FALSE, options = NULL) {
     if (length(operation$params) == 0) {
       operation$params <- NULL
     } else {
-      operation$params <- paste0(operation$params, collapse = ",")
+      operation$params <- operation$params |>
+        vapply(as.character, character(1)) |>
+        paste0(collapse = ",")
     }
   }
 

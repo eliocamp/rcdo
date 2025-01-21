@@ -211,7 +211,7 @@ cdo_execute_list <- function(operations,
   out
 }
 
-#' @import R6
+
 ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
   file = NA,
   initialize = function(file) {
@@ -225,7 +225,7 @@ ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
   finalize = function() {
     to_delete <- file.exists(self$file)
     if (any(to_delete)) {
-      file.remove(self$file[to_delete])
+      try(file.remove(self$files[to_delete]), silent = TRUE)
     }
   })
 )
