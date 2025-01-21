@@ -192,6 +192,7 @@ cdo_execute_list <- function(operations,
                              output = NULL,
                              options = NULL,
                              verbose = FALSE) {
+
   if (is.null(output)) {
     output <- lapply(operations, temp_output)
   }
@@ -208,6 +209,7 @@ cdo_execute_list <- function(operations,
                         verbose = verbose)
     out[[o]] <- this
   }
+  names(out) <- names(operations)
   out
 }
 
