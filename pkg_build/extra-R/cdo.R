@@ -211,7 +211,7 @@ cdo_execute_list <- function(operations,
   out
 }
 
-
+#' @import  R6
 ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
   file = NA,
   initialize = function(file) {
