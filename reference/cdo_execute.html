@@ -43,7 +43,9 @@
 <span>  output <span class="op">=</span> <span class="fu">temp_output</span><span class="op">(</span><span class="va">operation</span><span class="op">)</span>,</span>
 <span>  options <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span></code></pre></div>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">cdo_execute_list</span><span class="op">(</span><span class="va">operations</span>, output <span class="op">=</span> <span class="cn">NULL</span>, options <span class="op">=</span> <span class="cn">NULL</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -65,6 +67,10 @@ temporary files that will be deleted when its bond variable is garbage collected
 
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>whether to print the command being executed.</p></dd>
+
+
+<dt id="arg-operations">operations<a class="anchor" aria-label="anchor" href="#arg-operations"></a></dt>
+<dd><p>a list of CDO operations</p></dd>
 
 </dl></div>
 
