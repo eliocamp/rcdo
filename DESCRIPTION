@@ -1,6 +1,6 @@
 Package: rcdo
 Title: Create CDO Commands from R Functions
-Version: 0.1.0
+Version: 0.1.0.9000
 Authors@R: 
     person("Elio", "Campitelli", , "elio.campitelli@cima.fcen.uba.ar", role = c("cre", "aut"),
            comment = c(ORCID = "0000-0002-7742-9230"))
