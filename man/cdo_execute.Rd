@@ -2,6 +2,7 @@
 % Please edit documentation in R/cdo.R
 \name{cdo_execute}
 \alias{cdo_execute}
+\alias{cdo_execute_list}
 \title{Execute a CDO operation}
 \usage{
 cdo_execute(
@@ -10,6 +11,8 @@ cdo_execute(
   options = NULL,
   verbose = FALSE
 )
+
+cdo_execute_list(operations, output = NULL, options = NULL, verbose = FALSE)
 }
 \arguments{
 \item{operation}{a CDO operation}
@@ -20,6 +23,8 @@ temporary files that will be deleted when its bond variable is garbage collected
 \item{options}{character vector with CDO options.}
 
 \item{verbose}{whether to print the command being executed.}
+
+\item{operations}{a list of CDO operations}
 }
 \description{
 Execute a CDO operation

@@ -143,6 +143,7 @@ get_output_length <- function(x) {
 #' Execute a CDO operation
 #'
 #' @param operation a CDO operation
+#' @param operations a list of CDO operations
 #' @param output an output file or base string for output files. Defaults to
 #' temporary files that will be deleted when its bond variable is garbage collected.
 #' @param options character vector with CDO options.
@@ -153,7 +154,6 @@ cdo_execute <- function(operation,
                         output = temp_output(operation),
                         options = NULL,
                         verbose = FALSE) {
-
   if (is.null(operation$output)) {
     operation$output <- output
   }
@@ -186,25 +186,56 @@ cdo_execute <- function(operation,
   return(operation$output)
 }
 
+#' @export
+#' @rdname cdo_execute
+cdo_execute_list <- function(operations,
+                             output = NULL,
+                             options = NULL,
+                             verbose = FALSE) {
+  if (is.null(output)) {
+    output <- lapply(operations, temp_output)
+  }
 
-ephemeral_files <- R6::R6Class("ephemeral_files", public = list(
-  files = NA,
-  initialize = function(files) {
-    self$files <- files
+  if (length(output) != length(operations)) {
+    stop("Number of operations does not match number of outputs.")
+  }
+
+  out <- list()
+  for (o in seq_along(operations)) {
+    this <- cdo_execute(operations[[o]],
+                        output = output[[o]],
+                        options = options,
+                        verbose = verbose)
+    out[[o]] <- this
+  }
+  out
+}
+
+
+ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
+  file = NA,
+  initialize = function(file) {
+    self$file <- file
     return(self)
   },
   print = function() {
-    cat("Will be deleted when garbage collected\n")
+    cat("File will be deleted when garbage collected\n")
   },
 
   finalize = function() {
-    to_delete <- file.exists(self$files)
+    to_delete <- file.exists(self$file)
     if (any(to_delete)) {
-      file.remove(self$files[to_delete])
+      file.remove(self$file[to_delete])
     }
-
   })
 )
+
+make_ephemeral <- function(files) {
+  attr(files, "ephemeral") <- lapply(files, \(file) ephemeral_file$new(file))
+  class(files) <- c("ephemeral_files", class(files))
+  files
+}
+
 
 temp_output <- function(operation) {
   if (operation$operator$n_output == Inf) {
@@ -214,10 +245,8 @@ temp_output <- function(operation) {
   }
 
   files <- replicate(n, tempfile())
-  attr(files, "ephemeral") <- ephemeral_files$new(files)
-  files
+  make_ephemeral(files)
 }
-
 
 check_output <- function(operation, call = rlang::caller_env()) {
   if (is.null(operation$output)) {
