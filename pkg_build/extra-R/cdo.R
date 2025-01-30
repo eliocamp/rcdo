@@ -154,6 +154,7 @@ cdo_execute <- function(operation,
                         output = temp_output(operation),
                         options = NULL,
                         verbose = FALSE) {
+  check_cdo_version(get_cdo())
   if (is.null(operation$output)) {
     operation$output <- output
   }

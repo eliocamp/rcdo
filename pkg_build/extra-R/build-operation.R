@@ -1,6 +1,4 @@
 build_operation <- function(operation, chain = FALSE, options = NULL) {
-  check_cdo_version(get_cdo())
-
   if (is.character(operation)) {
     return(paste(shQuote(normalizePath(operation)), collapse = " "))
   }

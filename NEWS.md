@@ -1,5 +1,9 @@
 # rcdo (development version)
 
+## New Features
+
+-   Improved performance of command building by only checking the cdo version installed when needed and also caching the result per session.
+
 # rcdo 0.1.0
 
 ## New Features

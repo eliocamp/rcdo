@@ -67,11 +67,17 @@ package_cdo <- list(version = "2.4.3",
                     url = "https://code.mpimet.mpg.de/attachments/download/29616/cdo-2.4.3.tar.gz")
 
 
+cdo_version_cached <- new.env()
+
 get_cdo_version <- function(cdo) {
+  version <- cdo_version_cached$version
+  if (!is.null(version)) {
+    return(version)
+  }
   version <- system2(cdo, "-V", stdout = TRUE, stderr = TRUE)[1]
   semver_regex <- r"(\d+\.\d+\.\d+)"
   version <- regmatches(version, regexpr(semver_regex, version))
-
+  cdo_version_cached$version <- version
   return(version)
 }
 
