@@ -7,7 +7,7 @@
 #'     selregion  Select cells inside regions
 #'                Selects all grid cells with the center point inside the regions.
 #'                Regions can be defined by the user via an ASCII file.
-#'                Each region consists of the geographic coordinates of a convex polygon.
+#'                Each region consists of the geographic coordinates of a polygon.
 #'                Each line of a polygon description file contains the longitude and latitude of one point.
 #'                Each polygon description file can contain one or more polygons separated by a line with the character \\&amp;.
 #'                

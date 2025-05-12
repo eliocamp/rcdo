@@ -19,7 +19,7 @@ cdo_etccdi_fd(ifile, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily minimum temperature TN, then the number of days where TN < 0 °C is counted. Note that TN have to be given in units of Kelvin. Parameter is a comma-separated list of \"key=value\" pairs.
+Let infile be a time series of the daily minimum temperature TN, then the number of days where TN < 0 °C is counted. Note that TN have to be given in units of Kelvin. Parameter is a comma-separated list of "key=value" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_fd     Frost days index per time period

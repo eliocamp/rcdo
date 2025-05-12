@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' Seasonal statistics
 #'
-#' This module computes statistical values over timesteps of the same season. Depending on the chosen operator the minimum, maximum, range, sum, average, variance or standard deviation of timesteps of the same season is written to outfile. The time of outfile is determined by the time in the middle of all contributing timesteps of infile. This can be change with the CDO option --timestat_date &lt;first|middle|last&gt;. Be careful about the first and the last output timestep, they may be incorrect values if the seasons have incomplete timesteps. 
+#' This module computes statistical values over timesteps of the same meteorological season. Depending on the chosen operator the minimum, maximum, range, sum, average, variance or standard deviation of timesteps of the same season is written to outfile. The time of outfile is determined by the time in the middle of all contributing timesteps of infile. This can be change with the CDO option --timestat_date &lt;first|middle|last&gt;. Be careful about the first and the last output timestep, they may be incorrect values if the seasons have incomplete timesteps. 
 #'
 #' @details
 #'     seasmin    Seasonal minimum

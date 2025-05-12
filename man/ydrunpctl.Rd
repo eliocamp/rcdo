@@ -5,7 +5,16 @@
 \alias{ydrunpctl}
 \title{Multiyear daily running percentile values}
 \usage{
-cdo_ydrunpctl(ifile1, ifile2, ifile3, p = NULL, nts = NULL, ofile = NULL)
+cdo_ydrunpctl(
+  ifile1,
+  ifile2,
+  ifile3,
+  p = NULL,
+  nts = NULL,
+  rm_c = NULL,
+  pm_r8 = NULL,
+  ofile = NULL
+)
 }
 \arguments{
 \item{ifile1, ifile2, ifile3}{Strings with the path to the input files.}
@@ -13,6 +22,10 @@ cdo_ydrunpctl(ifile1, ifile2, ifile3, p = NULL, nts = NULL, ofile = NULL)
 \item{p}{FLOAT - Percentile number in \{0, ..., 100\}}
 
 \item{nts}{INTEGER - Number of timesteps}
+
+\item{rm_c}{STRING - Read method circular}
+
+\item{pm_r8}{STRING - Percentile method rtype8}
 
 \item{ofile}{String with the path to the output file.}
 }

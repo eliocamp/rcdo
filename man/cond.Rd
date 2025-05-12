@@ -17,7 +17,7 @@ cdo_ifthen(ifile1, ifile2, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module selects field elements from infile2 with respect to infile1 and writes them to outfile. The fields in infile1 are handled as a mask. A value not equal to zero is treated as \"true\ zero is treated as \"false\". The number of fields in infile1 has either to be the same as in infile2 or the same as in one timestep of infile2 or only one. The fields in outfile inherit the meta data from infile2.
+This module selects field elements from infile2 with respect to infile1 and writes them to outfile. The fields in infile1 are handled as a mask. A value not equal to zero is treated as "true zero is treated as "false". The number of fields in infile1 has either to be the same as in infile2 or the same as in one timestep of infile2 or only one. The fields in outfile inherit the meta data from infile2.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{ifthen     If then

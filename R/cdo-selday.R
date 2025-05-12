@@ -8,8 +8,8 @@
 #' @param months INTEGER - Comma-separated list or first/last\[/inc\] range of months.
 #' @param years INTEGER - Comma-separated list or first/last\[/inc\] range of years.
 #' @param seasons STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).
-#' @param startdate STRING - Start date (format YYYY-MM-DDThh:mm:ss).
-#' @param enddate STRING - End date (format YYYY-MM-DDThh:mm:ss) \[default: startdate\].
+#' @param startdate STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+#' @param enddate STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default: startdate\].
 #' @param nts1 INTEGER - Number of timesteps before the selected month \[default: 0\].
 #' @param nts2 INTEGER - Number of timesteps after the selected month \[default: nts1\].
 #'

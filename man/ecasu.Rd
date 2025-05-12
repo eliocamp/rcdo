@@ -21,7 +21,7 @@ cdo_etccdi_su(ifile, T = NULL, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily maximum temperature TX, then the number of days where TX > T is counted. The number T is an optional parameter with default T = 25°C. Note that TX have to be given in units of Kelvin, whereas T have to be given in degrees Celsius. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile be a time series of the daily maximum temperature TX, then the number of days where TX > T is counted. The number T is an optional parameter with default T = 25°C. Note that TX have to be given in units of Kelvin, whereas T have to be given in degrees Celsius. Parameter is a comma-separated list of "key=values" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_su     Summer days index per time period

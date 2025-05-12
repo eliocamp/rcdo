@@ -91,13 +91,13 @@ cdo_select(
 
 \item{gridnum}{INTEGER - Comma-separated list or first/last[/inc] range of grid numbers.}
 
-\item{steptype}{STRING - Comma-separated list of timestep types (constant, avg, accum, min, max, range, diff, sum)}
+\item{steptype}{STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)}
 
-\item{date}{STRING - Comma-separated list of dates (format YYYY-MM-DDThh:mm:ss).}
+\item{date}{STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).}
 
-\item{startdate}{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
+\item{startdate}{STRING - Start date (format: YYYY-MM-DDThh:mm:ss).}
 
-\item{enddate}{STRING - End date (format YYYY-MM-DDThh:mm:ss).}
+\item{enddate}{STRING - End date (format: YYYY-MM-DDThh:mm:ss).}
 
 \item{minute}{INTEGER - Comma-separated list or first/last[/inc] range of minutes.}
 
@@ -122,7 +122,7 @@ cdo_select(
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module selects some fields from infiles and writes them to outfile. infiles is an arbitrary number of input files. All input files need to have the same structure with the same variables on different timesteps. The fields selected depends on the chosen parameters. Parameter is a comma-separated list of \"key=value\" pairs. A range of integer values can be specified by first/last[/inc]. Wildcards are supported for string values.
+This module selects some fields from infiles and writes them to outfile. infiles is an arbitrary number of input files. All input files need to have the same structure with the same variables on different timesteps. The fields selected depends on the chosen parameters. Parameter is a comma-separated list of "key=value" pairs. A range of integer values can be specified by first/last[/inc]. Wildcards are supported for string values.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{select  Select fields

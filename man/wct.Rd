@@ -13,5 +13,5 @@ cdo_wct(ifile1, ifile2, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile1 and infile2 be time series of temperature and wind speed records, then a corresponding time series of resulting windchill temperatures is written to outfile. The wind chill temperature calculation is only valid for a temperature of T <= 33 °C and a wind speed of v >= 1.39 m/s. Whenever these conditions are not satisfied, a missing value is written to outfile. Note that temperature and wind speed records have to be given in units of °C and m/s, respectively.
+Let infile1 and infile2 be time series of temperature and wind speed fields, then a corresponding time series of resulting windchill temperatures is written to outfile. The wind chill temperature calculation is only valid for a temperature of T <= 33 °C and a wind speed of v >= 1.39 m/s. Whenever these conditions are not satisfied, a missing value is written to outfile. Note that temperature and wind speed fields have to be given in units of °C and m/s, respectively.
 }

@@ -27,7 +27,7 @@ small inconsistencies in the documentation, missing operators, extra operators
 or changes in syntax.
 
 \code{cdo_install()} will attempt to download, configure, compile and install
-CDO version 2.4.3 in the package data directory. If this
+CDO version 2.5.1 in the package data directory. If this
 version of CDO exists, the package will use it. Otherwise, it will use your
 system's installation.
 }

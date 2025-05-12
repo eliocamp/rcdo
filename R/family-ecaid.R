@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' Ice days index per time period
 #'
-#' Let infile be a time series of the daily maximum temperature TX, then the number of days where TX &lt; 0 °C is counted. Note that TX have to be given in units of Kelvin. Parameter is a comma-separated list of \&quot;key=values\&quot; pairs. 
+#' Let infile be a time series of the daily maximum temperature TX, then the number of days where TX &lt; 0 °C is counted. Note that TX have to be given in units of Kelvin. Parameter is a comma-separated list of &quot;key=values&quot; pairs. 
 #'
 #' @details
 #'     eca_id     Ice days index per time period

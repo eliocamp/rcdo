@@ -4,12 +4,12 @@
 #' @param day INTEGER - Value of the new day
 #' @param month INTEGER - Value of the new month
 #' @param year INTEGER - Value of the new year
-#' @param units STRING - Base units of the time axis (seconds, minutes, hours, days, months, years)
+#' @param units STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)
 #' @param date STRING - Date (format: YYYY-MM-DD)
 #' @param time STRING - Time (format: hh:mm:ss)
-#' @param inc STRING - Optional increment (seconds, minutes, hours, days, months, years) \[default: 1hour\]
-#' @param frequency STRING - Frequency of the time series (hour, day, month, year)
-#' @param calendar STRING - Calendar (standard, proleptic_gregorian, 360_day, 365_day, 366_day)
+#' @param inc STRING - Optional increment (seconds|minutes|hours|days|months|years) \[default: 1hour\]
+#' @param frequency STRING - Frequency of the time series (hour|day|month|year)
+#' @param calendar STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)
 #' @param shiftValue STRING - Shift value (e.g. -3hour)
 #'
 #' @export

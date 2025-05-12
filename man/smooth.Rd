@@ -12,7 +12,7 @@ cdo_smooth(
   nsmooth = NULL,
   radius = NULL,
   maxpoints = NULL,
-  form = NULL,
+  weighted = NULL,
   weight0 = NULL,
   weightR = NULL,
   ofile = NULL
@@ -23,7 +23,7 @@ cdo_smooth9(
   nsmooth = NULL,
   radius = NULL,
   maxpoints = NULL,
-  form = NULL,
+  weighted = NULL,
   weight0 = NULL,
   weightR = NULL,
   ofile = NULL
@@ -38,7 +38,7 @@ cdo_smooth9(
 
 \item{maxpoints}{INTEGER - Maximum number of points, default maxpoints=<gridsize>}
 
-\item{form}{STRING - Form of the curve, default form=linear}
+\item{weighted}{STRING - Weighting method, default weighted=linear}
 
 \item{weight0}{FLOAT - Weight at distance 0, default weight0=0.25}
 
@@ -47,26 +47,26 @@ cdo_smooth9(
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Smooth all grid points of a horizontal grid. Options is a comma-separated list of \"key=value\" pairs with optional parameters.
+Smooth all grid points of a horizontal grid. Options is a comma-separated list of "key=value" pairs with optional parameters.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{smooth   Smooth grid points
          Performs a N point smoothing on all input fields. The number of points used depend
          on the search radius (radius) and the maximum number of points (maxpoints).
          Per default all points within the search radius of 1degree are used.
-         The weights for the points depend on the form of the curve and the distance.
-         The implemented form of the curve is linear with constant default weights of 0.25
+         The weights for the points depend on the weighting method and the distance.
+         The implemented weighting method is linear with constant default weights of 0.25
          at distance 0 (weight0) and at the search radius (weightR).
 smooth9  9 point smoothing
          Performs a 9 point smoothing on all fields with a quadrilateral curvilinear grid.
          The result at each grid point is a weighted average of the grid point plus
-         the 8 surrounding points. The center point receives a weight of 1.0, the 
-         points at each side and above and below receive a weight of 0.5, and corner 
+         the 8 surrounding points. The center point receives a weight of 1.0, the
+         points at each side and above and below receive a weight of 0.5, and corner
          points receive a weight of 0.3.
-         All 9 points are multiplied by their weights and summed, then divided by 
-         the total weight to obtain the smoothed value. Any missing data points are 
-         not included in the sum; points beyond the grid boundary are considered to 
-         be missing. Thus the final result may be the result of an averaging with less 
+         All 9 points are multiplied by their weights and summed, then divided by
+         the total weight to obtain the smoothed value. Any missing data points are
+         not included in the sum; points beyond the grid boundary are considered to
+         be missing. Thus the final result may be the result of an averaging with less
          than 9 points.
 }\if{html}{\out{</div>}}
 }

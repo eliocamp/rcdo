@@ -9,7 +9,7 @@
 #'                     The model half-level pressure (p_half) is given by:
 #'                     
 #'                     
-#'                             p_half = a + b ∗ sp
+#'                             p_half = a + b * sp
 #'                     
 #'                     with
 #'                        a, b: coefficients defining the model levels

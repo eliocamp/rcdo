@@ -19,7 +19,7 @@ cdo_etccdi_id(ifile, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily maximum temperature TX, then the number of days where TX < 0 °C is counted. Note that TX have to be given in units of Kelvin. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile be a time series of the daily maximum temperature TX, then the number of days where TX < 0 °C is counted. Note that TX have to be given in units of Kelvin. Parameter is a comma-separated list of "key=values" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_id     Ice days index per time period

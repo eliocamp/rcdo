@@ -23,7 +23,7 @@ cdo_etccdi_cwd(ifile, R = NULL, N = NULL, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily precipitation amount RR, then the largest number of consecutive days where RR is at least R is counted. R is an optional parameter with default R = 1 mm. A further output variable is the number of wet periods of more than N days. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile be a time series of the daily precipitation amount RR, then the largest number of consecutive days where RR is at least R is counted. R is an optional parameter with default R = 1 mm. A further output variable is the number of wet periods of more than N days. Parameter is a comma-separated list of "key=values" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_cwd     Consecutive wet days index per time period

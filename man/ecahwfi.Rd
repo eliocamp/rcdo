@@ -21,7 +21,7 @@ cdo_etccdi_wsdi(ifile1, ifile2, nday = NULL, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile1 be a time series of the daily mean temperature TG, and infile2 be the 90th percentile TGn90 of daily mean temperatures for any period used as reference. Then counted is the number of days where, in intervals of at least nday consecutive days, TG > TGn90. The number nday is an optional parameter with default nday = 6. A further output variable is the number of warm-spell periods longer than or equal to nday days. TGn90 is calculated as the 90th percentile of daily mean temperatures of a five day window centred on each calendar day of a given climate reference period. Note that both TG and TGn90 have to be given in the same units. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile1 be a time series of the daily mean temperature TG, and infile2 be the 90th percentile TGn90 of daily mean temperatures for any period used as reference. Then counted is the number of days where, in intervals of at least nday consecutive days, TG > TGn90. The number nday is an optional parameter with default nday = 6. A further output variable is the number of warm-spell periods longer than or equal to nday days. TGn90 is calculated as the 90th percentile of daily mean temperatures of a five day window centred on each calendar day of a given climate reference period. Note that both TG and TGn90 have to be given in the same units. Parameter is a comma-separated list of "key=values" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_hwfi     Warm spell days index wrt 90th percentile of reference period

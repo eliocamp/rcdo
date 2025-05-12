@@ -1,7 +1,7 @@
 ## This file was created automatically, do not edit by hand.
 #' Conditional select a constant
 #'
-#' This module creates fields with a constant value or missing value. The fields in infile are handled as a mask. A value not equal to zero is treated as \&quot;true\ zero is treated as \&quot;false\&quot;. 
+#' This module creates fields with a constant value or missing value. The fields in infile are handled as a mask. A value not equal to zero is treated as &quot;true zero is treated as &quot;false&quot;. 
 #'
 #' @details
 #'     ifthenc     If then constant

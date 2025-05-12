@@ -15,6 +15,8 @@
 #'     infon  Dataset information listed by parameter name
 #'            The same as operator info but using the name instead of the
 #'            identifier to label the parameter.
+#'     cinfo  Compact information listed by parameter name
+#'            cinfo is a compact version of infon. It prints the minimum, mean and maximum value for each variable across all layers and time steps.
 #'     map    Dataset information and simple map
 #'            Prints information, simple statistics and a map for each field of all input
 #'            datasets. The map will be printed only for fields on a regular lon/lat grid.

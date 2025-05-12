@@ -21,7 +21,7 @@ cdo_etccdi_rx5day(ifile, x = NULL, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of 5-day precipitation totals RR, then the maximum of RR is written to outfile. A further output variable is the number of 5 day period with precipitation totals greater than x mm, where x is an optional parameter with default x = 50 mm. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile be a time series of 5-day precipitation totals RR, then the maximum of RR is written to outfile. A further output variable is the number of 5 day period with precipitation totals greater than x mm, where x is an optional parameter with default x = 50 mm. Parameter is a comma-separated list of "key=values" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_rx5day     Highest five-day precipitation amount per time period

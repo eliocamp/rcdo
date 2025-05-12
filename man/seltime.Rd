@@ -176,9 +176,9 @@ cdo_selyear(
 
 \item{seasons}{STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND or ANN).}
 
-\item{startdate}{STRING - Start date (format YYYY-MM-DDThh:mm:ss).}
+\item{startdate}{STRING - Start date (format: YYYY-MM-DDThh:mm:ss).}
 
-\item{enddate}{STRING - End date (format YYYY-MM-DDThh:mm:ss) [default: startdate].}
+\item{enddate}{STRING - End date (format: YYYY-MM-DDThh:mm:ss) [default: startdate].}
 
 \item{nts1}{INTEGER - Number of timesteps before the selected month [default: 0].}
 

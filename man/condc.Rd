@@ -19,7 +19,7 @@ cdo_ifthenc(ifile, c = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-This module creates fields with a constant value or missing value. The fields in infile are handled as a mask. A value not equal to zero is treated as \"true\ zero is treated as \"false\".
+This module creates fields with a constant value or missing value. The fields in infile are handled as a mask. A value not equal to zero is treated as "true zero is treated as "false".
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{ifthenc     If then constant

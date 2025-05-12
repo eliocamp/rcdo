@@ -12,10 +12,10 @@
 #' @param ltype INTEGER - Comma-separated list or first/last\[/inc\] range of GRIB level types.
 #' @param gridname STRING - Comma-separated list of grid names.
 #' @param gridnum INTEGER - Comma-separated list or first/last\[/inc\] range of grid numbers.
-#' @param steptype STRING - Comma-separated list of timestep types (constant, avg, accum, min, max, range, diff, sum)
-#' @param date STRING - Comma-separated list of dates (format YYYY-MM-DDThh:mm:ss).
-#' @param startdate STRING - Start date (format YYYY-MM-DDThh:mm:ss).
-#' @param enddate STRING - End date (format YYYY-MM-DDThh:mm:ss).
+#' @param steptype STRING - Comma-separated list of timestep types (constant|avg|accum|min|max|range|diff|sum)
+#' @param date STRING - Comma-separated list of dates (format: YYYY-MM-DDThh:mm:ss).
+#' @param startdate STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+#' @param enddate STRING - End date (format: YYYY-MM-DDThh:mm:ss).
 #' @param minute INTEGER - Comma-separated list or first/last\[/inc\] range of minutes.
 #' @param hour INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
 #' @param day INTEGER - Comma-separated list or first/last\[/inc\] range of days.

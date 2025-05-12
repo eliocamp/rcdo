@@ -15,28 +15,30 @@
 \alias{ydrunstat}
 \title{Multiyear daily running statistics}
 \usage{
-cdo_ydrunavg(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunavg(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunmax(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunmax(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunmean(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunmean(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunmin(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunmin(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunstd(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunstd(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunstd1(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunstd1(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunsum(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunsum(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunvar(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunvar(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 
-cdo_ydrunvar1(ifile, nts = NULL, ofile = NULL)
+cdo_ydrunvar1(ifile, nts = NULL, rm_c = NULL, ofile = NULL)
 }
 \arguments{
 \item{ifile}{String with the path to the input file.}
 
 \item{nts}{INTEGER - Number of timesteps}
+
+\item{rm_c}{STRING - Read method circular}
 
 \item{ofile}{String with the path to the output file.}
 }

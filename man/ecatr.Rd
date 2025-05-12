@@ -21,7 +21,7 @@ cdo_etccdi_tr(ifile, T = NULL, freq = NULL, ofile = NULL)
 \item{ofile}{String with the path to the output file.}
 }
 \description{
-Let infile be a time series of the daily minimum temperature TN, then the number of days where TN > T is counted. The number T is an optional parameter with default T = 20°C. Note that TN have to be given in units of Kelvin, whereas T have to be given in degrees Celsius. Parameter is a comma-separated list of \"key=values\" pairs.
+Let infile be a time series of the daily minimum temperature TN, then the number of days where TN > T is counted. The number T is an optional parameter with default T = 20°C. Note that TN have to be given in units of Kelvin, whereas T have to be given in degrees Celsius. Parameter is a comma-separated list of "key=values" pairs.
 }
 \details{
 \if{html}{\out{<div class="sourceCode">}}\preformatted{eca_tr     Tropical nights index per time period

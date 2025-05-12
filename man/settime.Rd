@@ -192,17 +192,17 @@ cdo_shifttime(
 
 \item{year}{INTEGER - Value of the new year}
 
-\item{units}{STRING - Base units of the time axis (seconds, minutes, hours, days, months, years)}
+\item{units}{STRING - Base units of the time axis (seconds|minutes|hours|days|months|years)}
 
 \item{date}{STRING - Date (format: YYYY-MM-DD)}
 
 \item{time}{STRING - Time (format: hh:mm:ss)}
 
-\item{inc}{STRING - Optional increment (seconds, minutes, hours, days, months, years) [default: 1hour]}
+\item{inc}{STRING - Optional increment (seconds|minutes|hours|days|months|years) [default: 1hour]}
 
-\item{frequency}{STRING - Frequency of the time series (hour, day, month, year)}
+\item{frequency}{STRING - Frequency of the time series (hour|day|month|year)}
 
-\item{calendar}{STRING - Calendar (standard, proleptic_gregorian, 360_day, 365_day, 366_day)}
+\item{calendar}{STRING - Calendar (standard|proleptic_gregorian|360_day|365_day|366_day)}
 
 \item{shiftValue}{STRING - Shift value (e.g. -3hour)}
 
