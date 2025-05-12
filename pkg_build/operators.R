@@ -1,6 +1,9 @@
 source("pkg_build/process-section.R")
 # Operators IO
-op_list <- suppressWarnings(system("cdo --operators", intern = TRUE))
+source("pkg_build/extra-R/cdo-install.R")
+
+cdo_install()
+op_list <- suppressWarnings(system(paste0(get_cdo(which = "rcdo_version"), " --operators"), intern = TRUE))
 
 operators <- strsplit(op_list, " ") |>
   vapply(\(x) x[1], FUN.VALUE = character(1))
@@ -20,7 +23,7 @@ operators_io[n_output == -1, n_output := Inf]
 
 
 # Operators documentation and parameters (more or less)
-help <- "pkg_build/cdo-2.4.3/src/operator_help.cc"
+help <- "pkg_build/cdo-2.5.1/src/operator_help.cc"
 
 help <- readLines(help)
 
@@ -68,7 +71,7 @@ not_build <- c("windtrans", "cmor")
 helps <- helps[!(names(helps) %in% not_build)]
 
 for (help in helps) {
-  for (op in help$operators)
+  for (op in help$operators) {
     operators[[op]] <- list(
       command = op,
       params = help$params,
@@ -76,6 +79,7 @@ for (help in helps) {
       n_input = operators_io[operator == op]$n_input,
       n_output = operators_io[operator == op]$n_output
     )
+  }
 }
 
 
