@@ -13,6 +13,11 @@ rm_quotes <- function(x) {
     gsub("\",", "", x = _)
 }
 
+rm_escaped <- function(x) {
+  gsub(r"(\\)", "", x)
+}
+
+
 rm_last_comma <- function(x) {
   gsub("\",")
 }
@@ -52,6 +57,7 @@ process_section.NAME <- function(section_text, operators) {
 process_section.DESCRIPTION <- function(section_text, operators) {
   operators$description <- section_text |>
     rm_quotes() |>
+    rm_escaped() |>
     trimws() |>
     paste0(collapse = " ") |>
     escape_chars()
@@ -135,6 +141,12 @@ process_section.PARAMETER <- function(section_text, operators) {
   # Some are duplicated (listed both as its own parameter and as
   # parameter,parameter,....)
   parameters <- parameters[!duplicated(names(parameters))]
+
+  # A couple of parameters are described as "parameter=value".
+  # For example. ydrunavg uses "rm=c" to set "Read Method" to circular.
+  # This will replace the "_", which breaks my parsing, but still those arguments
+  # don't work. I need to figure out how to parse and pass them correctly.
+  names(parameters) <- gsub("=", "_", names(parameters))
 
   # they are all optional for now because I cannot detect if they are
   # required.
