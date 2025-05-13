@@ -24,7 +24,13 @@ rcdo is a wrapper around [Climate Data Operators](https://code.mpimet.mpg.de/pro
 
 ## Installation
 
-You can install the development version of rcdo from [GitHub](https://github.com/) with:
+You can install rcdo from CRAN with 
+
+```r
+install.packages("rcdo")
+```
+
+or the development version of rcdo from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("pak")
@@ -37,8 +43,10 @@ The functions start with `cdo_` an the name of the operator (e.g. the selname op
 ## Example
 
 
+
 ```{r example}
 library(rcdo)
+cdo_use("packaged")  # use package version of cdo that can be installed with `cdo_install()`. 
 ncep <- "hgt_ncep.nc"
 ```
 

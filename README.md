@@ -16,8 +16,14 @@ Operators](https://code.mpimet.mpg.de/projects/cdo).
 
 ## Installation
 
-You can install the development version of rcdo from
-[GitHub](https://github.com/) with:
+You can install rcdo from CRAN with
+
+``` r
+install.packages("rcdo")
+```
+
+or the development version of rcdo from [GitHub](https://github.com/)
+with:
 
 ``` r
 # install.packages("pak")
@@ -32,6 +38,8 @@ is the `cdo_selname()` function)
 
 ``` r
 library(rcdo)
+cdo_use("packaged")  # use package version of cdo that can be installed with `cdo_install()`. 
+#> Using packaged CDO, version 2.5.1.
 ncep <- "hgt_ncep.nc"
 ```
 
@@ -42,7 +50,7 @@ is `cdo_ymonmean()`
 ncep |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] {{output}}
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo ymonmean [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] {{output}}
 ```
 
 The output just prints the command with a place holder output. Use
@@ -53,15 +61,13 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/Rtmpw7Ab0Q/file9bcc76ad5c497"
+#> [1] "/tmp/Rtmpl0EmNG/filebc68377cea48e"
 #> attr(,"ephemeral")
 #> attr(,"ephemeral")[[1]]
 #> File will be deleted when garbage collected
 #> 
-#> attr(,"class")
-#> [1] "ephemeral_files" "character"      
 #> attr(,"mtime")
-#> [1] "2025-01-21 17:13:20 AEDT"
+#> [1] "2025-05-13 12:28:34 AEST"
 #> attr(,"size")
 #> [1] 8630649
 ```
@@ -74,7 +80,7 @@ ncep |>
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] {{output}}
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo ymonmean [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] {{output}}
 ```
 
 Now also select the 500 hPa level
@@ -85,7 +91,7 @@ ncep |>
   cdo_sellevel(level = 500) |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
 ```
 
 ``` r
@@ -94,7 +100,7 @@ ncep |>
   cdo_sellevel(level = 500) |> 
   cdo_ymonmean() 
 #> CDO command:
-#>    cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
 ```
 
 ## Prior art
