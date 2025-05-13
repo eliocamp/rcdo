@@ -17,8 +17,9 @@ RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
 LazyData: true
-URL: https://eliocamp.github.io/rcdo/
+URL: https://eliocamp.github.io/rcdo/, https://github.com/eliocamp/rcdo
 Imports: 
     cli,
     R6,
     rlang
+BugReports: https://github.com/eliocamp/rcdo/issues
