@@ -16,10 +16,10 @@
 #'
 #' @export
 cdo_install <- function(reinstall = FALSE,
-                        proj = "/usr/",
-                        netcdf = "/usr/",
-                        fftw3 = "/usr/",
-                        eccodes = "/usr/") {
+                        proj = "/usr",
+                        netcdf = "/usr",
+                        fftw3 = "/usr",
+                        eccodes = "/usr") {
   if (!reinstall && file.exists(cdo_local_path())) {
     cli::cli_warn("Local CDO installation detected. To reinstall use {.code cdo_install(reinstall = TRUE)}")
     return(cdo_local_path())
