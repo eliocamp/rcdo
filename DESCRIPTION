@@ -8,7 +8,7 @@ Authors@R: c(
     )
 Description: Provides a translation layer between 'R' and 'CDO' operators. Each 
   operator is it's own function with documentation. Nested or piped functions
-  will be translateed into CDO chains. 
+  will be translated into 'CDO' chains. 
 License: GPL (>= 3)
 Encoding: UTF-8
 Language: en-GB
