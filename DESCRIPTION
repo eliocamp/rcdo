@@ -1,5 +1,5 @@
 Package: rcdo
-Title: Create CDO Commands from R Functions
+Title: R Wrapper of CDO Operators
 Version: 0.1.0.9000
 Authors@R: 
     person("Elio", "Campitelli", , "elio.campitelli@cima.fcen.uba.ar", role = c("cre", "aut", "cph"),
