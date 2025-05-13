@@ -16,7 +16,7 @@ create_function <- function(operator, template) {
                           paste0(input_args, collapse = ","),
                           " Strings with the path to the input files.")
   } else {
-    input <- "as.list(ifiles)"
+    input <- "maybe_list(ifiles)"
     input_args <- "ifiles"
     input_param <- "#' @param ifiles Character vector with the path to the input files."
   }
