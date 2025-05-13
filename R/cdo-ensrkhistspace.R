@@ -7,7 +7,7 @@
 #' @rdname ensstat2
 cdo_ensrkhistspace <- function(ifiles, ofile = NULL) {
   cdo(operator = operators$ensrkhistspace,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c(ofile)
   )

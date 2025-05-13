@@ -136,7 +136,8 @@ cdo_use <- function(version = c("system", "packaged")) {
       cli::cli_abort("Cannot find packaged version of CDO. Download and compile with {.code cdo_install()}.")
     }
   }
-
+  # need to clear cache first 
+  cdo_version_cached$version <- NULL
   cdo_version <- get_cdo_version(cdo)
   cli::cli_inform("Using {version[1]} CDO, version {cdo_version}.")
   check_cdo_version(cdo)

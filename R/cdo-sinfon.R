@@ -7,7 +7,7 @@
 #' @rdname sinfo
 cdo_sinfon <- function(ifiles) {
   cdo(operator = operators$sinfon,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c()
   )

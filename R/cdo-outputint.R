@@ -8,7 +8,7 @@
 #' @rdname output
 cdo_outputint <- function(ifiles, format = NULL, nelem = NULL) {
   cdo(operator = operators$outputint,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(format = format, nelem = nelem),
       output = c()
   )

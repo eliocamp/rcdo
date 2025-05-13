@@ -31,7 +31,7 @@
 #' @rdname select
 cdo_delete <- function(ifiles, name = NULL, param = NULL, code = NULL, level = NULL, levrange = NULL, levidx = NULL, zaxisname = NULL, zaxisnum = NULL, ltype = NULL, gridname = NULL, gridnum = NULL, steptype = NULL, date = NULL, startdate = NULL, enddate = NULL, minute = NULL, hour = NULL, day = NULL, month = NULL, season = NULL, year = NULL, dom = NULL, timestep = NULL, timestep_of_year = NULL, timestepmask = NULL, ofile = NULL) {
   cdo(operator = operators$delete,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(name = name, param = param, code = code, level = level, levrange = levrange, levidx = levidx, zaxisname = zaxisname, zaxisnum = zaxisnum, ltype = ltype, gridname = gridname, gridnum = gridnum, steptype = steptype, date = date, startdate = startdate, enddate = enddate, minute = minute, hour = hour, day = day, month = month, season = season, year = year, dom = dom, timestep = timestep, timestep_of_year = timestep_of_year, timestepmask = timestepmask),
       output = c(ofile)
   )

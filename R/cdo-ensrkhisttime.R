@@ -7,7 +7,7 @@
 #' @rdname ensstat2
 cdo_ensrkhisttime <- function(ifiles, ofile = NULL) {
   cdo(operator = operators$ensrkhisttime,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c(ofile)
   )

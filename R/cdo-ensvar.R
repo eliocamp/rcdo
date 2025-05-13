@@ -7,7 +7,7 @@
 #' @rdname ensstat
 cdo_ensvar <- function(ifiles, p = NULL, ofile = NULL) {
   cdo(operator = operators$ensvar,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(p = p),
       output = c(ofile)
   )

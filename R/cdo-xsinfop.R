@@ -7,7 +7,7 @@
 #' @rdname xsinfo
 cdo_xsinfop <- function(ifiles) {
   cdo(operator = operators$xsinfop,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c()
   )

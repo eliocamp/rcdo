@@ -7,7 +7,7 @@
 #' @rdname ensstat2
 cdo_ensroc <- function(ifiles, ofile = NULL) {
   cdo(operator = operators$ensroc,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c(ofile)
   )

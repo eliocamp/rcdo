@@ -7,7 +7,7 @@
 #' @rdname ensval
 cdo_enscrps <- function(ifiles, obase = NULL) {
   cdo(operator = operators$enscrps,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c(obase)
   )

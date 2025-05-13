@@ -7,7 +7,7 @@
 #' @rdname ensstat
 cdo_ensskew <- function(ifiles, p = NULL, ofile = NULL) {
   cdo(operator = operators$ensskew,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(p = p),
       output = c(ofile)
   )

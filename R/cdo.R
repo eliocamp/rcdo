@@ -40,6 +40,10 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
   return(operation)
 }
 
+maybe_list <- function(x) {
+  if (is.operation(x)) return(list(x))
+  x
+}
 
 #' @param command a string with the command used to run the operator
 #' @param params a character vector with the name of the parametsr

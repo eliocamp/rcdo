@@ -7,7 +7,7 @@
 #' @rdname info
 cdo_infon <- function(ifiles) {
   cdo(operator = operators$infon,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c()
   )

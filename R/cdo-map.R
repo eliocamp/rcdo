@@ -7,7 +7,7 @@
 #' @rdname info
 cdo_map <- function(ifiles) {
   cdo(operator = operators$map,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c()
   )

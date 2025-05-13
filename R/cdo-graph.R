@@ -7,7 +7,7 @@
 #' @rdname maggraph
 cdo_graph <- function(ifiles, parameter = NULL, ofile = NULL) {
   cdo(operator = operators$graph,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(parameter = parameter),
       output = c(ofile)
   )

@@ -7,7 +7,7 @@
 #' @rdname ensstat
 cdo_ensmean <- function(ifiles, p = NULL, ofile = NULL) {
   cdo(operator = operators$ensmean,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(p = p),
       output = c(ofile)
   )

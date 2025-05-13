@@ -7,7 +7,7 @@
 #' @rdname copy
 cdo_clone <- function(ifiles, ofile = NULL) {
   cdo(operator = operators$clone,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = NULL,
       output = c(ofile)
   )

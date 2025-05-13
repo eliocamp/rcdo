@@ -8,7 +8,7 @@
 #' @rdname merge
 cdo_merge <- function(ifiles, skip_same_time = NULL, names = NULL, ofile = NULL) {
   cdo(operator = operators$merge,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(skip_same_time = skip_same_time, names = names),
       output = c(ofile)
   )

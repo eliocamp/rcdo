@@ -8,7 +8,7 @@
 #' @rdname collgrid
 cdo_collgrid <- function(ifiles, nx = NULL, names = NULL, ofile = NULL) {
   cdo(operator = operators$collgrid,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(nx = nx, names = names),
       output = c(ofile)
   )

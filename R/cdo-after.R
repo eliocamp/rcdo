@@ -7,7 +7,7 @@
 #' @rdname afterburner
 cdo_after <- function(ifiles, vct = NULL, ofile = NULL) {
   cdo(operator = operators$after,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(vct = vct),
       output = c(ofile)
   )

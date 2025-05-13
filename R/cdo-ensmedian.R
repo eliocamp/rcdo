@@ -7,7 +7,7 @@
 #' @rdname ensstat
 cdo_ensmedian <- function(ifiles, p = NULL, ofile = NULL) {
   cdo(operator = operators$ensmedian,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(p = p),
       output = c(ofile)
   )

@@ -7,7 +7,7 @@
 #' @rdname outputtab
 cdo_outputtab <- function(ifiles, parameter = NULL) {
   cdo(operator = operators$outputtab,
-      input = as.list(ifiles),
+      input = maybe_list(ifiles),
       params = list(parameter = parameter),
       output = c()
   )
