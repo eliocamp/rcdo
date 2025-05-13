@@ -7,4 +7,5 @@
 ^pkgdown$
 ^\.github$
 ^pkg_build$
-^LICENSE\.md$
+^LICENCE\.md$
+^cran-comments\.md$
