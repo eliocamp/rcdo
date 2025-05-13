@@ -107,6 +107,7 @@ for (operator in operators) {
 
 
 template_family <- readLines("pkg_build/cdo-template-family.R")
+read_only_warning <- "## This file was created automatically, do not edit by hand."
 
 for (help in helps) {
   if (length(help$details) > 0) {
@@ -122,7 +123,7 @@ for (help in helps) {
 
   help$note <- gsub("\\n", "\n#' ", help$note)
 
-  help$warning <- "## This file was created automatically, do not edit by hand."
+  help$warning <- read_only_warning
 
   code <- whisker::whisker.render(template_family, help)
   file <- paste0("R/family-", help$name, ".R" )
@@ -134,7 +135,7 @@ usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
 files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
 for (file in files) {
-  file.copy(file, file.path("R", basename(file)), overwrite = TRUE)
+  writeLines(c(read_only_warning, readLines(file)), file.path("R", basename(file)))
 }
 
 licence <- "pkg_build/cdo-2.5.1/LICENSE"

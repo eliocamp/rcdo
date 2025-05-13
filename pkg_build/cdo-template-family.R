@@ -7,7 +7,7 @@
 #'
 #' {{note}}
 #'
-#' @return
+#' @returns
 #' Operators that output one or more files return a character vector to the
 #' output files.
 #'
