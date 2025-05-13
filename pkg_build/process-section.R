@@ -7,6 +7,13 @@ escape_chars <- function(x) {
   return(x)
 }
 
+replace_unicode <- function(x) {
+  chars <- c(r"(\\eqn{\\simeq})" = "≃")
+  for (i in seq_along(chars)) {
+    x <- gsub(chars[i], names(chars)[i], x, perl = TRUE)
+  }
+  return(x)
+}
 
 rm_quotes <- function(x) {
   gsub("^ +\"", "", x) |>
@@ -60,7 +67,8 @@ process_section.DESCRIPTION <- function(section_text, operators) {
     rm_escaped() |>
     trimws() |>
     paste0(collapse = " ") |>
-    escape_chars()
+    escape_chars() |> 
+    replace_unicode()
 
   operators
 }
