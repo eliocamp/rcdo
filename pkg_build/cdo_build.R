@@ -137,4 +137,8 @@ for (file in files) {
   file.copy(file, file.path("R", basename(file)), overwrite = TRUE)
 }
 
+licence <- "pkg_build/cdo-2.5.1/LICENSE"
+
+file.copy(licence, file.path("inst/LICENCE.CDO"))
+
 devtools::document(roclets = c('rd', 'collate', 'namespace'))

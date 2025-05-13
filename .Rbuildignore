@@ -7,3 +7,4 @@
 ^pkgdown$
 ^\.github$
 ^pkg_build$
+^LICENSE\.md$

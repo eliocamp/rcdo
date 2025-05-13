@@ -1,0 +1,2 @@
+The rcdo package as a whole is distributed under GPL3 but includes CDO documentation, which is distributed under the BSD-3-Clause licence. 
+A full copy of the BSD-3-Clause licence is included in `inst/LICENCE.CDO`.
