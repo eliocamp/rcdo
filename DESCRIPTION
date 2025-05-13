@@ -1,10 +1,11 @@
 Package: rcdo
 Title: R Wrapper of CDO Operators
 Version: 0.1.0.9000
-Authors@R: 
-    person("Elio", "Campitelli", , "elio.campitelli@cima.fcen.uba.ar", role = c("cre", "aut", "cph"),
-           comment = c(ORCID = "0000-0002-7742-9230"))
-    person("MPI für Meteorologie", role = "cph")
+Authors@R: c(
+      person("Elio", "Campitelli", , "eliocampitelli@gmail.com", role = c("cre", "aut", "cph"),
+             comment = c(ORCID = "0000-0002-7742-9230")),
+      person("MPI für Meteorologie", role = "cph")
+    )
 Description: Provides a translation layer between R and CDO operators. Each 
   operator is it's own function with documentation. Nested or piped functions
   will be translateed into CDO chains. 
