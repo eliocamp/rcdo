@@ -9,3 +9,4 @@
 ^pkg_build$
 ^LICENCE\.md$
 ^cran-comments\.md$
+^CRAN-SUBMISSION$

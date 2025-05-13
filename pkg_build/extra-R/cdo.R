@@ -234,7 +234,7 @@ ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
 )
 
 make_ephemeral <- function(files) {
-  attr(files, "ephemeral") <- lapply(files, \(file) ephemeral_file$new(file))
+  attr(files, "ephemeral") <- lapply(files, function(file) ephemeral_file$new(file))
   files
 }
 
