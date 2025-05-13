@@ -22,5 +22,14 @@
 #' @section Note: 
 #' Operators of this module need to open all input files simultaneously. The maximum number of open files depends on the operating system!
 #'
+#' @returns
+#' Operators that output one or more files return a character vector to the
+#' output files.
+#'
+#' Operators that output an indefinite number of files return a string with the
+#' basename of the files.
+#'
+#' Operatos that don't return filenames return a character vector with the
+#' string output.
 #' @name merge
 NULL

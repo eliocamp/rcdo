@@ -23,6 +23,16 @@ cdo_zaxisdes(ifile)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module provides operators to print meta information about a dataset. The printed meta-data depends on the chosen operator.
 }

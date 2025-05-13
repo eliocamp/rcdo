@@ -6,16 +6,19 @@
 \usage{
 cdo_install(
   reinstall = FALSE,
-  proj = "/usr/",
-  netcdf = "/usr/",
-  fftw3 = "/usr/",
-  eccodes = "/usr/"
+  proj = "/usr",
+  netcdf = "/usr",
+  fftw3 = "/usr",
+  eccodes = "/usr"
 )
 }
 \arguments{
 \item{reinstall}{Logical. Set to true to force reinstallation.}
 
 \item{proj, netcdf, fftw3, eccodes}{Location of the optional libraries.}
+}
+\value{
+The path to the installed cdo executable.
 }
 \description{
 Install the supported CDO version

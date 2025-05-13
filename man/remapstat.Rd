@@ -53,6 +53,16 @@ cdo_remapvar1(ifile, grid = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module maps source points to target cells by calculating a statistical value from the source points. Each target cell contains the statistical value from all source points within that target cell. If there are no source points within a target cell, it gets a missing value. Depending on the chosen operator the minimum, maximum, range, sum, average, variance, standard deviation, skewness, kurtosis or median of source points is computed.
 }

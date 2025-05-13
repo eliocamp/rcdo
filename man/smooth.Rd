@@ -46,6 +46,16 @@ cdo_smooth9(
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 Smooth all grid points of a horizontal grid. Options is a comma-separated list of "key=value" pairs with optional parameters.
 }

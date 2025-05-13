@@ -11,5 +11,14 @@
 #' @section Note: 
 #' Attributes are evaluated by CDO when opening infile. Therefor the result of this operator is not available for other operators when this operator is used in chaining operators.
 #'
+#' @returns
+#' Operators that output one or more files return a character vector to the
+#' output files.
+#'
+#' Operators that output an indefinite number of files return a string with the
+#' basename of the files.
+#'
+#' Operatos that don't return filenames return a character vector with the
+#' string output.
 #' @name setattribute
 NULL

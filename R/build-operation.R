@@ -1,3 +1,4 @@
+## This file was created automatically, do not edit by hand.
 build_operation <- function(operation, chain = FALSE, options = NULL) {
   if (is.character(operation)) {
     return(paste(shQuote(normalizePath(operation)), collapse = " "))

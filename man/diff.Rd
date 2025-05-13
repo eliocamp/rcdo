@@ -35,6 +35,16 @@ cdo_diffn(
 
 \item{names}{STRING - Consideration of the variable names of only one input file (left/right) or the intersection of both (intersect).}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 Compares the contents of two datasets field by field. The input datasets need to have the same structure and its fields need to have the dimensions. Try the option names if the number of variables differ. Exit status is 0 if inputs are the same and 1 if they differ.
 }

@@ -18,6 +18,16 @@ cdo_setgridcell(ifile, value = NULL, cell = NULL, mask = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This operator sets the value of the selected grid cells. The grid cells can be selected by a comma-separated list of grid cell indices or a mask. The mask is read from a data file, which may contain only one field. If no grid cells are selected, all values are set.
 }

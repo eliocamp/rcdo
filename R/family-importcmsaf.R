@@ -8,5 +8,14 @@
 #' @section Note: 
 #' To use this operator, it is necessary to build CDO with HDF5 support (version 1.6 or higher). The PROJ library (version 5.0 or higher) is needed for full support of the remapping functionality.
 #'
+#' @returns
+#' Operators that output one or more files return a character vector to the
+#' output files.
+#'
+#' Operators that output an indefinite number of files return a string with the
+#' basename of the files.
+#'
+#' Operatos that don't return filenames return a character vector with the
+#' string output.
 #' @name importcmsaf
 NULL

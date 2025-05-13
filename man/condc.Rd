@@ -18,6 +18,16 @@ cdo_ifthenc(ifile, c = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module creates fields with a constant value or missing value. The fields in infile are handled as a mask. A value not equal to zero is treated as "true zero is treated as "false".
 }

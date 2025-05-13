@@ -18,6 +18,16 @@ cdo_splitsel(ifile, nsets = NULL, noffset = NULL, nskip = NULL, obase = NULL)
 
 \item{obase}{String with the basename of the output files.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This operator splits infile into pieces, one for each adjacent sequence t_1, ...., t_n of timesteps of the same selected time range. The output files will be named <obase><nnnnnn><suffix> where nnnnnn is the sequence number and suffix is the filename extension derived from the file format.
 }

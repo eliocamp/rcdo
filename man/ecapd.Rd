@@ -26,6 +26,16 @@ cdo_etccdi_r1mm(ifile, x = NULL, freq = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 Let infile be a time series of the daily precipitation amount RR in [mm] (or alternatively in [kg m-2]), then the number of days where RR is at least x mm is counted. eca_r10mm and eca_r20mm are specific ECA operators with a daily precipitation amount of 10 and 20 mm respectively. The date information of a timestep in outfile is the date of the last contributing timestep in infile except for the etccdi operator. Parameter is a comma-separated list of "key=values" pairs.
 }

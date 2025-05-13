@@ -36,6 +36,16 @@ cdo_splitzaxis(ifile, swap = NULL, uuid = NULL, obase = NULL)
 
 \item{obase}{String with the basename of the output files.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module splits infile into pieces. The output files will be named <obase><xxx><suffix> where suffix is the filename extension derived from the file format. xxx and the contents of the output files depends on the chosen operator. params is a comma-separated list of processing parameters.
 }

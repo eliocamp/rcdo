@@ -28,6 +28,16 @@ cdo_ne(ifile1, ifile2, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module compares two datasets field by field. The resulting field is a mask containing 1 if the comparison is true and 0 if not. The number of fields in infile1 should be the same as in infile2. One of the input files can contain only one timestep or one field. The fields in outfile inherit the meta data from infile1 or infile2. The type of comparison depends on the chosen operator.
 }

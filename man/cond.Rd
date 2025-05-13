@@ -16,6 +16,16 @@ cdo_ifthen(ifile1, ifile2, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module selects field elements from infile2 with respect to infile1 and writes them to outfile. The fields in infile1 are handled as a mask. A value not equal to zero is treated as "true zero is treated as "false". The number of fields in infile1 has either to be the same as in infile2 or the same as in one timestep of infile2 or only one. The fields in outfile inherit the meta data from infile2.
 }

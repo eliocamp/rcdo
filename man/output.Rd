@@ -27,6 +27,16 @@ cdo_outputsrv(ifiles, format = NULL, nelem = NULL)
 
 \item{nelem}{INTEGER - Number of elements for each row (default: nelem = 1)}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module prints all values of all input datasets to standard output. All input fields need to have the same horizontal grid. All input files need to have the same structure with the same variables. The format of the output depends on the chosen operator.
 }

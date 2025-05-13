@@ -1,3 +1,4 @@
+## This file was created automatically, do not edit by hand.
 #' Execute a custom operator
 #'
 #' @param operator, a list created with `cdo_operator`.

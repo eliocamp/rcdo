@@ -20,6 +20,16 @@ cdo_remapnn(ifile, grid = NULL, map3d = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module contains operators for a nearest neighbor remapping of fields between grids in spherical coordinates.
 }

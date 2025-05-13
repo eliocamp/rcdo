@@ -19,5 +19,14 @@
 #' @section Note: 
 #' Precipitation rates in \[mm/s\] have to be converted to precipitation amounts (multiply with 86400 s). Apart from metadata information the result of eca_pd,1 and eca_rr1 is the same.
 #'
+#' @returns
+#' Operators that output one or more files return a character vector to the
+#' output files.
+#'
+#' Operators that output an indefinite number of files return a string with the
+#' basename of the files.
+#'
+#' Operatos that don't return filenames return a character vector with the
+#' string output.
 #' @name ecapd
 NULL

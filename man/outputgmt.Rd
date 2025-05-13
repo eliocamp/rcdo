@@ -14,6 +14,16 @@ cdo_gmtxyz(ifile)
 \arguments{
 \item{ifile}{String with the path to the input file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module prints the first field of the input dataset to standard output. The output can be used to generate 2D Lon/Lat plots with GMT. The format of the output depends on the chosen operator.
 }

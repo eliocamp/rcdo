@@ -16,6 +16,16 @@ cdo_distgrid(ifile, nx = NULL, ny = NULL, obase = NULL)
 
 \item{obase}{String with the basename of the output files.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This operator distributes a dataset into smaller pieces. Each output file contains a different region of the horizontal source grid. 2D Lon/Lat grids can be split into nx*ny pieces, where a target grid region contains a structured longitude/latitude box of the source grid. Data on an unstructured grid is split into nx pieces. The output files will be named <obase><xxx><suffix> where suffix is the filename extension derived from the file format. xxx will have five digits with the number of the target region.
 }

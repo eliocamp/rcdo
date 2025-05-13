@@ -1,3 +1,4 @@
+## This file was created automatically, do not edit by hand.
 #' Install the supported CDO version
 #'
 #' @param reinstall Logical. Set to true to force reinstallation.
@@ -14,12 +15,14 @@
 #' version of CDO exists, the package will use it. Otherwise, it will use your
 #' system's installation.
 #'
+#' @returns The path to the installed cdo executable.
+#'
 #' @export
 cdo_install <- function(reinstall = FALSE,
-                        proj = "/usr/",
-                        netcdf = "/usr/",
-                        fftw3 = "/usr/",
-                        eccodes = "/usr/") {
+                        proj = "/usr",
+                        netcdf = "/usr",
+                        fftw3 = "/usr",
+                        eccodes = "/usr") {
   if (!reinstall && file.exists(cdo_local_path())) {
     cli::cli_warn("Local CDO installation detected. To reinstall use {.code cdo_install(reinstall = TRUE)}")
     return(cdo_local_path())
@@ -101,25 +104,44 @@ check_cdo_version <- function(cdo, call = rlang::caller_env()) {
 }
 
 
-
-cdo_use <- function(which = c("system", "packaged")) {
-  if (which[1] == "system") {
+#' Chose CDO version to use
+#'
+#' @param version String with the cdo version to use:
+#' * `"system"` (the default) will use the system-wide installed version
+#' (specifically, whatever path is returned by `Sys.which("cdo")`).
+#' * `"packaged"` instructs rcdo to use a package-specific version that can be
+#' compiled and installed with [cdo_install()].
+#'
+#' @details
+#' A one-time warning will be issued if the the cdo version found when
+#' using `"system"` doesn't match the version used to build the rcdo package.
+#' In that case, some operators documented in this package might not be
+#' available to you or might behave slightly different.
+#' However, most operators are stable, particularly the most often used ones.
+#'
+#' @returns The path to the cdo executable (invisibly).
+#'
+#' @export
+cdo_use <- function(version = c("system", "packaged")) {
+  if (version[1] == "system") {
     cdo <- Sys.which("cdo")
     if (cdo == "") {
       cli::cli_abort("Cannot find a system version of CDO. Make sure CDO is installed and available in your PATH")
     }
   }
 
-  if (which[1] == "packaged") {
+  if (version[1] == "packaged") {
     cdo <- cdo_local_path()
     if (!file.exists(cdo)) {
       cli::cli_abort("Cannot find packaged version of CDO. Download and compile with {.code cdo_install()}.")
     }
   }
 
-  version <- get_cdo_version(cdo)
-  cli::cli_inform("Using {which[1]} CDO, version {version}.")
-  options("rcdo_version" = which[1])
+  cdo_version <- get_cdo_version(cdo)
+  cli::cli_inform("Using {version[1]} CDO, version {cdo_version}.")
+  check_cdo_version(cdo)
+  options("rcdo_version" = version[1])
+  return(invisible(cdo))
 }
 
 get_cdo <- function(which = getOption("rcdo_version", "system")) {

@@ -18,6 +18,16 @@ cdo_intlevelx3d(ifile1, ifile2, tgtcoordinate = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This operator performs a linear vertical interpolation of 3D variables fields with given 3D vertical coordinates. infile1 contains the 3D data variables and infile2 the 3D vertical source coordinate. The parameter tgtcoordinate is a datafile with the 3D vertical target coordinate.
 }

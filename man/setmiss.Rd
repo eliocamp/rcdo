@@ -98,6 +98,16 @@ cdo_setvrange(
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module sets part of a field to missing value or missing values to a constant value. Which part of the field is set depends on the chosen operator.
 }

@@ -48,6 +48,16 @@ cdo_timvar1(ifile, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 This module computes statistical values over all timesteps in infile. Depending on the chosen operator the minimum, maximum, range, sum, average, variance or standard deviation of all timesteps read from infile is written to outfile. The time of outfile is determined by the time in the middle of all contributing timesteps of infile. This can be change with the CDO option --timestat_date <first|middle|last>.
 }

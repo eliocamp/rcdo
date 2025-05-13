@@ -16,6 +16,16 @@ cdo_cmorlite(ifile, table = NULL, convert = NULL, ofile = NULL)
 
 \item{ofile}{String with the path to the output file.}
 }
+\value{
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with the
+basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+}
 \description{
 The CMOR (Climate Model Output Rewriter) library comprises a set of functions, that can be used to produce CF-compliant NetCDF files that fulfill the requirements of many of the climate community's standard model experiments. These experiments are collectively referred to as MIP's. Much of the metadata written to the output files is defined in MIP-specific tables, typically made available from each MIP's web site.  The CDO operator cmorlite process the header and variable section of such MIP tables and writes the result with the internal IO library CDI. In addition to the CMOR 2 and 3 table format, the CDO parameter table format is also supported. The following parameter table entries are available:  Entry           & Type        & Description name            & WORD        & Name of the variable out_name        & WORD        & New name of the variable type            & WORD        & Data type (real or double) standard_name   & WORD        & As defined in the CF standard name table long_name       & STRING      & Describing the variable units           & STRING      & Specifying the units for the variable comment         & STRING      & Information concerning the variable cell_methods    & STRING      & Information concerning calculation of means or climatologies cell_measures   & STRING      & Indicates the names of the variables containing cell areas and volumes missing_value   & FLOAT       & Specifying how missing data will be identified valid_min       & FLOAT       & Minimum valid value valid_max       & FLOAT       & Maximum valid value ok_min_mean_abs & FLOAT       & Minimum absolute mean ok_max_mean_abs & FLOAT       & Maximum absolute mean factor          & FLOAT       & Scale factor delete          & INTEGER     & Set to 1 to delete variable convert         & INTEGER     & Set to 1 to convert the unit if necessary  Most of the above entries are stored as variables attributes, some of them are handled differently. The variable name is used as a search key for the parameter table. valid_min, valid_max, ok_min_mean_abs and ok_max_mean_abs are used to check the range of the data.
 }

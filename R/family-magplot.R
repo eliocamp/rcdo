@@ -45,5 +45,14 @@
 #' @section Note: 
 #' All colour parameter can be either standard name or in RGB format. The valid standard name strings for \&quot;colour\&quot; are:  \&quot;red\ \&quot;green\ \&quot;blue\ \&quot;yellow\ \&quot;cyan\ \&quot;magenta\ \&quot;black\ \&quot;avocado\ \&quot;beige\ \&quot;brick\ \&quot;brown\ \&quot;burgundy\ \&quot;charcoal\ \&quot;chestnut\ \&quot;coral\ \&quot;cream\ \&quot;evergreen\ \&quot;gold\ \&quot;grey\ \&quot;khaki\ \&quot;kellygreen\ \&quot;lavender\ \&quot;mustard\ \&quot;navy\ \&quot;ochre\ \&quot;olive\ \&quot;peach\ \&quot;pink\ \&quot;rose\ \&quot;rust\ \&quot;sky\ \&quot;tan\ \&quot;tangerine\ \&quot;turquoise\ \&quot;violet\ \&quot;reddishpurple\ \&quot;purplered\ \&quot;purplishred\ \&quot;orangishred\ \&quot;redorange\ \&quot;reddishorange\ \&quot;orange\ \&quot;yellowishorange\ \&quot;orangeyellow\ \&quot;orangishyellow\ \&quot;greenishyellow\ \&quot;yellowgreen\ \&quot;yellowishgreen\ \&quot;bluishgreen\ \&quot;bluegreen\ \&quot;greenishblue\ \&quot;purplishblue\ \&quot;bluepurple\ \&quot;bluishpurple\ \&quot;purple\ \&quot;white\&quot;
 #'
+#' @returns
+#' Operators that output one or more files return a character vector to the
+#' output files.
+#'
+#' Operators that output an indefinite number of files return a string with the
+#' basename of the files.
+#'
+#' Operatos that don't return filenames return a character vector with the
+#' string output.
 #' @name magplot
 NULL

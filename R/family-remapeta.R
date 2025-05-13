@@ -8,5 +8,14 @@
 #' @section Note: 
 #' The code numbers or the variable names of the required parameter have to follow the ECHAM convention.  Use the sinfo command to test if your vertical coordinate system is recognized as hybrid system.  In case remapeta complains about not finding any data on hybrid model levels you may wish to use the setzaxis command to generate a zaxis description which conforms to the ECHAM convention. See section \&quot;1.4 Z-axis description\&quot; for an example how to define a hybrid Z-axis.
 #'
+#' @returns
+#' Operators that output one or more files return a character vector to the
+#' output files.
+#'
+#' Operators that output an indefinite number of files return a string with the
+#' basename of the files.
+#'
+#' Operatos that don't return filenames return a character vector with the
+#' string output.
 #' @name remapeta
 NULL
