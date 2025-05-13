@@ -224,18 +224,19 @@ ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
   },
   print = function() {
     cat("File will be deleted when garbage collected\n")
-  },
-
-  finalize = function() {
-    to_delete <- file.exists(self$file)
-    if (any(to_delete)) {
-      try(file.remove(self$files[to_delete]), silent = TRUE)
-    }
-  })
-)
+  }),
+  
+  private = list(
+    finalize = function() {
+      to_delete <- file.exists(self$file)
+      if (any(to_delete)) {
+        try(file.remove(self$files[to_delete]), silent = TRUE)
+      }
+    })
+  )
 
 make_ephemeral <- function(files) {
-  attr(files, "ephemeral") <- lapply(files, \(file) ephemeral_file$new(file))
+  attr(files, "ephemeral") <- lapply(files, function(file) ephemeral_file$new(file))
   files
 }
 
