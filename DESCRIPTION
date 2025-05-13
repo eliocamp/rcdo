@@ -24,3 +24,7 @@ Imports:
     R6,
     rlang
 BugReports: https://github.com/eliocamp/rcdo/issues
+Suggests: 
+    knitr,
+    markdown
+VignetteBuilder: knitr
