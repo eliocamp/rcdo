@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rcdo</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,6 +19,7 @@
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/eliocamp/rcdo/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -28,7 +29,7 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Arithmetic with a constant</h1>
-
+      <small class="dont-index">Source: <a href="https://github.com/eliocamp/rcdo/blob/main/R/cdo-addc.R" class="external-link"><code>R/cdo-addc.R</code></a>, <a href="https://github.com/eliocamp/rcdo/blob/main/R/cdo-divc.R" class="external-link"><code>R/cdo-divc.R</code></a>, <a href="https://github.com/eliocamp/rcdo/blob/main/R/cdo-maxc.R" class="external-link"><code>R/cdo-maxc.R</code></a>, and 4 more</small>
       <div class="d-none name"><code>arithc.Rd</code></div>
     </div>
 
@@ -67,6 +68,15 @@
 <dd><p>String with the path to the output file.</p></dd>
 
 </dl></div>
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    <p>Operators that output one or more files return a character vector to the
+output files.</p>
+<p>Operators that output an indefinite number of files return a string with the
+basename of the files.</p>
+<p>Operatos that don't return filenames return a character vector with the
+string output.</p>
+    </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
     <p></p><div class="sourceCode"><pre><code><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>addc  Add a constant</span>

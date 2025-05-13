@@ -1,6 +1,6 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>https://eliocamp.github.io/rcdo/404.html</loc></url>
-<url><loc>https://eliocamp.github.io/rcdo/LICENSE-text.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/LICENCE.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/authors.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/index.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/news/index.html</loc></url>
@@ -16,6 +16,7 @@
 <url><loc>https://eliocamp.github.io/rcdo/reference/cdo_execute.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/reference/cdo_install.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/reference/cdo_set_output.html</loc></url>
+<url><loc>https://eliocamp.github.io/rcdo/reference/cdo_use.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/reference/change.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/reference/cmorlite.html</loc></url>
 <url><loc>https://eliocamp.github.io/rcdo/reference/collgrid.html</loc></url>
