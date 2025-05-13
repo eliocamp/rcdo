@@ -136,8 +136,8 @@ cdo_use <- function(version = c("system", "packaged")) {
     }
   }
 
-  version <- get_cdo_version(cdo)
-  cli::cli_inform("Using {which[1]} CDO, version {version}.")
+  cdo_version <- get_cdo_version(cdo)
+  cli::cli_inform("Using {version[1]} CDO, version {cdo_version}.")
   check_cdo_version(cdo)
   options("rcdo_version" = version[1])
   return(invisible(cdo))
