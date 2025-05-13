@@ -219,15 +219,17 @@ cdo_execute_list <- function(operations,
 }
 
 #' @import  R6
-ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
-  file = NA,
-  initialize = function(file) {
-    self$file <- file
-    return(self)
-  },
-  print = function() {
-    cat("File will be deleted when garbage collected\n")
-  }),
+ephemeral_file <- R6::R6Class("ephemeral_file", 
+  public = list(
+    file = NA,
+    initialize = function(file) {
+      self$file <- file
+      return(self)
+    },
+    print = function() {
+      cat("File will be deleted when garbage collected\n")
+    }
+  ),
   
   private = list(
     finalize = function() {
@@ -235,8 +237,9 @@ ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
       if (any(to_delete)) {
         try(file.remove(self$files[to_delete]), silent = TRUE)
       }
-    })
+    }
   )
+)
 
 make_ephemeral <- function(files) {
   attr(files, "ephemeral") <- lapply(files, function(file) ephemeral_file$new(file))
