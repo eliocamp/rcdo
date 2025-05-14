@@ -2,6 +2,9 @@
 title: "Using rcdo"
 author: "Elio Campitelli"
 date: "`r Sys.Date()`"
+editor:
+  markdown:
+    wrap: sentence
 output: 
     markdown::html_format
 vignette: >
@@ -21,18 +24,18 @@ knitr::opts_chunk$set(
 library(rcdo)
 ```
 
-The rcdo package translates R functions into CDO commands. Each CDO operator has an equivalent rcdo function, which prefixed with `cdo_`. So, if you want to use the `monmean` CDO operator to resample a time series into monthly values, you would use the `cdo_monmean()` function.
+## How rcdo works
 
-**Important**\
-The whole rcdo package and its documentation is built automatically from the CDO source. This comes with some limitations.
+The rcdo package does very little.
+It merely translates R functions into CDO commands that are then executed via `system()` calls.
+This makes the package relatively simple but requires the user to have cdo installed separatedly.
 
-1.  CDO operators are documented in "families" where all parameters are documented together. Currently there is no way for the build process to correctly attribute each parameter to the correct operator. This unfortunately means that rcdo functions have every argument from a particular family. For example, the functions `cdo_selindexbox()` and `cdo_sellonlatbox()` both have `lon1` in their signature.
-2.  The conversion from rcdo function arguments to CDO command parameters is pretty dumb. Argument names re only for the user convenience and are not really used: function arguments are converted to CDO parameters simply in the order they are defined in the function signature. Neither are argument checked for validity. This means that `cdo_sellonlatbox(file, lon1 = 0)` will not return an error even though the operator is missing other necessary arguments. Also `cdo_sellonlatbox(file, idx1 = 0)` is identical to `cdo_sellonlatbox(file, lon1 = 0)`.
-3.  Some CDO operators need named parameters. rcdo currently doesn't know how to deal with that, so you need to pass the names yourself. So `cdo_select(file, name = "temperature")` doesn't work, you need to do `cdo_select(file, name = "name=temperature")`, which is equivalent to `cdo_select(file, code = "name=temperature")` due to the previously described limitation.
-4.  Some parameters need to be quoted. For example, the expression in the `expr` operator needs to be surrounded by quotes. Again, rcdo doesn't know this so you must "double quote" the argument yourself; i.e. `cdo_expr(file, "'t_celcius=t-273.15'")`.
-5.  Some documentation formatting might be incorrect. If you spot some part of the documentation that didn't survive the conversion, [open an issue](https://github.com/eliocamp/rcdo/issues)!
+Each CDO operator has an equivalent rcdo function, which prefixed with `cdo_`.
+So, if you want to use the `monmean` CDO operator to resample a time series into monthly values, you would use the `cdo_monmean()` function.
 
-By default, rcdo will use the system installed version. This is safe and convenient, but there's no guarantee that the CDO version in your system is the same as the CDO version used to generate the current rcdo version. A version mismatch is not critical, since the vast majority of functionality and documentation will be compatible, so rcdo will emit a one-time warning but will otherwise still try to execute commands.
+By default, rcdo will use the system installed version.
+This is safe and convenient, but there's no guarantee that the CDO version in your system is the same as the CDO version used to generate the current rcdo version.
+A version mismatch is not critical, since the vast majority of functionality and documentation will be compatible, so rcdo will emit a one-time warning but will otherwise still try to execute commands.
 
 ```{r}
 cdo_use("system")  # The default
@@ -44,6 +47,8 @@ cdo_use("system")  # The default
 # cdo_install()
 cdo_use("packaged")
 ```
+
+## Using rcdo
 
 We will use a sample file.
 
@@ -59,7 +64,8 @@ file |>
   cdo_execute()
 ```
 
-Notice the use of `cdo_execute()`. Plain rcdo functions return an operation waiting to be executed.
+Notice the use of `cdo_execute()`.
+Plain rcdo functions return an operation waiting to be executed.
 
 ```{r}
 file |> 
@@ -68,7 +74,10 @@ file |>
 
 This could seem a bit cumbersome for just one operation, but allows operators to be chained together as we will see later.
 
-`sinfo` is an operator with zero output files. It returns a string with information. There are other operators like this. For example, if we wanted to know how many vertical levels are in this file, we could use the `cdo_nlevel()` function.
+`sinfo` is an operator with zero output files.
+It returns a string with information.
+There are other operators like this.
+For example, if we wanted to know how many vertical levels are in this file, we could use the `cdo_nlevel()` function.
 
 ```{r}
 file |> 
@@ -76,7 +85,8 @@ file |>
   cdo_execute()
 ```
 
-For actual data manipulation, we use operators that take a one or more files and return one or more files. For instance, let's select only the Southern Hemisphere in this dataset with the `sellonlatbox` operator.
+For actual data manipulation, we use operators that take a one or more files and return one or more files.
+For instance, let's select only the Southern Hemisphere in this dataset with the `sellonlatbox` operator.
 
 ```{r}
 sh <- file |> 
@@ -84,7 +94,9 @@ sh <- file |>
 sh
 ```
 
-At this point, we haven't done anything; `sh` is just an operation waiting to be executed. Because it will return a file, `cdo_execute()` needs to know where to save the output. We can do it explicitly with the `output` argument.
+At this point, we haven't done anything; `sh` is just an operation waiting to be executed.
+Because it will return a file, `cdo_execute()` needs to know where to save the output.
+We can do it explicitly with the `output` argument.
 
 ```{r}
 sh |> 
@@ -127,7 +139,8 @@ sh |>
   _[7]
 ```
 
-It's more interesting to chain multiple data-manipulating operations. For example, let's select only the 500hPa level.
+It's more interesting to chain multiple data-manipulating operations.
+For example, let's select only the 500hPa level.
 
 ```{r}
 sh_500 <- sh |> 
@@ -143,7 +156,9 @@ sh_500 |>
   cdo_execute()
 ```
 
-Other operators take more than one file as arguments. `ymonsub` subtracts two files matching the same month of year. It's mainly used to compute monthly anomalies by first computing monthly climatology with 'ymonmean'.
+Other operators take more than one file as arguments.
+`ymonsub` subtracts two files matching the same month of year.
+It's mainly used to compute monthly anomalies by first computing monthly climatology with 'ymonmean'.
 
 ```{r}
 climatology <- cdo_ymonmean(file)
@@ -152,7 +167,10 @@ anomalies <- cdo_ymonsub(file, climatology) |>
   cdo_execute()
 ```
 
-Some operators take one file and return an undetermined number of files. `splitmon` will return one file per month. Unfortunately rcdo cannot return the list of files created. The returned string is the base suffix shared by all files.
+Some operators take one file and return an undetermined number of files.
+`splitmon` will return one file per month.
+Unfortunately rcdo cannot return the list of files created yet.
+The returned string is the base suffix shared by all files.
 
 ```{r}
 mon_split <- sh_500 |> 
@@ -171,7 +189,8 @@ mon_split
 
 (Note that this is not entirely reliable since it assumes that there are no other files that share the same suffix.)
 
-And now we can use the files normally. These will not be automatically deleted by R (although they will eventually be deleted by your OS is they are in the correct temporary folder).
+And now we can use the files normally.
+These will not be automatically deleted by R (although they will eventually be deleted by your OS is they are in the correct temporary folder).
 
 ```{r}
 mon_split[1] |> 
@@ -196,14 +215,17 @@ mon_split |>
   cdo_execute_list()
 ```
 
-We could've also have executed each operation inside the `lapply` call. However, because of the way `lapply` combines outputs, the ephemeral files will be deleted. So you need to either use `cdo_execute_list()` or take care of explicitly creating temporary files.
+We could've also have executed each operation inside the `lapply` call.
+However, because of the way `lapply` combines outputs, the ephemeral files will be deleted.
+So you need to either use `cdo_execute_list()` or take care of explicitly creating temporary files.
 
 ```{r}
 mon_split |> 
   lapply(function(x) cdo_deltat(x) |> cdo_execute(output = tempfile()))
 ```
 
-Finally, some operators take a vector of files and return a single file. We can re-merge the list of files with `cdo_mergetime()`.
+Finally, some operators take a vector of files and return a single file.
+We can re-merge the list of files with `cdo_mergetime()`.
 
 ```{r}
 merged <- mon_split |> 
@@ -217,7 +239,8 @@ merged |>
   cdo_execute()   
 ```
 
-Because rcdo can chain operations, there is no need of executing the individual operations and then merging. `cdo_mergetime()` can take a list of operations naturally, so we could do this
+Because rcdo can chain operations, there is no need of executing the individual operations and then merging.
+`cdo_mergetime()` can take a list of operations naturally, so we could do this
 
 ```{r}
 mon_split |> 
@@ -225,3 +248,32 @@ mon_split |>
   cdo_mergetime() |> 
   cdo_execute()
 ```
+
+## Important limitations
+
+**Important**
+
+The whole rcdo package and its documentation is built automatically from the CDO source.
+This comes with some limitations.
+
+CDO operators are documented in "families" where all parameters are documented together.
+Currently there is no way for the build process to correctly attribute each parameter to the correct operator.
+This unfortunately means that rcdo functions have every argument from a particular family.
+For example, the functions `cdo_selindexbox()` and `cdo_sellonlatbox()` both have `lon1` in their signature.
+
+The conversion from rcdo function arguments to CDO command parameters is pretty dumb.
+Argument names re only for the user convenience and are not really used: function arguments are converted to CDO parameters simply in the order they are defined in the function signature.
+Neither are argument checked for validity.
+This means that `cdo_sellonlatbox(file, lon1 = 0)` will not return an error even though the operator is missing other necessary arguments.
+Also `cdo_sellonlatbox(file, idx1 = 0)` is identical to `cdo_sellonlatbox(file, lon1 = 0)`.
+
+Some CDO operators need named parameters.
+rcdo currently doesn't know how to deal with that, so you need to pass the names yourself.
+So `cdo_select(file, name = "temperature")` doesn't work, you need to do `cdo_select(file, name = "name=temperature")`, which is equivalent to `cdo_select(file, code = "name=temperature")` due to the previously described limitation.
+
+Some parameters need to be quoted.
+For example, the expression in the `expr` operator needs to be surrounded by quotes.
+Again, rcdo doesn't know this so you must "double quote" the argument yourself; i.e. `cdo_expr(file, "'t_celcius=t-273.15'")`.
+
+Some documentation formatting might be incorrect.
+If you spot some part of the documentation that didn't survive the conversion, [open an issue](https://github.com/eliocamp/rcdo/issues)!
