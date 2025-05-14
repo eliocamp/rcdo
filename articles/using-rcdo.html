@@ -70,45 +70,17 @@ Campitelli</h4>
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://eliocamp.github.io/rcdo/">rcdo</a></span><span class="op">)</span></span></code></pre></div>
-<p>The rcdo package translates R functions into CDO commands. Each CDO
-operator has an equivalent rcdo function, which prefixed with
-<code>cdo_</code>. So, if you want to use the <code>monmean</code> CDO
-operator to resample a time series into monthly values, you would use
-the <code><a href="../reference/monstat.html">cdo_monmean()</a></code> function.</p>
-<p><strong>Important</strong><br>
-The whole rcdo package and its documentation is built automatically from
-the CDO source. This comes with some limitations.</p>
-<ol style="list-style-type: decimal">
-<li>CDO operators are documented in “families” where all parameters are
-documented together. Currently there is no way for the build process to
-correctly attribute each parameter to the correct operator. This
-unfortunately means that rcdo functions have every argument from a
-particular family. For example, the functions
-<code><a href="../reference/selbox.html">cdo_selindexbox()</a></code> and <code><a href="../reference/selbox.html">cdo_sellonlatbox()</a></code> both
-have <code>lon1</code> in their signature.</li>
-<li>The conversion from rcdo function arguments to CDO command
-parameters is pretty dumb. Argument names re only for the user
-convenience and are not really used: function arguments are converted to
-CDO parameters simply in the order they are defined in the function
-signature. Neither are argument checked for validity. This means that
-<code>cdo_sellonlatbox(file, lon1 = 0)</code> will not return an error
-even though the operator is missing other necessary arguments. Also
-<code>cdo_sellonlatbox(file, idx1 = 0)</code> is identical to
-<code>cdo_sellonlatbox(file, lon1 = 0)</code>.</li>
-<li>Some CDO operators need named parameters. rcdo currently doesn’t
-know how to deal with that, so you need to pass the names yourself. So
-<code>cdo_select(file, name = "temperature")</code> doesn’t work, you
-need to do <code>cdo_select(file, name = "name=temperature")</code>,
-which is equivalent to
-<code>cdo_select(file, code = "name=temperature")</code> due to the
-previously described limitation.</li>
-<li>Some parameters need to be quoted. For example, the expression in
-the <code>expr</code> operator needs to be surrounded by quotes. Again,
-rcdo doesn’t know this so you must “double quote” the argument yourself;
-i.e. <code>cdo_expr(file, "'t_celcius=t-273.15'")</code>.</li>
-<li>Some documentation formatting might be incorrect. If you spot some
-part of the documentation that didn’t survive the conversion, <a href="https://github.com/eliocamp/rcdo/issues" class="external-link">open an issue</a>!</li>
-</ol>
+<div class="section level2">
+<h2 id="how-rcdo-works">How rcdo works<a class="anchor" aria-label="anchor" href="#how-rcdo-works"></a>
+</h2>
+<p>The rcdo package does very little. It merely translates R functions
+into CDO commands that are then executed via <code><a href="https://rdrr.io/r/base/system.html" class="external-link">system()</a></code>
+calls. This makes the package relatively simple but requires the user to
+have cdo installed separatedly.</p>
+<p>Each CDO operator has an equivalent rcdo function, which prefixed
+with <code>cdo_</code>. So, if you want to use the <code>monmean</code>
+CDO operator to resample a time series into monthly values, you would
+use the <code><a href="../reference/monstat.html">cdo_monmean()</a></code> function.</p>
 <p>By default, rcdo will use the system installed version. This is safe
 and convenient, but there’s no guarantee that the CDO version in your
 system is the same as the CDO version used to generate the current rcdo
@@ -117,9 +89,7 @@ functionality and documentation will be compatible, so rcdo will emit a
 one-time warning but will otherwise still try to execute commands.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/cdo_use.html">cdo_use</a></span><span class="op">(</span><span class="st">"system"</span><span class="op">)</span>  <span class="co"># The default</span></span>
-<span><span class="co">#&gt; Using system CDO, version 2.4.3.</span></span>
-<span><span class="co">#&gt; Warning: Using CDO version 2.4.3 which is different from the version supported by this version of rcdo (2.5.1).</span></span>
-<span><span class="co">#&gt; ℹ This warning is displayed once per session.</span></span></code></pre></div>
+<span><span class="co">#&gt; Using system CDO, version 2.4.3.</span></span></code></pre></div>
 <p><code><a href="../reference/cdo_install.html">cdo_install()</a></code> will try to download, compile and install
 the “supported” CDO version and then we can use
 <code>cdo_use("packaged")</code> to tell rcdo to use the package
@@ -128,6 +98,10 @@ version.</p>
 <code class="sourceCode R"><span><span class="co"># cdo_install()</span></span>
 <span><span class="fu"><a href="../reference/cdo_use.html">cdo_use</a></span><span class="op">(</span><span class="st">"packaged"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Using packaged CDO, version 2.5.1.</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="using-rcdo">Using rcdo<a class="anchor" aria-label="anchor" href="#using-rcdo"></a>
+</h2>
 <p>We will use a sample file.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"hgt_ncep.nc"</span>, package <span class="op">=</span> <span class="st">"rcdo"</span><span class="op">)</span></span></code></pre></div>
@@ -193,9 +167,9 @@ can do it explicitly with the <code>output</code> argument.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sh</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span>output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e23a06782"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e7820da3c"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:31 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 1580009</span></span></code></pre></div>
 <p>(The file size and modification date are attached as attributes to
@@ -207,13 +181,13 @@ ephemeral file in a temporary folder.</p>
 <code class="sourceCode R"><span><span class="va">sh_file</span> <span class="op">&lt;-</span> <span class="va">sh</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">sh_file</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e5e7215ed"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5ebc7fbd2"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 1580009</span></span></code></pre></div>
 <p>This file will be deleted when the variable holding the path is
@@ -263,14 +237,14 @@ monthly climatology with ‘ymonmean’.</p>
 <span>  <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>Some operators take one file and return an undetermined number of
 files. <code>splitmon</code> will return one file per month.
-Unfortunately rcdo cannot return the list of files created. The returned
-string is the base suffix shared by all files.</p>
+Unfortunately rcdo cannot return the list of files created yet. The
+returned string is the base suffix shared by all files.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mon_split</span> <span class="op">&lt;-</span> <span class="va">sh_500</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/splittime.html">cdo_splitmon</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">mon_split</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e796a57e9"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a7"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span></code></pre></div>
@@ -279,12 +253,10 @@ string is the base suffix shared by all files.</p>
 <code class="sourceCode R"><span><span class="va">mon_split</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">mon_split</span>, <span class="st">"*"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/Sys.glob.html" class="external-link">Sys.glob</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">mon_split</span></span>
-<span><span class="co">#&gt;  [1] "/tmp/Rtmp9eAVmx/filee0a5e796a57e901.nc" "/tmp/Rtmp9eAVmx/filee0a5e796a57e902.nc"</span></span>
-<span><span class="co">#&gt;  [3] "/tmp/Rtmp9eAVmx/filee0a5e796a57e903.nc" "/tmp/Rtmp9eAVmx/filee0a5e796a57e904.nc"</span></span>
-<span><span class="co">#&gt;  [5] "/tmp/Rtmp9eAVmx/filee0a5e796a57e905.nc" "/tmp/Rtmp9eAVmx/filee0a5e796a57e906.nc"</span></span>
-<span><span class="co">#&gt;  [7] "/tmp/Rtmp9eAVmx/filee0a5e796a57e907.nc" "/tmp/Rtmp9eAVmx/filee0a5e796a57e908.nc"</span></span>
-<span><span class="co">#&gt;  [9] "/tmp/Rtmp9eAVmx/filee0a5e796a57e909.nc" "/tmp/Rtmp9eAVmx/filee0a5e796a57e910.nc"</span></span>
-<span><span class="co">#&gt; [11] "/tmp/Rtmp9eAVmx/filee0a5e796a57e911.nc" "/tmp/Rtmp9eAVmx/filee0a5e796a57e912.nc"</span></span></code></pre></div>
+<span><span class="co">#&gt;  [1] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a701.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a702.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a703.nc"</span></span>
+<span><span class="co">#&gt;  [4] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a704.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a705.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a706.nc"</span></span>
+<span><span class="co">#&gt;  [7] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a707.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a708.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a709.nc"</span></span>
+<span><span class="co">#&gt; [10] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a710.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a711.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a712.nc"</span></span></code></pre></div>
 <p>(Note that this is not entirely reliable since it assumes that there
 are no other files that share the same suffix.)</p>
 <p>And now we can use the files normally. These will not be
@@ -307,51 +279,51 @@ each file.</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">cdo_deltat</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e901.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a701.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[2]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e902.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a702.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[3]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e903.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a703.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[4]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e904.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a704.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[5]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e905.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a705.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[6]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e906.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a706.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[7]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e907.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a707.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[8]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e908.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a708.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[9]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e909.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a709.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[10]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e910.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a710.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[11]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e911.nc' ] {{output}} </span></span>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a711.nc' ] {{output}} </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[12]]</span></span>
 <span><span class="co">#&gt; CDO command:</span></span>
-<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e796a57e912.nc' ] {{output}}</span></span></code></pre></div>
+<span><span class="co">#&gt;    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a712.nc' ] {{output}}</span></span></code></pre></div>
 <p>To execute a list of operations, use
 <code><a href="../reference/cdo_execute.html">cdo_execute_list()</a></code>.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
@@ -359,134 +331,134 @@ each file.</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">cdo_deltat</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute_list</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e361f6a37"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e2a5212ea"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[2]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e2eda7fb4"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e7ec35c5"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[3]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e183416f2"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e3048379e"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[4]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e6231c7bb"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5ef5e0588"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[5]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e42710772"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e10de3ecb"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:00 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[6]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e76a62cdf"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e3c103371"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[7]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e664af4e4"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e16d6377f"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[8]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e2e6c60de"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e56fd5ceb"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[9]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e2ab5ff3b"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e9ebb1b8"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:32 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[10]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e32528eec"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e6b70a80a"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[11]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e78041089"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5ec9c1f12"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[12]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e596856ea"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e11dec2fd"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span></code></pre></div>
 <p>We could’ve also have executed each operation inside the
@@ -498,86 +470,86 @@ take care of explicitly creating temporary files.</p>
 <code class="sourceCode R"><span><span class="va">mon_split</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="fu"><a href="../reference/deltat.html">cdo_deltat</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span>output <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e5936ef67"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e17bdb9ec"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[2]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5ef6fd9e3"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e617c3903"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[3]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e62e74885"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e27553394"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[4]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e675ab51c"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e7e6fdf0b"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[5]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5ec309ad5"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e437efdf4"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[6]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e52a3c062"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e280ffaa8"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[7]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e6610b684"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e1898f2bc"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[8]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e4843926a"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e72aeb36b"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[9]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e4c0e184c"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e6cb2b04f"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[10]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e1050d1a7"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e32470d4b"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[11]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e42cda9f0"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e7f5c2b0f"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; [[12]]</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e7f499b34"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e380afe7a"</span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 59545</span></span></code></pre></div>
 <p>Finally, some operators take a vector of files and return a single
@@ -600,15 +572,52 @@ take a list of operations naturally, so we could do this</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/lapply.html" class="external-link">lapply</a></span><span class="op">(</span><span class="va">cdo_deltat</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/merge.html">cdo_mergetime</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e2bc6127a"</span></span>
+<span><span class="co">#&gt; [1] "/tmp/Rtmp9eAVmx/filee0a5e79085d5b"</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")</span></span>
 <span><span class="co">#&gt; attr(,"ephemeral")[[1]]</span></span>
 <span><span class="co">#&gt; File will be deleted when garbage collected</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; attr(,"mtime")</span></span>
-<span><span class="co">#&gt; [1] "2025-05-14 10:19:01 AEST"</span></span>
+<span><span class="co">#&gt; [1] "2025-05-14 10:38:33 AEST"</span></span>
 <span><span class="co">#&gt; attr(,"size")</span></span>
 <span><span class="co">#&gt; [1] 295001</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="important-limitations">Important limitations<a class="anchor" aria-label="anchor" href="#important-limitations"></a>
+</h2>
+<p><strong>Important</strong></p>
+<p>The whole rcdo package and its documentation is built automatically
+from the CDO source. This comes with some limitations.</p>
+<p>CDO operators are documented in “families” where all parameters are
+documented together. Currently there is no way for the build process to
+correctly attribute each parameter to the correct operator. This
+unfortunately means that rcdo functions have every argument from a
+particular family. For example, the functions
+<code><a href="../reference/selbox.html">cdo_selindexbox()</a></code> and <code><a href="../reference/selbox.html">cdo_sellonlatbox()</a></code> both
+have <code>lon1</code> in their signature.</p>
+<p>The conversion from rcdo function arguments to CDO command parameters
+is pretty dumb. Argument names re only for the user convenience and are
+not really used: function arguments are converted to CDO parameters
+simply in the order they are defined in the function signature. Neither
+are argument checked for validity. This means that
+<code>cdo_sellonlatbox(file, lon1 = 0)</code> will not return an error
+even though the operator is missing other necessary arguments. Also
+<code>cdo_sellonlatbox(file, idx1 = 0)</code> is identical to
+<code>cdo_sellonlatbox(file, lon1 = 0)</code>.</p>
+<p>Some CDO operators need named parameters. rcdo currently doesn’t know
+how to deal with that, so you need to pass the names yourself. So
+<code>cdo_select(file, name = "temperature")</code> doesn’t work, you
+need to do <code>cdo_select(file, name = "name=temperature")</code>,
+which is equivalent to
+<code>cdo_select(file, code = "name=temperature")</code> due to the
+previously described limitation.</p>
+<p>Some parameters need to be quoted. For example, the expression in the
+<code>expr</code> operator needs to be surrounded by quotes. Again, rcdo
+doesn’t know this so you must “double quote” the argument yourself;
+i.e. <code>cdo_expr(file, "'t_celcius=t-273.15'")</code>.</p>
+<p>Some documentation formatting might be incorrect. If you spot some
+part of the documentation that didn’t survive the conversion, <a href="https://github.com/eliocamp/rcdo/issues" class="external-link">open an issue</a>!</p>
+</div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
