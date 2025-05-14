@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/rcdo)](https://CRAN.R-project.org/package=rcdo)
 <!-- badges: end -->
@@ -61,13 +61,13 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/Rtmpl0EmNG/filebc68377cea48e"
+#> [1] "/tmp/RtmpCwYLc5/file11103679d9d408"
 #> attr(,"ephemeral")
 #> attr(,"ephemeral")[[1]]
 #> File will be deleted when garbage collected
 #> 
 #> attr(,"mtime")
-#> [1] "2025-05-13 12:28:34 AEST"
+#> [1] "2025-05-14 10:42:16 AEST"
 #> attr(,"size")
 #> [1] 8630649
 ```
