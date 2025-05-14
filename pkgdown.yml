@@ -3,7 +3,7 @@ pkgdown: 2.1.2
 pkgdown_sha: ~
 articles:
   using-rcdo: using-rcdo.html
-last_built: 2025-05-14T00:40Z
+last_built: 2025-05-14T00:45Z
 urls:
   reference: https://eliocamp.github.io/rcdo/reference
   article: https://eliocamp.github.io/rcdo/articles
