@@ -170,11 +170,24 @@ get_output_length <- function(x) {
 #'
 #' @export
 cdo_execute <- function(operation,
-                        output = temp_output(operation),
+                        output = temp_output(operation, !cache),
                         options = NULL,
                         verbose = FALSE,
                         cache = FALSE) {
   check_cdo_version(get_cdo())
+
+  # Need to first build the hash to make temp output deterministic
+  if (isTRUE(cache)) {
+    if (operation$operator$n_output != 1) {
+      stop("cache only works with oeprations with 1 file output.")
+    }
+    hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
+                                     build_operation(operation, options = options),
+                                     input_info(operation)))
+
+    attr(operation, "hash") <- hash_current
+  }
+
   if (is.null(operation$output)) {
     operation$output <- output
   }
@@ -188,12 +201,6 @@ cdo_execute <- function(operation,
   command <- build_operation(operation, options = options)
 
   if (isTRUE(cache)) {
-    if (operation$operator$n_output != 1) {
-      stop("cache only works with oeprations with 1 file output.")
-    }
-    hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
-                                     command,
-                                     input_info(operation)))
     hash_file <- paste0(operation$output, ".hash")
 
     if (file.exists(operation$output)) {
@@ -300,16 +307,31 @@ make_ephemeral <- function(files) {
   files
 }
 
+cdo_tmpdir <- function() {
+  getOption("rcdo_tmpdir", default = tempdir())
+}
 
-temp_output <- function(operation) {
+temp_output <- function(operation, ephemeral = TRUE) {
   if (operation$operator$n_output == Inf) {
     n <- 1
   } else {
     n <- operation$operator$n_output
   }
 
-  files <- replicate(n, tempfile())
-  make_ephemeral(files)
+  files <- replicate(n, tempfile(tmpdir = cdo_tmpdir()))
+
+  if (operation$operator$n_output == 1) {
+    hash <- attr(operation, "hash")
+    if (!is.null(hash)) {
+      files <- file.path(cdo_tmpdir(), hash)
+    }
+  }
+
+  if (ephemeral) {
+    files <- make_ephemeral(files)
+  }
+
+  return(files)
 }
 
 check_output <- function(operation, call = rlang::caller_env()) {
