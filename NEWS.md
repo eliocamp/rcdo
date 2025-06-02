@@ -1,5 +1,9 @@
 # rcdo (development version)
 
+## New Features
+
+-   Adds caching support in `cdo_execute()` and `cdo_execute_list()`.
+
 # rcdo 0.2.0
 
 ## New Features

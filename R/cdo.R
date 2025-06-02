@@ -153,12 +153,27 @@ get_output_length <- function(x) {
 #' temporary files that will be deleted when its bond variable is garbage collected.
 #' @param options character vector with CDO options.
 #' @param verbose whether to print the command being executed.
+#' @param cache whether to cache results.
+#'
+#'
+#' @details
+#' When `cache = TRUE` `cdo_execute` will try to reuse results.
+#' When first executing the operation, it will create a ".hash" file matching the
+#' output file name with a hash generated from the current cdo version, the
+#' text of the command, the sum of the file sizes of the input files and the
+#' max modified time of the input files.
+#' The next time the same command is executed, `cdo_execute` will compute
+#' the same hash and compare it with the file and, if it matches, it will
+#' return the output file without running the command.
+#' Caching currently only works with operations with only one output file.
+#'
 #'
 #' @export
 cdo_execute <- function(operation,
                         output = temp_output(operation),
                         options = NULL,
-                        verbose = FALSE) {
+                        verbose = FALSE,
+                        cache = FALSE) {
   check_cdo_version(get_cdo())
   if (is.null(operation$output)) {
     operation$output <- output
@@ -171,6 +186,30 @@ cdo_execute <- function(operation,
   }
 
   command <- build_operation(operation, options = options)
+
+  if (isTRUE(cache)) {
+    if (operation$operator$n_output != 1) {
+      stop("cache only works with oeprations with 1 file output.")
+    }
+    hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
+                                     command,
+                                     input_info(operation)))
+    hash_file <- paste0(operation$output, ".hash")
+
+    if (file.exists(operation$output)) {
+      if (file.exists(hash_file)) {
+        hash_previous <- readLines(hash_file)
+        if (hash_previous == hash_current) {
+          message("Returning previous version of file")
+
+          attr(operation$output, "mtime") <- max(file.mtime(operation$output))
+          attr(operation$output, "size") <- sum(file.size(operation$output))
+          return(operation$output)
+        }
+      }
+    }
+  }
+
   if (verbose) {
     message("Running ", command)
   }
@@ -189,7 +228,19 @@ cdo_execute <- function(operation,
     attr(operation$output, "size") <- sum(file.size(operation$output))
   }
 
+  if (isTRUE(cache)) {
+    writeLines(hash_current, hash_file)
+  }
+
   return(operation$output)
+}
+
+input_info <- function(x) {
+  if (is.character(x)) {
+    return(list(mtime = max(file.mtime(x)),
+                size = sum(file.size(x))))
+  }
+  lapply(x$input, input_info)
 }
 
 #' @export
@@ -197,7 +248,8 @@ cdo_execute <- function(operation,
 cdo_execute_list <- function(operations,
                              output = NULL,
                              options = NULL,
-                             verbose = FALSE) {
+                             verbose = FALSE,
+                             cache = FALSE) {
 
   if (is.null(output)) {
     output <- lapply(operations, temp_output)
@@ -212,7 +264,8 @@ cdo_execute_list <- function(operations,
     this <- cdo_execute(operations[[o]],
                         output = output[[o]],
                         options = options,
-                        verbose = verbose)
+                        verbose = verbose,
+                        cache = cache)
     out[[o]] <- this
   }
   names(out) <- names(operations)
@@ -220,24 +273,27 @@ cdo_execute_list <- function(operations,
 }
 
 #' @import  R6
-ephemeral_file <- R6::R6Class("ephemeral_file", public = list(
-  file = NA,
-  initialize = function(file) {
-    self$file <- file
-    return(self)
-  },
-  print = function() {
-    cat("File will be deleted when garbage collected\n")
-  }),
-  
-  private = list(
-    finalize = function() {
-      to_delete <- file.exists(self$file)
-      if (any(to_delete)) {
-        try(file.remove(self$files[to_delete]), silent = TRUE)
-      }
-    })
-  )
+ephemeral_file <- R6::R6Class("ephemeral_file",
+                              public = list(
+                                file = NA,
+                                initialize = function(file) {
+                                  self$file <- file
+                                  return(self)
+                                },
+                                print = function() {
+                                  cat("File will be deleted when garbage collected\n")
+                                }
+                              ),
+
+                              private = list(
+                                finalize = function() {
+                                  to_delete <- file.exists(self$file)
+                                  if (any(to_delete)) {
+                                    try(file.remove(self$files[to_delete]), silent = TRUE)
+                                  }
+                                }
+                              )
+)
 
 make_ephemeral <- function(files) {
   attr(files, "ephemeral") <- lapply(files, function(file) ephemeral_file$new(file))

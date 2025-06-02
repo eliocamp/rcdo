@@ -1,3 +1,4 @@
+## This file was created automatically, do not edit by hand.
 
 .onAttach <- function(...) {
     if (!interactive()) return()

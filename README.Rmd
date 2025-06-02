@@ -60,7 +60,7 @@ ncep |>
 
 The output just prints the command with a place holder output. 
 Use `cdo_execute()` to actually run the command. 
-If no outpuf file is specified, then the result is saved in a tempfile. 
+If no output file is specified, then the result is saved in a tempfile. 
 
 ```{r, message=FALSE}
 ncep |> 
