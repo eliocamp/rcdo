@@ -173,7 +173,7 @@ cdo_execute <- function(operation,
                         output = temp_output(operation, !cache),
                         options = NULL,
                         verbose = FALSE,
-                        cache = FALSE) {
+                        cache = getOption("rcdo_cache", default = FALSE)) {
   check_cdo_version(get_cdo())
 
   # Need to first build the hash to make temp output deterministic
