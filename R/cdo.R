@@ -179,7 +179,7 @@ cdo_execute <- function(operation,
   # Need to first build the hash to make temp output deterministic
   if (isTRUE(cache)) {
     if (operation$operator$n_output != 1) {
-      stop("cache only works with oeprations with 1 file output.")
+      warning("cache only works with oeprations with 1 file output.")
     }
     hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
                                      build_operation(operation, options = options),
