@@ -83,14 +83,14 @@ values before exiting the function with <code><a href="https://rdrr.io/r/base/on
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Reset the cache to its previous state</span></span></span>
 <span class="r-in"><span><span class="fu">cdo_cache_set</span><span class="op">(</span><span class="va">old</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (is.null(cache) &amp; is.na(cache)) {    cli::cli_abort("{.var cache} needs to be a non-null, non-NA string or a list returned by a previous {.fn cdo_cache_set} call.")}:</span> the condition has length &gt; 1</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in is.null(cache) || is.na(cache):</span> 'length = 2' in coercion to 'logical(1)'</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Disable the cache</span></span></span>
 <span class="r-in"><span><span class="va">old</span> <span class="op">&lt;-</span> <span class="fu">cdo_cache_unset</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Again, reset the cache to its previous state.</span></span></span>
 <span class="r-in"><span><span class="fu">cdo_cache_set</span><span class="op">(</span><span class="va">old</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in if (is.null(cache) &amp; is.na(cache)) {    cli::cli_abort("{.var cache} needs to be a non-null, non-NA string or a list returned by a previous {.fn cdo_cache_set} call.")}:</span> the condition has length &gt; 1</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in is.null(cache) || is.na(cache):</span> 'length = 2' in coercion to 'logical(1)'</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">with_cache</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">operation</span>, <span class="va">cache</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>  <span class="va">old</span> <span class="op">&lt;-</span> <span class="fu">cdo_cache_set</span><span class="op">(</span><span class="va">cache</span><span class="op">)</span></span></span>
