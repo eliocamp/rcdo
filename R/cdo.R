@@ -177,7 +177,7 @@ cdo_options_clear <- function() {
 #' @export
 #' @rdname cdo_cache
 cdo_cache_set <- function(cache = tempdir()) {
-  if (is.null(cache) & is.na(cache)) {
+  if (is.null(cache) || is.na(cache)) {
     cli::cli_abort("{.var cache} needs to be a non-null, non-NA string or a list returned by a previous {.fn cdo_cache_set} call.")
   }
 
