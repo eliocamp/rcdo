@@ -45,10 +45,10 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">cdo_execute</span><span class="op">(</span></span>
 <span>  <span class="va">operation</span>,</span>
-<span>  output <span class="op">=</span> <span class="fu">temp_output</span><span class="op">(</span><span class="va">operation</span><span class="op">)</span>,</span>
+<span>  output <span class="op">=</span> <span class="fu">temp_output</span><span class="op">(</span><span class="va">operation</span>, <span class="op">!</span><span class="va">cache</span><span class="op">)</span>,</span>
 <span>  options <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  cache <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  cache <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">getOption</a></span><span class="op">(</span><span class="st">"rcdo_cache"</span>, default <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">cdo_execute_list</span><span class="op">(</span></span>
@@ -82,25 +82,13 @@ temporary files that will be deleted when its bond variable is garbage collected
 
 
 <dt id="arg-cache">cache<a class="anchor" aria-label="anchor" href="#arg-cache"></a></dt>
-<dd><p>whether to cache results.</p></dd>
+<dd><p>whether to cache results. See cdo_cache for details.</p></dd>
 
 
 <dt id="arg-operations">operations<a class="anchor" aria-label="anchor" href="#arg-operations"></a></dt>
 <dd><p>a list of CDO operations</p></dd>
 
 </dl></div>
-    <div class="section level2">
-    <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>When <code>cache = TRUE</code> <code>cdo_execute</code> will try to reuse results.
-When first executing the operation, it will create a ".hash" file matching the
-output file name with a hash generated from the current cdo version, the
-text of the command, the sum of the file sizes of the input files and the
-max modified time of the input files.
-The next time the same command is executed, <code>cdo_execute</code> will compute
-the same hash and compare it with the file and, if it matches, it will
-return the output file without running the command.
-Caching currently only works with operations with only one output file.</p>
-    </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside></div>
