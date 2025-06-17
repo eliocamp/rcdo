@@ -7,10 +7,10 @@
 \usage{
 cdo_execute(
   operation,
-  output = temp_output(operation),
+  output = temp_output(operation, !cache),
   options = NULL,
   verbose = FALSE,
-  cache = FALSE
+  cache = getOption("rcdo_cache", default = FALSE)
 )
 
 cdo_execute_list(
@@ -31,21 +31,10 @@ temporary files that will be deleted when its bond variable is garbage collected
 
 \item{verbose}{whether to print the command being executed.}
 
-\item{cache}{whether to cache results.}
+\item{cache}{whether to cache results. See \link{cdo_cache} for details.}
 
 \item{operations}{a list of CDO operations}
 }
 \description{
 Execute a CDO operation
-}
-\details{
-When \code{cache = TRUE} \code{cdo_execute} will try to reuse results.
-When first executing the operation, it will create a ".hash" file matching the
-output file name with a hash generated from the current cdo version, the
-text of the command, the sum of the file sizes of the input files and the
-max modified time of the input files.
-The next time the same command is executed, \code{cdo_execute} will compute
-the same hash and compare it with the file and, if it matches, it will
-return the output file without running the command.
-Caching currently only works with operations with only one output file.
 }

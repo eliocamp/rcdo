@@ -2,7 +2,7 @@
 
 ## New Features
 
--   Adds caching support in `cdo_execute()` and `cdo_execute_list()`.
+-   Adds caching support in `cdo_execute()` and `cdo_execute_list()` as well as cache management with `cdo_cache_set()` and `cdo_cache_unset()`.
 
 # rcdo 0.2.0
 
