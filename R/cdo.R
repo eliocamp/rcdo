@@ -182,7 +182,7 @@ cdo_cache_set <- function(cache = tempdir()) {
     if (is.null(cache) || is.na(cache)) {
       cli::cli_abort(error)
     }
-  
+
     cache <- list(rcdo_cache = TRUE,
                   rcdo_tmpdir = cache)
   }
@@ -301,7 +301,8 @@ cdo_execute <- function(operation,
   }
 
   result <- system(command, intern = operation$operator$n_output == 0,
-                   ignore.stdout = getOption("rcdo_silent", FALSE))
+                   ignore.stdout = getOption("rcdo_silent", FALSE),
+                   ignore.stderr = getOption("rcdo_silent", FALSE))
 
   if (operation$operator$n_output == 0) {
     return(result)
