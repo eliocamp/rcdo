@@ -2,10 +2,13 @@
 % Please edit documentation in R/cdo.R
 \name{cdo_cache_set}
 \alias{cdo_cache_set}
+\alias{cdo_cache_get}
 \alias{cdo_cache_unset}
 \title{Manages the cache}
 \usage{
 cdo_cache_set(cache = tempdir())
+
+cdo_cache_get()
 
 cdo_cache_unset()
 }

@@ -177,13 +177,19 @@ cdo_options_clear <- function() {
 #' @export
 #' @rdname cdo_cache
 cdo_cache_set <- function(cache = tempdir()) {
-  if (is.null(cache) || is.na(cache)) {
-    cli::cli_abort("{.var cache} needs to be a non-null, non-NA string or a list returned by a previous {.fn cdo_cache_set} call.")
-  }
-
+  error <- "{.var cache} needs to be a non-null, non-NA string or a list returned by a previous {.fn cdo_cache_set} call."
   if (!is.list(cache)) {
+    if (is.null(cache) || is.na(cache)) {
+      cli::cli_abort(error)
+    }
+  
     cache <- list(rcdo_cache = TRUE,
                   rcdo_tmpdir = cache)
+  }
+
+  correct_names <- length(setdiff(names(cache), c("rcdo_cache", "rcdo_tmpdir"))) == 0
+  if (!correct_names) {
+    cli::cli_abort(error)
   }
 
   options(cache)
@@ -191,9 +197,15 @@ cdo_cache_set <- function(cache = tempdir()) {
 
 #' @export
 #' @rdname cdo_cache
+cdo_cache_get <- function() {
+  list(rcdo_cache = getOption("rcdo_cache"),
+       rcdo_tmpdir = getOption("rcdo_tmpdir"))
+}
+
+#' @export
+#' @rdname cdo_cache
 cdo_cache_unset <- function() {
-  old <- list(rcdo_cache = getOption("rcdo_cache"),
-              rcdo_tmpdir = getOption("rcdo_tmpdir"))
+  old <- cdo_cache_get()
   options(rcdo_cache = NULL)
 
   return(invisible(old))
@@ -228,14 +240,17 @@ get_output_length <- function(x) {
 #' @param output an output file or base string for output files. Defaults to
 #' temporary files that will be deleted when its bond variable is garbage collected.
 #' @param options character vector with CDO options.
+#' @param options_replace logical indicating whether the options given in execute should 
+#' replace any other options (global or set with `cdo_options_use`). 
 #' @param verbose whether to print the command being executed.
-#' @param cache whether to cache results. See [cdo_cache] for details.
+#' @param cache whether to cache results. See [cdo_cache_set()] for details.
 #'
 #'
 #' @export
 cdo_execute <- function(operation,
                         output = temp_output(operation, !cache),
                         options = NULL,
+                        options_replace = FALSE,
                         verbose = FALSE,
                         cache = getOption("rcdo_cache", default = FALSE)) {
   check_cdo_version(get_cdo())
@@ -246,7 +261,7 @@ cdo_execute <- function(operation,
       warning("cache only works with oeprations with 1 file output.")
     }
     hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
-                                     build_operation(operation, options = options),
+                                     build_operation(operation, options = options, options_replace = options_replace),
                                      input_info(operation)))
 
     attr(operation, "hash") <- hash_current
@@ -262,7 +277,7 @@ cdo_execute <- function(operation,
     check_output(operation)
   }
 
-  command <- build_operation(operation, options = options)
+  command <- build_operation(operation, options = options, options_replace = options_replace)
 
   if (isTRUE(cache)) {
     hash_file <- paste0(operation$output, ".hash")
@@ -319,6 +334,7 @@ input_info <- function(x) {
 cdo_execute_list <- function(operations,
                              output = NULL,
                              options = NULL,
+                             options_replace = FALSE,
                              verbose = FALSE,
                              cache = FALSE) {
 
@@ -335,6 +351,7 @@ cdo_execute_list <- function(operations,
     this <- cdo_execute(operations[[o]],
                         output = output[[o]],
                         options = options,
+                        options_replace = options_replace,
                         verbose = verbose,
                         cache = cache)
     out[[o]] <- this

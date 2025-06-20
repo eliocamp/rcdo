@@ -1,20 +1,18 @@
 ## This file was created automatically, do not edit by hand.
-build_operation <- function(operation, chain = FALSE, options = NULL) {
+build_operation <- function(operation, chain = FALSE, options = NULL, options_replace = FALSE) {
   if (is.character(operation)) {
     return(paste(shQuote(normalizePath(operation)), collapse = " "))
   }
 
   operation$input <- vapply(operation$input, build_operation, chain = TRUE, FUN.VALUE = character(1))
   operation$input <- paste(operation$input, collapse = " ")
-
-  if (!is.null(options)) {
+  
+  if (isTRUE(options_replace)) {
     operation$options <- options
+  } else {
+    operation$options <- paste0(c(operation$options, options, getOption(rcdo_options)), collapse = " ")
   }
-
-  if (is.null(operation$options)) {
-    operation$options <- getOption(rcdo_options)
-  }
-
+  
   prefix <- paste(c(get_cdo(), operation$options), collapse = " ")
 
   if (chain) {

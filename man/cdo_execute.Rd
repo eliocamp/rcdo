@@ -9,6 +9,7 @@ cdo_execute(
   operation,
   output = temp_output(operation, !cache),
   options = NULL,
+  options_replace = FALSE,
   verbose = FALSE,
   cache = getOption("rcdo_cache", default = FALSE)
 )
@@ -17,6 +18,7 @@ cdo_execute_list(
   operations,
   output = NULL,
   options = NULL,
+  options_replace = FALSE,
   verbose = FALSE,
   cache = FALSE
 )
@@ -29,9 +31,12 @@ temporary files that will be deleted when its bond variable is garbage collected
 
 \item{options}{character vector with CDO options.}
 
+\item{options_replace}{logical indicating whether the options given in execute should
+replace any other options (global or set with \code{cdo_options_use}).}
+
 \item{verbose}{whether to print the command being executed.}
 
-\item{cache}{whether to cache results. See \link{cdo_cache} for details.}
+\item{cache}{whether to cache results. See \code{\link[=cdo_cache_set]{cdo_cache_set()}} for details.}
 
 \item{operations}{a list of CDO operations}
 }
