@@ -240,8 +240,8 @@ get_output_length <- function(x) {
 #' @param output an output file or base string for output files. Defaults to
 #' temporary files that will be deleted when its bond variable is garbage collected.
 #' @param options character vector with CDO options.
-#' @param options_replace logical indicating whether the options given in execute should 
-#' replace any other options (global or set with `cdo_options_use`). 
+#' @param options_replace logical indicating whether the options given in execute should
+#' replace any other options (global or set with `cdo_options_use`).
 #' @param verbose whether to print the command being executed.
 #' @param cache whether to cache results. See [cdo_cache_set()] for details.
 #'
@@ -300,7 +300,8 @@ cdo_execute <- function(operation,
     message("Running ", command)
   }
 
-  result <- system(command, intern = operation$operator$n_output == 0)
+  result <- system(command, intern = operation$operator$n_output == 0,
+                   ignore.stdout = getOption("rcdo_silent", FALSE))
 
   if (operation$operator$n_output == 0) {
     return(result)
