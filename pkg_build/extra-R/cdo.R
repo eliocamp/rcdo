@@ -285,7 +285,7 @@ cdo_execute <- function(operation,
       if (file.exists(hash_file)) {
         hash_previous <- readLines(hash_file)
         if (hash_previous == hash_current) {
-          message("Returning previous version of file")
+          if (verbose) cli::cli_inform("Returning cached version of file")
 
           attr(operation$output, "mtime") <- max(file.mtime(operation$output))
           attr(operation$output, "size") <- sum(file.size(operation$output))
@@ -296,7 +296,7 @@ cdo_execute <- function(operation,
   }
 
   if (verbose) {
-    message("Running ", command)
+    cli::cli_inform("Running {.code {command}}")
   }
 
   result <- system(command, intern = operation$operator$n_output == 0,
