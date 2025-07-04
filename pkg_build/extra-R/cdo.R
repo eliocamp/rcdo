@@ -257,7 +257,7 @@ cdo_execute <- function(operation,
   # Need to first build the hash to make temp output deterministic
   if (isTRUE(cache)) {
     if (operation$operator$n_output != 1) {
-      warning("cache only works with oeprations with 1 file output.")
+      cli::cli_alert_warning("cache only works with oeprations with 1 file output.")
     }
     hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
                                      build_operation(operation, options = options, options_replace = options_replace),
@@ -271,7 +271,7 @@ cdo_execute <- function(operation,
   }
 
   if (is.null(operation$output)) {
-    stop("Missing output")
+    cli::cli_abort("Missing output")
   } else {
     check_output(operation)
   }
@@ -309,7 +309,7 @@ cdo_execute <- function(operation,
 
   if (operation$operator$n_output < Inf) {
     if (!all(file.exists(operation$output))) {
-      stop("Operation failed")
+      cli::cli_abort("Operation failed")
     }
     attr(operation$output, "mtime") <- max(file.mtime(operation$output))
     attr(operation$output, "size") <- sum(file.size(operation$output))
@@ -344,7 +344,7 @@ cdo_execute_list <- function(operations,
   }
 
   if (length(output) != length(operations)) {
-    stop("Number of operations does not match number of outputs.")
+    cli::cli_abort("Number of operations does not match number of outputs.")
   }
 
   out <- list()
