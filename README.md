@@ -11,6 +11,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 status](https://www.r-pkg.org/badges/version/rcdo)](https://CRAN.R-project.org/package=rcdo)
 [![Codecov test
 coverage](https://codecov.io/gh/eliocamp/rcdo/graph/badge.svg)](https://app.codecov.io/gh/eliocamp/rcdo)
+[![R-CMD-check](https://github.com/eliocamp/rcdo/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/eliocamp/rcdo/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 rcdo is a wrapper around [Climate Data
@@ -63,13 +64,13 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/Rtmp1CbJnP/file27bc746075b8e2"
+#> [1] "/tmp/RtmpjoNW20/file27c2a87617d80"
 #> attr(,"ephemeral")
 #> attr(,"ephemeral")[[1]]
 #> File will be deleted when garbage collected
 #> 
 #> attr(,"mtime")
-#> [1] "2025-07-07 11:18:43 AEST"
+#> [1] "2025-07-07 11:20:52 AEST"
 #> attr(,"size")
 #> [1] 8630649
 ```

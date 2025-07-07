@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![CRAN status](https://www.r-pkg.org/badges/version/rcdo)](https://CRAN.R-project.org/package=rcdo)
 [![Codecov test coverage](https://codecov.io/gh/eliocamp/rcdo/graph/badge.svg)](https://app.codecov.io/gh/eliocamp/rcdo)
+[![R-CMD-check](https://github.com/eliocamp/rcdo/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/eliocamp/rcdo/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 rcdo is a wrapper around [Climate Data Operators](https://code.mpimet.mpg.de/projects/cdo). 
