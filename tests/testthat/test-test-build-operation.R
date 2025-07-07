@@ -14,7 +14,7 @@ test_that("simple operator", {
   x <- norm_file("file.nc")
 
   expect_warning(expect_equal(build_operation(cdo_ymonmin(x)),
-                              glue("cdo  ymonmin [ '<x>' ] {{output}}")))
+                              glue("cdo  ymonmin [ <x> ] {{output}}")))
 })
 
 
@@ -23,7 +23,7 @@ test_that("2 file operator", {
   y <- norm_file("file2.nc")
   op <- cdo_ymonsub(y, x)
   expect_warning(expect_warning(expect_equal(build_operation(op),
-                                             glue("cdo  ymonsub [ '<y>' '<x>' ] {{output}}"))))
+                                             glue("cdo  ymonsub [ <y> <x> ] {{output}}"))))
 })
 
 
@@ -31,7 +31,7 @@ test_that("parameters work", {
   x <- norm_file("file.nc")
   op <- cdo_sellonlatbox(x, 0, 360, -90, 0)
   expect_warning(expect_equal(build_operation(op),
-                              glue("cdo  sellonlatbox,0,360,-90,0 [ '<x>' ] {{output}}")))
+                              glue("cdo  sellonlatbox,0,360,-90,0 [ <x> ] {{output}}")))
 })
 
 test_that("chaining", {
@@ -39,7 +39,7 @@ test_that("chaining", {
   y <- norm_file("file2.nc")
   op <- cdo_ymonsub(y, cdo_ymonmean(x))
   expect_warning(expect_warning(expect_equal(build_operation(op),
-                                             glue("cdo  ymonsub [ '<y>' -ymonmean [ '<x>' ] ] {{output}}"))))
+                                             glue("cdo  ymonsub [ <y> -ymonmean [ <x> ] ] {{output}}"))))
 
   expect_error(cdo_ymonmean(cdo_trend(x)), "needs 1 input stream, not 2")
 })
@@ -50,21 +50,21 @@ test_that("options work", {
   op_option <- cdo_options_use(op, c("-L", "-f"))
 
   expect_warning(expect_equal(build_operation(op_option),
-                              glue("cdo -L -f ymonmax [ '<x>' ] {{output}}")))
+                              glue("cdo -L -f ymonmax [ <x> ] {{output}}")))
 
   cdo_options_set(c("-O"))
 
   expect_warning(expect_equal(build_operation(op),
-                              glue("cdo -O ymonmax [ '<x>' ] {{output}}")))
+                              glue("cdo -O ymonmax [ <x> ] {{output}}")))
 
   expect_warning(expect_equal(build_operation(op_option),
-                              glue("cdo -L -f -O ymonmax [ '<x>' ] {{output}}")))
+                              glue("cdo -L -f -O ymonmax [ <x> ] {{output}}")))
 
   expect_warning(expect_equal(build_operation(op_option, options_replace = TRUE),
-                              glue("cdo ymonmax [ '<x>' ] {{output}}")))
+                              glue("cdo ymonmax [ <x> ] {{output}}")))
 
   expect_warning(expect_equal(build_operation(op_option, options = "-L", options_replace = TRUE),
-                              glue("cdo -L ymonmax [ '<x>' ] {{output}}")))
+                              glue("cdo -L ymonmax [ <x> ] {{output}}")))
   cdo_options_clear()
 })
 
@@ -73,6 +73,6 @@ test_that("setting ouput works", {
   op <- cdo_set_output(cdo_ymonmax(x), "out.nc")
 
   expect_warning(expect_equal(build_operation(op),
-                              glue("cdo  ymonmax [ '<x>' ] out.nc")))
+                              glue("cdo  ymonmax [ <x> ] out.nc")))
 })
 
