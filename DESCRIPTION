@@ -26,5 +26,7 @@ Imports:
 BugReports: https://github.com/eliocamp/rcdo/issues
 Suggests: 
     knitr,
-    markdown
+    markdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
+Config/testthat/edition: 3

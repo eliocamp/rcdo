@@ -89,8 +89,9 @@ create_function <- function(operator, template) {
   )
 
   code <-   whisker::whisker.render(template, data)
-  file <- paste0("R/cdo-", operator_name, ".R" )
+  file <- paste0("R/op-cdo-", operator_name, ".R" )
   writeLines(code, file)
+  return(file)
 }
 
 

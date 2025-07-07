@@ -1,4 +1,4 @@
-
+#nocov start
 .onAttach <- function(...) {
     if (!interactive()) return()
 
@@ -7,3 +7,4 @@
 
     if (trigger) packageStartupMessage("Trans rights are human rights.")
 }
+#nocov end
