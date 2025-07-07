@@ -7,7 +7,7 @@ glue <- function(.x, .envir = parent.frame()) {
 
 
 norm_file <- function(x) {
-  suppressWarnings(normalizePath(x))
+  suppressWarnings(shQuote(normalizePath(x)))
 }
 
 test_that("simple operator", {
