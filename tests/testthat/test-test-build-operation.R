@@ -1,5 +1,10 @@
+cdo_use("system")# Check version to trigger the possible warning.
+
+Sys.setenv(RCDO_DEBUG_CDO_VERSION = cdo_supported_version())
+
 test_that("simple operator", {
   x <- "file.nc"
+
   expect_warning(expect_equal(build_operation(cdo_ymonmin(x)), "cdo  ymonmin [ 'file.nc' ] {{output}}"))
 })
 
@@ -23,6 +28,8 @@ test_that("chaining", {
   y <- "file2.nc"
   op <- cdo_ymonsub(y, cdo_ymonmean(x))
   expect_warning(expect_warning(expect_equal(build_operation(op), "cdo  ymonsub [ 'file2.nc' -ymonmean [ 'file.nc' ] ] {{output}}")))
+
+  expect_error(cdo_ymonmean(cdo_trend(x)), "needs 1 input stream, not 2")
 })
 
 test_that("options work", {
@@ -52,5 +59,4 @@ test_that("setting ouput works", {
   expect_warning(expect_equal(build_operation(op),
                               "cdo  ymonmax [ 'file.nc' ] out.nc"))
 })
-
 
