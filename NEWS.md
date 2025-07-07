@@ -1,4 +1,4 @@
-# rcdo (development version)
+# rcdo 0.3.0
 
 ## New Features
 
