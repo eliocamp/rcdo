@@ -4,7 +4,11 @@
 
 -   Adds caching support in `cdo_execute()` and `cdo_execute_list()` as well as cache management with `cdo_cache_set()` and `cdo_cache_unset()`.
 
--   Global options are now not replaced by default if an `options` argument is supplied. The new `options_replace` controls this behaviour. If it's `FALSE`, then global options, operation options and argument options are all concatenated (duplicated options are not checked for). If it's `TRUE`, then only the argument options are used, even if they are `NULL` (which implies, no options). This is potentially a **breaking change**
+-   Global options are now not replaced by default if an `options` argument is supplied.
+    The new `options_replace` controls this behaviour.
+    If it's `FALSE`, then global options, operation options and argument options are all concatenated (duplicated options are not checked for).
+    If it's `TRUE`, then only the argument options are used, even if they are `NULL` (which implies, no options).
+    This is potentially a **breaking change.**
 
 # rcdo 0.2.0
 
