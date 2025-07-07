@@ -6,13 +6,13 @@ build_operation <- function(operation, chain = FALSE, options = NULL, options_re
 
   operation$input <- vapply(operation$input, build_operation, chain = TRUE, FUN.VALUE = character(1))
   operation$input <- paste(operation$input, collapse = " ")
-  
+
   if (isTRUE(options_replace)) {
     operation$options <- options
   } else {
-    operation$options <- paste0(c(operation$options, options, getOption(rcdo_options)), collapse = " ")
+    operation$options <- paste0(c(operation$options, options, cdo_options_get()), collapse = " ")
   }
-  
+
   prefix <- paste(c(get_cdo(), operation$options), collapse = " ")
 
   if (chain) {

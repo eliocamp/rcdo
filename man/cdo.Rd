@@ -14,19 +14,19 @@ cdo_operator(command, params, n_input, n_output)
 
 \item{input}{a list with the input files.}
 
-\item{params}{a character vector with the name of the parametsr}
+\item{params}{a character vector with the name of the parameter}
 
 \item{output}{a vector of file name(s).}
 
 \item{command}{a string with the command used to run the operator}
 
-\item{n_input, n_output}{an integer with the number of input and ouput files
+\item{n_input, n_output}{an integer with the number of input and output files
 required by the operator}
 }
 \value{
 a cdo operation.
 
-A list with elements comand, params, n_input and n_output.
+A list with elements command, params, n_input and n_output.
 }
 \description{
 Execute a custom operator

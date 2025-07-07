@@ -1,5 +1,5 @@
 ## This file was created automatically, do not edit by hand.
-
+#nocov start
 .onAttach <- function(...) {
     if (!interactive()) return()
 
@@ -8,3 +8,4 @@
 
     if (trigger) packageStartupMessage("Trans rights are human rights.")
 }
+#nocov end

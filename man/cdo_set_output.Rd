@@ -2,25 +2,14 @@
 % Please edit documentation in R/cdo.R
 \name{cdo_set_output}
 \alias{cdo_set_output}
-\alias{cdo_options_use}
-\alias{cdo_options_set}
-\alias{cdo_options_clear}
 \title{Set output and options}
 \usage{
 cdo_set_output(operation, output)
-
-cdo_options_use(operation, options)
-
-cdo_options_set(options)
-
-cdo_options_clear()
 }
 \arguments{
 \item{operation}{a CDO operation}
 
 \item{output}{an output file or base string for output files}
-
-\item{options}{character vector with CDO options.}
 }
 \description{
 Set output and options
