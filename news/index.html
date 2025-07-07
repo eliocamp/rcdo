@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">rcdo</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,9 +37,9 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="development version" id="rcdo-development-version">rcdo (development version)<a class="anchor" aria-label="anchor" href="#rcdo-development-version"></a></h2>
+<h2 class="pkg-version" data-toc-text="0.3.0" id="rcdo-030">rcdo 0.3.0<a class="anchor" aria-label="anchor" href="#rcdo-030"></a></h2>
 <div class="section level3">
-<h3 id="new-features-development-version">New Features<a class="anchor" aria-label="anchor" href="#new-features-development-version"></a></h3>
+<h3 id="new-features-0-3-0">New Features<a class="anchor" aria-label="anchor" href="#new-features-0-3-0"></a></h3>
 <ul><li><p>Adds caching support in <code><a href="../reference/cdo_execute.html">cdo_execute()</a></code> and <code><a href="../reference/cdo_execute.html">cdo_execute_list()</a></code> as well as cache management with <code><a href="../reference/cdo_cache.html">cdo_cache_set()</a></code> and <code><a href="../reference/cdo_cache.html">cdo_cache_unset()</a></code>.</p></li>
 <li><p>Global options are now not replaced by default if an <code>options</code> argument is supplied. The new <code>options_replace</code> controls this behaviour. If it’s <code>FALSE</code>, then global options, operation options and argument options are all concatenated (duplicated options are not checked for). If it’s <code>TRUE</code>, then only the argument options are used, even if they are <code>NULL</code> (which implies, no options). This is potentially a <strong>breaking change.</strong></p></li>
 </ul></div>
