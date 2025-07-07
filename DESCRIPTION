@@ -25,6 +25,7 @@ Imports:
     rlang
 BugReports: https://github.com/eliocamp/rcdo/issues
 Suggests: 
+    glue,
     knitr,
     markdown,
     testthat (>= 3.0.0)
