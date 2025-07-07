@@ -45,12 +45,12 @@ maybe_list <- function(x) {
 }
 
 #' @param command a string with the command used to run the operator
-#' @param params a character vector with the name of the parametsr
-#' @param n_input,n_output an integer with the number of input and ouput files
+#' @param params a character vector with the name of the parameter
+#' @param n_input,n_output an integer with the number of input and output files
 #' required by the operator
 #'
 #' @return
-#' A list with elements comand, params, n_input and n_output.
+#' A list with elements command, params, n_input and n_output.
 #' @export
 #' @rdname cdo
 cdo_operator <- function(command, params, n_input, n_output) {
@@ -78,16 +78,6 @@ check_input_exists <- function(input, call = rlang::caller_env()) {
 }
 
 
-collect_options <- function(inputs) {
-  options <- lapply(inputs, function(x) {
-    if (is.operation(x)) {
-      return(x$options)
-    }
-    return(NULL)
-  })
-
-  unlist(options, recursive = FALSE)
-}
 
 #' Set output and options
 #'
@@ -100,27 +90,6 @@ cdo_set_output <- function(operation, output) {
   operation
 }
 
-#' @param options character vector with CDO options.
-#' @export
-#' @rdname cdo_set_output
-cdo_options_use <- function(operation, options) {
-  operation$options <- options
-  operation
-}
-
-rcdo_options <- "rcdo_options"
-
-#' @export
-#' @rdname cdo_set_output
-cdo_options_set <- function(options) {
-  return(invisible(options(rcdo_options = options)))
-}
-
-#' @export
-#' @rdname cdo_set_output
-cdo_options_clear <- function() {
-  return(invisible(options(rcdo_options = NULL)))
-}
 
 
 #' Manages the cache
