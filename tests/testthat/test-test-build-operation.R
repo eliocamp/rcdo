@@ -1,5 +1,3 @@
-cdo_use("system")# Check version to trigger the possible warning.
-
 Sys.setenv(RCDO_DEBUG_CDO_VERSION = cdo_supported_version())
 
 test_that("simple operator", {

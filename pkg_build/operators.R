@@ -1,7 +1,7 @@
 source("pkg_build/process-section.R")
 # Operators IO
 source("pkg_build/extra-R/cdo-install.R")
-
+Sys.setenv(RCDO_DEBUG_CDO_VERSION = "")
 cdo_install()
 op_list <- suppressWarnings(system(paste0(get_cdo(which = "rcdo_version"), " --operators"), intern = TRUE))
 
