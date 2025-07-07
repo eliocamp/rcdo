@@ -20,13 +20,6 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
     cli::cli_abort("cdo_{operator$command} needs {operator$n_input} input stream{?s}, not {n_input}.")
   }
 
-  # if (is.null(operator$params)) {
-  #   stopifnot(`Missing parameters` = is.null(params))
-  # } else {
-  #   stopifnot(all(names(operator$params$required) %in% names(params)))
-  #   stopifnot(all(names(params) %in% names(c(operator$params$required, operator$params$optional))))
-  # }
-
   options <- collect_options(input)
   operation <-  structure(list(operator = operator,
                                params = params,
@@ -63,22 +56,6 @@ cdo_operator <- function(command, params, n_input, n_output) {
     n_output = n_output
   )
 }
-
-
-check_input_exists <- function(input, call = rlang::caller_env()) {
-  force(call)
-  none <- lapply(input, function(x) {
-    if (is.character(x)) {
-      if (!file.exists(x)) {
-        cli::cli_abort("File {x} doesn't exist.", call = call)
-      }
-    }
-  })
-
-  return(invisible(input))
-}
-
-
 
 #' Set output and options
 #'
