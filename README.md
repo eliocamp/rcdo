@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rcdo <a href="https://eliocamp.github.io/rcdo/"><img src="man/figures/logo.png" align="right" height="120" alt="rcdo website" /></a>
+# rcdo <a href="https://eliocamp.github.io/rcdo/"><img src="man/figures/logo.png" align="right" height="200" alt="rcdo website" /></a>
 
 <!-- badges: start -->
 
