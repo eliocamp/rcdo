@@ -6,6 +6,7 @@ output: github_document
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
+  eval = FALSE,
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
@@ -13,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# rcdo
+# rcdo <a href="https://eliocamp.github.io/rcdo/"><img src="man/figures/logo.png" align="right" height="120" alt="rcdo website" /></a>
 
 <!-- badges: start -->
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
@@ -45,8 +46,12 @@ The functions start with `cdo_` an the name of the operator (e.g. the selname op
 ## Example
 
 
+```{r, include=FALSE}
+library(rcdo)
+ncep <- "hgt_ncep.nc"
+```
 
-```{r example}
+```{r, eval=FALSE}
 library(rcdo)
 cdo_use("packaged")  # use package version of cdo that can be installed with `cdo_install()`. 
 ncep <- "hgt_ncep.nc"

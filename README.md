@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# rcdo
+# rcdo <a href="https://eliocamp.github.io/rcdo/"><img src="man/figures/logo.png" align="right" height="120" alt="rcdo website" /></a>
 
 <!-- badges: start -->
 
@@ -42,7 +42,6 @@ is the `cdo_selname()` function)
 ``` r
 library(rcdo)
 cdo_use("packaged")  # use package version of cdo that can be installed with `cdo_install()`. 
-#> Using packaged CDO, version 2.5.1.
 ncep <- "hgt_ncep.nc"
 ```
 
@@ -52,8 +51,6 @@ is `cdo_ymonmean()`
 ``` r
 ncep |> 
   cdo_ymonmean() 
-#> CDO command:
-#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo  ymonmean [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] {{output}}
 ```
 
 The output just prints the command with a place holder output. Use
@@ -64,15 +61,6 @@ specified, then the result is saved in a tempfile.
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
-#> [1] "/tmp/RtmpjoNW20/file27c2a87617d80"
-#> attr(,"ephemeral")
-#> attr(,"ephemeral")[[1]]
-#> File will be deleted when garbage collected
-#> 
-#> attr(,"mtime")
-#> [1] "2025-07-07 11:20:52 AEST"
-#> attr(,"size")
-#> [1] 8630649
 ```
 
 Operators can be chained. Lets select just the Southern Hemisphere
@@ -82,8 +70,6 @@ first.
 ncep |> 
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_ymonmean() 
-#> CDO command:
-#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo  ymonmean [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] {{output}}
 ```
 
 Now also select the 500 hPa level
@@ -93,8 +79,6 @@ ncep |>
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_sellevel(level = 500) |> 
   cdo_ymonmean() 
-#> CDO command:
-#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo  ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
 ```
 
 ``` r
@@ -102,8 +86,6 @@ ncep |>
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_sellevel(level = 500) |> 
   cdo_ymonmean() 
-#> CDO command:
-#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo  ymonmean [ -sellevel,500 [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/hgt_ncep.nc' ] ] ] {{output}}
 ```
 
 ## Prior art
