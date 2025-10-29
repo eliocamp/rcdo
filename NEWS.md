@@ -2,7 +2,7 @@
 
 ## New features
 
--   Automatically creates the cache dir if needed. 
+-   Automatically creates directories if needed.
 
 # rcdo 0.3.0
 

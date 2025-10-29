@@ -146,11 +146,6 @@ cdo_cache_set <- function(cache = tempdir()) {
     cli::cli_abort(error)
   }
 
-  dir <- cache$rcdo_tmpdir
-  if (!is.null(dir) && !dir.exists(dir)) {
-    dir.create(dir, recursive = TRUE)
-  }
-
   options(cache)
 }
 
@@ -274,6 +269,11 @@ cdo_execute <- function(
 
   if (verbose) {
     cli::cli_inform("Running {.code {command}}")
+  }
+
+  dir <- dirname(operation$output)
+  if (!dir.exists(dir)) {
+    dir.create(dir, recursive = TRUE)
   }
 
   result <- system(
