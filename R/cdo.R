@@ -148,7 +148,7 @@ cdo_cache_set <- function(cache = tempdir()) {
   }
 
   dir <- cache$rcdo_tmpdir
-  if (!dir.exists(dir)) {
+  if (!is.null(dir) && !dir.exists(dir)) {
     dir.create(dir, recursive = TRUE)
   }
 
