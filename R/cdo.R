@@ -17,16 +17,21 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
   operators_compatible <- operator$n_input == Inf || operator$n_input == n_input
 
   if (!operators_compatible) {
-    cli::cli_abort("cdo_{operator$command} needs {operator$n_input} input stream{?s}, not {n_input}.")
+    cli::cli_abort(
+      "cdo_{operator$command} needs {operator$n_input} input stream{?s}, not {n_input}."
+    )
   }
 
   options <- collect_options(input)
-  operation <-  structure(list(operator = operator,
-                               params = params,
-                               input = input,
-                               output = output,
-                               options = options),
-                          class = "cdo_operation"
+  operation <- structure(
+    list(
+      operator = operator,
+      params = params,
+      input = input,
+      output = output,
+      options = options
+    ),
+    class = "cdo_operation"
   )
 
   check_output(operation)
@@ -34,7 +39,9 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
 }
 
 maybe_list <- function(x) {
-  if (is.operation(x)) return(list(x))
+  if (is.operation(x)) {
+    return(list(x))
+  }
   x
 }
 
@@ -67,7 +74,6 @@ cdo_set_output <- function(operation, output) {
   operation$output <- output
   operation
 }
-
 
 
 #' Manages the cache
@@ -129,13 +135,21 @@ cdo_cache_set <- function(cache = tempdir()) {
       cli::cli_abort(error)
     }
 
-    cache <- list(rcdo_cache = TRUE,
-                  rcdo_tmpdir = cache)
+    cache <- list(rcdo_cache = TRUE, rcdo_tmpdir = cache)
   }
 
-  correct_names <- length(setdiff(names(cache), c("rcdo_cache", "rcdo_tmpdir"))) == 0
+  correct_names <- length(setdiff(
+    names(cache),
+    c("rcdo_cache", "rcdo_tmpdir")
+  )) ==
+    0
   if (!correct_names) {
     cli::cli_abort(error)
+  }
+
+  dir <- cache$rcdo_tmpdir
+  if (!dir.exists(dir)) {
+    dir.create(dir, recursive = TRUE)
   }
 
   options(cache)
@@ -144,8 +158,10 @@ cdo_cache_set <- function(cache = tempdir()) {
 #' @export
 #' @rdname cdo_cache
 cdo_cache_get <- function() {
-  list(rcdo_cache = getOption("rcdo_cache"),
-       rcdo_tmpdir = getOption("rcdo_tmpdir"))
+  list(
+    rcdo_cache = getOption("rcdo_cache"),
+    rcdo_tmpdir = getOption("rcdo_tmpdir")
+  )
 }
 
 #' @export
@@ -163,7 +179,7 @@ is.operation <- function(x) {
 
 
 #' @export
-print.cdo_operation <- function(x,...) {
+print.cdo_operation <- function(x, ...) {
   cat("CDO command:\n")
   cat("  ", build_operation(x), "\n")
 }
@@ -176,7 +192,6 @@ get_output_length <- function(x) {
 
   return(length(x))
 }
-
 
 
 #' Execute a CDO operation
@@ -193,22 +208,32 @@ get_output_length <- function(x) {
 #'
 #'
 #' @export
-cdo_execute <- function(operation,
-                        output = temp_output(operation, !cache),
-                        options = NULL,
-                        options_replace = FALSE,
-                        verbose = FALSE,
-                        cache = getOption("rcdo_cache", default = FALSE)) {
+cdo_execute <- function(
+  operation,
+  output = temp_output(operation, !cache),
+  options = NULL,
+  options_replace = FALSE,
+  verbose = FALSE,
+  cache = getOption("rcdo_cache", default = FALSE)
+) {
   check_cdo_version(get_cdo())
 
   # Need to first build the hash to make temp output deterministic
   if (isTRUE(cache)) {
     if (operation$operator$n_output != 1) {
-      cli::cli_alert_warning("cache only works with oeprations with 1 file output.")
+      cli::cli_alert_warning(
+        "cache only works with oeprations with 1 file output."
+      )
     }
-    hash_current <- rlang::hash(list(get_cdo_version(get_cdo()),
-                                     build_operation(operation, options = options, options_replace = options_replace),
-                                     input_info(operation)))
+    hash_current <- rlang::hash(list(
+      get_cdo_version(get_cdo()),
+      build_operation(
+        operation,
+        options = options,
+        options_replace = options_replace
+      ),
+      input_info(operation)
+    ))
 
     attr(operation, "hash") <- hash_current
   }
@@ -223,7 +248,11 @@ cdo_execute <- function(operation,
     check_output(operation)
   }
 
-  command <- build_operation(operation, options = options, options_replace = options_replace)
+  command <- build_operation(
+    operation,
+    options = options,
+    options_replace = options_replace
+  )
 
   if (isTRUE(cache)) {
     hash_file <- paste0(operation$output, ".hash")
@@ -232,7 +261,9 @@ cdo_execute <- function(operation,
       if (file.exists(hash_file)) {
         hash_previous <- readLines(hash_file)
         if (hash_previous == hash_current) {
-          if (verbose) cli::cli_inform("Returning cached version of file")
+          if (verbose) {
+            cli::cli_inform("Returning cached version of file")
+          }
 
           attr(operation$output, "mtime") <- max(file.mtime(operation$output))
           attr(operation$output, "size") <- sum(file.size(operation$output))
@@ -246,9 +277,12 @@ cdo_execute <- function(operation,
     cli::cli_inform("Running {.code {command}}")
   }
 
-  result <- system(command, intern = operation$operator$n_output == 0,
-                   ignore.stdout = getOption("rcdo_silent", FALSE),
-                   ignore.stderr = getOption("rcdo_silent", FALSE))
+  result <- system(
+    command,
+    intern = operation$operator$n_output == 0,
+    ignore.stdout = getOption("rcdo_silent", FALSE),
+    ignore.stderr = getOption("rcdo_silent", FALSE)
+  )
 
   if (operation$operator$n_output == 0) {
     return(result)
@@ -271,21 +305,21 @@ cdo_execute <- function(operation,
 
 input_info <- function(x) {
   if (is.character(x)) {
-    return(list(mtime = max(file.mtime(x)),
-                size = sum(file.size(x))))
+    return(list(mtime = max(file.mtime(x)), size = sum(file.size(x))))
   }
   lapply(x$input, input_info)
 }
 
 #' @export
 #' @rdname cdo_execute
-cdo_execute_list <- function(operations,
-                             output = NULL,
-                             options = NULL,
-                             options_replace = FALSE,
-                             verbose = FALSE,
-                             cache = FALSE) {
-
+cdo_execute_list <- function(
+  operations,
+  output = NULL,
+  options = NULL,
+  options_replace = FALSE,
+  verbose = FALSE,
+  cache = FALSE
+) {
   if (is.null(output)) {
     output <- lapply(operations, temp_output)
   }
@@ -296,12 +330,14 @@ cdo_execute_list <- function(operations,
 
   out <- list()
   for (o in seq_along(operations)) {
-    this <- cdo_execute(operations[[o]],
-                        output = output[[o]],
-                        options = options,
-                        options_replace = options_replace,
-                        verbose = verbose,
-                        cache = cache)
+    this <- cdo_execute(
+      operations[[o]],
+      output = output[[o]],
+      options = options,
+      options_replace = options_replace,
+      verbose = verbose,
+      cache = cache
+    )
     out[[o]] <- this
   }
   names(out) <- names(operations)
@@ -309,30 +345,33 @@ cdo_execute_list <- function(operations,
 }
 
 #' @import  R6
-ephemeral_file <- R6::R6Class("ephemeral_file",
-                              public = list(
-                                file = NA,
-                                initialize = function(file) {
-                                  self$file <- file
-                                  return(self)
-                                },
-                                print = function() {
-                                  cat("File will be deleted when garbage collected\n")
-                                }
-                              ),
+ephemeral_file <- R6::R6Class(
+  "ephemeral_file",
+  public = list(
+    file = NA,
+    initialize = function(file) {
+      self$file <- file
+      return(self)
+    },
+    print = function() {
+      cat("File will be deleted when garbage collected\n")
+    }
+  ),
 
-                              private = list(
-                                finalize = function() {
-                                  to_delete <- file.exists(self$file)
-                                  if (any(to_delete)) {
-                                    try(file.remove(self$files[to_delete]), silent = TRUE)
-                                  }
-                                }
-                              )
+  private = list(
+    finalize = function() {
+      to_delete <- file.exists(self$file)
+      if (any(to_delete)) {
+        try(file.remove(self$files[to_delete]), silent = TRUE)
+      }
+    }
+  )
 )
 
 make_ephemeral <- function(files) {
-  attr(files, "ephemeral") <- lapply(files, function(file) ephemeral_file$new(file))
+  attr(files, "ephemeral") <- lapply(files, function(file) {
+    ephemeral_file$new(file)
+  })
   files
 }
 
@@ -376,7 +415,9 @@ check_output <- function(operation, call = rlang::caller_env()) {
   }
 
   if (n_expected_output != n_output) {
-    cli::cli_abort("The {.var cdo_{operation$operator$command}} requires {n_expected_output} {cli::qty(n_expected_output)} output{?s}, not {n_output}.",
-                   call = call)
+    cli::cli_abort(
+      "The {.var cdo_{operation$operator$command}} requires {n_expected_output} {cli::qty(n_expected_output)} output{?s}, not {n_output}.",
+      call = call
+    )
   }
 }
