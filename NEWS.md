@@ -1,5 +1,9 @@
 # rcdo (development version)
 
+## New features
+
+-   Automatically creates the cache dir if needed. 
+
 # rcdo 0.3.0
 
 ## New Features
