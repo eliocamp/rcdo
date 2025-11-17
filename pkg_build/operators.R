@@ -3,20 +3,27 @@ source("pkg_build/process-section.R")
 source("pkg_build/extra-R/cdo-install.R")
 Sys.setenv(RCDO_DEBUG_CDO_VERSION = "")
 cdo_install()
-op_list <- suppressWarnings(system(paste0(get_cdo(which = "rcdo_version"), " --operators"), intern = TRUE))
+op_list <- suppressWarnings(system(
+  paste0(get_cdo(which = "rcdo_version"), " --operators"),
+  intern = TRUE
+))
 
 operators <- strsplit(op_list, " ") |>
   vapply(\(x) x[1], FUN.VALUE = character(1))
 
-io <- utils::strcapture("\\({1}(-?[0123])\\|(-?[012])\\)", op_list,
-                        proto = list(n_input = integer(1),
-                                     n_output = integer(1)))
+io <- utils::strcapture(
+  "\\({1}(-?[0123])\\|(-?[012])\\)",
+  op_list,
+  proto = list(n_input = integer(1), n_output = integer(1))
+)
 
 stopifnot(all(!is.na(io$n_input + io$n_output)))
 
-operators_io <- data.table::data.table(operator = operators,
-                                       n_input = as.numeric(io$n_input),
-                                       n_output = as.numeric(io$n_output))
+operators_io <- data.table::data.table(
+  operator = operators,
+  n_input = as.numeric(io$n_input),
+  n_output = as.numeric(io$n_output)
+)
 
 operators_io[n_input == -1, n_input := Inf]
 operators_io[n_output == -1, n_output := Inf]
@@ -32,7 +39,7 @@ sections <- which(startsWith(help, "const "))
 helps <- list()
 
 for (i in seq_along(sections)[-length(sections)]) {
-  help_page <- help[seq(sections[i], sections[i+1] - 1)]
+  help_page <- help[seq(sections[i], sections[i + 1] - 1)]
 
   headers <- c(grep(r"( +"[A-Z]+",)", help_page), length(help_page) - 1)
 
@@ -50,9 +57,6 @@ for (i in seq_along(sections)[-length(sections)]) {
     section_text <- help_page[seq(headers[j] + 1, headers[j + 1] - 1)]
 
     class(section_text) <- section_name
-    # if (name == "change" & section_name == "PARAMETER") {
-    #   debugonce(process_section.PARAMETER)
-    # }
 
     operator <- process_section(section_text, operator)
   }
@@ -61,7 +65,6 @@ for (i in seq_along(sections)[-length(sections)]) {
   helps[[i]]$name <- name
   names(helps)[i] <- name
 }
-
 
 operators <- list()
 
@@ -84,4 +87,3 @@ for (help in helps) {
 
 
 usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
-

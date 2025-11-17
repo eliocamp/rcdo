@@ -1,7 +1,6 @@
 source("pkg_build/operators.R")
 create_function <- function(operator, template) {
   operator_name <- operator$command
-
   if (operator$n_input == 1) {
     input <- "list(ifile)"
     input_args <- "ifile"
@@ -12,9 +11,11 @@ create_function <- function(operator, template) {
   } else if (operator$n_input < Inf) {
     input_args <- paste0("ifile", seq_len(operator$n_input))
     input <- paste0("list(", paste0(input_args, collapse = ", "), ")")
-    input_param <- paste0("#' @param ",
-                          paste0(input_args, collapse = ","),
-                          " Strings with the path to the input files.")
+    input_param <- paste0(
+      "#' @param ",
+      paste0(input_args, collapse = ","),
+      " Strings with the path to the input files."
+    )
   } else {
     input <- "maybe_list(ifiles)"
     input_args <- "ifiles"
@@ -32,9 +33,11 @@ create_function <- function(operator, template) {
   } else if (operator$n_output < Inf) {
     output <- paste0("ofile", seq_len(operator$n_output), " = NULL")
     output_body <- paste0("ofile", seq_len(operator$n_output))
-    output_param <- paste0("#' @param ",
-                           paste0(output_body, collapse = ","),
-                          " Strings with the path to the output files.")
+    output_param <- paste0(
+      "#' @param ",
+      paste0(output_body, collapse = ","),
+      " Strings with the path to the output files."
+    )
   } else {
     output <- "obase = NULL"
     output_body <- "obase"
@@ -48,8 +51,17 @@ create_function <- function(operator, template) {
     # browser()
     if (!is.null(operator$params$optional)) {
       optional <- paste0(names(operator$params$optional), sep = " = NULL")
-      optional_list <- paste0(names(operator$params$optional), " = ", names(operator$params$optional))
-      extra_params <- paste0("#' @param ", names(operator$params$optional), " ", operator$param$optional)
+      optional_list <- paste0(
+        names(operator$params$optional),
+        " = ",
+        names(operator$params$optional)
+      )
+      extra_params <- paste0(
+        "#' @param ",
+        names(operator$params$optional),
+        " ",
+        operator$param$optional
+      )
     } else {
       optional <- NULL
       optional_list <- NULL
@@ -57,19 +69,31 @@ create_function <- function(operator, template) {
 
     if (!is.null(operator$params$required)) {
       required <- names(operator$params$required)
-      required_list <- paste0(names(operator$params$required), " = ", names(operator$params$required))
-      extra_params <- c(extra_params,
-                        paste0("#' @param ", names(operator$params$required), " ", operator$param$required))
+      required_list <- paste0(
+        names(operator$params$required),
+        " = ",
+        names(operator$params$required)
+      )
+      extra_params <- c(
+        extra_params,
+        paste0(
+          "#' @param ",
+          names(operator$params$required),
+          " ",
+          operator$param$required
+        )
+      )
     } else {
       required <- NULL
       required_list <- NULL
     }
 
-
     params_args <- paste0(c(required, optional), collapse = ", ")
-    params_list <- paste0("list(",
-                          paste0(c(required_list, optional_list), collapse = ", "),
-                          ")")
+    params_list <- paste0(
+      "list(",
+      paste0(c(required_list, optional_list), collapse = ", "),
+      ")"
+    )
     extra_params <- paste0(extra_params, collapse = "\n")
   }
   arguments <- paste0(c(input_args, params_args, output), collapse = ", ")
@@ -88,8 +112,8 @@ create_function <- function(operator, template) {
     warning = "## This file was created automatically, do not edit by hand."
   )
 
-  code <-   whisker::whisker.render(template, data)
-  file <- paste0("R/op-cdo-", operator_name, ".R" )
+  code <- whisker::whisker.render(template, data)
+  file <- paste0("R/op-cdo-", operator_name, ".R")
   writeLines(code, file)
   return(file)
 }
@@ -127,7 +151,7 @@ for (help in helps) {
   help$warning <- read_only_warning
 
   code <- whisker::whisker.render(template_family, help)
-  file <- paste0("R/family-", help$name, ".R" )
+  file <- paste0("R/family-", help$name, ".R")
   writeLines(code, file)
 }
 usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
@@ -136,7 +160,10 @@ usethis::use_data(operators, overwrite = TRUE, internal = TRUE)
 files <- list.files("pkg_build/extra-R/", full.names = TRUE)
 
 for (file in files) {
-  writeLines(c(read_only_warning, readLines(file)), file.path("R", basename(file)))
+  writeLines(
+    c(read_only_warning, readLines(file)),
+    file.path("R", basename(file))
+  )
 }
 
 licence <- "pkg_build/cdo-2.5.1/LICENSE"

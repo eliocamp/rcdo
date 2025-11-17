@@ -1,3 +1,4 @@
+# fmt: skip file
 {{warning}}
 {{input_param}}
 {{output_param}}

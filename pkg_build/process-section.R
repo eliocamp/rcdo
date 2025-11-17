@@ -1,4 +1,3 @@
-
 escape_chars <- function(x) {
   escape <- c("\\{", "\\}", "\\[", "\\]")
   for (e in escape) {
@@ -50,10 +49,10 @@ process_section.NAME <- function(section_text, operators) {
     _[[1]] |>
     trimws()
 
-  list <- list(operators = list[[1]],
-       short_description = paste0(list[-1], collapse = "")
-       )
-
+  list <- list(
+    operators = list[[1]],
+    short_description = paste0(list[-1], collapse = "")
+  )
 
   list$operators <- trimws(strsplit(list$operators, ",")[[1]])
 
@@ -67,7 +66,7 @@ process_section.DESCRIPTION <- function(section_text, operators) {
     rm_escaped() |>
     trimws() |>
     paste0(collapse = " ") |>
-    escape_chars() |> 
+    escape_chars() |>
     replace_unicode()
 
   operators
@@ -92,8 +91,6 @@ process_section.OPERATORS <- function(section_text, operators) {
 
   operators
 }
-
-
 
 
 process_section.PARAMETER <- function(section_text, operators) {
@@ -131,13 +128,15 @@ process_section.PARAMETER <- function(section_text, operators) {
   param_start[trues] <- seq_len(sum(trues, na.rm = TRUE))
   param_start <- data.table::nafill(param_start, "locf")
 
-  descriptions <- tapply(descriptions, param_start, \(x) paste0(x, collapse = ""))
+  descriptions <- tapply(descriptions, param_start, \(x) {
+    paste0(x, collapse = "")
+  })
 
   # For some operators (chname), some parameters are written as
   # "par1,par2,...". Split them up, remove the "..." and duplicate
   # the description.
   newpars <- strsplit(parameters, ",") |>
-    lapply(\(x) x[x!= "..."])
+    lapply(\(x) x[x != "..."])
 
   parameters <- lapply(seq_along(newpars), \(i) {
     paste0(types[i], " - ", descriptions[i]) |>
@@ -160,7 +159,8 @@ process_section.PARAMETER <- function(section_text, operators) {
   # required.
   operators$params$optional <- parameters
 
-  operators$params$optional <- operators$params$optional[!is.na(names(operators$params$optional))]
+  operators$params$optional <- operators$params$optional[
+    !is.na(names(operators$params$optional))
+  ]
   operators
 }
-

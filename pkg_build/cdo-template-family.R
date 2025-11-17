@@ -1,3 +1,4 @@
+# fmt: skip file
 {{warning}}
 #' {{short_description}}
 #'
