@@ -1,0 +1,79 @@
+# Compare two datasets field by field
+
+Compares the contents of two datasets field by field. The input datasets
+need to have the same structure and its fields need to have the
+dimensions. Try the option names if the number of variables differ. Exit
+status is 0 if inputs are the same and 1 if they differ.
+
+## Usage
+
+``` r
+cdo_diff(
+  ifile1,
+  ifile2,
+  maxcount = NULL,
+  abslim = NULL,
+  rellim = NULL,
+  names = NULL
+)
+
+cdo_diffn(
+  ifile1,
+  ifile2,
+  maxcount = NULL,
+  abslim = NULL,
+  rellim = NULL,
+  names = NULL
+)
+```
+
+## Arguments
+
+- ifile1, ifile2:
+
+  Strings with the path to the input files.
+
+- maxcount:
+
+  INTEGER - Stop after maxcount different fields
+
+- abslim:
+
+  FLOAT - Limit of the maximum absolute difference (default: 0)
+
+- rellim:
+
+  FLOAT - Limit of the maximum relative difference (default: 1)
+
+- names:
+
+  STRING - Consideration of the variable names of only one input file
+  (left/right) or the intersection of both (intersect).
+
+## Value
+
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with
+the basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+
+## Details
+
+    diff   Compare two datasets listed by parameter id
+           Provides statistics on differences between two datasets.
+           For each pair of fields the operator prints one line with the following information:
+           - Date and Time
+           - Level, Gridsize and number of Missing values
+           - Number of different values
+           - Occurrence of coefficient pairs with different signs (S)
+           - Occurrence of zero values (Z)
+           - Maxima of absolute difference of coefficient pairs
+           - Maxima of relative difference of non-zero coefficient pairs with equal signs
+           - Parameter identifier
+    diffn  Compare two datasets listed by parameter name
+           The same as operator diff. Using the name instead of the
+           identifier to label the parameter.

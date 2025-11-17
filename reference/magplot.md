@@ -1,0 +1,115 @@
+# Lat/Lon plot
+
+The operators in this module generates 2D Lon/Lat plots. The data for
+the plot is read from infile. Only data on rectilinear Lon/Lat grids are
+supported. The output file will be named \<obase\>\_\<param\>.\<device\>
+where param is the parameter name and device is the device name. The
+default output file format is postscript, this can be changed with the
+device parameter. The type of the plot depends on the choosen operator.
+Here is a list of all common plot parameters: Keyname & Type &
+Description device & STRING & Output device (ps, eps, pdf, png, gif,
+gif_animation, jpeg, svg, kml) projection & STRING & Projection
+(cylindrical, polar_stereographic, robinson, mercator) style & STRING &
+Contour line style (solid, dash, dot, chain_dash, chain_dot) min & FLOAT
+& Minimum value max & FLOAT & Maximum value lon_max & FLOAT & Maximum
+longitude of the image lon_min & FLOAT & Minimum longitude of the image
+lat_max & FLOAT & Maximum latitude of the image lat_min & FLOAT &
+Minimum latitude of the image count & INTEGER & Number of Contour levels
+/ Colour bands interval & FLOAT & Interval in data units between two
+bands lines list & INTEGER & List of levels to be plotted RGB & STRING &
+TRUE or FALSE, to indicate, if the input colour is in RGB format
+step_freq & INTEGER & Frequency of time steps to be considered for
+making the animation & & (device=gif_animation). Default value is "1"
+(all time steps). & & Will be ignored if input file has multiple
+variables. file_split & STRING & TRUE or FALSE, to split the output file
+for each variable, if input has & & multiple variables. Default value is
+"FALSE". Valid only for "PS" format.
+
+## Usage
+
+``` r
+cdo_contour(ifile, parameter = NULL, ofile = NULL)
+
+cdo_grfill(ifile, parameter = NULL, ofile = NULL)
+
+cdo_shaded(ifile, parameter = NULL, ofile = NULL)
+```
+
+## Arguments
+
+- ifile:
+
+  String with the path to the input file.
+
+- parameter:
+
+  STRING - Comma-separated list of plot parameters
+
+- ofile:
+
+  String with the path to the output file.
+
+## Value
+
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with
+the basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+
+## Details
+
+    contour  Contour plot
+             The operator contour generates the discrete contour lines of the input field values.
+             The following additional parameters are valid for contour operator,
+             module in addition to the common plot parameters:
+
+              Keyname      &amp; Type    &amp; Description
+              colour       &amp; STRING  &amp; Colour for drawing the contours
+              thickness    &amp; FLOAT   &amp; Thickness of the contour line
+              style        &amp; STRING  &amp; Line Style can be \&quot;SOLID\ \&quot;DASH\ \&quot;DOT\ \&quot;CHAIN_DASH\
+                           &amp;         &amp; \&quot;CHAIN_DOT\&quot;
+    shaded   Shaded contour plot
+             The operator shaded generates the filled contours of the given input field values.
+             The following additional parameters are valid for shaded contour and gridfill operator,
+             in addition to the common plot parameters.
+
+              Keyname      &amp; Type    &amp; Description
+              colour_min   &amp; STRING  &amp; Colour for the Minimum colour band
+              colour_max   &amp; STRING  &amp; Colour for the Minimum colour band
+              colour_triad &amp; STRING  &amp; Direction of colour sequencing for shading \&quot;CW\&quot; or \&quot;ACW\
+                           &amp;         &amp; to denote \&quot;clockwise\&quot; and \&quot;anticlockwise\&quot; respectively.
+                           &amp;         &amp; To be used in conjunction with \&quot;colour_min\ \&quot;colour_max\&quot;
+                           &amp;         &amp; options. Default is \&quot;ACW\&quot;
+              colour_table &amp; STRING  &amp; File with user specified colours with the format as
+
+             Example file for 6 colours in RGB format:
+                6
+                RGB(0.0;0.0;1.0)
+                RGB(0.0;0.0;0.5)
+                RGB(0.0;0.5;0.5)
+                RGB(0.0;1.0;0.0)
+                RGB(0.5;0.5;0.0)
+                RGB(1.0;0.0;0.0)
+
+    grfill   Shaded gridfill plot
+             The operator grfill is similar to satellite imaging and shades each cell (pixel) according
+             to the value of the field at that cell.
+
+## Note
+
+All colour parameter can be either standard name or in RGB format. The
+valid standard name strings for \\colour\\ are: \\red\\ \\green\\
+\\blue\\ \\yellow\\ \\cyan\\ \\magenta\\ \\black\\ \\avocado\\ \\beige\\
+\\brick\\ \\brown\\ \\burgundy\\ \\charcoal\\ \\chestnut\\ \\coral\\
+\\cream\\ \\evergreen\\ \\gold\\ \\grey\\ \\khaki\\ \\kellygreen\\
+\\lavender\\ \\mustard\\ \\navy\\ \\ochre\\ \\olive\\ \\peach\\ \\pink\\
+\\rose\\ \\rust\\ \\sky\\ \\tan\\ \\tangerine\\ \\turquoise\\ \\violet\\
+\\reddishpurple\\ \\purplered\\ \\purplishred\\ \\orangishred\\
+\\redorange\\ \\reddishorange\\ \\orange\\ \\yellowishorange\\
+\\orangeyellow\\ \\orangishyellow\\ \\greenishyellow\\ \\yellowgreen\\
+\\yellowishgreen\\ \\bluishgreen\\ \\bluegreen\\ \\greenishblue\\
+\\purplishblue\\ \\bluepurple\\ \\bluishpurple\\ \\purple\\ \\white\\

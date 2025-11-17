@@ -1,0 +1,638 @@
+# Using rcdo
+
+``` r
+library(rcdo)
+```
+
+## How rcdo works
+
+The rcdo package does very little. It merely translates R functions into
+CDO commands that are then executed via
+[`system()`](https://rdrr.io/r/base/system.html) calls. This makes the
+package relatively simple but requires the user to have cdo installed
+separatedly.
+
+Each CDO operator has an equivalent rcdo function, which prefixed with
+`cdo_`. So, if you want to use the `monmean` CDO operator to resample a
+time series into monthly values, you would use the
+[`cdo_monmean()`](https://eliocamp.github.io/rcdo/reference/monstat.md)
+function.
+
+By default, rcdo will use the system installed version. This is safe and
+convenient, but there’s no guarantee that the CDO version in your system
+is the same as the CDO version used to generate the current rcdo
+version. A version mismatch is not critical, since the vast majority of
+functionality and documentation will be compatible, so rcdo will emit a
+one-time warning but will otherwise still try to execute commands.
+
+``` r
+cdo_use("system")  # The default
+#> Using system CDO, version 2.4.3.
+```
+
+[`cdo_install()`](https://eliocamp.github.io/rcdo/reference/cdo_install.md)
+will try to download, compile and install the “supported” CDO version
+and then we can use `cdo_use("packaged")` to tell rcdo to use the
+package version.
+
+``` r
+# cdo_install()
+cdo_use("packaged")
+#> Using packaged CDO, version 2.5.1.
+```
+
+## Using rcdo
+
+We will use a sample file.
+
+``` r
+file <- system.file("extdata", "hgt_ncep.nc", package = "rcdo")
+```
+
+We can get a quick look at the contents of the file with the `sinfo`
+(*s*hort info) operator using the
+[`cdo_sinfo()`](https://eliocamp.github.io/rcdo/reference/sinfo.md)
+function.
+
+``` r
+file |> 
+  cdo_sinfo() |> 
+  cdo_execute()
+#>  [1] "   File format : NetCDF4 classic"                                                      
+#>  [2] "    -1 : Institut Source   T Steptype Levels Num    Points Num Dtype : Parameter ID"   
+#>  [3] "     1 : NCEP     NCEP/DOE v instant       3   1     10512   1  F32  : -1            " 
+#>  [4] "   Grid coordinates :"                                                                 
+#>  [5] "     1 : lonlat                   : points=10512 (144x73)"                             
+#>  [6] "                              lon : 0 to 357.5 by 2.5 degrees_east  circular"          
+#>  [7] "                              lat : 90 to -90 by -2.5 degrees_north"                   
+#>  [8] "   Vertical coordinates :"                                                             
+#>  [9] "     1 : pressure                 : levels=3"                                          
+#> [10] "                            level : 1000 to 500 millibar"                              
+#> [11] "   Time coordinate :"                                                                  
+#> [12] "                             time : 24 steps"                                          
+#> [13] "     RefTime =  1800-01-01 00:00:00  Units = hours  Calendar = standard  Bounds = true"
+#> [14] "  YYYY-MM-DD hh:mm:ss  YYYY-MM-DD hh:mm:ss  YYYY-MM-DD hh:mm:ss  YYYY-MM-DD hh:mm:ss"  
+#> [15] "  2000-01-01 00:00:00  2000-02-01 00:00:00  2000-03-01 00:00:00  2000-04-01 00:00:00"  
+#> [16] "  2000-05-01 00:00:00  2000-06-01 00:00:00  2000-07-01 00:00:00  2000-08-01 00:00:00"  
+#> [17] "  2000-09-01 00:00:00  2000-10-01 00:00:00  2000-11-01 00:00:00  2000-12-01 00:00:00"  
+#> [18] "  2001-01-01 00:00:00  2001-02-01 00:00:00  2001-03-01 00:00:00  2001-04-01 00:00:00"  
+#> [19] "  2001-05-01 00:00:00  2001-06-01 00:00:00  2001-07-01 00:00:00  2001-08-01 00:00:00"  
+#> [20] "  2001-09-01 00:00:00  2001-10-01 00:00:00  2001-11-01 00:00:00  2001-12-01 00:00:00"
+```
+
+Notice the use of
+[`cdo_execute()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md).
+Plain rcdo functions return an operation waiting to be executed.
+
+``` r
+file |> 
+  cdo_sinfo() 
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo sinfo [ '/home/user1/Documents/r-packages/rcdo/inst/extdata/hgt_ncep.nc' ] {{output}}
+```
+
+This could seem a bit cumbersome for just one operation, but allows
+operators to be chained together as we will see later.
+
+`sinfo` is an operator with zero output files. It returns a string with
+information. There are other operators like this. For example, if we
+wanted to know how many vertical levels are in this file, we could use
+the [`cdo_nlevel()`](https://eliocamp.github.io/rcdo/reference/ninfo.md)
+function.
+
+``` r
+file |> 
+  cdo_nlevel() |> 
+  cdo_execute()
+#> [1] "3"
+```
+
+For actual data manipulation, we use operators that take a one or more
+files and return one or more files. For instance, let’s select only the
+Southern Hemisphere in this dataset with the `sellonlatbox` operator.
+
+``` r
+sh <- file |> 
+  cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0)
+sh
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/inst/extdata/hgt_ncep.nc' ] {{output}}
+```
+
+At this point, we haven’t done anything; `sh` is just an operation
+waiting to be executed. Because it will return a file,
+[`cdo_execute()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md)
+needs to know where to save the output. We can do it explicitly with the
+`output` argument.
+
+``` r
+sh |> 
+  cdo_execute(output = tempfile())
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e7820da3c"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:31 AEST"
+#> attr(,"size")
+#> [1] 1580009
+```
+
+(The file size and modification date are attached as attributes to the
+output. This potentially makes it possible to memoise functions based on
+it).
+
+If we omit that argument, however, rcdo will save the result into a
+ephemeral file in a temporary folder.
+
+``` r
+sh_file <- sh |> 
+  cdo_execute()
+sh_file
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5ebc7fbd2"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 1580009
+```
+
+This file will be deleted when the variable holding the path is removed.
+
+Since `sh` is not a file, applying another rcdo function will return a
+chained set of operations.
+
+``` r
+sh |> 
+  cdo_sinfo() 
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo sinfo [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/inst/extdata/hgt_ncep.nc' ] ] {{output}}
+```
+
+This is the same as
+
+``` r
+file |> 
+  cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
+  cdo_sinfo() 
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo sinfo [ -sellonlatbox,0,360,-90,0 [ '/home/user1/Documents/r-packages/rcdo/inst/extdata/hgt_ncep.nc' ] ] {{output}}
+```
+
+We can execute the chain and confirm that `sh` only selects the Southen
+Hemisphere
+
+``` r
+sh |> 
+  cdo_sinfo() |> 
+  cdo_execute() |> 
+  _[7]
+#> [1] "                              lat : 0 to -90 by -2.5 degrees_north"
+```
+
+It’s more interesting to chain multiple data-manipulating operations.
+For example, let’s select only the 500hPa level.
+
+``` r
+sh_500 <- sh |> 
+  cdo_sellevel(500) |> 
+  cdo_execute() 
+```
+
+We can confirm that the result only has 1 level.
+
+``` r
+sh_500 |> 
+  cdo_nlevel() |> 
+  cdo_execute()
+#> [1] "1"
+```
+
+Other operators take more than one file as arguments. `ymonsub`
+subtracts two files matching the same month of year. It’s mainly used to
+compute monthly anomalies by first computing monthly climatology with
+‘ymonmean’.
+
+``` r
+climatology <- cdo_ymonmean(file)
+
+anomalies <- cdo_ymonsub(file, climatology) |> 
+  cdo_execute()
+```
+
+Some operators take one file and return an undetermined number of files.
+`splitmon` will return one file per month. Unfortunately rcdo cannot
+return the list of files created yet. The returned string is the base
+suffix shared by all files.
+
+``` r
+mon_split <- sh_500 |> 
+  cdo_splitmon() |> 
+  cdo_execute()
+mon_split
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a7"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+```
+
+We can get a list of all files by globbing with an asterisk.
+
+``` r
+mon_split <- paste0(mon_split, "*") |> 
+  Sys.glob()
+mon_split
+#>  [1] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a701.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a702.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a703.nc"
+#>  [4] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a704.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a705.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a706.nc"
+#>  [7] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a707.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a708.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a709.nc"
+#> [10] "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a710.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a711.nc" "/tmp/Rtmp9eAVmx/filee0a5e44a2b5a712.nc"
+```
+
+(Note that this is not entirely reliable since it assumes that there are
+no other files that share the same suffix.)
+
+And now we can use the files normally. These will not be automatically
+deleted by R (although they will eventually be deleted by your OS is
+they are in the correct temporary folder).
+
+``` r
+mon_split[1] |> 
+  cdo_sinfo() |> 
+  cdo_execute() |> 
+  _[11:15]
+#> [1] "   Time coordinate :"                                                                  
+#> [2] "                             time : 2 steps"                                           
+#> [3] "     RefTime =  1800-01-01 00:00:00  Units = hours  Calendar = standard  Bounds = true"
+#> [4] "  YYYY-MM-DD hh:mm:ss  YYYY-MM-DD hh:mm:ss  YYYY-MM-DD hh:mm:ss  YYYY-MM-DD hh:mm:ss"  
+#> [5] "  2000-01-01 00:00:00  2001-01-01 00:00:00"
+```
+
+We can use functional programming to apply one or more operations to
+each file.
+
+``` r
+mon_split |> 
+  lapply(cdo_deltat)
+#> [[1]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a701.nc' ] {{output}} 
+#> 
+#> [[2]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a702.nc' ] {{output}} 
+#> 
+#> [[3]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a703.nc' ] {{output}} 
+#> 
+#> [[4]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a704.nc' ] {{output}} 
+#> 
+#> [[5]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a705.nc' ] {{output}} 
+#> 
+#> [[6]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a706.nc' ] {{output}} 
+#> 
+#> [[7]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a707.nc' ] {{output}} 
+#> 
+#> [[8]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a708.nc' ] {{output}} 
+#> 
+#> [[9]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a709.nc' ] {{output}} 
+#> 
+#> [[10]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a710.nc' ] {{output}} 
+#> 
+#> [[11]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a711.nc' ] {{output}} 
+#> 
+#> [[12]]
+#> CDO command:
+#>    /home/user1/.local/share/R/rcdo/cdo-2.5.1/bin/cdo deltat [ '/tmp/Rtmp9eAVmx/filee0a5e44a2b5a712.nc' ] {{output}}
+```
+
+To execute a list of operations, use
+[`cdo_execute_list()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md).
+
+``` r
+mon_split |> 
+  lapply(cdo_deltat) |> 
+  cdo_execute_list()
+#> [[1]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e2a5212ea"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[2]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e7ec35c5"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[3]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e3048379e"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[4]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5ef5e0588"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[5]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e10de3ecb"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[6]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e3c103371"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[7]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e16d6377f"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[8]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e56fd5ceb"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[9]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e9ebb1b8"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:32 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[10]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e6b70a80a"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[11]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5ec9c1f12"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[12]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e11dec2fd"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+```
+
+We could’ve also have executed each operation inside the `lapply` call.
+However, because of the way `lapply` combines outputs, the ephemeral
+files will be deleted. So you need to either use
+[`cdo_execute_list()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md)
+or take care of explicitly creating temporary files.
+
+``` r
+mon_split |> 
+  lapply(function(x) cdo_deltat(x) |> cdo_execute(output = tempfile()))
+#> [[1]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e17bdb9ec"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[2]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e617c3903"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[3]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e27553394"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[4]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e7e6fdf0b"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[5]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e437efdf4"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[6]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e280ffaa8"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[7]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e1898f2bc"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[8]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e72aeb36b"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[9]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e6cb2b04f"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[10]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e32470d4b"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[11]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e7f5c2b0f"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+#> 
+#> [[12]]
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e380afe7a"
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 59545
+```
+
+Finally, some operators take a vector of files and return a single file.
+We can re-merge the list of files with
+[`cdo_mergetime()`](https://eliocamp.github.io/rcdo/reference/merge.md).
+
+``` r
+merged <- mon_split |> 
+  cdo_mergetime() |> 
+  cdo_execute()
+```
+
+``` r
+merged |> 
+  cdo_ntime() |> 
+  cdo_execute()   
+#> [1] "24"
+```
+
+Because rcdo can chain operations, there is no need of executing the
+individual operations and then merging.
+[`cdo_mergetime()`](https://eliocamp.github.io/rcdo/reference/merge.md)
+can take a list of operations naturally, so we could do this
+
+``` r
+mon_split |> 
+  lapply(cdo_deltat) |> 
+  cdo_mergetime() |> 
+  cdo_execute()
+#> [1] "/tmp/Rtmp9eAVmx/filee0a5e79085d5b"
+#> attr(,"ephemeral")
+#> attr(,"ephemeral")[[1]]
+#> File will be deleted when garbage collected
+#> 
+#> attr(,"mtime")
+#> [1] "2025-05-14 10:38:33 AEST"
+#> attr(,"size")
+#> [1] 295001
+```
+
+## Important limitations
+
+**Important**
+
+The whole rcdo package and its documentation is built automatically from
+the CDO source. This comes with some limitations.
+
+CDO operators are documented in “families” where all parameters are
+documented together. Currently there is no way for the build process to
+correctly attribute each parameter to the correct operator. This
+unfortunately means that rcdo functions have every argument from a
+particular family. For example, the functions
+[`cdo_selindexbox()`](https://eliocamp.github.io/rcdo/reference/selbox.md)
+and
+[`cdo_sellonlatbox()`](https://eliocamp.github.io/rcdo/reference/selbox.md)
+both have `lon1` in their signature.
+
+The conversion from rcdo function arguments to CDO command parameters is
+pretty dumb. Argument names re only for the user convenience and are not
+really used: function arguments are converted to CDO parameters simply
+in the order they are defined in the function signature. Neither are
+argument checked for validity. This means that
+`cdo_sellonlatbox(file, lon1 = 0)` will not return an error even though
+the operator is missing other necessary arguments. Also
+`cdo_sellonlatbox(file, idx1 = 0)` is identical to
+`cdo_sellonlatbox(file, lon1 = 0)`.
+
+Some CDO operators need named parameters. rcdo currently doesn’t know
+how to deal with that, so you need to pass the names yourself. So
+`cdo_select(file, name = "temperature")` doesn’t work, you need to do
+`cdo_select(file, name = "name=temperature")`, which is equivalent to
+`cdo_select(file, code = "name=temperature")` due to the previously
+described limitation.
+
+Some parameters need to be quoted. For example, the expression in the
+`expr` operator needs to be surrounded by quotes. Again, rcdo doesn’t
+know this so you must “double quote” the argument yourself;
+i.e. `cdo_expr(file, "'t_celcius=t-273.15'")`.
+
+Some documentation formatting might be incorrect. If you spot some part
+of the documentation that didn’t survive the conversion, [open an
+issue](https://github.com/eliocamp/rcdo/issues)!

@@ -1,0 +1,93 @@
+# Bit rounding
+
+This operator calculates for each field the number of necessary mantissa
+bits to get a certain information level in the data. With this number of
+significant bits (numbits) a rounding of the data is performed. This
+allows the data to be compressed to a higher level. The default value of
+the information level is 0.9999 and can be adjusted with the parameter
+inflevel. That means 99.99% of the information in the mantissa bits is
+preserved. Alternatively, the number of significant bits can be set for
+all variables with the numbits parameter. Furthermore, numbits can be
+assigned for each variable via the filename parameter. In this case,
+numbits is still calculated for all variables if they are not present in
+the file. The analysis of the bit information is based on the Julia
+library BitInformation.jl
+(https://github.com/milankl/BitInformation.jl). The procedure to derive
+the number of significant mantissa bits was adapted from the Python
+library xbitinfo (https://github.com/observingClouds/xbitinfo). Quantize
+to the number of mantissa bits is done with IEEE rounding using code
+from NetCDF 4.9.0. Currently only 32-bit float data is rounded. Data
+with missing values are not yet supported for the calculation of
+significant bits.
+
+## Usage
+
+``` r
+cdo_bitrounding(
+  ifile,
+  inflevel = NULL,
+  addbits = NULL,
+  minbits = NULL,
+  maxbits = NULL,
+  numsteps = NULL,
+  numbits = NULL,
+  printbits = NULL,
+  filename = NULL,
+  ofile = NULL
+)
+```
+
+## Arguments
+
+- ifile:
+
+  String with the path to the input file.
+
+- inflevel:
+
+  FLOAT - Information level (0 - 1) \[default: 0.9999\]
+
+- addbits:
+
+  INTEGER - Add bits to the number of significant bits \[default: 0\]
+
+- minbits:
+
+  INTEGER - Minimum value of the number of bits \[default: 1\]
+
+- maxbits:
+
+  INTEGER - Maximum value of the number of bits \[default: 23\]
+
+- numsteps:
+
+  INTEGER - Set to 1 to run the calculation only in the first time step
+
+- numbits:
+
+  INTEGER - Set number of significant bits
+
+- printbits:
+
+  BOOL - Print max. numbits per variable of 1st timestep to stdout
+  \[format: name=numbits\]
+
+- filename:
+
+  STRING - Read number of significant bits per variable from file
+  \[format: name=numbits\]
+
+- ofile:
+
+  String with the path to the output file.
+
+## Value
+
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with
+the basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.

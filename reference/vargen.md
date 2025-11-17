@@ -1,0 +1,140 @@
+# Generate a field
+
+Generates a dataset with one or more fields
+
+## Usage
+
+``` r
+cdo_const(
+  const = NULL,
+  seed = NULL,
+  grid = NULL,
+  start = NULL,
+  end = NULL,
+  inc = NULL,
+  levels = NULL,
+  ofile = NULL
+)
+
+cdo_random(
+  const = NULL,
+  seed = NULL,
+  grid = NULL,
+  start = NULL,
+  end = NULL,
+  inc = NULL,
+  levels = NULL,
+  ofile = NULL
+)
+
+cdo_seq(
+  const = NULL,
+  seed = NULL,
+  grid = NULL,
+  start = NULL,
+  end = NULL,
+  inc = NULL,
+  levels = NULL,
+  ofile = NULL
+)
+
+cdo_stdatm(
+  const = NULL,
+  seed = NULL,
+  grid = NULL,
+  start = NULL,
+  end = NULL,
+  inc = NULL,
+  levels = NULL,
+  ofile = NULL
+)
+
+cdo_topo(
+  const = NULL,
+  seed = NULL,
+  grid = NULL,
+  start = NULL,
+  end = NULL,
+  inc = NULL,
+  levels = NULL,
+  ofile = NULL
+)
+```
+
+## Arguments
+
+- const:
+
+  FLOAT - Constant
+
+- seed:
+
+  INTEGER - The seed for a new sequence of pseudo-random numbers
+  \[default: 1\]
+
+- grid:
+
+  STRING - Target grid description file or name
+
+- start:
+
+  FLOAT - Start value of the loop
+
+- end:
+
+  FLOAT - End value of the loop
+
+- inc:
+
+  FLOAT - Increment of the loop \[default: 1\]
+
+- levels:
+
+  FLOAT - Target levels in metre above surface
+
+- ofile:
+
+  String with the path to the output file.
+
+## Value
+
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with
+the basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+
+## Details
+
+    const   Create a constant field
+            Creates a constant field. All field elements of the grid have the same value.
+    random  Create a field with random numbers
+            Creates a field with rectangularly distrubuted random numbers in the interval \[0,1\].
+    topo    Create a field with topography
+            Creates a field with topography data, per default on a global half degree grid.
+    seq     Create a time series
+            Creates a time series with field size 1 and field elements beginning with a start value in time step 1
+            which is increased from one time step to the next.
+    stdatm  Create values for pressure and temperature for hydrostatic atmosphere
+            Creates pressure and temperature values for the given list of vertical levels.
+            The formulas are:
+
+            P(z) = P_0 * exp(-1 * g/R * H/T_0 * log( (exp(z/H)*T_0 + T_Delta)/(T_0 + T_Delta))
+            T(z) = T_0 + T_Delta * exp(-z/H)
+
+            with the following constants
+
+            T_0     = 213 K           Offset to get a surface temperature of 288K
+            T_Delta = 75 K            Temperature lapse rate for 10Km
+            P_0     = 1013.25 hPa     Surface pressure
+            H       = 10000.0 m       Scale height
+            g       = 9.80665 m/s**2  Earth gravity
+            R       = 287.05 J/kg*K   Gas constant for air
+
+            This is the solution for the hydrostatic equations and is only valid for the
+            troposphere (constant positive lapse rate). The temperature increase in the
+            stratosphere and other effects of the upper atmosphere are not taken into
+            account.

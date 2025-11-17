@@ -1,0 +1,246 @@
+# Select timesteps
+
+This module selects user specified timesteps from infile and writes them
+to outfile. The timesteps selected depends on the chosen operator and
+the parameters. A range of integer values can be specified by
+first/last\[/inc\].
+
+## Usage
+
+``` r
+cdo_seldate(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_selday(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_selhour(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_selmonth(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_selseason(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_selsmon(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_seltime(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_seltimestep(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+
+cdo_selyear(
+  ifile,
+  timesteps = NULL,
+  times = NULL,
+  hours = NULL,
+  days = NULL,
+  months = NULL,
+  years = NULL,
+  seasons = NULL,
+  startdate = NULL,
+  enddate = NULL,
+  nts1 = NULL,
+  nts2 = NULL,
+  ofile = NULL
+)
+```
+
+## Arguments
+
+- ifile:
+
+  String with the path to the input file.
+
+- timesteps:
+
+  INTEGER - Comma-separated list or first/last\[/inc\] range of
+  timesteps. Negative values select timesteps from the end (NetCDF
+  only).
+
+- times:
+
+  STRING - Comma-separated list of times (format hh:mm:ss).
+
+- hours:
+
+  INTEGER - Comma-separated list or first/last\[/inc\] range of hours.
+
+- days:
+
+  INTEGER - Comma-separated list or first/last\[/inc\] range of days.
+
+- months:
+
+  INTEGER - Comma-separated list or first/last\[/inc\] range of months.
+
+- years:
+
+  INTEGER - Comma-separated list or first/last\[/inc\] range of years.
+
+- seasons:
+
+  STRING - Comma-separated list of seasons (substring of DJFMAMJJASOND
+  or ANN).
+
+- startdate:
+
+  STRING - Start date (format: YYYY-MM-DDThh:mm:ss).
+
+- enddate:
+
+  STRING - End date (format: YYYY-MM-DDThh:mm:ss) \[default:
+  startdate\].
+
+- nts1:
+
+  INTEGER - Number of timesteps before the selected month \[default:
+  0\].
+
+- nts2:
+
+  INTEGER - Number of timesteps after the selected month \[default:
+  nts1\].
+
+- ofile:
+
+  String with the path to the output file.
+
+## Value
+
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with
+the basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
+
+## Details
+
+    seltimestep  Select timesteps
+                 Selects all timesteps with a timestep in a user given list or range.
+    seltime      Select times
+                 Selects all timesteps with a time in a user given list or range.
+    selhour      Select hours
+                 Selects all timesteps with a hour in a user given list or range.
+    selday       Select days
+                 Selects all timesteps with a day in a user given list or range.
+    selmonth     Select months
+                 Selects all timesteps with a month in a user given list or range.
+    selyear      Select years
+                 Selects all timesteps with a year in a user given list or range.
+    selseason    Select seasons
+                 Selects all timesteps with a month of a season in a user given list.
+    seldate      Select dates
+                 Selects all timesteps with a date in a user given range.
+    selsmon      Select single month
+                 Selects a month and optional an arbitrary number of timesteps before and after this month.

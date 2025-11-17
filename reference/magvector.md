@@ -1,0 +1,48 @@
+# Lat/Lon vector plot
+
+This operator generates 2D Lon/Lat vector plots. The data for the plot
+is read from infile. The input is expected to contain two velocity
+components. Only data on rectilinear Lon/Lat grids are supported. The
+output file will be named \<obase\>.\<device\> where device is the
+device name. The default output file format is postscript, this can be
+changed with the device parameter. Here is a list of all vector plot
+parameters: Keyname & Type & Description device & STRING & Output device
+(ps, eps, pdf, png, gif, gif_animation, jpeg, svg, kml) projection &
+STRING & Projection (cylindrical, polar_stereographic, robinson,
+mercator) thin_fac & FLOAT & Controls the actual number of wind arrows
+or flags plotted (default 2). unit_vec & FLOAT & Wind speed in m/s
+represented by a unit vector (1.0cm) step_freq & INTEGER & Frequency of
+time steps to be considered for making the animation & &
+(device=gif_animation). Default value is "1" (all time steps). & & Will
+be ignored if input file has multiple variables.
+
+## Usage
+
+``` r
+cdo_vector(ifile, parameter = NULL, ofile = NULL)
+```
+
+## Arguments
+
+- ifile:
+
+  String with the path to the input file.
+
+- parameter:
+
+  STRING - Comma-separated list of plot parameters
+
+- ofile:
+
+  String with the path to the output file.
+
+## Value
+
+Operators that output one or more files return a character vector to the
+output files.
+
+Operators that output an indefinite number of files return a string with
+the basename of the files.
+
+Operatos that don't return filenames return a character vector with the
+string output.
