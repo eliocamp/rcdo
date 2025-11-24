@@ -10,7 +10,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/eliocamp/rcdo/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/eliocamp/rcdo/blob/v0.3.1/DESCRIPTION)
 
 Campitelli E (2025). *rcdo: Wrapper of 'CDO' Operators*. R package
 version 0.3.1, <https://eliocamp.github.io/rcdo/>.
