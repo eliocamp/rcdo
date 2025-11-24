@@ -1,3 +1,4 @@
+# fmt: skip file
 ## This file was created automatically, do not edit by hand.
 #' @param ifile1,ifile2 Strings with the path to the input files.
 #' @param obase String with the basename of the output files.

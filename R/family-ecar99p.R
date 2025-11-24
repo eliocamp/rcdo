@@ -1,3 +1,4 @@
+# fmt: skip file
 ## This file was created automatically, do not edit by hand.
 #' Extremely wet days wrt 99th percentile of reference period
 #'
@@ -14,7 +15,7 @@
 #' Operators that output an indefinite number of files return a string with the
 #' basename of the files.
 #'
-#' Operatos that don't return filenames return a character vector with the
+#' Operators that don't return filenames return a character vector with the
 #' string output.
 #' @name ecar99p
 NULL

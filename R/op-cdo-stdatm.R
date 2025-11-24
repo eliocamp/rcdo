@@ -1,3 +1,4 @@
+# fmt: skip file
 ## This file was created automatically, do not edit by hand.
 
 #' @param ofile String with the path to the output file.

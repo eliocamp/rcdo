@@ -1,3 +1,4 @@
+# fmt: skip file
 ## This file was created automatically, do not edit by hand.
 #' Daily statistics
 #'
@@ -55,7 +56,7 @@
 #' Operators that output an indefinite number of files return a string with the
 #' basename of the files.
 #'
-#' Operatos that don't return filenames return a character vector with the
+#' Operators that don't return filenames return a character vector with the
 #' string output.
 #' @name daystat
 NULL
