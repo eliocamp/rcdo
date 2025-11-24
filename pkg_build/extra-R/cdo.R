@@ -271,10 +271,12 @@ cdo_execute <- function(
     cli::cli_inform("Running {.code {command}}")
   }
 
-  dir <- dirname(operation$output)
-  if (!dir.exists(dir)) {
-    dir.create(dir, recursive = TRUE)
-  }
+  dirs <- dirname(operation$output)
+  sink <- lapply(dirs, \(dir) {
+    if (!dir.exists(dir)) {
+      dir.create(dir, recursive = TRUE)
+    }
+  })
 
   result <- system(
     command,
