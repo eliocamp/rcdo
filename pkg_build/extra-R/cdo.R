@@ -272,7 +272,7 @@ cdo_execute <- function(
   }
 
   dirs <- dirname(operation$output)
-  sink <- lapply(dirs, \(dir) {
+  sink <- lapply(dirs, function(dir) {
     if (!dir.exists(dir)) {
       dir.create(dir, recursive = TRUE)
     }

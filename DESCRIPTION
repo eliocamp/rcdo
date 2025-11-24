@@ -15,7 +15,7 @@ Language: en-GB
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Depends: 
-    R (>= 4.1.0)
+    R (>= 3.5.0)
 SystemRequirements: cdo
 LazyData: true
 URL: https://eliocamp.github.io/rcdo/, https://github.com/eliocamp/rcdo
