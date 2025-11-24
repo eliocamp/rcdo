@@ -1,8 +1,11 @@
 source("pkg_build/process-section.R")
-# Operators IO
 source("pkg_build/extra-R/cdo-install.R")
+
+# Install suppported cdo version
 Sys.setenv(RCDO_DEBUG_CDO_VERSION = "")
 cdo_install()
+
+# Operator I/O
 op_list <- suppressWarnings(system(
   paste0(get_cdo(which = "rcdo_version"), " --operators"),
   intern = TRUE
@@ -30,32 +33,27 @@ operators_io[n_output == -1, n_output := Inf]
 
 
 # Operators documentation and parameters (more or less)
-help <- "pkg_build/cdo-2.5.1/src/operator_help.cc"
-
-help <- readLines(help)
+help <- "pkg_build/cdo-2.5.1/src/operator_help.cc" |>
+  readLines()
 
 sections <- which(startsWith(help, "const "))
-
 helps <- list()
 
 for (i in seq_along(sections)[-length(sections)]) {
   help_page <- help[seq(sections[i], sections[i + 1] - 1)]
-
   headers <- c(grep(r"( +"[A-Z]+",)", help_page), length(help_page) - 1)
-
-  operator <- list()
 
   name <- help_page[1] |>
     gsub("const CdoHelp ", "", x = _) |>
     gsub("Help = \\{", "", x = _) |>
     tolower()
 
+  operator <- list()
   for (j in seq_along(headers)[-length(headers)]) {
     section_name <- help_page[headers[j]] |>
       rm_quotes()
 
     section_text <- help_page[seq(headers[j] + 1, headers[j + 1] - 1)]
-
     class(section_text) <- section_name
 
     operator <- process_section(section_text, operator)
