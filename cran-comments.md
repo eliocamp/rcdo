@@ -1,4 +1,7 @@
 
+This is a hotfix to fix a critical issue introduced in the previous release.
+
+
 Tested on 
 
 - local installation using R version 4.5.1 (2025-06-13) on  platform: x86_64-pc-linux-gnu
