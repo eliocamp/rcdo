@@ -1,6 +1,6 @@
 # Changelog
 
-## rcdo (development version)
+## rcdo 0.3.2
 
 ### Bug fixes
 
