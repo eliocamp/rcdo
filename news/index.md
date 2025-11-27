@@ -2,7 +2,13 @@
 
 ## rcdo (development version)
 
+### Bug fixes
+
+- Fix error for operators without output
+
 ## rcdo 0.3.1
+
+CRAN release: 2025-11-24
 
 ### New features
 
