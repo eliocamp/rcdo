@@ -1,5 +1,9 @@
 # rcdo (development version)
 
+## Bug fixes
+
+-   Fix error for operators without output
+
 # rcdo 0.3.1
 
 ## New features
