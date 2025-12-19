@@ -216,7 +216,7 @@ cdo_execute <- function(
   if (isTRUE(cache)) {
     if (operation$operator$n_output != 1) {
       cli::cli_alert_warning(
-        "cache only works with oeprations with 1 file output."
+        "Cache only works with oeprations with 1 file output."
       )
     }
     hash_current <- rlang::hash(list(
