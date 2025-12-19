@@ -157,7 +157,7 @@ process_section.PARAMETER <- function(section_text, operators) {
 
   # they are all optional for now because I cannot detect if they are
   # required.
-  operators$params$optional <- parameters
+  operators$params$optional <- as.list(parameters)
 
   operators$params$optional <- operators$params$optional[
     !is.na(names(operators$params$optional))

@@ -55,7 +55,6 @@ for (i in seq_along(sections)[-length(sections)]) {
 
     section_text <- help_page[seq(headers[j] + 1, headers[j + 1] - 1)]
     class(section_text) <- section_name
-
     operator <- process_section(section_text, operator)
   }
 
@@ -73,13 +72,16 @@ helps <- helps[!(names(helps) %in% not_build)]
 
 for (help in helps) {
   for (op in help$operators) {
-    operators[[op]] <- list(
-      command = op,
-      params = help$params,
-      family = help$name,
-      n_input = operators_io[operator == op]$n_input,
-      n_output = operators_io[operator == op]$n_output
-    )
+    op_io <- operators_io[operator == op]
+    if (nrow(op_io) != 0) {
+      operators[[op]] <- list(
+        command = op,
+        params = help$params,
+        family = help$name,
+        n_input = operators_io[operator == op]$n_input,
+        n_output = operators_io[operator == op]$n_output
+      )
+    }
   }
 }
 
