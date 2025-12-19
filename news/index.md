@@ -2,6 +2,8 @@
 
 ## rcdo 0.3.2
 
+CRAN release: 2025-11-28
+
 ### Bug fixes
 
 - Fix error for operators without output
