@@ -215,12 +215,14 @@ cdo_execute <- function(
   use_cache <- FALSE
   # Need to first build the hash to make temp output deterministic
   if (isTRUE(cache)) {
+    use_cache <- TRUE
     if (operation$operator$n_output != 1) {
       cli::cli_alert_warning(
         "Cache only works with oeprations with 1 file output."
       )
+      use_cache <- FALSE
     }
-    use_cache <- TRUE
+
     hash_current <- rlang::hash(list(
       get_cdo_version(get_cdo()),
       build_operation(
