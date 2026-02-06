@@ -218,7 +218,7 @@ cdo_execute <- function(
     use_cache <- TRUE
     if (operation$operator$n_output != 1) {
       cli::cli_alert_warning(
-        "Cache only works with oeprations with 1 file output."
+        "Cache only works with opperations with 1 file output."
       )
       use_cache <- FALSE
     }
