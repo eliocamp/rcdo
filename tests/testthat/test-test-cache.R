@@ -1,4 +1,4 @@
-test_that("multiplication works", {
+test_that("cache works", {
   expect_null(unlist(cdo_cache_get()))
 
   location <- tempfile()
@@ -10,6 +10,4 @@ test_that("multiplication works", {
 
   cdo_cache_set(old)
   expect_null(unlist(cdo_cache_get()))
-
-
 })
