@@ -13,12 +13,12 @@ Source:
 [`DESCRIPTION`](https://github.com/eliocamp/rcdo/blob/main/DESCRIPTION)
 
 Campitelli E (2026). *rcdo: Wrapper of 'CDO' Operators*. R package
-version 0.3.2, <https://eliocamp.github.io/rcdo/>.
+version 0.3.2.9000, <https://eliocamp.github.io/rcdo/>.
 
     @Manual{,
       title = {rcdo: Wrapper of 'CDO' Operators},
       author = {Elio Campitelli},
       year = {2026},
-      note = {R package version 0.3.2},
+      note = {R package version 0.3.2.9000},
       url = {https://eliocamp.github.io/rcdo/},
     }

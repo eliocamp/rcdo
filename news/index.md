@@ -1,5 +1,11 @@
 # Changelog
 
+## rcdo (development version)
+
+### Bug fixes
+
+- Fix crash when using cache for operators without output
+
 ## rcdo 0.3.2
 
 CRAN release: 2025-11-28
