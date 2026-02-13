@@ -2,6 +2,12 @@
 
 ## rcdo (development version)
 
+### New features
+
+- `[` is now an alias for
+  [`cdo_execute()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md).
+  This enables more compact notation (e.g. `cdo_monmean(file)[]`)
+
 ### Bug fixes
 
 - Fix crash when using cache for operators without output
