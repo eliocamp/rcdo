@@ -1,14 +1,14 @@
 # rcdo (development version)
 
+## New features
+
+-   `[` is now an alias for `cdo_execute()`. This enables more compact notation (e.g. `cdo_monmean(file)[]`)
+
 ## Bug fixes
 
 -   Fix crash when using cache for operators without output
 
 # rcdo 0.3.2
-
-## New features
-
--   `[` is now an alias for `cdo_execute()`. This enables more compact notation (e.g. `cdo_monmean(file)[]`)
 
 ## Bug fixes
 
