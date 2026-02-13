@@ -214,13 +214,17 @@ cdo_execute <- function(
 ) {
   check_cdo_version(get_cdo())
 
+  use_cache <- FALSE
   # Need to first build the hash to make temp output deterministic
   if (isTRUE(cache)) {
+    use_cache <- TRUE
     if (operation$operator$n_output != 1) {
       cli::cli_alert_warning(
-        "cache only works with oeprations with 1 file output."
+        "Cache only works with oeprations with 1 file output."
       )
+      use_cache <- FALSE
     }
+
     hash_current <- rlang::hash(list(
       get_cdo_version(get_cdo()),
       build_operation(
@@ -250,7 +254,7 @@ cdo_execute <- function(
     options_replace = options_replace
   )
 
-  if (isTRUE(cache)) {
+  if (use_cache) {
     hash_file <- paste0(operation$output, ".hash")
 
     if (file.exists(operation$output)) {
@@ -301,7 +305,7 @@ cdo_execute <- function(
     attr(operation$output, "size") <- sum(file.size(operation$output))
   }
 
-  if (isTRUE(cache)) {
+  if (use_cache) {
     writeLines(hash_current, hash_file)
   }
 
