@@ -37,6 +37,7 @@ cdo <- function(operator, input, params = NULL, output = NULL) {
   return(operation)
 }
 
+
 maybe_list <- function(x) {
   if (is.operation(x)) {
     return(list(x))
@@ -305,6 +306,11 @@ cdo_execute <- function(
 
   return(operation$output)
 }
+
+
+#' @export
+`[.cdo_operation` <- cdo_execute
+
 
 input_info <- function(x) {
   if (is.character(x)) {
