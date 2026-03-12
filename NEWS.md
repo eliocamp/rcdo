@@ -1,5 +1,10 @@
 # rcdo (development version)
 
+## New features
+
+-   `[]` is an alias for `cdo_execute()` for cdo operations.
+-   `cdo_execute()` is a no-op for anything that it's not a cdo operation. This supports using this functions with elements that might be a cdo operation depending on previous code and also makes it equivalent to `[]`.
+
 ## Bug fixes
 
 -   Fix crash when using cache for operators without output
