@@ -1,9 +1,21 @@
 # rcdo (development version)
 
 ## New features
--   `[` is now an alias for `cdo_execute()`. This enables more compact notation (e.g. `cdo_monmean(file)[]`)
 
--   `cdo_execute()` is a no-op for anything that it's not a cdo operation. This supports using this functions with elements that might be a cdo operation depending on previous code and also makes it equivalent to `[]`.
+-   `[` is now an alias for `cdo_execute()`.
+    This enables more compact notation (e.g. `cdo_monmean(file)[]`)
+
+-   `cdo_execute()` is a no-op for anything that it's not a cdo operation.
+    This supports this kind of idiom
+
+    ```         
+    if (condition) {
+       file <- cdo_operation(file)
+    }
+    file <- cdo_execute(file)  # or file[]
+    ```
+
+    It also makes it more consistent with `[`.
 
 ## Bug fixes
 
@@ -27,7 +39,11 @@
 
 -   Adds caching support in `cdo_execute()` and `cdo_execute_list()` as well as cache management with `cdo_cache_set()` and `cdo_cache_unset()`.
 
--   Global options are now not replaced by default if an `options` argument is supplied. The new `options_replace` controls this behaviour. If it's `FALSE`, then global options, operation options and argument options are all concatenated (duplicated options are not checked for). If it's `TRUE`, then only the argument options are used, even if they are `NULL` (which implies, no options). This is potentially a **breaking change.**
+-   Global options are now not replaced by default if an `options` argument is supplied.
+    The new `options_replace` controls this behaviour.
+    If it's `FALSE`, then global options, operation options and argument options are all concatenated (duplicated options are not checked for).
+    If it's `TRUE`, then only the argument options are used, even if they are `NULL` (which implies, no options).
+    This is potentially a **breaking change.**
 
 # rcdo 0.2.0
 
