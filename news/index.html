@@ -39,8 +39,8 @@
 <h2 class="pkg-version" data-toc-text="development version" id="rcdo-development-version">rcdo (development version)<a class="anchor" aria-label="anchor" href="#rcdo-development-version"></a></h2>
 <div class="section level3">
 <h3 id="new-features-development-version">New features<a class="anchor" aria-label="anchor" href="#new-features-development-version"></a></h3>
-<ul><li>
-<code>[</code> is now an alias for <code><a href="../reference/cdo_execute.html">cdo_execute()</a></code>. This enables more compact notation (e.g. <code>cdo_monmean(file)[]</code>)</li>
+<ul><li><p><code>[</code> is now an alias for <code><a href="../reference/cdo_execute.html">cdo_execute()</a></code>. This enables more compact notation (e.g. <code>cdo_monmean(file)[]</code>)</p></li>
+<li><p><code><a href="../reference/cdo_execute.html">cdo_execute()</a></code> is a no-op for anything that it’s not a cdo operation. This supports using this functions with elements that might be a cdo operation depending on previous code and also makes it equivalent to <code>[]</code>.</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="bug-fixes-development-version">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-development-version"></a></h3>
