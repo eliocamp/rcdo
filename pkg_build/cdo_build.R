@@ -1,4 +1,12 @@
 source("pkg_build/operators.R")
+jsonlite::write_json(
+  operators,
+  "operators.json",
+  simplifyVector = FALSE,
+  pretty = TRUE,
+  auto_unbox = TRUE
+)
+
 create_function <- function(operator, template) {
   operator_name <- operator$command
   if (operator$n_input == 1) {

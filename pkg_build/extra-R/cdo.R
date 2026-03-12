@@ -211,6 +211,10 @@ cdo_execute <- function(
   verbose = FALSE,
   cache = getOption("rcdo_cache", default = FALSE)
 ) {
+  # cdo_execute is a no-op in these cases
+  if (!is.operation(operation)) {
+    return(operation)
+  }
   check_cdo_version(get_cdo())
 
   use_cache <- FALSE
