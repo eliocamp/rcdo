@@ -40,7 +40,14 @@
 <div class="section level3">
 <h3 id="new-features-development-version">New features<a class="anchor" aria-label="anchor" href="#new-features-development-version"></a></h3>
 <ul><li><p><code>[</code> is now an alias for <code><a href="../reference/cdo_execute.html">cdo_execute()</a></code>. This enables more compact notation (e.g. <code>cdo_monmean(file)[]</code>)</p></li>
-<li><p><code><a href="../reference/cdo_execute.html">cdo_execute()</a></code> is a no-op for anything that it’s not a cdo operation. This supports using this functions with elements that might be a cdo operation depending on previous code and also makes it equivalent to <code>[]</code>.</p></li>
+<li>
+<p><code><a href="../reference/cdo_execute.html">cdo_execute()</a></code> is a no-op for anything that it’s not a cdo operation. This supports this kind of idiom</p>
+<pre><code><span><span class="kw">if</span> <span class="op">(</span><span class="va">condition</span><span class="op">)</span> <span class="op">{</span></span>
+<span>   <span class="va">file</span> <span class="op">&lt;-</span> <span class="fu">cdo_operation</span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="va">file</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cdo_execute.html">cdo_execute</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span>  <span class="co"># or file[]</span></span></code></pre>
+<p>It also makes it more consistent with <code>[</code>.</p>
+</li>
 </ul></div>
 <div class="section level3">
 <h3 id="bug-fixes-development-version">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-development-version"></a></h3>

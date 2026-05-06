@@ -8,6 +8,7 @@ Operators](https://code.mpimet.mpg.de/projects/cdo).
 You can install rcdo from CRAN with
 
 ``` r
+
 install.packages("rcdo")
 ```
 
@@ -15,6 +16,7 @@ or the development version of rcdo from [GitHub](https://github.com/)
 with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("eliocamp/rcdo")
 ```
@@ -28,6 +30,7 @@ function)
 ## Example
 
 ``` r
+
 library(rcdo)
 cdo_use("packaged")  # use package version of cdo that can be installed with `cdo_install()`. 
 ncep <- "hgt_ncep.nc"
@@ -38,6 +41,7 @@ is
 [`cdo_ymonmean()`](https://eliocamp.github.io/rcdo/reference/ymonstat.md)
 
 ``` r
+
 ncep |> 
   cdo_ymonmean() 
 ```
@@ -48,6 +52,7 @@ to actually run the command. If no output file is specified, then the
 result is saved in a tempfile.
 
 ``` r
+
 ncep |> 
   cdo_ymonmean() |> 
   cdo_execute()
@@ -57,6 +62,7 @@ Operators can be chained. Lets select just the Southern Hemisphere
 first.
 
 ``` r
+
 ncep |> 
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_ymonmean() 
@@ -65,6 +71,7 @@ ncep |>
 Now also select the 500 hPa level
 
 ``` r
+
 ncep |> 
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_sellevel(level = 500) |> 
@@ -72,6 +79,7 @@ ncep |>
 ```
 
 ``` r
+
 ncep |> 
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_sellevel(level = 500) |> 
@@ -90,6 +98,7 @@ that runs the operators that the user needs to write as strings. Instead
 of
 
 ``` r
+
 ncep |> 
   rcdo::cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) 
 ```
@@ -97,5 +106,6 @@ ncep |>
 one would write
 
 ``` r
+
 ClimateOperators::cdo("sellonlatbox,0,360,-90,0", ncep, output_file)
 ```

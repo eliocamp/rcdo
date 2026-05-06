@@ -10,8 +10,14 @@
 
 - [`cdo_execute()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md)
   is a no-op for anything that it’s not a cdo operation. This supports
-  using this functions with elements that might be a cdo operation
-  depending on previous code and also makes it equivalent to `[]`.
+  this kind of idiom
+
+      if (condition) {
+         file <- cdo_operation(file)
+      }
+      file <- cdo_execute(file)  # or file[]
+
+  It also makes it more consistent with `[`.
 
 ### Bug fixes
 

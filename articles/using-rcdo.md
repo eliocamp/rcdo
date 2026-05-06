@@ -1,6 +1,7 @@
 # Using rcdo
 
 ``` r
+
 library(rcdo)
 ```
 
@@ -26,6 +27,7 @@ functionality and documentation will be compatible, so rcdo will emit a
 one-time warning but will otherwise still try to execute commands.
 
 ``` r
+
 cdo_use("system")  # The default
 #> Using system CDO, version 2.4.3.
 ```
@@ -36,6 +38,7 @@ and then we can use `cdo_use("packaged")` to tell rcdo to use the
 package version.
 
 ``` r
+
 # cdo_install()
 cdo_use("packaged")
 #> Using packaged CDO, version 2.5.1.
@@ -46,6 +49,7 @@ cdo_use("packaged")
 We will use a sample file.
 
 ``` r
+
 file <- system.file("extdata", "hgt_ncep.nc", package = "rcdo")
 ```
 
@@ -55,6 +59,7 @@ We can get a quick look at the contents of the file with the `sinfo`
 function.
 
 ``` r
+
 file |> 
   cdo_sinfo() |> 
   cdo_execute()
@@ -85,6 +90,7 @@ Notice the use of
 Plain rcdo functions return an operation waiting to be executed.
 
 ``` r
+
 file |> 
   cdo_sinfo() 
 #> CDO command:
@@ -101,6 +107,7 @@ the [`cdo_nlevel()`](https://eliocamp.github.io/rcdo/reference/ninfo.md)
 function.
 
 ``` r
+
 file |> 
   cdo_nlevel() |> 
   cdo_execute()
@@ -112,6 +119,7 @@ files and return one or more files. For instance, let’s select only the
 Southern Hemisphere in this dataset with the `sellonlatbox` operator.
 
 ``` r
+
 sh <- file |> 
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0)
 sh
@@ -126,6 +134,7 @@ needs to know where to save the output. We can do it explicitly with the
 `output` argument.
 
 ``` r
+
 sh |> 
   cdo_execute(output = tempfile())
 #> [1] "/tmp/Rtmp9eAVmx/filee0a5e7820da3c"
@@ -143,6 +152,7 @@ If we omit that argument, however, rcdo will save the result into a
 ephemeral file in a temporary folder.
 
 ``` r
+
 sh_file <- sh |> 
   cdo_execute()
 sh_file
@@ -163,6 +173,7 @@ Since `sh` is not a file, applying another rcdo function will return a
 chained set of operations.
 
 ``` r
+
 sh |> 
   cdo_sinfo() 
 #> CDO command:
@@ -172,6 +183,7 @@ sh |>
 This is the same as
 
 ``` r
+
 file |> 
   cdo_sellonlatbox(lon1 = 0, lon2 = 360, lat1 = -90, lat2 = 0) |> 
   cdo_sinfo() 
@@ -183,6 +195,7 @@ We can execute the chain and confirm that `sh` only selects the Southen
 Hemisphere
 
 ``` r
+
 sh |> 
   cdo_sinfo() |> 
   cdo_execute() |> 
@@ -194,6 +207,7 @@ It’s more interesting to chain multiple data-manipulating operations.
 For example, let’s select only the 500hPa level.
 
 ``` r
+
 sh_500 <- sh |> 
   cdo_sellevel(500) |> 
   cdo_execute() 
@@ -202,6 +216,7 @@ sh_500 <- sh |>
 We can confirm that the result only has 1 level.
 
 ``` r
+
 sh_500 |> 
   cdo_nlevel() |> 
   cdo_execute()
@@ -214,6 +229,7 @@ compute monthly anomalies by first computing monthly climatology with
 ‘ymonmean’.
 
 ``` r
+
 climatology <- cdo_ymonmean(file)
 
 anomalies <- cdo_ymonsub(file, climatology) |> 
@@ -226,6 +242,7 @@ return the list of files created yet. The returned string is the base
 suffix shared by all files.
 
 ``` r
+
 mon_split <- sh_500 |> 
   cdo_splitmon() |> 
   cdo_execute()
@@ -239,6 +256,7 @@ mon_split
 We can get a list of all files by globbing with an asterisk.
 
 ``` r
+
 mon_split <- paste0(mon_split, "*") |> 
   Sys.glob()
 mon_split
@@ -256,6 +274,7 @@ deleted by R (although they will eventually be deleted by your OS is
 they are in the correct temporary folder).
 
 ``` r
+
 mon_split[1] |> 
   cdo_sinfo() |> 
   cdo_execute() |> 
@@ -271,6 +290,7 @@ We can use functional programming to apply one or more operations to
 each file.
 
 ``` r
+
 mon_split |> 
   lapply(cdo_deltat)
 #> [[1]]
@@ -326,6 +346,7 @@ To execute a list of operations, use
 [`cdo_execute_list()`](https://eliocamp.github.io/rcdo/reference/cdo_execute.md).
 
 ``` r
+
 mon_split |> 
   lapply(cdo_deltat) |> 
   cdo_execute_list()
@@ -469,6 +490,7 @@ files will be deleted. So you need to either use
 or take care of explicitly creating temporary files.
 
 ``` r
+
 mon_split |> 
   lapply(function(x) cdo_deltat(x) |> cdo_execute(output = tempfile()))
 #> [[1]]
@@ -561,12 +583,14 @@ We can re-merge the list of files with
 [`cdo_mergetime()`](https://eliocamp.github.io/rcdo/reference/merge.md).
 
 ``` r
+
 merged <- mon_split |> 
   cdo_mergetime() |> 
   cdo_execute()
 ```
 
 ``` r
+
 merged |> 
   cdo_ntime() |> 
   cdo_execute()   
@@ -579,6 +603,7 @@ individual operations and then merging.
 can take a list of operations naturally, so we could do this
 
 ``` r
+
 mon_split |> 
   lapply(cdo_deltat) |> 
   cdo_mergetime() |> 
