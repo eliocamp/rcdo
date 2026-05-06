@@ -1,0 +1,128 @@
+# Problems in the documentation
+
+Help sections that don't have any parameter in SYNOPSIS but one or more paramters are documented in PARAMETERS
+	arithc
+	daystat
+	filedes (genbounds parameter only used by griddes)
+	splittime
+	vertstat (the weights parameter is only used by some operators; the other operators ignore the extra paramter silently)
+	yearstat
+
+Input:
+	has "**" as parameter name instead of zaxis
+
+Cmor: 
+	This one is very complex so I might be wrong in this. It's SYNOPSIS documents paramters as `cdo  cmor,MIPtable[,cmor_name=VarList[,key=value[,…]]]  infile`. Would `cdo  cmor,MIPtable[,parameters]  infile` be more consistent wiht the rest of the documentation? 
+	
+	Typo: Preprozessing should be Preprocessing 
+
+Fldstat: 
+	SYNOPSIS uses a generic "parameter" and generic <operator>, but not all operators use all the parameters (e.g. fldmin doesn't use weights, only flgpctl uses pn).
+	Possible code error: Operators seem to ignore the extra paramters silently (`cdo fldmin,weights=false ...` doesn't throw an error).
+
+Remapknn:
+	is similar to Fldstat, SYNOPSIS uses a generic <operator>, but not all operators use use the same parameters. 
+	remapknn (and genknn?) seem to use all parameters and require key=value pairs, but the other operators in the family, which are special cases of remapknn, use only? the grid argument and it's positional. 
+
+	For remapknn only the grid parameter is required, the rest are optional, which might be better documented as `cdo  remapknn,grid[,parameter]  infile outfile`? (although remapknn still requiring key=value for grid would make this notation inconsistent). 
+
+Remapstat:
+	uses generic "parameters", but there is only one documented parameter (grid). So SYNOPSIS might be better as `cdo  <operator>,grid  infile outfile"`
+
+
+Selmulti:
+	uses generic "paramters", but no parameter is documented. 
+
+Strbre and Strgal:
+	the parameter v is not documented in PARAMETERS. 
+
+Eca_cwd:
+	SYNOPSIS is `cdo  <operator>[,params]  infile outfile`, but it seem to expect positional paramters (`cdo eca_cwd,freq=1 ...` throws an error). Should it be documented `cdo  <operator>[,R[,N[,params]]]  infile outfile` like eca_cdd is? 
+
+Gridboxstat:
+	paramters are not named in SYNOPSIS but are positional. Should SYNOPSIS be `cdo  <operator>,nx,ny  infile outfile`?
+
+Magploit:
+	parameters are described in a table in DESCRIPTION instead of PARAMETERS.
+
+Split:
+	uuid is documented in PARAMETERS as uuid=<attname>, which is not the parameter name. It probably should be documented as "uuid" and then document that it's a key=value parameter.
+
+uvDestag:
+	parameter -/+0.5 is similarly named by its value. Maybe it should be documented as `cdo  uvDestag,u,v[,offset]  infile outfile`? And document that offset needs to be a pair of offsets? 
+
+In change, chcode uses "[...] to refer to more arguments but the other operators use "..." (with no brackets). 
+
+There are a few parameters that are actually flags. 
+	1. `swap` in split
+	2. `rm=c` in ydrunstat and ydrunpctl
+	3. `pm=r8` in ydrunpctl
+	4. `convert` in cmorlite and setpartab
+
+ 	These are not paramter names themselves, but the string that needs to be passed to turn on that flag (use convert instead of convert=true, for example). I feel that these should be documented differently from other normal paramters that accept a value. 
+
+
+Operators documented more than once. 
+	remapdis and gendis, and remapnn and gennn. Each pair is documented in the remapknn section and as their own family. 
+
+
+In general, it's not clear and consistent documentation on which parameters are key=value and which are positional. 
+Are parameters not named in SYNOPSIS always key=value? 
+Are boolean parameters always key=value? 
+
+
+Undocumented operators. 
+`cdo --operators` returns a list of 943 operators. By my count, the documentation has information for 719 operators. 224 operators are not documented. Some of them appear to be old names for existing operators (e.g. afterburner is now after, I think?), others seem to point to deprecated operators that are kept for backwards compatibilty (e.g. I assume del29feb was removed in favour of delete,dom=29feb), some are "obsolete" and listed in Obsolete_operators, and some might be operators in development (e.g. query seems be in active development, from looking at the changelog). 
+
+If would be good to document the deprecated operators that should not be used in future CDO code and also consider removing their output from `cdo --operators`. 
+
+A list of all the undocumented operators I found follows: 
+
+afterburner, anomaly, ap2hl, ap2hlx, ap2plx, arg
+
+boxavg
+
+cdiread, cdiwrite, chltype, chtabnum, chvar, cloudlayer, complextopol, complextorect, conj, conv_cmor_table, coshill
+
+daycount, dcw, del29feb, delday, delvar, diffc, diffp, difftest, diffv, dump_cmor_table, dumpmap, dv2uvl
+
+eca_r1mm, eof3dspatial, eof3dtime, eofcoeff3d, etccdi, etccdi_gsl, etccdi_hd, etccdi_r10mm, etccdi_r20mm, etccdi_rx1daymon, etccdi_rx5daymon, etccdi_sdii, export_e5ml
+
+fc2gp, fc2sp, filedes, fillmiss, fillmiss2, fldrms, for, fourier2grid
+
+gengrid, genycon, genycon2test, gh2hlx, gheight_full, gheighthalf, globavg, gp2fc, gp2spl, grid2fourier, gridcellidx, griddes2, griddx, griddy, gridmask
+
+harmonic, hi, hourcount
+
+im, import_e5ml, import_fv3grid, import_grads, import_obs, imtocomplex, infoc, infop, infov, intgridbil, intgriddis, intgridknn, intgridnn, intgridtraj, intlevelx, intlevelx3d, invertlatdata, invertlatdes, invertlon, invertlondata, invertlondes
+
+lic, linfo, log
+
+mask, maskcircle, meandiff2test, ml2hl, ml2hlx, ml2plx, mod, moncount, mrotuv, muldoy
+
+ncode, ncopy, nvar
+
+outputarr, outputbounds, outputboundscpt, outputcenter, outputcenter2, outputcentercpt, outputfld, outputkey, outputkml, outputtri, outputts, outputvector, outputvrml, outputxyz
+
+pardup, parmul, partab2, pinfo, pinfov, pressure_full
+
+query
+
+rand, re, recttocomplex, remapavgtest, remapeta_s, remapeta_z, remapycon, remapycon2test, retocomplex, rotuvN
+
+samplegridicon, seascount, seasmonavg, seasmonmean, seinfo, seinfoc, seinfon, seinfop, selgridname, selmon, seloperator, selrec, selseas, selvar, setgridnumber, setgriduri, setpartab, setpartabc, setpartabv, setrcaname, settabnum, setvar, showattsvar, showgrid, showhistory, showparam, showunit, showvar, sincos, sinfoc, sinfop, sinfov, sortcode, sortlevel, sortname, sortparam, sorttaxis, sorttimestamp, sortvar, sp2fc, sp2gpl, spartab, spcut, specinfo, spectrum, splitdatetime, splitrec, splitvar, stream, subgrid, szip
+
+temp, testcellsearch, testfield, testpointsearch, thinout, timcount, timederivative, timrmsd, tinfo, tpnhalo, transxy, tstepcount
+
+unsetgridmask, usegridnumber, uv2dvl
+
+vardes, varquot2test, varrms, vct2, verifyweights, vertcum, vertcumhl, vertint, vertwind, vinfo, vlist
+
+writegrid, writerandom, writeremapscrip
+
+xsinfoc, xsinfon
+
+yearcount, yearmonavg
+
+zs2zl, zs2zlx, zsdepth
+
