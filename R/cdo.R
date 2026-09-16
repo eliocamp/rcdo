@@ -1,4 +1,3 @@
-## This file was created automatically, do not edit by hand.
 #' Execute a custom operator
 #'
 #' @param operator, a list created with `cdo_operator`.
@@ -302,7 +301,8 @@ cdo_execute <- function(
   }
 
   if (operation$operator$n_output < Inf) {
-    if (!all(file.exists(operation$output))) {
+    if (result != 0 || !all(file.exists(operation$output))) {
+      use_cache <- FALSE
       cli::cli_abort("Operation failed")
     }
     attr(operation$output, "mtime") <- max(file.mtime(operation$output))
