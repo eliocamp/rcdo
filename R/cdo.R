@@ -303,7 +303,7 @@ cdo_execute <- function(
   if (operation$operator$n_output < Inf) {
     if (result != 0 || !all(file.exists(operation$output))) {
       use_cache <- FALSE
-      cli::cli_abort(c("Operation failed:", "{.code {operation}}"))
+      cli::cli_abort(c("Operation failed:", "{.code {command}}"))
     }
     attr(operation$output, "mtime") <- max(file.mtime(operation$output))
     attr(operation$output, "size") <- sum(file.size(operation$output))
